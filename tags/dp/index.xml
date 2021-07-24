@@ -7,19 +7,19 @@
     <title>树形dp总结</title>
     <link>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</link>
     <pubDate>Tue, 20 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</guid>
-    <description><![CDATA[我对树形背包转移的理解]]></description>
-</item>
-<item>
-    <title>DP总结</title>
-    <link>https://haofish.github.io/2021/07/dp%E6%80%BB%E7%BB%93/</link>
-    <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/dp%E6%80%BB%E7%BB%93/</guid>
-    <description><![CDATA[1. 写在前面的话 之前写了一篇不像总结的动态规划总结，感觉更像是一个成长历程，所以就打算重写一篇。 2. 对DP简单的总结 dp的题目特点： 求最大或者最]]></description>
+    <description><![CDATA[本人对树形背包转移的理解]]></description>
 </item>
 <item>
     <title>数位dp总结</title>
     <link>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</link>
     <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</guid>
     <description><![CDATA[数位dp总结 数位dp思考形式与套路 对于区间的询问，一般利用的是前缀和的思想来求得答案 在求解答案时，一般是从高位到低位开始对答案进行累计 求解数]]></description>
+</item>
+<item>
+    <title>DP总结</title>
+    <link>https://haofish.github.io/2020/08/dp%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Wed, 19 Aug 2020 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/dp%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[初学时对一些动态规划的总结，包括常见的dp、背包、状压、树形（还有坑没填完）]]></description>
 </item>
 </channel>
 </rss>

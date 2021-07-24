@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>我的模板 - haofish</title><meta name="description" content="记录一些常用的板子"><meta property="og:title" content="我的模板" />
+        <title>我的模板 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="我的模板" />
 <meta property="og:description" content="记录一些常用的板子" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2021/07/%E6%A8%A1%E6%9D%BF/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E6%A8%A1%E6%9D%BF\/"
-        },"genre": "posts","wordcount":  28656 ,
+        },"genre": "posts","wordcount":  28653 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E6%A8%A1%E6%9D%BF\/","datePublished": "2021-07-22T12:22:01+08:00","dateModified": "2021-07-22T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "记录一些常用的板子"
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">我的模板</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-22">2021-07-22</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 28656 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-22">2021-07-22</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 28653 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 58 分钟</span>&nbsp;<span id="/2021/07/%E6%A8%A1%E6%9D%BF/" class="leancloud_visitors" data-flag-title="我的模板">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -2944,16 +2944,14 @@
 <ol>
 <li>设$d[i] = a[i] - a[i - 1]$</li>
 <li>则 $a[ x ] = \sum_{i = 1}^{x}{d_i}$</li>
-<li>设 $$sum[y] = \sum_{i = 1}^{x}{a_i}$$</li>
-<li>即 $$sum<i class="far fa-check-square fa-fw"></i> = d[1] + d[1] + d[2] + d[1] + d[2] + d[3] + …… + d[1] + ……+ d[n]$$</li>
-<li>化简得 $sum<i class="far fa-check-square fa-fw"></i> = \sum_{i = 1}^{x}{d_i \times (n - i + 1)}$</li>
-<li>得 $sum<i class="far fa-check-square fa-fw"></i> = (n + 1) \times \sum_{i = 1}^{x}{d_i} - \sum_{i = 1}^{x}{i \times d_i}$</li>
+<li>设 $sum[ x ] = \sum_{i = 1}^{x}{a_i}$</li>
+<li>即 $sum[ x ] = d[1] + d[1] + d[2] + d[1] + d[2] + d[3] + …… + d[1] + ……+ d[n]$</li>
+<li>化简得 $sum[ x ] = \sum_{i = 1}^{x}{d_i \times (n - i + 1)}$</li>
+<li>得 $sum[ x ] = (n + 1) \times \sum_{i = 1}^{x}{d_i} - \sum_{i = 1}^{x}{i \times d_i}$</li>
 <li>固开两个树状数组，一个维护差分数组$d_i$，一个维护$i \times d_i$</li>
 </ol>
 </li>
 </ol>
-<p>实验katex公式</p>
-<p>$$sum[x] = \sum_(i = 1)^(x)(a_i)$$</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
