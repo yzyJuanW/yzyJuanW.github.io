@@ -4,10 +4,10 @@
         <link>https://haofish.github.io/tags/%E6%95%B0%E5%AD%A6/</link>
         <description>数学 - 标签 - haofish</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 21 Jul 2021 12:22:01 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%95%B0%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
-    <title>数学总结</title>
+    <title>一些有用的数学公式与结论</title>
     <link>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</link>
     <pubDate>Wed, 21 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</guid>
-    <description><![CDATA[一些有用的数学公式与结论 质数 算术基本定理：$N = {P_1}^{k_1} \times{P_2}^{k_2} \times {P_3}^{k_3} \cdots \times {P_n}^{k_n} \ \ , \ \ P_1 &lt; P_2 &lt; P_3 &lt; \cdots &lt; P_n$ 一个数N约数个数：$(k_1 + 1) \times (k_2 + 1) \times (k_3 + 1) \times]]></description>
+    <description><![CDATA[记录一些有用的数学公式]]></description>
 </item>
 <item>
     <title>acm常用数学总结</title>

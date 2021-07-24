@@ -7,7 +7,7 @@
     <title>ACM常用C&#43;&#43;stl总结</title>
     <link>https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</link>
     <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</guid>
-    <description><![CDATA[一、前言 本博客对ACM的常用的函数和c++STL做一个简单的总结， 显然善用这些函数，可以对代码做大幅度地简化 本文主要对每个头文件/函数分常用]]></description>
+    <description><![CDATA[一些个人觉得在ACM中比较有用的函数和stl的用法]]></description>
 </item>
 </channel>
 </rss>

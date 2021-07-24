@@ -6,28 +6,28 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jul 2021 12:22:01 &#43;0800</lastBuildDate>
             <atom:link href="https://haofish.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>模板</title>
+    <title>我的模板</title>
     <link>https://haofish.github.io/2021/07/%E6%A8%A1%E6%9D%BF/</link>
     <pubDate>Thu, 22 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A8%A1%E6%9D%BF/</guid>
-    <description><![CDATA[常用模板（包括网络赛） 一、基础板子 1. 二分 整数二分 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 1 while (l &lt; r) { int mid = (l + r) &gt;&gt; 1; if (check(mid)) l = mid + 1; else r = mid; } //]]></description>
+    <description><![CDATA[记录一些常用的板子]]></description>
 </item>
 <item>
-    <title>数学总结</title>
+    <title>一些有用的数学公式与结论</title>
     <link>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</link>
     <pubDate>Wed, 21 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</guid>
-    <description><![CDATA[一些有用的数学公式与结论 质数 算术基本定理：$N = {P_1}^{k_1} \times{P_2}^{k_2} \times {P_3}^{k_3} \cdots \times {P_n}^{k_n} \ \ , \ \ P_1 &lt; P_2 &lt; P_3 &lt; \cdots &lt; P_n$ 一个数N约数个数：$(k_1 + 1) \times (k_2 + 1) \times (k_3 + 1) \times]]></description>
+    <description><![CDATA[记录一些有用的数学公式]]></description>
 </item>
 <item>
     <title>树形dp总结</title>
     <link>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</link>
     <pubDate>Tue, 20 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</guid>
-    <description><![CDATA[树形dp总结 树形背包常用思考模型 模型一 首先对于每个节点我们在dfs中dp转移时可以想象成一个分组背包，每次新遍历一个子树就可以想象成一个分组]]></description>
+    <description><![CDATA[关于我对树形背包的理解]]></description>
 </item>
 <item>
     <title>ACM常用C&#43;&#43;stl总结</title>
     <link>https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</link>
     <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</guid>
-    <description><![CDATA[一、前言 本博客对ACM的常用的函数和c++STL做一个简单的总结， 显然善用这些函数，可以对代码做大幅度地简化 本文主要对每个头文件/函数分常用]]></description>
+    <description><![CDATA[一些个人觉得在ACM中比较有用的函数和stl的用法]]></description>
 </item>
 <item>
     <title>DP总结</title>
@@ -39,7 +39,7 @@
     <title>失误录</title>
     <link>https://haofish.github.io/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/</link>
     <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/</guid>
-    <description><![CDATA[做题时的失误记录 提交前检查 提交之前人肉debug一下，最好自己造一下特殊的样例走一下 考虑dp的转移决策上 dp状态转移时要考虑好具体对应的决策]]></description>
+    <description><![CDATA[记录自己做题时的脑残行为]]></description>
 </item>
 <item>
     <title>数位dp总结</title>

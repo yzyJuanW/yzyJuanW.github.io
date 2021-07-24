@@ -7,7 +7,7 @@
     <title>树形dp总结</title>
     <link>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</link>
     <pubDate>Tue, 20 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</guid>
-    <description><![CDATA[树形dp总结 树形背包常用思考模型 模型一 首先对于每个节点我们在dfs中dp转移时可以想象成一个分组背包，每次新遍历一个子树就可以想象成一个分组]]></description>
+    <description><![CDATA[关于我对树形背包的理解]]></description>
 </item>
 <item>
     <title>DP总结</title>
