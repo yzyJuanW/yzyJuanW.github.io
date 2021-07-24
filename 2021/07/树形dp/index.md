@@ -9,7 +9,7 @@
 ### 模型二
 - 首先对于每次新遍历一个结点我们都可以想象成是在给这个结点拼接一颗子树如下图
 
-{{< figure src="/img/dp分类.png" alt="/img/dp分类.png" title="Lighthouse (figure)" >}}
+{{< figure src="/images/logo.png" alt="/images/logo.png" title="Lighthouse (figure)" >}}
 
 - 解释：圆点为树的结点，三角形为一颗子树，线段为边，箭头是拼接方向。蓝色为之前计算好的状态的树，红色为即将**拼接**上去的一颗子树（这颗子树在dfs时计算好了所有状态）
 ### 模型一与模型二的联系
