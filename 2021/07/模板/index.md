@@ -1396,8 +1396,8 @@ ll get(int l, int r) { return get(r) - get(l - 1); }
 ```
 2. 区间修改，区间查询
 	1. 设$d[i] = a[i] - a[i - 1]$
-	2. 则 $a[x] = \sum_{i = 1}^{x}{d_i}$
-	3. 设 $$sum[x] = \sum_{i = 1}^{x}{a_i}$$
+	2. 则 $a[ x ] = \sum_{i = 1}^{x}{d_i}$
+	3. 设 $$sum[y] = \sum_{i = 1}^{x}{a_i}$$
 	4. 即 $$sum[x] = d[1] + d[1] + d[2] + d[1] + d[2] + d[3] + …… + d[1] + ……+ d[n]$$
 	4. 化简得 $sum[x] = \sum_{i = 1}^{x}{d_i \times (n - i + 1)}$
 	5. 得 $sum[x] = (n + 1) \times \sum_{i = 1}^{x}{d_i} - \sum_{i = 1}^{x}{i \times d_i}$
