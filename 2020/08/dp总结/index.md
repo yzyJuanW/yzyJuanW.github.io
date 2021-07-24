@@ -590,11 +590,14 @@ for(int i = n; i >= 1; --i) { // 先枚举左端点
   $$
   - 最后我这题采用的是自顶向下的递归来求的，最后根节点是通过回溯得来，当然如果喜欢自底向上的童鞋可以采用栈来遍历也可以哦。而我们的状态转移方程总结为
   $$
-  \begin{cases}
-  dp[i][1] = w[i] + \sum dp[son[i]][0]，\ \ (选择i节点) \\
-  dp[i][0] = \sum max(dp[son[i]][1], dp[son[i]][0]) \ \ (不选择i节点)
-  \end{cases}
+  dp[i][1] = w[i] + \sum dp[son[i]][0]，\ \ (选择i节点) 
   $$
+  $$
+  dp[i][0] = \sum max(dp[son[i]][1], dp[son[i]][0]) \ \ (不选择i节点)
+  $$
+
+  
+
   - 那么最后的答案就是根节点的选和不选两状态的最大值,即 max(dp\[root][1], dp\[root][0])，（其余细节看注释）。
 
   ```c++
@@ -661,19 +664,21 @@ for(int i = n; i >= 1; --i) { // 先枚举左端点
 #### 【例题2】[HDU 2196 Computer](http://acm.hdu.edu.cn/showproblem.php?pid=2196)
 
 - 大致题意：给你一个棵无向树，每个相连的节点之间都有个距离，即边有权，让你求出每个节点距离该节点的最远节点的距离。
+
 - 又是一道树状DP~~都放树状DP里了，怎么可能不是呢😂~~，但是这题是无向的，恰恰是因为这样给了一丝丝方便。
+
 - 简单的分析
   - 首先既然是无向，为了方便我们把他看作有向的，就设1号节点（1号电脑）是根节点，任性~~图方便~~。
   - 每个节点，他只有两种状态（除根节点，和叶子节点），一、要么**是从它的子节点过来的距离**；二、要么**不是从它的子节点过来**。~~如图~~不画了，自己脑补😂。
   - 那么我们就这样定义状态：dp[i][j], i表示的是节点编号（$1 \le i \le n$），而 j（$0 \le j \le 1$）的话就是，当 $j = 0$ 时表示 i 节点到其最远从属于它的叶子节点 **（即他的子节点过来）的距离**， $j = 1$ 时表示**不是从它子节点过来的最远距离**。
   - 对于从子节点到来本节点的距离，只需要对比大小便可，为了方便思考，我把题目的例子改了一下，如图（这回有图啊！！）
-![树状例题2图01](https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图01.png)
+  ![树状例题2图01](https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图01.png)
   - 说明：方形里的数字代表距离（边权）。不难看出从2号节点的子节点（7号节点、6号节点、3号节点）到2号节点的最大距离就是子节点到来的最大值（老规矩，别想他的父节点），有点拗口，看方程（son[i]表示 i 节点的子节点, len(son[i])则表示它的子节点到他它自己的距离）：
   $$
   dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace
   $$
   - 简单吧，下面就来看看比较难的：不是从他的子节点到来的最大距离。先上图（画的好累）：
-![树状例题2图ii](https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图ii.png)
+  ![树状例题2图ii](https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图ii.png)
   - 清楚吧，~~不用解释了吧~~，好吧好吧，我们把目光放到3号节点上，如果计算**不是从它子节点过来的距离**的话，只有两种可能，其中最简单的一条路就是从它的爷爷节点来再到他的父亲节点来的距离（黄色箭头路线），为什么只有一条？因为它肯定只有一个爷爷和父亲，不可能有两个，不可能！！！这个世界还是很美好滴；第二种可能就是从它的兄弟节点来，这个比较多路（蓝色和绿色箭头路线），因为它可以有很多兄弟，也可以没有兄弟（独生子😁）。这样理解的话方程就能出来了（fa[i]表示 i 节点父节点，所以son[fa[i]]就代表 i 节点 的兄弟节点，len的含义和上面一样）：
   $$
   dp[i][1] = max\lbrace dp[fa[i]][1]+ len(i), dp[son[fa[i]]][0] + len(son[fa[i]]\rbrace+ len(i))
@@ -684,39 +689,42 @@ for(int i = n; i >= 1; --i) { // 先枚举左端点
   $$
   - 解释：max内部的前者是上述的第一种可能，后者是第二种可能，是不是简单明了😁，但是对于这个状态还利用到来我们第一个讲的（$j = 0$）状态。所以我们在计算时要先把所有 $j = 0$ 的状态先计算，即做两遍dfs（当然你也可以把他们的dfs放到一起，都一样的，为了方便~~我不会😂~~我选择做两遍dfs），注意：这个状态方程的状态，即 $j = 1$ 时的状态一定要自顶向下计算，因为方程中还用到了它父亲的第二（$j = 1$）状态。所以最终的状态转移方程总结为：
   $$
-  \begin{cases}
-  dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace， \ \ （第一种状态）\\
-  dp[i][1] = max\lbrace dp[fa[i]][1], dp[son[fa[i]]][0] + len(son[fa[i]])\rbrace + len(i) \ \ （第二种状态）
-  \end{cases}
+  dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace， \ \ （第一种状态）
   $$
-  - 那么最后的答案是什么呢？显然就是每个节点的 $j = 0$ 和 $j = 1$ 的两种状态的最大值，即对于 i 节点 max（dp\[i][0], dp\[i][1]）。不废话，上代码（其余细节看注释）！！！
+  $$
+  dp[i][1] = max\lbrace dp[fa[i]][1], dp[son[fa[i]]][0] + len(son[fa[i]])\rbrace + len(i) \ \ （第二种状态）
+  $$
+
   
-```c++
+
+  - 那么最后的答案是什么呢？显然就是每个节点的 $j = 0$ 和 $j = 1$ 的两种状态的最大值，即对于 i 节点 max（dp\[i][0], dp\[i][1]）。不废话，上代码（其余细节看注释）！！！
+
+  ```c++
   #include <algorithm>
   #include <cstdio>
   #include <cstring>
   #include <vector>
   
-using namespace std;
+  using namespace std;
   const int M = 1e4 + 10;
   int n;
   vector<int> son[M]; //子节点不止一个，不放入结构体是为了方便清空数组
   long long dp[M][2];
   
-struct cpNode {    //电脑节点结构体
+  struct cpNode {    //电脑节点结构体
       int fa;        //它爹是谁
       long long len; // 它到它爹的距离
       cpNode(int f = 0, long long l = 0) : fa(f), len(l) {}
   } cp[M];
   
-void dfs1(int r) { //状态一
+  void dfs1(int r) { //状态一
       for (auto s : son[r]) {
           dfs1(s);
           dp[r][0] = max(dp[r][0], dp[s][0] + cp[s].len);
       }
   }
   
-void dfs2(int r) { //状态二
+  void dfs2(int r) { //状态二
       dp[r][1] = dp[cp[r].fa][1] + cp[r].len; //先把第二种状态的第一种可能算了，还记得吗因为它只有一个爹
       for (auto bro : son[cp[r].fa]) { //遍历他的兄弟
           if (bro != r)                // 如果是它兄弟，即不是它自己
@@ -725,7 +733,7 @@ void dfs2(int r) { //状态二
       for (auto s : son[r]) dfs2(s); //计算它子节点的状态二
   }
   
-int main() {
+  int main() {
       while (scanf("%d", &n) != EOF) { //多组输入，这设定把我坑惨了
           for (int i = 2; i <= n; i++) {
               int f, len; // f为第 i 号节点的父亲， len是到它父亲的距离
@@ -734,24 +742,24 @@ int main() {
               cp[i] = {f, (long long)len};
           }
   
-        dfs1(1); //第一状态的转移计算
+          dfs1(1); //第一状态的转移计算
           for (auto s : son[1]) dfs2(s); //把除 1 号节点的节点都进行计算第二状态，因为 1 号节点只有第一状态
   
-        for (int i = 1; i <= n; i++) printf("%lld\n", max(dp[i][0], dp[i][1])); //输出每个节点的结果
+          for (int i = 1; i <= n; i++) printf("%lld\n", max(dp[i][0], dp[i][1])); //输出每个节点的结果
   
-        //清空数组，可以不看
+          //清空数组，可以不看
           memset(dp, 0, sizeof dp);
           for (int i = 1; i <= n; i++) {
               for (auto it = son[i].begin(); it != son[i].end();)
                   it = son[i].erase(it);
           }
   
-    }
+      }
       return 0;
   }
   ```
-  
-- 平均时间复杂度应该也是O($n$)
+
+  - 平均时间复杂度应该也是O($n$)
   - 空间复杂度O(n)
 
 ### ④ 状态压缩DP

@@ -7,7 +7,7 @@
     <title>数位dp总结</title>
     <link>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</link>
     <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</guid>
-    <description><![CDATA[数位dp总结 数位dp思考形式与套路 对于区间的询问，一般利用的是前缀和的思想来求得答案 在求解答案时，一般是从高位到低位开始对答案进行累计 求解数]]></description>
+    <description><![CDATA[基础数位dp刷题的一些小总结]]></description>
 </item>
 </channel>
 </rss>

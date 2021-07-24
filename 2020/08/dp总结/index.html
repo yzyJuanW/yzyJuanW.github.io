@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2020\/08\/dp%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "dp","wordcount":  13424 ,
+        },"genre": "posts","keywords": "dp","wordcount":  13419 ,
         "url": "https:\/\/haofish.github.io\/2020\/08\/dp%E6%80%BB%E7%BB%93\/","datePublished": "2020-08-19T12:22:01+08:00","dateModified": "2020-08-19T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">DP总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-19">2020-08-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 13424 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-19">2020-08-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 13419 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 27 分钟</span>&nbsp;<span id="/2020/08/dp%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="DP总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -1225,8 +1225,11 @@ $$</li>
 <li>
 <p>简单的分析：</p>
 <ul>
-<li>对于一个节点有两种可能，<strong>选</strong>或者<strong>不选</strong>。那么我们就这样定义状态：dp[i][j],  $1 \le i \le n$、 $0 \le j \le 1$，表示i节点的权值总和最大，$j = 0$表示不选择当前节点时的权值总和最大，$j = 1$表示选择当前节点时的权值总和最大</li>
-<li>当一个节点选了之后，那么它的所有子节点都不能选（当然它的父节点也不能选，但是考虑到我们这题用dp来解，为了不扰乱思维，我们<strong>只看它和它的子节点</strong>），看图：
+<li>
+<p>对于一个节点有两种可能，<strong>选</strong>或者<strong>不选</strong>。那么我们就这样定义状态：dp[i][j],  $1 \le i \le n$、 $0 \le j \le 1$，表示i节点的权值总和最大，$j = 0$表示不选择当前节点时的权值总和最大，$j = 1$表示选择当前节点时的权值总和最大</p>
+</li>
+<li>
+<p>当一个节点选了之后，那么它的所有子节点都不能选（当然它的父节点也不能选，但是考虑到我们这题用dp来解，为了不扰乱思维，我们<strong>只看它和它的子节点</strong>），看图：
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -1234,12 +1237,16 @@ $$</li>
         data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e9%80%89%e5%ad%90%e4%b8%8d%e9%80%89.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e9%80%89%e5%ad%90%e4%b8%8d%e9%80%89.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e9%80%89%e5%ad%90%e4%b8%8d%e9%80%89.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC父选子不选.png"
-        title="父选子不选" /></li>
-<li><strong>黄色</strong>为选，<strong>灰色</strong>为不选，父亲节点选了后，它下面的2、3、4、5、6……都不能选了（清楚明了），喂喂喂，你可别再想1号节点的父亲的事了，我们正在dp呢，它父亲节点以后它爷爷节点会搞定的，别再多想了，不然会扰乱思维。那么很容易得到这部分的转移方程(son[i]表示i的子节点, w[i]表示当前节点的权值)：
+        title="父选子不选" /></p>
+</li>
+<li>
+<p><strong>黄色</strong>为选，<strong>灰色</strong>为不选，父亲节点选了后，它下面的2、3、4、5、6……都不能选了（清楚明了），喂喂喂，你可别再想1号节点的父亲的事了，我们正在dp呢，它父亲节点以后它爷爷节点会搞定的，别再多想了，不然会扰乱思维。那么很容易得到这部分的转移方程(son[i]表示i的子节点, w[i]表示当前节点的权值)：
 $$
 dp[i][1] = w[i] + \sum dp[son[i]][0]
-$$</li>
-<li>如果这个节点不选呢？不说话，先看图：
+$$</p>
+</li>
+<li>
+<p>如果这个节点不选呢？不说话，先看图：
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -1247,8 +1254,10 @@ $$</li>
         data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC父不选子选.png"
-        title="父不选子选" /></li>
-<li>还是一样：<strong>黄色</strong>为选，<strong>灰色</strong>为不选。可能有人很奇怪：“哎呀，为什么儿子还有不选的情况，既然父亲都不选了，那么他的儿子全选不就总和最大了吗”。别急，且听我慢慢道来，如果这个是一条链，那么你这种想法可能就是对的，但这个是一棵树，之所以会有这个疑惑是因为我的图没上画完呢。
+        title="父不选子选" /></p>
+</li>
+<li>
+<p>还是一样：<strong>黄色</strong>为选，<strong>灰色</strong>为不选。可能有人很奇怪：“哎呀，为什么儿子还有不选的情况，既然父亲都不选了，那么他的儿子全选不就总和最大了吗”。别急，且听我慢慢道来，如果这个是一条链，那么你这种想法可能就是对的，但这个是一棵树，之所以会有这个疑惑是因为我的图没上画完呢。
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -1256,19 +1265,26 @@ $$</li>
         data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89%e8%a1%a5%e5%85%85.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89%e8%a1%a5%e5%85%85.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%b6%e4%b8%8d%e9%80%89%e5%ad%90%e9%80%89%e8%a1%a5%e5%85%85.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC父不选子选补充.png"
-        title="父选子不选补充" /></li>
-<li>说明：方形内的数字是节点的权值。显然如果要总和最大，那么5号节点就不能选，因为它的5号几点的子节点（8号节点）的权值更大（清楚明了😁）。所以又可以得到相应的转移方程：
+        title="父选子不选补充" /></p>
+</li>
+<li>
+<p>说明：方形内的数字是节点的权值。显然如果要总和最大，那么5号节点就不能选，因为它的5号几点的子节点（8号节点）的权值更大（清楚明了😁）。所以又可以得到相应的转移方程：
 $$
 dp[i][0] = \sum max(dp[son[i]][1], dp[son[i]][0])
-$$</li>
-<li>最后我这题采用的是自顶向下的递归来求的，最后根节点是通过回溯得来，当然如果喜欢自底向上的童鞋可以采用栈来遍历也可以哦。而我们的状态转移方程总结为
+$$</p>
+</li>
+<li>
+<p>最后我这题采用的是自顶向下的递归来求的，最后根节点是通过回溯得来，当然如果喜欢自底向上的童鞋可以采用栈来遍历也可以哦。而我们的状态转移方程总结为
 $$
-\begin{cases}
-dp[i][1] = w[i] + \sum dp[son[i]][0]，\ \ (选择i节点) \<br>
+dp[i][1] = w[i] + \sum dp[son[i]][0]，\ \ (选择i节点)
+$$
+$$
 dp[i][0] = \sum max(dp[son[i]][1], dp[son[i]][0]) \ \ (不选择i节点)
-\end{cases}
-$$</li>
-<li>那么最后的答案就是根节点的选和不选两状态的最大值,即 max(dp[root][1], dp[root][0])，（其余细节看注释）。</li>
+$$</p>
+</li>
+<li>
+<p>那么最后的答案就是根节点的选和不选两状态的最大值,即 max(dp[root][1], dp[root][0])，（其余细节看注释）。</p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1394,14 +1410,26 @@ $$</li>
 </ul>
 <h4 id="例题2hdu-2196-computerhttpacmhdueducnshowproblemphppid2196">【例题2】<a href="http://acm.hdu.edu.cn/showproblem.php?pid=2196" target="_blank" rel="noopener noreffer">HDU 2196 Computer</a></h4>
 <ul>
-<li>大致题意：给你一个棵无向树，每个相连的节点之间都有个距离，即边有权，让你求出每个节点距离该节点的最远节点的距离。</li>
-<li>又是一道树状DP<del>都放树状DP里了，怎么可能不是呢😂</del>，但是这题是无向的，恰恰是因为这样给了一丝丝方便。</li>
-<li>简单的分析
+<li>
+<p>大致题意：给你一个棵无向树，每个相连的节点之间都有个距离，即边有权，让你求出每个节点距离该节点的最远节点的距离。</p>
+</li>
+<li>
+<p>又是一道树状DP<del>都放树状DP里了，怎么可能不是呢😂</del>，但是这题是无向的，恰恰是因为这样给了一丝丝方便。</p>
+</li>
+<li>
+<p>简单的分析</p>
 <ul>
-<li>首先既然是无向，为了方便我们把他看作有向的，就设1号节点（1号电脑）是根节点，任性<del>图方便</del>。</li>
-<li>每个节点，他只有两种状态（除根节点，和叶子节点），一、要么<strong>是从它的子节点过来的距离</strong>；二、要么<strong>不是从它的子节点过来</strong>。<del>如图</del>不画了，自己脑补😂。</li>
-<li>那么我们就这样定义状态：dp[i][j], i表示的是节点编号（$1 \le i \le n$），而 j（$0 \le j \le 1$）的话就是，当 $j = 0$ 时表示 i 节点到其最远从属于它的叶子节点 <strong>（即他的子节点过来）的距离</strong>， $j = 1$ 时表示<strong>不是从它子节点过来的最远距离</strong>。</li>
-<li>对于从子节点到来本节点的距离，只需要对比大小便可，为了方便思考，我把题目的例子改了一下，如图（这回有图啊！！）
+<li>
+<p>首先既然是无向，为了方便我们把他看作有向的，就设1号节点（1号电脑）是根节点，任性<del>图方便</del>。</p>
+</li>
+<li>
+<p>每个节点，他只有两种状态（除根节点，和叶子节点），一、要么<strong>是从它的子节点过来的距离</strong>；二、要么<strong>不是从它的子节点过来</strong>。<del>如图</del>不画了，自己脑补😂。</p>
+</li>
+<li>
+<p>那么我们就这样定义状态：dp[i][j], i表示的是节点编号（$1 \le i \le n$），而 j（$0 \le j \le 1$）的话就是，当 $j = 0$ 时表示 i 节点到其最远从属于它的叶子节点 <strong>（即他的子节点过来）的距离</strong>， $j = 1$ 时表示<strong>不是从它子节点过来的最远距离</strong>。</p>
+</li>
+<li>
+<p>对于从子节点到来本节点的距离，只需要对比大小便可，为了方便思考，我把题目的例子改了一下，如图（这回有图啊！！）
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -1409,12 +1437,16 @@ $$</li>
         data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%be01.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%be01.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%be01.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图01.png"
-        title="树状例题2图01" /></li>
-<li>说明：方形里的数字代表距离（边权）。不难看出从2号节点的子节点（7号节点、6号节点、3号节点）到2号节点的最大距离就是子节点到来的最大值（老规矩，别想他的父节点），有点拗口，看方程（son[i]表示 i 节点的子节点, len(son[i])则表示它的子节点到他它自己的距离）：
+        title="树状例题2图01" /></p>
+</li>
+<li>
+<p>说明：方形里的数字代表距离（边权）。不难看出从2号节点的子节点（7号节点、6号节点、3号节点）到2号节点的最大距离就是子节点到来的最大值（老规矩，别想他的父节点），有点拗口，看方程（son[i]表示 i 节点的子节点, len(son[i])则表示它的子节点到他它自己的距离）：
 $$
 dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace
-$$</li>
-<li>简单吧，下面就来看看比较难的：不是从他的子节点到来的最大距离。先上图（画的好累）：
+$$</p>
+</li>
+<li>
+<p>简单吧，下面就来看看比较难的：不是从他的子节点到来的最大距离。先上图（画的好累）：
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -1422,24 +1454,31 @@ $$</li>
         data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%beii.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%beii.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e6%a0%91%e7%8a%b6%e4%be%8b%e9%a2%982%e5%9b%beii.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC树状例题2图ii.png"
-        title="树状例题2图ii" /></li>
-<li>清楚吧，<del>不用解释了吧</del>，好吧好吧，我们把目光放到3号节点上，如果计算<strong>不是从它子节点过来的距离</strong>的话，只有两种可能，其中最简单的一条路就是从它的爷爷节点来再到他的父亲节点来的距离（黄色箭头路线），为什么只有一条？因为它肯定只有一个爷爷和父亲，不可能有两个，不可能！！！这个世界还是很美好滴；第二种可能就是从它的兄弟节点来，这个比较多路（蓝色和绿色箭头路线），因为它可以有很多兄弟，也可以没有兄弟（独生子😁）。这样理解的话方程就能出来了（fa[i]表示 i 节点父节点，所以son[fa[i]]就代表 i 节点 的兄弟节点，len的含义和上面一样）：
+        title="树状例题2图ii" /></p>
+</li>
+<li>
+<p>清楚吧，<del>不用解释了吧</del>，好吧好吧，我们把目光放到3号节点上，如果计算<strong>不是从它子节点过来的距离</strong>的话，只有两种可能，其中最简单的一条路就是从它的爷爷节点来再到他的父亲节点来的距离（黄色箭头路线），为什么只有一条？因为它肯定只有一个爷爷和父亲，不可能有两个，不可能！！！这个世界还是很美好滴；第二种可能就是从它的兄弟节点来，这个比较多路（蓝色和绿色箭头路线），因为它可以有很多兄弟，也可以没有兄弟（独生子😁）。这样理解的话方程就能出来了（fa[i]表示 i 节点父节点，所以son[fa[i]]就代表 i 节点 的兄弟节点，len的含义和上面一样）：
 $$
 dp[i][1] = max\lbrace dp[fa[i]][1]+ len(i), dp[son[fa[i]]][0] + len(son[fa[i]]\rbrace+ len(i))
-$$</li>
-<li>化简一下
+$$</p>
+</li>
+<li>
+<p>化简一下
 $$
 dp[i][1] = max\lbrace dp[fa[i]][1], dp[son[fa[i]]][0] + len(son[fa[i]])\rbrace + len(i)
-$$</li>
-<li>解释：max内部的前者是上述的第一种可能，后者是第二种可能，是不是简单明了😁，但是对于这个状态还利用到来我们第一个讲的（$j = 0$）状态。所以我们在计算时要先把所有 $j = 0$ 的状态先计算，即做两遍dfs（当然你也可以把他们的dfs放到一起，都一样的，为了方便<del>我不会😂</del>我选择做两遍dfs），注意：这个状态方程的状态，即 $j = 1$ 时的状态一定要自顶向下计算，因为方程中还用到了它父亲的第二（$j = 1$）状态。所以最终的状态转移方程总结为：
+$$</p>
+</li>
+<li>
+<p>解释：max内部的前者是上述的第一种可能，后者是第二种可能，是不是简单明了😁，但是对于这个状态还利用到来我们第一个讲的（$j = 0$）状态。所以我们在计算时要先把所有 $j = 0$ 的状态先计算，即做两遍dfs（当然你也可以把他们的dfs放到一起，都一样的，为了方便<del>我不会😂</del>我选择做两遍dfs），注意：这个状态方程的状态，即 $j = 1$ 时的状态一定要自顶向下计算，因为方程中还用到了它父亲的第二（$j = 1$）状态。所以最终的状态转移方程总结为：
 $$
-\begin{cases}
-dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace， \ \ （第一种状态）\<br>
+dp[i][0] = max\lbrace dp[son[i]][0] + len(son[i])\rbrace， \ \ （第一种状态）
+$$
+$$
 dp[i][1] = max\lbrace dp[fa[i]][1], dp[son[fa[i]]][0] + len(son[fa[i]])\rbrace + len(i) \ \ （第二种状态）
-\end{cases}
-$$</li>
-<li>那么最后的答案是什么呢？显然就是每个节点的 $j = 0$ 和 $j = 1$ 的两种状态的最大值，即对于 i 节点 max（dp[i][0], dp[i][1]）。不废话，上代码（其余细节看注释）！！！</li>
-</ul>
+$$</p>
+</li>
+<li>
+<p>那么最后的答案是什么呢？显然就是每个节点的 $j = 0$ 和 $j = 1$ 的两种状态的最大值，即对于 i 节点 max（dp[i][0], dp[i][1]）。不废话，上代码（其余细节看注释）！！！</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -1503,68 +1542,67 @@ $$</li>
 </span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">  <span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp"></span>  <span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp"></span>  <span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
-</span><span class="cp"></span>  <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp"></span>  
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">son</span><span class="p">[</span><span class="n">M</span><span class="p">];</span> <span class="c1">//子节点不止一个，不放入结构体是为了方便清空数组
-</span><span class="c1"></span>  <span class="kt">long</span> <span class="kt">long</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
-  
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">son</span><span class="p">[</span><span class="n">M</span><span class="p">];</span> <span class="c1">//子节点不止一个，不放入结构体是为了方便清空数组
+</span><span class="c1"></span><span class="kt">long</span> <span class="kt">long</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+
 <span class="k">struct</span> <span class="nc">cpNode</span> <span class="p">{</span>    <span class="c1">//电脑节点结构体
-</span><span class="c1"></span>      <span class="kt">int</span> <span class="n">fa</span><span class="p">;</span>        <span class="c1">//它爹是谁
-</span><span class="c1"></span>      <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">;</span> <span class="c1">// 它到它爹的距离
-</span><span class="c1"></span>      <span class="n">cpNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="p">}</span> <span class="n">cp</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
-  
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">fa</span><span class="p">;</span>        <span class="c1">//它爹是谁
+</span><span class="c1"></span>    <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">;</span> <span class="c1">// 它到它爹的距离
+</span><span class="c1"></span>    <span class="n">cpNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span> <span class="n">cp</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+
 <span class="kt">void</span> <span class="nf">dfs1</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//状态一
-</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="p">{</span>
-          <span class="n">dfs1</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-          <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">s</span><span class="p">].</span><span class="n">len</span><span class="p">);</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-  
-<span class="kt">void</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//状态二
-</span><span class="c1"></span>      <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">fa</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">len</span><span class="p">;</span> <span class="c1">//先把第二种状态的第一种可能算了，还记得吗因为它只有一个爹
-</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">bro</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">fa</span><span class="p">])</span> <span class="p">{</span> <span class="c1">//遍历他的兄弟
-</span><span class="c1"></span>          <span class="k">if</span> <span class="p">(</span><span class="n">bro</span> <span class="o">!=</span> <span class="n">r</span><span class="p">)</span>                <span class="c1">// 如果是它兄弟，即不是它自己
-</span><span class="c1"></span>              <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">bro</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">bro</span><span class="p">].</span><span class="n">len</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">len</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c1">//计算它子节点的状态二
-</span><span class="c1"></span>  <span class="p">}</span>
-  
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//多组输入，这设定把我坑惨了
-</span><span class="c1"></span>          <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-              <span class="kt">int</span> <span class="n">f</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span> <span class="c1">// f为第 i 号节点的父亲， len是到它父亲的距离
-</span><span class="c1"></span>              <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">len</span><span class="p">);</span>
-              <span class="n">son</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-              <span class="n">cp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">len</span><span class="p">};</span>
-          <span class="p">}</span>
-  
-        <span class="n">dfs1</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//第一状态的转移计算
-</span><span class="c1"></span>          <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c1">//把除 1 号节点的节点都进行计算第二状态，因为 1 号节点只有第一状态
-</span><span class="c1"></span>  
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span> <span class="c1">//输出每个节点的结果
-</span><span class="c1"></span>  
-        <span class="c1">//清空数组，可以不看
-</span><span class="c1"></span>          <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
-          <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-              <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();)</span>
-                  <span class="n">it</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
-          <span class="p">}</span>
-  
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">dfs1</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">s</span><span class="p">].</span><span class="n">len</span><span class="p">);</span>
     <span class="p">}</span>
-      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//状态二
+</span><span class="c1"></span>    <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">fa</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">len</span><span class="p">;</span> <span class="c1">//先把第二种状态的第一种可能算了，还记得吗因为它只有一个爹
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">bro</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">fa</span><span class="p">])</span> <span class="p">{</span> <span class="c1">//遍历他的兄弟
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">bro</span> <span class="o">!=</span> <span class="n">r</span><span class="p">)</span>                <span class="c1">// 如果是它兄弟，即不是它自己
+</span><span class="c1"></span>            <span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">bro</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">bro</span><span class="p">].</span><span class="n">len</span> <span class="o">+</span> <span class="n">cp</span><span class="p">[</span><span class="n">r</span><span class="p">].</span><span class="n">len</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c1">//计算它子节点的状态二
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//多组输入，这设定把我坑惨了
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">f</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span> <span class="c1">// f为第 i 号节点的父亲， len是到它父亲的距离
+</span><span class="c1"></span>            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">len</span><span class="p">);</span>
+            <span class="n">son</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="n">cp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">len</span><span class="p">};</span>
+        <span class="p">}</span>
+
+        <span class="n">dfs1</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//第一状态的转移计算
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">son</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c1">//把除 1 号节点的节点都进行计算第二状态，因为 1 号节点只有第一状态
+</span><span class="c1"></span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span> <span class="c1">//输出每个节点的结果
+</span><span class="c1"></span>
+        <span class="c1">//清空数组，可以不看
+</span><span class="c1"></span>        <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();)</span>
+                <span class="n">it</span> <span class="o">=</span> <span class="n">son</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>平均时间复杂度应该也是O($n$)
-<ul>
+<li>平均时间复杂度应该也是O($n$)</li>
 <li>空间复杂度O(n)</li>
 </ul>
 </li>

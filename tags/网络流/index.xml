@@ -7,7 +7,7 @@
     <title>网络流</title>
     <link>https://haofish.github.io/2021/05/%E7%BD%91%E7%BB%9C%E6%B5%81/</link>
     <pubDate>Wed, 26 May 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/05/%E7%BD%91%E7%BB%9C%E6%B5%81/</guid>
-    <description><![CDATA[网络流 一、最大流 Ekmonds-Karp 主要思想就是先找增广路，就是一个贪心的过程，注意这是带反悔的贪心，固要建立一个流为0的反边 时间复杂度$O(nm^2)$ bf]]></description>
+    <description><![CDATA[对网络流板子的认识和总结，包括EK算法、dinic算法、最小费用最大流的EK算法]]></description>
 </item>
 </channel>
 </rss>

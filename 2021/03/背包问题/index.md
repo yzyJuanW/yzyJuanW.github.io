@@ -343,15 +343,15 @@ $$
   - 和01背包一样，可以把二维优化成一维的，但值得注意的是：j - v[i]的第一维是i，和01背包的i - 1不同，固它用的不是上一层的数据，而是刚更新的同层的下标在j之前的数据，所以第二层于01背包不同，要顺着遍历，即从小到达遍历
   - 代码与**分析1**中的最终代码是一样的
   
-  ```c++
-  memset(dp, 0, sizeof dp);
+```c++
+memset(dp, 0, sizeof dp);
 for (int j = 1; j <= n; j++) {
-      for (int i = v[j]; i <= m; i++) {
-          dp[i] = max(dp[i], dp[i - v[j]] + w[j]);
-      }
-  }
-  ```
-  
+    for (int i = v[j]; i <= m; i++) {
+        dp[i] = max(dp[i], dp[i - v[j]] + w[j]);
+    }
+}
+```
+
 - 一个**重要的优化**
   - 对于0(mn)的复杂度应该说是非常优秀的了，但是O($m n\times \frac{m}{v[i]}$)在不换转移方程的思路下还是有别的优化方式的，能优化到O($nmlog\frac{m}{v[i]}$)
   - 采用一种**二进制的方式优化**
@@ -363,53 +363,53 @@ for (int j = 1; j <= n; j++) {
   - 对于每个拆分出来的新物品只有选和不选的两种决策，不就是01背包了嘛
   - 其余的有点难解释，看代码细细地品吧
 
-  ```c++
-  #include <iostream>
-  #include <cstdio>
-  #include <algorithm>
-  #include <vector>
+```cpp
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <vector>
 
-  using namespace std;
+using namespace std;
 
-  const int Max = 1010;
-  int n, m, dp[100005][Max], v, w;
+const int Max = 1010;
+int n, m, dp[100005][Max], v, w;
 
-  struct goods{
-      int v, w;
-      goods(int v = 0, int w = 0) : v(v), w(w) {}
-  };
-  vector<goods> good;
+struct goods{
+    int v, w;
+    goods(int v = 0, int w = 0) : v(v), w(w) {}
+};
+vector<goods> good;
 
-  int main() {
-      scanf("%d%d", &n, &m);
-      good.push_back(goods(0, 0));
-      for (int i = 0; i < n; i++) {
-          scanf("%d%d", &v, &w);
-          int num = m / v;
-          for (int j = 1; j <= num; j <<= 1) {
-              num -= j;
-              good.push_back(goods(j * v, j * w));
-          }
-          if (num) good.push_back(goods(num * v, num * w));
-      }
-      int len = good.size();
-      for (int i = 1; i <= len; i++) {//01背包代码
-          for (int j = 0; j <= m; j++) {
-              dp[i][j] = dp[i - 1][j]; // 不选
-              if (j >= good[i].v) dp[i][j] = max(dp[i][j], dp[i][j - good[i].v] + good[i].w); // 选
-          }
-      }
-      printf("%d", dp[len][m]);
-      return 0;
-  }
-  ```
-  
-  - 假设对于每个物品平均最多只能装num件，则这个代码的复杂度为O($mnlognum$)，这样的优化完全足够ac的，当然还能做的就是像01背包一样把二维优化成一维的空间优化，在这里直接把第一维未知的大小直接省去，达到一个非常大的空间优化效果，固01背包代码就要换成这样、答案最终为dp[m]
+int main() {
+    scanf("%d%d", &n, &m);
+    good.push_back(goods(0, 0));
+    for (int i = 0; i < n; i++) {
+        scanf("%d%d", &v, &w);
+        int num = m / v;
+        for (int j = 1; j <= num; j <<= 1) {
+            num -= j;
+            good.push_back(goods(j * v, j * w));
+        }
+        if (num) good.push_back(goods(num * v, num * w));
+    }
+    int len = good.size();
+    for (int i = 1; i <= len; i++) {//01背包代码
+        for (int j = 0; j <= m; j++) {
+            dp[i][j] = dp[i - 1][j]; // 不选
+            if (j >= good[i].v) dp[i][j] = max(dp[i][j], dp[i][j - good[i].v] + good[i].w); // 选
+        }
+    }
+    printf("%d", dp[len][m]);
+    return 0;
+}
+```
+
+- 假设对于每个物品平均最多只能装num件，则这个代码的复杂度为O($mnlognum$)，这样的优化完全足够ac的，当然还能做的就是像01背包一样把二维优化成一维的空间优化，在这里直接把第一维未知的大小直接省去，达到一个非常大的空间优化效果，固01背包代码就要换成这样、答案最终为dp[m]
 
   ```c++
 for (int i = 1; i <= len; i++) {//01背包代码
       for (int j = m; j >= good[i].v; j--) {
-          dp[j] = max(dp[j], dp[j - good[i].v] + good[i].w);
+        dp[j] = max(dp[j], dp[j - good[i].v] + good[i].w);
       }
   }
   ```
@@ -702,7 +702,7 @@ int main() {
 - 接下来状态转移，先说说为什么这样转移，需要提前知道的是下面两个转移方程会导致复杂度不同
 
 $$
-dp[u][j] = max(dp[u][j], \ \ dp[son][i] + dp[u][j - i])  \tag{1}\\
+dp[u][j] = max(dp[u][j], \ \ dp[son][i] + dp[u][j - i])  \tag{1}
 $$
 
 $$
