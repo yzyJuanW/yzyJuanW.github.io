@@ -7,9 +7,12 @@
 
 ## 树形背包常用思考模型
 ### 模型一
-- 首先对于每个节点我们在dfs中dp转移时可以想象成一个分组背包，每次新遍历一个子树就可以想象成一个分组背包的下一组，转移时利用之前的背包状态进行转移，如果觉得这个模型比较难理解可以看下面的模型二
+- 首先对于每个节点我们在dfs中dp转移时可以想象成一个分组背包，每次新遍历一个子树就可以想象成一个分组背包的下一组，转移时利用之前的背包状态进行转移，如果觉得这个模型比较难理解可以看下面的模型二。
 ### 模型二
-- 首先对于每次新遍历一个结点我们都可以想象成是在给这个结点拼接一颗子树如下图![模型二](https://img-blog.csdnimg.cn/20210301114923359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhb182XzY=,size_16,color_FFFFFF,t_70)
+- 首先对于每次新遍历一个结点我们都可以想象成是在给这个结点拼接一颗子树如下图
+
+{{< figure src="https://img-blog.csdnimg.cn/20210301114923359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhb182XzY=,size_16,color_FFFFFF,t_70"  title="Lighthouse (figure)" >}}
+
 - 解释：圆点为树的结点，三角形为一颗子树，线段为边，箭头是拼接方向。蓝色为之前计算好的状态的树，红色为即将**拼接**上去的一颗子树（这颗子树在dfs时计算好了所有状态）
 ### 模型一与模型二的联系
 - 回到模型二，我们可以把蓝色部分想象成是分组背包中的前k - 1个背包状态，红色被第k组背包，子树中的每个方案都是分组背包中的一个物品，可以结合题目进行理解
