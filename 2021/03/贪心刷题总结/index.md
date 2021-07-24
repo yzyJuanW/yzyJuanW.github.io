@@ -159,51 +159,49 @@ int main() {
   - 正确的思路②：回忆上上题的总结，正难则反，反过来想，现在把问题改成拼成一个完整的木段，消耗最小，这样的话就是拼当前最小的两小木段，最终的答案就是最小的
   
 - 代码如下(注释的部分是一开始错误的思路，交上去才发现思路不对)
-  
-  ```cpp
-  #include <algorithm>
-  #include <cstdio>
-  #include <cstring>
+
+```cpp
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
 #include <queue>
-  
-  using namespace std;
-  using ll = long long;
-  int n, arr[50010], sum[50010];
-  priority_queue<int> heap;
-  int main() {
-      scanf("%d", &n);
-      for (int i = 0; i < n; i++) {
-          // scanf("%d", &arr[i]);
-          int x;
-          scanf("%d", &x);
-          heap.push(-x);
-      }
-      int ans = 0;
-      while (heap.size()) {
-          int x = -heap.top();
-          heap.pop();
-          int y = -heap.top();
-          heap.pop();
-        ans += x + y;
-  
-          if (heap.size()) heap.push(-(x + y));
-      }
-      printf("%d", ans);
-      /* sort(arr, arr + n);
-      for (int i = 0; i < n; i++) {
-          sum[i + 1] = sum[i] + arr[i];
-      }
-      ll ans = 0;
-      for (int i = n - 1; i >= 1; i--) {
-          ans = ans + arr[i] + sum[i] - sum[0];
-      }
-      printf("%lld\n", ans); */
-      return 0;
-  }
-  ```
-  
-  
-  
+
+using namespace std;
+using ll = long long;
+int n, arr[50010], sum[50010];
+priority_queue<int> heap;
+int main() {
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        // scanf("%d", &arr[i]);
+        int x;
+        scanf("%d", &x);
+        heap.push(-x);
+    }
+    int ans = 0;
+    while (heap.size()) {
+        int x = -heap.top();
+        heap.pop();
+        int y = -heap.top();
+        heap.pop();
+      ans += x + y;
+
+        if (heap.size()) heap.push(-(x + y));
+    }
+    printf("%d", ans);
+    /* sort(arr, arr + n);
+    for (int i = 0; i < n; i++) {
+        sum[i + 1] = sum[i] + arr[i];
+    }
+    ll ans = 0;
+    for (int i = n - 1; i >= 1; i--) {
+        ans = ans + arr[i] + sum[i] - sum[0];
+    }
+    printf("%lld\n", ans); */
+    return 0;
+}
+```
+
 - [例题5：HDU 6709 Fishing Master](http://acm.hdu.edu.cn/showproblem.php?pid=6709)
   
   - 题意：钓鱼家有一个锅和一个鱼竿，他有 n 条鱼要钓，钓一条鱼需要 k 时间，他的任务就是把这些鱼都钓上来，并且把它们都煮了，第i条鱼的煮熟所需要的时间为$t_i$，他钓鱼的时候不能往锅里放鱼并且要等他掉好k时间才可做下一件事，他可以在煮鱼的时候钓鱼，他可以同时拥有很多鱼，即他钓好后可以放在身边，因为锅一次只能煮一条鱼。现在问你他至少要花多少时间煮好n条鱼。
@@ -409,14 +407,13 @@ int main() {
   
   $$
   \Rightarrow max(b_i,a_j) - a_j - b_i < max(b_j, a_i) - a_i - b_j
-$$
-  
-  
-$$
+  $$
+
+  $$
   \Rightarrow max(-a_j,-b_i) < max(-a_i, -b_j)
-$$
+  $$
   
-$$
+  $$
   \Rightarrow min(a_j, b_i) > min(a_i, b_j)
   $$
 
