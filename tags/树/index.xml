@@ -3,61 +3,7 @@
         <title>树 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E6%A0%91/</link>
         <description>树 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Aug 2020 10:12:16 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
-    <title>UVA10410</title>
-    <link>https://haofish.github.io/2020/08/uva10410/</link>
-    <pubDate>Wed, 05 Aug 2020 10:12:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10410/</guid>
-    <description><![CDATA[Tree Reconstruction 题意：给你一个DFS和一个BFS遍历的树（具体遍历方式都是小的权值优先），让你求出每个节点的子节点 直接说思路：栈的运用，题目说输出任意可]]></description>
-</item>
-<item>
-    <title>UVA806</title>
-    <link>https://haofish.github.io/2020/08/uva806/</link>
-    <pubDate>Tue, 04 Aug 2020 18:02:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva806/</guid>
-    <description><![CDATA[Spatial Structures 类似于计算像素的，读懂题意直接模拟就好了 毒瘤题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45]]></description>
-</item>
-<item>
-    <title>UVA12166</title>
-    <link>https://haofish.github.io/2020/08/uva12166/</link>
-    <pubDate>Mon, 03 Aug 2020 20:27:46 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12166/</guid>
-    <description><![CDATA[Equilibrium Mobile 题意：给你一个天平，修改某些节点可以使得天平平衡，让你求出最小的修改数量 竟然是一道思维题，不行，这题要写写题解 思路： 假设这个数是一个满二]]></description>
-</item>
-<item>
-    <title>UVA536</title>
-    <link>https://haofish.github.io/2020/08/uva536/</link>
-    <pubDate>Sun, 02 Aug 2020 15:35:18 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva536/</guid>
-    <description><![CDATA[Tree Recovery 给你一个二叉树的先序和中序遍历，输出对应的后序遍历 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #include &lt;bits/stdc++.h&gt; using namespace std; char pre[30], in[30]; void dfs(int a, int b, int]]></description>
-</item>
-<item>
-    <title>UVA712</title>
-    <link>https://haofish.github.io/2020/08/uva712/</link>
-    <pubDate>Sun, 02 Aug 2020 14:41:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva712/</guid>
-    <description><![CDATA[S-Trees 题意：一棵二叉树，每个层节点都有有个逻辑布尔变量，0往左走，1往右走，给你最后一层的结果值，再给你每个变量的取值，问你最后走到的最后一层叶]]></description>
-</item>
-<item>
-    <title>UVA699</title>
-    <link>https://haofish.github.io/2020/07/uva699/</link>
-    <pubDate>Fri, 31 Jul 2020 19:38:47 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva699/</guid>
-    <description><![CDATA[The Falling Leaves 二叉树的计算，直接递归读入遍历即可 所有数据要以空行相隔，UVA特色 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34]]></description>
-</item>
-<item>
-    <title>UVA839</title>
-    <link>https://haofish.github.io/2020/07/uva839/</link>
-    <pubDate>Fri, 31 Jul 2020 17:53:32 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva839/</guid>
-    <description><![CDATA[Not so Mobile 题意：天平平衡，题意很好懂，就是让你判断给的天平平不平衡，直接递归读入就好了 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29]]></description>
-</item>
-<item>
-    <title>UVA679</title>
-    <link>https://haofish.github.io/2020/07/uva679/</link>
-    <pubDate>Fri, 31 Jul 2020 11:53:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva679/</guid>
-    <description><![CDATA[Dropping Balls 题意：小球在一个二叉树上下落，每个节点都有一个开关，起初全是关的，如果节点是开小球往右走，反之往左走，让你求最后一个球落到了哪个节点 如果]]></description>
-</item>
-<item>
-    <title>UVA548</title>
-    <link>https://haofish.github.io/2020/07/uva548/</link>
-    <pubDate>Fri, 31 Jul 2020 11:50:26 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva548/</guid>
-    <description><![CDATA[Tree 给你二叉树的中序和先序遍历，让你求从根节点到叶节点的的距离权值和最小，如果有多解，叶节点的权值要小，输出叶节点的权值 1 2 3 4 5 6 7 8 9 10 11]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
     <title>UVA122</title>
     <link>https://haofish.github.io/2020/07/uva122/</link>
     <pubDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva122/</guid>

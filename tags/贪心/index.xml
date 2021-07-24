@@ -10,12 +10,6 @@
     <description><![CDATA[前言 终于开始刷贪心了，感觉cf很多题都喜欢出贪心，所以决定也练练 贪心貌似也有挺系统的分类和一些经典例题，把这些刷了应该就有提升了把 总结 贪心是]]></description>
 </item>
 <item>
-    <title>UVA1149</title>
-    <link>https://haofish.github.io/2020/08/uva1149/</link>
-    <pubDate>Tue, 18 Aug 2020 15:50:53 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1149/</guid>
-    <description><![CDATA[Bin Packing 题意：给你n个物品，每个物品的重量为$w_i$，你有容量为w的背包，每个背包最多只能装两件物品，问你最少要多少背包来装 贪心就好了，贪心策]]></description>
-</item>
-<item>
     <title>Olympiad</title>
     <link>https://haofish.github.io/2020/07/olympiad/</link>
     <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>

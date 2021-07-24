@@ -1,8 +1,6 @@
 # 树形dp总结
 
 
-<!--more-->
-
 # 树形dp总结
 
 ## 树形背包常用思考模型
@@ -11,7 +9,7 @@
 ### 模型二
 - 首先对于每次新遍历一个结点我们都可以想象成是在给这个结点拼接一颗子树如下图
 
-{{< figure src="https://img-blog.csdnimg.cn/20210301114923359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhb182XzY=,size_16,color_FFFFFF,t_70"  title="Lighthouse (figure)" >}}
+{{< figure src="/img/dp分类.png" alt="/img/dp分类.png" title="Lighthouse (figure)" >}}
 
 - 解释：圆点为树的结点，三角形为一颗子树，线段为边，箭头是拼接方向。蓝色为之前计算好的状态的树，红色为即将**拼接**上去的一颗子树（这颗子树在dfs时计算好了所有状态）
 ### 模型一与模型二的联系

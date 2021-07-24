@@ -3,65 +3,65 @@
         <title>题解 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/</link>
         <description>题解 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/" rel="self" type="application/rss+xml" /><item>
-    <title>UVA1625</title>
-    <link>https://haofish.github.io/2020/09/uva1625/</link>
-    <pubDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/09/uva1625/</guid>
-    <description><![CDATA[Color Length 题意：给你两个长度分别为$n、m(1 \le n, m \le 5000)$的字符串，让你求出组成新串的最小$l(c)$（具体组成方式看原题） 个人感觉这题很]]></description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA122</title>
+    <link>https://haofish.github.io/2020/07/uva122/</link>
+    <pubDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva122/</guid>
+    <description><![CDATA[Trees on the level 二叉树的建立 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60]]></description>
 </item>
 <item>
-    <title>UVA11584</title>
-    <link>https://haofish.github.io/2020/08/uva11584/</link>
-    <pubDate>Mon, 31 Aug 2020 19:20:38 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11584/</guid>
-    <description><![CDATA[Partitioning by Palindromes 题意：给你一个字符串，让你求分割成最少回文串的数量，比如racecar最少就是1，fastcar就是7，aaadbccb就是3 思路： 说]]></description>
+    <title>Olympiad</title>
+    <link>https://haofish.github.io/2020/07/olympiad/</link>
+    <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>
+    <description><![CDATA[传送门 题意：给你两个同长数组代表n个人两场比赛的成绩，再给你一个x，某两个数组的和$a_i + b_j \ge x$，问你两数组组合成满足式子的排名最高和最]]></description>
 </item>
 <item>
-    <title>UVA11400</title>
-    <link>https://haofish.github.io/2020/08/uva11400/</link>
-    <pubDate>Mon, 31 Aug 2020 16:12:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11400/</guid>
-    <description><![CDATA[Lighting System Design 题意：你要设计一个一共需要n种不同电压灯泡的照明系统，不同种类的灯泡用不同的电源，同一种灯泡必须要用同一个电源，现在为了省钱，在亮度不]]></description>
+    <title>Cosmic_Tables</title>
+    <link>https://haofish.github.io/2020/07/cosmic_tables/</link>
+    <pubDate>Fri, 24 Jul 2020 16:26:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/cosmic_tables/</guid>
+    <description><![CDATA[传送门 题意：给你一个矩阵，每次进行与行之间的交换，或者是列与列之间的交换，或者查询(x, y)点的值 思路：一开始想着是不是直接就纯模拟算了，后]]></description>
 </item>
 <item>
-    <title>UVA12563</title>
-    <link>https://haofish.github.io/2020/08/uva12563/</link>
-    <pubDate>Fri, 21 Aug 2020 21:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12563/</guid>
-    <description><![CDATA[Jin Ge Jin Qu hao 大致题意：在KTV里，如果还剩下1秒的时间，则可以点一首更长的歌，因为他会播放完最后一首歌才停止，现在给你剩下的时间$m$和$n(]]></description>
+    <title>Shooshuns_and_Sequence</title>
+    <link>https://haofish.github.io/2020/07/shooshuns_and_sequence/</link>
+    <pubDate>Fri, 24 Jul 2020 15:15:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/shooshuns_and_sequence/</guid>
+    <description><![CDATA[传送门 什么鬼，div2也出水题？还是我变强了？😂 题意：给你一个长为n的序列，再给你一个k，你每次都必须要这样做：选择第k个数，把他复制到序列]]></description>
 </item>
 <item>
-    <title>UVA116</title>
-    <link>https://haofish.github.io/2020/08/uva116/</link>
-    <pubDate>Fri, 21 Aug 2020 14:36:57 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva116/</guid>
-    <description><![CDATA[Unidirectional TSP 大致题意：有个$m \times n$矩阵，对于每个点你可以向直接向右、右上，右下走，第1行的上一行是第m行，第m行的下一行是第1行，问你从第一列的某]]></description>
+    <title>Tourist&#39;s_Notes</title>
+    <link>https://haofish.github.io/2020/07/tourists_notes/</link>
+    <pubDate>Fri, 24 Jul 2020 09:56:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/tourists_notes/</guid>
+    <description><![CDATA[传送门 题意：旅行者每天都会记录自己的海拔高度，他每天规定走海拔相差不超过1的路线，有一天他的记录丢失了，只剩下几天的，问你他之前有可能到达的]]></description>
 </item>
 <item>
-    <title>UVA437</title>
-    <link>https://haofish.github.io/2020/08/uva437/</link>
-    <pubDate>Fri, 21 Aug 2020 09:46:38 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva437/</guid>
-    <description><![CDATA[The Tower of Babylon 题意：给你n种有无数个的立方体，现在让你用这些立方体堆一个塔，每个立方体的底面长宽都要严格小于下面立方体的底面长宽，问你最高能堆多高]]></description>
+    <title>Quasi_Binary</title>
+    <link>https://haofish.github.io/2020/07/quasi_binary/</link>
+    <pubDate>Thu, 23 Jul 2020 21:08:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/quasi_binary/</guid>
+    <description><![CDATA[传送门 题意：一个只由1和0组成的十进制数叫做Quasi Binary，例如11（十一）就是，现在给你一个n，让你求出他可能有哪些Quasi Bi]]></description>
 </item>
 <item>
-    <title>UVA1025</title>
-    <link>https://haofish.github.io/2020/08/uva1025/</link>
-    <pubDate>Thu, 20 Aug 2020 19:32:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1025/</guid>
-    <description><![CDATA[A Spy in the Metro 本篇是由DP总结中搬出的，目的是记录刷题进度 大致题意：一个线性的地铁，有$n(2 \le n \le 50)$个站，目标是在$T(0 \le T \le 200)]]></description>
+    <title>Cutting_Banner</title>
+    <link>https://haofish.github.io/2020/07/cutting_banner/</link>
+    <pubDate>Thu, 23 Jul 2020 20:08:59 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/cutting_banner/</guid>
+    <description><![CDATA[传送门 题意：给你个字符串，减去一段子串，是否能将剩下的不改变顺序拼成&quot;CODEFORCES&quot;，能则输出&quot;YES]]></description>
 </item>
 <item>
-    <title>UVA1149</title>
-    <link>https://haofish.github.io/2020/08/uva1149/</link>
-    <pubDate>Tue, 18 Aug 2020 15:50:53 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1149/</guid>
-    <description><![CDATA[Bin Packing 题意：给你n个物品，每个物品的重量为$w_i$，你有容量为w的背包，每个背包最多只能装两件物品，问你最少要多少背包来装 贪心就好了，贪心策]]></description>
+    <title>C. A Cookie for You题解</title>
+    <link>https://haofish.github.io/2020/07/654div2problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/654div2problemc/</guid>
+    <description><![CDATA[传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &gt;]]></description>
 </item>
 <item>
-    <title>UVA11572</title>
-    <link>https://haofish.github.io/2020/08/uva11572/</link>
-    <pubDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11572/</guid>
-    <description><![CDATA[Unique Snowflakes 题意：给你一个长度为$n(n \le 1000000)$的数组，问你最长有不重复数字的连续子序列有多长 用set和map的速度都差不多，set记录]]></description>
+    <title>E1. Reading Books (easy version)题解</title>
+    <link>https://haofish.github.io/2020/07/653div3probleme1/</link>
+    <pubDate>Mon, 06 Jul 2020 18:00:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3probleme1/</guid>
+    <description><![CDATA[传送门 题意 小A和小B要读书，现在共又 n 本书，对于每本书都有三个参数，$t_i$：阅读的时间、$a_i$：小A喜欢读的书、$b_i$：小B喜欢]]></description>
 </item>
 <item>
-    <title>UVA11054</title>
-    <link>https://haofish.github.io/2020/08/uva11054/</link>
-    <pubDate>Tue, 18 Aug 2020 10:55:44 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11054/</guid>
-    <description><![CDATA[Wine trading in Gergovia 题意：有n个村庄，每个村庄都有对酒的需求，正数代表要送出多少酒，负数代表需要多少酒，把k单位的酒运到相邻的村庄要k单位的体力，让你计]]></description>
+    <title>D. Zero Remainder Array题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemd/</link>
+    <pubDate>Mon, 06 Jul 2020 16:58:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemd/</guid>
+    <description><![CDATA[传送门 题意 给你一个长度为 n 的数组$a_n$，和一个 k，你有一个 x（一开始为0），你有以下两种操作 给 x 加上 1，即$x = x + 1$ 选择一个任意一个$]]></description>
 </item>
 </channel>
 </rss>

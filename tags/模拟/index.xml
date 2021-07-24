@@ -3,13 +3,7 @@
         <title>模拟 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/</link>
         <description>模拟 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
-    <title>UVA804</title>
-    <link>https://haofish.github.io/2020/08/uva804/</link>
-    <pubDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva804/</guid>
-    <description><![CDATA[Petri Net Simulation 每个T变迁都有限制，必须是指定的P库有足够的token才行（注意，T指定的P库不一定只有一个），直接模拟就好了 1 2 3 4 5 6 7 8 9 10 11 12]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
     <title>Olympiad</title>
     <link>https://haofish.github.io/2020/07/olympiad/</link>
     <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>

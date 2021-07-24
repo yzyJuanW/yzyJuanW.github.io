@@ -3,49 +3,7 @@
         <title>思维 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/</link>
         <description>思维 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
-    <title>UVA11572</title>
-    <link>https://haofish.github.io/2020/08/uva11572/</link>
-    <pubDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11572/</guid>
-    <description><![CDATA[Unique Snowflakes 题意：给你一个长度为$n(n \le 1000000)$的数组，问你最长有不重复数字的连续子序列有多长 用set和map的速度都差不多，set记录]]></description>
-</item>
-<item>
-    <title>UVA11054</title>
-    <link>https://haofish.github.io/2020/08/uva11054/</link>
-    <pubDate>Tue, 18 Aug 2020 10:55:44 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11054/</guid>
-    <description><![CDATA[Wine trading in Gergovia 题意：有n个村庄，每个村庄都有对酒的需求，正数代表要送出多少酒，负数代表需要多少酒，把k单位的酒运到相邻的村庄要k单位的体力，让你计]]></description>
-</item>
-<item>
-    <title>UVA1152</title>
-    <link>https://haofish.github.io/2020/08/uva1152/</link>
-    <pubDate>Mon, 17 Aug 2020 19:54:27 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1152/</guid>
-    <description><![CDATA[4 Values whose Sum is 0 题意：给你4个长度为$n(n \le 4000)$的集合，让你在4个集合里分别取a、b、c、d，使得$a + b + c + d = 0$，问你有多少种]]></description>
-</item>
-<item>
-    <title>UVA1605</title>
-    <link>https://haofish.github.io/2020/08/uva1605/</link>
-    <pubDate>Mon, 17 Aug 2020 11:43:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1605/</guid>
-    <description><![CDATA[Building for UN 题意：有一栋楼，有$n(n \le 50)$个国家要开会，每个国家至少分配一个位置，让你输出一种方案，H层，每层W行L列，使得任意两个国家要能]]></description>
-</item>
-<item>
-    <title>UVA120</title>
-    <link>https://haofish.github.io/2020/08/uva120/</link>
-    <pubDate>Mon, 17 Aug 2020 11:16:52 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva120/</guid>
-    <description><![CDATA[Stacks of Flapjacks 题意：给你一个序列，每次选一个数k，从序列的后往前数第k个数然后把它及它之前时数都翻转一下，问你一种选法使得序列从小到大排好序 有点像选]]></description>
-</item>
-<item>
-    <title>UVA12166</title>
-    <link>https://haofish.github.io/2020/08/uva12166/</link>
-    <pubDate>Mon, 03 Aug 2020 20:27:46 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12166/</guid>
-    <description><![CDATA[Equilibrium Mobile 题意：给你一个天平，修改某些节点可以使得天平平衡，让你求出最小的修改数量 竟然是一道思维题，不行，这题要写写题解 思路： 假设这个数是一个满二]]></description>
-</item>
-<item>
-    <title>UVA679</title>
-    <link>https://haofish.github.io/2020/07/uva679/</link>
-    <pubDate>Fri, 31 Jul 2020 11:53:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva679/</guid>
-    <description><![CDATA[Dropping Balls 题意：小球在一个二叉树上下落，每个节点都有一个开关，起初全是关的，如果节点是开小球往右走，反之往左走，让你求最后一个球落到了哪个节点 如果]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
     <title>Olympiad</title>
     <link>https://haofish.github.io/2020/07/olympiad/</link>
     <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>
@@ -62,6 +20,36 @@
     <link>https://haofish.github.io/2020/07/shooshuns_and_sequence/</link>
     <pubDate>Fri, 24 Jul 2020 15:15:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/shooshuns_and_sequence/</guid>
     <description><![CDATA[传送门 什么鬼，div2也出水题？还是我变强了？😂 题意：给你一个长为n的序列，再给你一个k，你每次都必须要这样做：选择第k个数，把他复制到序列]]></description>
+</item>
+<item>
+    <title>C. A Cookie for You题解</title>
+    <link>https://haofish.github.io/2020/07/654div2problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/654div2problemc/</guid>
+    <description><![CDATA[传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &gt;]]></description>
+</item>
+<item>
+    <title>E1. Reading Books (easy version)题解</title>
+    <link>https://haofish.github.io/2020/07/653div3probleme1/</link>
+    <pubDate>Mon, 06 Jul 2020 18:00:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3probleme1/</guid>
+    <description><![CDATA[传送门 题意 小A和小B要读书，现在共又 n 本书，对于每本书都有三个参数，$t_i$：阅读的时间、$a_i$：小A喜欢读的书、$b_i$：小B喜欢]]></description>
+</item>
+<item>
+    <title>D. Zero Remainder Array题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemd/</link>
+    <pubDate>Mon, 06 Jul 2020 16:58:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemd/</guid>
+    <description><![CDATA[传送门 题意 给你一个长度为 n 的数组$a_n$，和一个 k，你有一个 x（一开始为0），你有以下两种操作 给 x 加上 1，即$x = x + 1$ 选择一个任意一个$]]></description>
+</item>
+<item>
+    <title>C. Move Brackets题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 15:59:43 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemc/</guid>
+    <description><![CDATA[传送门 题意 给你一串字符串，只有&quot;(&quot; h和&quot;)&ldquo;组成，你每次都能选择一个字符把它移到最左边或者最右边]]></description>
+</item>
+<item>
+    <title>B. Multiply by 2, divide by 6题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemb/</link>
+    <pubDate>Mon, 06 Jul 2020 15:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemb/</guid>
+    <description><![CDATA[传送门 题意 给一个数 n,问你只进行以下两种操作，要操作最少多少次能够使得 n 为 1： 把 n 除以 6 （前提是可以整除） 把 n 乘 2 输出最少的操作次数，如果无]]></description>
 </item>
 </channel>
 </rss>
