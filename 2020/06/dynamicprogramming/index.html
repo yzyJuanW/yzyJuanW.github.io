@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>动态规划刷题总结 - haofish</title><meta name="description" content="description."><meta property="og:title" content="动态规划刷题总结" />
+<meta property="og:description" content="description." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haofish.github.io/2020/06/dynamicprogramming/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="动态规划刷题总结"/>
+<meta name="twitter:description" content="description."/>
+<meta name="application-name" content="FeelIt">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/06/dynamicprogramming/" /><link rel="prev" href="https://haofish.github.io/1/01/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" /><link rel="next" href="https://haofish.github.io/2020/07/653div3problemb/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "动态规划刷题总结",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/haofish.github.io\/2020\/06\/dynamicprogramming\/"
+        },"genre": "posts","keywords": "动态规划","wordcount":  1897 ,
+        "url": "https:\/\/haofish.github.io\/2020\/06\/dynamicprogramming\/","datePublished": "2020-06-27T00:00:00+00:00","dateModified": "2020-06-27T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "幼稚园卷王"},"author": {
+                "@type": "Person",
+                "name": "幼稚园卷王"
+            },"description": "description."
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/posts/" title="显示所有文章"> 文章 </a><a class="menu-item" href="/tags/" title="显示标签"> 标签 </a><a class="menu-item" href="/categories/" title="显示分类"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/posts/" title="显示所有文章">文章</a><a class="menu-item" href="/tags/" title="显示标签">标签</a><a class="menu-item" href="/categories/" title="显示分类">分类</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">动态规划刷题总结</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%88%90%E9%95%BF%E5%BF%83%E5%BE%97/"><i class="far fa-folder fa-fw"></i>成长心得</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1897 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟</span>&nbsp;<span id="/2020/06/dynamicprogramming/" class="leancloud_visitors" data-flag-title="动态规划刷题总结">
+                            <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                        </span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>目录</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1写在前面">1、写在前面</a></li>
+    <li><a href="#2我对dp的看法和理解">2、我对dp的看法和理解</a></li>
+    <li><a href="#3典型例题">3、典型例题</a>
+      <ul>
+        <li><a href="#爬楼梯leetcode-70httpsleetcode-cncomproblemsclimbing-stairs">①爬楼梯（<a href="https://leetcode-cn.com/problems/climbing-stairs/">leetcode #70</a>）</a>
+          <ul>
+            <li><a href="#题意">题意</a></li>
+            <li><a href="#分析">分析</a></li>
+            <li><a href="#小结">小结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><ul>
+<li><a href="#1%e5%86%99%e5%9c%a8%e5%89%8d%e9%9d%a2" rel="">1、写在前面</a></li>
+<li><a href="#2%e6%88%91%e5%af%b9dp%e7%9a%84%e7%9c%8b%e6%b3%95%e5%92%8c%e7%90%86%e8%a7%a3" rel="">2、我对dp的看法和理解</a></li>
+<li><a href="#3%e5%85%b8%e5%9e%8b%e4%be%8b%e9%a2%98" rel="">3、典型例题</a>
+<ul>
+<li><a href="#%e7%88%ac%e6%a5%bc%e6%a2%afleetcode-70" rel="">①爬楼梯（leetcode #70）</a>
+<ul>
+<li><a href="#%e9%a2%98%e6%84%8f" rel="">题意</a></li>
+<li><a href="#%e5%88%86%e6%9e%90" rel="">分析</a></li>
+<li><a href="#%e5%b0%8f%e7%bb%93" rel="">小结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1写在前面">1、写在前面</h2>
+<p>这几天疯狂刷leetcode的dp题，刷到我都想吐了，看到一个题就先往dp想，感觉中毒不浅，话不多说，赶紧开始总结一下我的成长<del>历程</del>心得。</p>
+<h2 id="2我对dp的看法和理解">2、我对dp的看法和理解</h2>
+<ul>
+<li>
+<p>首先引入《算法笔记》里的一句话:</p>
+<blockquote>
+<p>动态规划是一种非常精妙的算法思想，他没有<strong>固定的写法、极其灵活，常常需要具体问题具体分析</strong>。</p>
+</blockquote>
+<p>没错正式这种具体问题具体分析的设定让我刷到吐了</p>
+</li>
+<li>
+<p>平时在思考动态规划的往往是利用一个小小的公式：<strong>递推 = 递归 + 记忆化</strong>（下面会赘述我是怎么利用这个公式思考的）</p>
+</li>
+<li>
+<p>虽然他是这么说，但是我还是觉得dp的是有套路可循的，例如给dp分类 <em>（背包dp、树形dp、区间dp……）</em>，经典题的记忆 <em>（爬楼梯、树塔问题、LIS……）</em></p>
+</li>
+<li>
+<p>一般来说，我思考dp都是从结果往前想的（即从末尾开始想）</p>
+</li>
+<li>
+<p><strong>dp的基本使用条件：</strong> 1. 拥有重叠子问题、 2. 最优子结构、3.无后效性</p>
+</li>
+<li>
+<p><strong>dp思考三步走：</strong> 1. 状态定义 → 2.列状态转移方程 → 3.验证方程</p>
+</li>
+<li>
+<p>我觉得的动规成长路线：小白 → 利用小公式辅助建立dp → 正常dp三步走思维思考 → 大佬 （<del>我还没触及</del> 将来一定达到( ఠൠఠ )ﾉ）</p>
+</li>
+</ul>
+<h2 id="3典型例题">3、典型例题</h2>
+<h3 id="爬楼梯leetcode-70httpsleetcode-cncomproblemsclimbing-stairs">①爬楼梯（<a href="https://leetcode-cn.com/problems/climbing-stairs/" target="_blank" rel="noopener noreffer">leetcode #70</a>）</h3>
+<h4 id="题意">题意</h4>
+<blockquote>
+<p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+注意：给定 n 是一个正整数。</p>
+<p>示例 1：<br>
+输入： 2<br>
+输出： 2<br>
+解释： 有两种方法可以爬到楼顶。<br>
+1、 1 阶 + 1 阶<br>
+2、 2 阶</p>
+<p>示例 2：<br>
+输入： 3<br>
+输出： 3<br>
+解释： 有三种方法可以爬到楼顶。<br>
+1、  1 阶 + 1 阶 + 1 阶<br>
+2、  1 阶 + 2 阶<br>
+3、  2 阶 + 1 阶</p>
+</blockquote>
+<h4 id="分析">分析</h4>
+<ul>
+<li>
+<p>（抛开动规，假设我们是小白）我的思考过程，利用上述提到的小小公式（递推 = 递归 + 记忆化</p>
+</li>
+<li>
+<p>首先：从末尾结果开始想，如果我们要走到最后一个台阶,那么我们就有两种走到这个台阶的方法：一是从这一个台阶的前一个台阶上来、二是从这个台阶的前第二个台阶上来。如图：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC爬楼梯.png"
+        title="爬楼梯" /></p>
+</li>
+<li>
+<p>这样我们就很容易想到到达<strong>最后一个台阶的方法数</strong>为<strong>到前一个台阶的方法数</strong>加上<strong>到前第二个台阶的方法数</strong>，可能很拗口。看下面的公式就懂了。</p>
+</li>
+<li>
+<p>设 <strong>dp(n)</strong> 为到台阶n的总方法数，这样很容易就能写出这个方法数的公式为：</p>
+</li>
+</ul>
+<p>$$
+dp(n) = dp(n - 1) + dp(n - 2)
+$$</p>
+<ul>
+<li>不难写出递归代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">dp</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>仔细分析一下这个代码，时间复杂度不难发现式O(2^n)，例如假设我们求的是dp(5)
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af%e9%80%92%e5%bd%92.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af%e9%80%92%e5%bd%92.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af%e9%80%92%e5%bd%92.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e7%88%ac%e6%a5%bc%e6%a2%af%e9%80%92%e5%bd%92.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC爬楼梯递归.png"
+        title="递归" /></p>
+</li>
+<li>
+<p>不难发现有很多重复计算(黄色部分)，这里采取了一个比较好的优化方法&ndash;记忆化递归（是不是觉得很接近那个小公式了？别急看代码）</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">const</span> <span class="kt">int</span> <span class="n">Max</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">memor</span><span class="p">[</span><span class="n">Max</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">dp</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">memor</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">memor</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="n">memor</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">memor</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度降到了O(n),就是变成这样
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICp%e8%ae%b0%e5%bf%86%e5%8c%96%e9%80%92%e5%bd%92.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICp%e8%ae%b0%e5%bf%86%e5%8c%96%e9%80%92%e5%bd%92.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICp%e8%ae%b0%e5%bf%86%e5%8c%96%e9%80%92%e5%bd%92.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICp%e8%ae%b0%e5%bf%86%e5%8c%96%e9%80%92%e5%bd%92.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICp记忆化递归.png"
+        title="记忆化递归" /></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="err">两者时间对比：</span>
+    <span class="err">普通递归计算</span><span class="n">dp</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="o">:</span> <span class="mi">3464</span> <span class="n">ms</span>
+    <span class="err">记忆化递归计算</span><span class="n">dp</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="o">:</span> <span class="mi">1</span> <span class="n">ms</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>天壤之别！！！</p>
+<ul>
+<li>回过头来看这题，这题是一个典型的动规问题，那么我是怎么利用那个小公式来思考这个题的状态方程的呢，很简单就是按照刚刚的思路走一遍。</li>
+<li>不难发现我们按照那个思路走，其实已经写出了转移状态方程，就是下面这个，并且这个方程的含义就是我们递归时的含义，这就相当于一下完成了<strong>dp三步走</strong>的前两步。</li>
+</ul>
+<p>$$
+dp(n) = dp(n - 1) + dp(n - 2)
+$$</p>
+<ul>
+<li>接下来的一步就是检查（验证）方程，<strong>首先</strong>我们要思考这道题适不适合用动规的方法来写，这就需要我们验证这个题是否满足<strong>1.有重叠子问题</strong>，<strong>2.有最优子结构</strong>。<em>重叠子问题</em>的话，刚刚分析递归的时候已经发现了，并且优化后不会出现重复计算子问题；<em>最优子结构</em>就是分析没有个状态（即dp(n)）是否是最优的解，在一开始分析题目时不难发现每一个台阶的步数只取决于他前两个台阶的步数。</li>
+<li>验证方程的最后一步，设定状态边界（我们总不可能让他一直计算下去吧），其实这道题的边界就是我们一开始的递归边界。</li>
+<li>到了这里dp的代码就不难了,递归式自顶向下地计算，而我们动规就是自顶向下地思考，自底向上地计算，多说无益，上代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">const</span> <span class="kt">int</span> <span class="n">Max</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">Max</span><span class="p">],</span> <span class="n">n</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度同样是O(n),虽然还有更快O(logn)的方式解这题，<del>但我们现在是小白呀</del>，下次再聊。</li>
+</ul>
+<h4 id="小结">小结</h4>
+<ul>
+<li>通过这道题我们从小白晋级到了会用小公式来思考dp。</li>
+<li>1、首先从末尾结果开始思考</li>
+<li>2、思考怎么递归</li>
+<li>3、再来就是写出递归的的方程</li>
+<li>4、分析递归，去除重叠问题</li>
+<li>5、转换成dp思想，直接走dp三步走的第三步，检查是否状态方程，若不满足，回到1看看有没有另一种更好的办法（一般不会出现这种情况),当然还有另一种方法就是在原有的基础上再次优化（这些都是后话）；若满足直接dp走你。</li>
+</ul>
+<p><del>写不动了</del>未完待续……</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>更新于 2020-06-27</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/2020/06/dynamicprogramming/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2020/06/dynamicprogramming/" data-title="动态规划刷题总结" data-hashtags="动态规划"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2020/06/dynamicprogramming/" data-hashtag="动态规划"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2020/06/dynamicprogramming/" data-title="动态规划刷题总结" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/1/01/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2020/07/653div3problemb/" class="next" rel="next" title="B. Multiply by 2, divide by 6题解">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="valine"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.min.js?version=1.0.1', { scope: '/' })
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Registered');
+        }, err => console.error('haofish\u00A0Service Worker registration failed: ', err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Ready');
+        });
+}
+</script>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/valine/Valine.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/typeit/typeit.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":5},"comment":{"valine":{"appId":"UEWBV1gTCf9VzQHTH13chcGE-gzGzoHsz","appKey":"VDomK0X3UPsfl7r7TAPGLRR1","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧","recordIP":true,"visitor":true}},"data":{"id-1":"haofish","id-2":"haofish"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":200}};</script><script src="/js/theme.min.js"></script></body>
+</html>

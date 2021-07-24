@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>动态规划 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+        <description>动态规划 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA1625</title>
+    <link>https://haofish.github.io/2020/09/uva1625/</link>
+    <pubDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/09/uva1625/</guid>
+    <description><![CDATA[Color Length 题意：给你两个长度分别为$n、m(1 \le n, m \le 5000)$的字符串，让你求出组成新串的最小$l(c)$（具体组成方式看原题） 个人感觉这题很]]></description>
+</item>
+<item>
+    <title>UVA11584</title>
+    <link>https://haofish.github.io/2020/08/uva11584/</link>
+    <pubDate>Mon, 31 Aug 2020 19:20:38 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11584/</guid>
+    <description><![CDATA[Partitioning by Palindromes 题意：给你一个字符串，让你求分割成最少回文串的数量，比如racecar最少就是1，fastcar就是7，aaadbccb就是3 思路： 说]]></description>
+</item>
+<item>
+    <title>UVA11400</title>
+    <link>https://haofish.github.io/2020/08/uva11400/</link>
+    <pubDate>Mon, 31 Aug 2020 16:12:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11400/</guid>
+    <description><![CDATA[Lighting System Design 题意：你要设计一个一共需要n种不同电压灯泡的照明系统，不同种类的灯泡用不同的电源，同一种灯泡必须要用同一个电源，现在为了省钱，在亮度不]]></description>
+</item>
+<item>
+    <title>UVA12563</title>
+    <link>https://haofish.github.io/2020/08/uva12563/</link>
+    <pubDate>Fri, 21 Aug 2020 21:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12563/</guid>
+    <description><![CDATA[Jin Ge Jin Qu hao 大致题意：在KTV里，如果还剩下1秒的时间，则可以点一首更长的歌，因为他会播放完最后一首歌才停止，现在给你剩下的时间$m$和$n(]]></description>
+</item>
+<item>
+    <title>UVA116</title>
+    <link>https://haofish.github.io/2020/08/uva116/</link>
+    <pubDate>Fri, 21 Aug 2020 14:36:57 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva116/</guid>
+    <description><![CDATA[Unidirectional TSP 大致题意：有个$m \times n$矩阵，对于每个点你可以向直接向右、右上，右下走，第1行的上一行是第m行，第m行的下一行是第1行，问你从第一列的某]]></description>
+</item>
+<item>
+    <title>UVA437</title>
+    <link>https://haofish.github.io/2020/08/uva437/</link>
+    <pubDate>Fri, 21 Aug 2020 09:46:38 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva437/</guid>
+    <description><![CDATA[The Tower of Babylon 题意：给你n种有无数个的立方体，现在让你用这些立方体堆一个塔，每个立方体的底面长宽都要严格小于下面立方体的底面长宽，问你最高能堆多高]]></description>
+</item>
+<item>
+    <title>UVA1025</title>
+    <link>https://haofish.github.io/2020/08/uva1025/</link>
+    <pubDate>Thu, 20 Aug 2020 19:32:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1025/</guid>
+    <description><![CDATA[A Spy in the Metro 本篇是由DP总结中搬出的，目的是记录刷题进度 大致题意：一个线性的地铁，有$n(2 \le n \le 50)$个站，目标是在$T(0 \le T \le 200)]]></description>
+</item>
+<item>
+    <title>动态规划刷题总结</title>
+    <link>https://haofish.github.io/2020/06/dynamicprogramming/</link>
+    <pubDate>Sat, 27 Jun 2020 00:00:00 &#43;0000</pubDate><guid>https://haofish.github.io/2020/06/dynamicprogramming/</guid>
+    <description><![CDATA[1、写在前面 2、我对dp的看法和理解 3、典型例题 ①爬楼梯（leetcode #70） 题意 分析 小结 1、写在前面 这几天疯狂刷leetcode的dp]]></description>
+</item>
+</channel>
+</rss>

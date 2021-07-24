@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>平衡树 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/</link>
+        <description>平衡树 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 09 Mar 2021 12:22:01 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+    <title>FHQ树</title>
+    <link>https://haofish.github.io/2021/03/fhqtreap/</link>
+    <pubDate>Tue, 09 Mar 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/03/fhqtreap/</guid>
+    <description><![CDATA[FHQ Treap 简介 fhq treap主要有两个操作：分裂、合并 作为平衡树，他所有的平衡树操作都是基于这两个操作实现的 关于结点的存储与生成新的结点 由于一个结点]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>背包问题 - haofish</title><meta name="description" content="description."><meta property="og:title" content="背包问题" />
+<meta property="og:description" content="description." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-26T12:22:01+08:00" />
+<meta property="article:modified_time" content="2021-03-26T12:22:01+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="背包问题"/>
+<meta name="twitter:description" content="description."/>
+<meta name="application-name" content="FeelIt">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" /><link rel="prev" href="https://haofish.github.io/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/" /><link rel="next" href="https://haofish.github.io/2021/05/dsu%E5%88%B7%E9%A2%98/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "背包问题",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/haofish.github.io\/2021\/03\/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98\/"
+        },"genre": "posts","keywords": "背包","wordcount":  11111 ,
+        "url": "https:\/\/haofish.github.io\/2021\/03\/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98\/","datePublished": "2021-03-26T12:22:01+08:00","dateModified": "2021-03-26T12:22:01+08:00","publisher": {
+            "@type": "Organization",
+            "name": "幼稚园卷王"},"author": {
+                "@type": "Person",
+                "name": "幼稚园卷王"
+            },"description": "description."
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/posts/" title="显示所有文章"> 文章 </a><a class="menu-item" href="/tags/" title="显示标签"> 标签 </a><a class="menu-item" href="/categories/" title="显示分类"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/posts/" title="显示所有文章">文章</a><a class="menu-item" href="/tags/" title="显示标签">标签</a><a class="menu-item" href="/categories/" title="显示分类">分类</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">背包问题</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-26">2021-03-26</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 11111 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 23 分钟</span>&nbsp;<span id="/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="背包问题">
+                            <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                        </span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>目录</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#01背包">01背包</a>
+      <ul>
+        <li><a href="#例题1acwing-2-01背包问题httpswwwacwingcomproblemcontentdescription2">【例题1】<a href="https://www.acwing.com/problem/content/description/2/">AcWing 2. 01背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#完全背包">完全背包</a>
+      <ul>
+        <li><a href="#例题1acwing-3-完全背包问题httpswwwacwingcomproblemcontent3">【例题1】<a href="https://www.acwing.com/problem/content/3/">AcWing 3. 完全背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#多重背包">多重背包</a>
+      <ul>
+        <li><a href="#例题1acwing-4-多重背包问题-ihttpswwwacwingcomproblemcontent4">【例题1】<a href="https://www.acwing.com/problem/content/4/">AcWing 4. 多重背包问题 I</a></a></li>
+        <li><a href="#例题2acwing-5-多重背包问题-iihttpswwwacwingcomproblemcontent5">【例题2】<a href="https://www.acwing.com/problem/content/5/">AcWing 5. 多重背包问题 II</a></a></li>
+        <li><a href="#例题36-多重背包问题-iiihttpswwwacwingcomproblemcontentdescription6">【例题3】<a href="https://www.acwing.com/problem/content/description/6/">6. 多重背包问题 III</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#混合背包">混合背包</a>
+      <ul>
+        <li><a href="#例题-混合背包问题httpswwwacwingcomproblemcontent7">【例题】<a href="https://www.acwing.com/problem/content/7/"> 混合背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#二维费用背包">二维费用背包</a>
+      <ul>
+        <li><a href="#例题-二维费用的背包问题httpswwwacwingcomproblemcontent8">【例题】<a href="https://www.acwing.com/problem/content/8/"> 二维费用的背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#分组背包">分组背包</a>
+      <ul>
+        <li><a href="#例题acwing9-分组背包问题httpswwwacwingcomproblemcontentdescription9">【例题】<a href="https://www.acwing.com/problem/content/description/9/">AcWing9. 分组背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#有依赖的背包问题">有依赖的背包问题</a>
+      <ul>
+        <li><a href="#例题-有依赖的背包问题httpswwwacwingcomproblemcontent10">【例题】<a href="https://www.acwing.com/problem/content/10/"> 有依赖的背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#背包问题求方案数">背包问题求方案数</a>
+      <ul>
+        <li><a href="#例题-背包问题求方案数httpswwwacwingcomproblemcontent11">【例题】<a href="https://www.acwing.com/problem/content/11/"> 背包问题求方案数</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#背包问题求具体方案">背包问题求具体方案</a>
+      <ul>
+        <li><a href="#例题背包问题求具体方案httpswwwacwingcomproblemcontent12">【例题】<a href="https://www.acwing.com/problem/content/12/">背包问题求具体方案</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h1 id="背包问题总结">背包问题总结</h1>
+<p>本文从<a href="https://haofish.github.io/2020/dp%E6%80%BB%E7%BB%93/" target="_blank" rel="noopener noreffer"><strong>dp总结</strong></a>中搬出</p>
+<ul>
+<li>背包问题是一类非常经典的动规问题，包括了<strong>01背包</strong>、<strong>完全背包</strong>、<strong>多重背包</strong>、<strong>混合背包</strong>、<strong>二维费用背包</strong>、<strong>分组背包</strong>、<strong>有依赖的背包问题</strong>、<strong>背包问题求方案数</strong>、<strong>背包问题求具体方案</strong>（称为背包九讲）</li>
+<li>本片博客会在个人觉得比较重要的地方上啰嗦qwq</li>
+</ul>
+<h2 id="01背包">01背包</h2>
+<ul>
+<li>最最经典的背包问题，背包九讲中说到：“它包含了背包问题中设计状态、方程的最基本思想。另外，<strong>别的类型的背包问题往往也可以转换成01 背包问题求解</strong>。”，固01背包的模型是非常重要的</li>
+<li>下面的01背包会展示<strong>三种空间的优化手段</strong>，我发现这三种优化手段都是非常重要的，针对不同场景三种手段各有优势</li>
+<li>直接看到最原汁原味的题</li>
+</ul>
+<h3 id="例题1acwing-2-01背包问题httpswwwacwingcomproblemcontentdescription2">【例题1】<a href="https://www.acwing.com/problem/content/description/2/" target="_blank" rel="noopener noreffer">AcWing 2. 01背包问题</a></h3>
+<ul>
+<li>
+<p>题意不多说，就是原汁原味的01背包题，值得说的是以下内容均以V为容量，W为价值，c为背包总容量</p>
+</li>
+<li>
+<p>分析1:</p>
+<ul>
+<li>对于每个物品有<strong>选和不选的两种决策</strong>，固我们可以从<strong>dfs</strong>的角度加上<strong>记忆化</strong>来思考这道题</li>
+<li>可以考虑每一层都代表一个物品，有选和不选两种方案，意味着有两个递归下去的道路</li>
+<li>其余细节具体看代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//调用时直接调用dfs(n, m)就好了
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span><span class="c1">//第nums个物品，还剩下sum的容量，
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">nums</span> <span class="o">==</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 边界
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">nums</span><span class="p">][</span><span class="n">sum</span><span class="p">])</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">nums</span><span class="p">][</span><span class="n">sum</span><span class="p">];</span> <span class="c1">// 记忆化
+</span><span class="c1"></span>    <span class="n">vis</span><span class="p">[</span><span class="n">nums</span><span class="p">][</span><span class="n">sum</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ans</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">nums</span><span class="p">][</span><span class="n">sum</span><span class="p">];</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span> <span class="c1">//不选当前的物品，则容量依旧还剩sum
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">nums</span><span class="p">])</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sum</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">nums</span><span class="p">])</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">nums</span><span class="p">]);</span> <span class="c1">// 如果容量够，则选当前物品，则容量剩余sum - v[nums]
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>可以看得出来，<strong>dfs+记忆化</strong>的好处就是简单易懂，似乎完全不用过多说明代码的意义</li>
+</ul>
+</li>
+<li>
+<p>分析2：</p>
+<ul>
+<li>本题递归+记忆化的好处就是易于思考，不需要过多地打草稿</li>
+<li>但考虑到01背包经典性和别的背包问题都可以转换成01背包来解决，所以只会递归是不够的</li>
+<li>根据上述分析1的内容，可以很容易定义状态：<strong>设dp[i][j]为决策到第i个物品时，还剩j容量的储存的最大价值</strong></li>
+<li>根据分析1的代码不难得出状态转移方程
+$$
+dp[i][j] = max\lbrace dp[i + 1][j], \ \ dp[i + 1][j - v[i]] + w[i]\rbrace \ \ (j &gt;= v[i])
+$$</li>
+<li>递推部分代码如下，答案为dp[1][m]</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 不选
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">// 选，前提是空间够
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>其实从第1件物品开始也是一样的</li>
+<li>输出答案为dp[n][m]</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>上面这个代码比逆着来递推的好处就是可以<em>边读边计算</em>，剩下了一些空间</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>复杂度都是$O(nm)$</li>
+</ul>
+</li>
+<li>
+<p><strong>空间优化1</strong>：</p>
+<ul>
+<li>不难发现，当遍历到第$i$个物品时（顺着来递推），它利用到的状态只有上一个物品的状态，即第i - 1个物品的状态，则这个第一维完全可以用<strong>滚动数组</strong>来优化，即优化成$2 * Maxn$的数组</li>
+<li>直接看代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">Maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">now</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 一个本状态，一个上一个状态
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="n">fill_n</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 这句话就01背包而言可以不用加，但在其他动规问题时可能就必须初始化了
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">pre</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">pre</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">swap</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">now</span><span class="p">);</span> <span class="c1">// 滚动
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">pre</span><span class="p">][</span><span class="n">m</span><span class="p">]);</span> <span class="c1">// 答案是推出循环后的pre维数组里的答案
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>这种写法的好处就是当我们在处理动规时发现他的只和上一个状态有关时就可以用这种优化，注意第19行的初始化有时候是必加的，例如在计数类dp中，我们就必须初始化当前计算的数组（即当前循环的now维数组）为0</li>
+<li>下面两种优化个人感觉比本空间优化1要重要</li>
+</ul>
+</li>
+<li>
+<p><strong>空间优化2</strong></p>
+<ul>
+<li>根据空间优化1， 我们再来看他的第二维，它会利用到$j - v[i]$的状态，计算完成后$j - v[i]$的状态就没用了</li>
+<li>综上，看图
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e9%9b%b6%e4%b8%80%e8%83%8c%e5%8c%85%e7%a9%ba%e9%97%b4%e4%bc%98%e5%8c%96.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e9%9b%b6%e4%b8%80%e8%83%8c%e5%8c%85%e7%a9%ba%e9%97%b4%e4%bc%98%e5%8c%96.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e9%9b%b6%e4%b8%80%e8%83%8c%e5%8c%85%e7%a9%ba%e9%97%b4%e4%bc%98%e5%8c%96.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC%e9%9b%b6%e4%b8%80%e8%83%8c%e5%8c%85%e7%a9%ba%e9%97%b4%e4%bc%98%e5%8c%96.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPIC零一背包空间优化.png"
+        title="01背包空间优化" /></li>
+<li>所以完全可以将二维优化成一维的数组，为了保持$j - v[i]$是上一个物品的状态，<strong>第二层递推时要逆着过来递推</strong></li>
+<li>状态转移方程如下</li>
+</ul>
+<p>$$
+dp[j] = max(dp[j],\ \ dp[j - v] + w)
+$$</p>
+<ul>
+<li>上述的状态方程是对应边读边计算的</li>
+<li>最终代码如下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>说明：这里的二层循环是m到v，一来是因为j要大于等于v数组才有意义，二来是因为最开始是从c到0时，当$j &lt; v$时只有不选当前物品的选择，则状态就会继承自一个物品此时的容量的状态，而此时代码是m到v默认了$j &lt; v$时的状态时<strong>继承自上一个物品同容量的状态</strong></li>
+<li>本优化多用于<strong>分组背包</strong>中空间优化，<strong>树形背包（有依赖的背包）</strong>，记住子问题是01背包时，一维空间优化必须逆着来（有基础的同学可以回忆一下树形背包中的转化</li>
+</ul>
+</li>
+<li>
+<p><strong>空间优化3</strong></p>
+<ul>
+<li>下面介绍个人认为<strong>最最有用的空间优化手段</strong></li>
+<li>先来说说第一种空间优化的好处：好理解，不必像第二种空间优化那样需要逆着过来更新状态（相信我，考虑循环的顺逆，在比赛时真的可以把自己搞晕）</li>
+<li>然而第一种空间优化也是有缺陷的：维度依然没有变化，即本来是二维的还是二维（这样的坏处就是多维时比较折磨人，想想树形背包，我们之所以可以用在定义状态时只开二维，是因为利用到了01背包一维优化的思想，更新时是逆着更新的，若要顺着更新，则可能会退化到三维，哪怕你第三位用滚动数组优化（第一种优化）可能也会被pre和now维度下标弄晕）</li>
+<li>而第二种空间优化的好处和缺陷正好是第一种空间优化的缺陷和好处</li>
+<li>综上，接下来要推出一个能集合上面两种优化的好处的优化手段</li>
+<li>先看代码，感觉看了代码就能秒懂了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="n">tmp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 用tmp数组存起上一次的状态
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 这句话可以不加，具体问题具体分析吧
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>当然还有另一种写法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">1010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="n">tmp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 用tmp数组来装本次要更新的状态，初始化具体问题具体分析，例如dp找到是最大值则初始化为负无穷
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 把值赋回给dp数组
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>上述两种写法都是一个道理的，他们的好处就是依旧是顺推，依旧是一维</li>
+<li>怎么说呢，我觉得这种写法是上面两种空间优化的进化版吧，不懂的可以看后面的依赖背包写法中利用到这种方式更新状态的好处，当然多重背包单调队列优化也用到了这个技巧</li>
+</ul>
+</li>
+<li>
+<p>上面的01背包问的是容量不超过m的最大价值，但如果问的是<strong>容量恰好是m</strong>的呢？</p>
+</li>
+<li>
+<p>下面将不超过容量m名为问题一，容量恰好为m为问题二</p>
+</li>
+<li>
+<p>回忆以下不超过c的最大价值的状态定义：dp[i][j]表示正在考虑第i件物品还剩下j的容量所能装下的最大价值</p>
+</li>
+<li>
+<p>说解法之前，先来看这么一组数据，<strong>物品个数为4，背包容量为9，物品重量分别为{2，3，4，5}，价值分别为{3，5，2，6}</strong>，则在不超过9容量的最大价值为11，但恰好是9容量的最大价值为10，为什么反而价值还少了呢，其实在问题一中，背包装的容量为8，并没有装满，这就意味着在问题一中dp[9] = dp[8]，有一格空间是没有用上的，使得装9和装8的价值一样，那为什么会有这种情况呢</p>
+<ul>
+<li>下面是dp[9]和dp[8]在问题一中的真正转移路程</li>
+<li>$dp[9] = dp[4(9 - 5)] + 6 = (dp[1(4 - 3)] + 5) + 6 = (0 + 5) + 6$</li>
+<li>$dp[8] = dp[3(8 - 5)] + 6 = (dp[0(3 - 3)] + 5) + 6 = (0 + 5) + 6$</li>
+</ul>
+</li>
+<li>
+<p>注意到dp[1]在问题一中是为0的，上面说过为0则表示什么都不装，但是在问题二中，<strong>除了容量本来就是0的背包外其余容量的背包在什么都不装的情况下价值不能定义为0</strong>，为什么？因为这样在问题二中转移时为默认认为多出的1格（以上面的例子为例）是不装东西的</p>
+</li>
+<li>
+<p>怎么解决呢，根据上述的一句话“除了容量本来就是0的背包外其余容量的背包在什么都不装的情况下价值不能定义为0”，这样这样操作：<strong>dp[0] = 0，其余的都初始化为$-∞$</strong></p>
+</li>
+<li>
+<p>还不理解就这样想：<strong>恰好容量m一定是从容量为0的状态一步一步转移过来的</strong></p>
+</li>
+</ul>
+<h2 id="完全背包">完全背包</h2>
+<ul>
+<li>紫书是先说完全背包问题的，紫书是从完全背包来引入背包问题的，可能是因为完全背包和硬币模型十分相似，都是<strong>DAG模型</strong>的题，和硬币模型最明显不同的是硬币模型起点和终点都是固定的，而完全背包是起点固定，终点任意的题</li>
+<li>直接看例题</li>
+</ul>
+<h3 id="例题1acwing-3-完全背包问题httpswwwacwingcomproblemcontent3">【例题1】<a href="https://www.acwing.com/problem/content/3/" target="_blank" rel="noopener noreffer">AcWing 3. 完全背包问题</a></h3>
+<ul>
+<li>
+<p>完全背包的裸题，题意就不再赘述了</p>
+</li>
+<li>
+<p>分析方式1：</p>
+<ul>
+<li>刚刚说了，完全背包和无限硬币模型（硬币无限个，问你能否组成特定的面值）相似，只不过呢和硬币模型DAG有两个不同的地方，一是<strong>硬币模型的起点是要求的面值和，终点是0，而完全背包的DAG的起点是要求的背包总容量，而终点是任意的</strong>；二是<strong>硬币模型的边权是1，而完全背包问题的边权是对应物品的价值，固之前硬币问题中的“+1”就要变成“+w[i]”了</strong></li>
+<li>回忆一下硬币模型的状态定义：dp[i]表示面值为i的最大（最小）凑的数量，转移方程是：$dp[i] = max \lbrace dp[i - coin[j]] \rbrace + 1, \ \ i \ge coin[j]$，其中<strong>除dp[0]为0外，其余都初始化为</strong>$-∞$</li>
+<li>上面说过，硬币模型的DAG终点是0，但完全背包问题的终点是任意的，固完全背包应该对所有dp值都初始化为0（这个和01背包中的不超过容量m和恰好容量是m的道理是一样的），不难得出完全背包的转移方程
+$$
+dp[i] = max\lbrace dp[i - v[j]]\ \ +\ \ w[j]\rbrace ,\ \ i \ge v[j]
+$$</li>
+<li>和硬币模型差不多其中dp[i]表示容量为i的背包能装的最大价值，输出答案为dp[m]</li>
+<li>代码如下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 面值 对应完全背包的背包容量
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 硬币 对应完全背包的物品
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>以上代码是仿照凑硬币模型写的，<strong>第一层循环和第二层循环是完全可以对调的</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>注意到，上面的代码第二层循环的起点完全可以改成<strong>从v[j]到m</strong>，然后if语句就可以删去了</li>
+<li>至于最终答案也是dp[m]</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度为O(mn)</li>
+<li>对于并非第一次接触完全背包的同学，是不是觉得上面的代码很像最终学到的代码呢，没错，上面的代码就是即将进入的<strong>分析方式2</strong>的最终结论</li>
+<li>此时比较乱的同学可能有疑惑，第二重循环能否逆着来呢，答案是不行，细心的同学可能发现了，如果<strong>逆着过来就是01背包</strong>了</li>
+<li>那么为什么不行呢，其实很简单，回到最开始完全背包的代码甚至是硬币模型的代码，我们是从0开始一步一步递推到最终目标m的，这样能推出最终答案，仔细想想也是，怎么可能是先从目标c开始推呢？</li>
+</ul>
+</li>
+<li>
+<p>分析方式2：</p>
+<ul>
+<li>对于完全背包，上面的分析1完全是够用的，但是就以背包问题而言，这样是不够的</li>
+<li>考虑这么一个物品，其重量为v[i]，则它最多只能装<strong>m/v[i]个</strong>，这个很重要，这个结论意味着完全背包可以转换成01背包来做</li>
+<li>将每个无限个的物品看成<strong>有限的m/v[i]个</strong>，然后当成01背包来做，<strong>设dp[i][j]表示对于第i件物品，容量为j</strong>转移方程如下
+$$
+dp[i][j] = max\lbrace dp[i - 1][j],\ \ dp[i - 1][j - k \times v[i]] + k \times w[i]\rbrace \ \ k = 1, 2, 3, 4 \cdots
+$$</li>
+<li>其中k = 0时就是dp[i - 1][j]，这个转移方程之所以这么写是为了对应01背包的转移方程</li>
+<li>相应的代码如下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 不选
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//选
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度为O($m n\times \frac{m}{v[i]}$)</li>
+<li>很遗憾TLE了，对转移方程做一下变换
+$$
+dp[i][j] = max\lbrace dp[i - 1][j], dp[i][j - v[i]] + w[i]\rbrace
+$$</li>
+<li>解释：将每<strong>种</strong>无限的物品看成一<strong>个</strong>一<strong>个</strong>的，当不选这<strong>种</strong>物品时，则决策为上一<strong>种</strong>物品容量相同时的状态，当选这一<strong>种</strong>物品的一<strong>个</strong>时，其由同<strong>种</strong>物品的$j - v[i]$的容量转移过来</li>
+<li>换句话说：如果我选当前物品，则应该是当前物品背包容量还剩$j - v[i]$加上当前物品的价值，即我选了当前物品我还能继续考虑是否选当前物品</li>
+<li>状态定义是不变的代码如下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 不选
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">//选
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度为O(nm)，这回Ac了</li>
+<li>但同样是转换成01背包，为什么这个转移方程复杂度就降得如此低呢？说起来有点绕，如果下面解释完了还没明白可以自己草稿模拟两个代码或者一层一层递推状态方程，找到区别</li>
+</ul>
+</li>
+<li>
+<p>假设我们考虑到dp[i][j]时，对于复杂度为O(cn)的转移，dp[i][j]由两个状态转移而来</p>
+<ul>
+<li>一是<strong>dp[i - 1][j]</strong>，表示不选当前物品，状态来自上一种物品的同容量状态</li>
+<li>二是<strong>dp[i][j - v[i]] + w[i]</strong>，表示选当前物品，状态来自同种物品，小v[i]容量的状态而来</li>
+<li>根据动态规划的原则，上一个状态一定是计算好并且是当前最优解的值</li>
+<li>而对于复杂度为O($m n\times \frac{m}{v[i]}$)的话，dp[i][j]则由多个状态而来
+<ul>
+<li>基本都是由上一种物品<strong>对应$j - k \times v[i]$容量</strong>的状态而来，<strong>即$dp[i - 1][j - k \times v[i]] + k \times w[i]$</strong></li>
+</ul>
+</li>
+<li>注意到在复杂度为O($m n\times \frac{m}{v[i]}$)中计算<strong>dp[i][j]时</strong>，用到了一个状态就是<strong>dp[i - 1][j - 2 $\times$ v[i]]</strong>，而我们在计算<strong>dp[i][j - v[i]]时</strong>也用到了<strong>dp[i - 1][j - k $\times$ v[i]]这个状态</strong>，假设dp[i][j-v[i]]的最终值就是来自于dp[i - 1][j - t $\times$ v[i]]，则dp[i][j]就相当于也利用到了$dp[i][j - v[i]]$的值，固可以<strong>把众多的[i - 1]的状态归纳为[i]</strong>，其余的便可以<strong>反推归纳为dp[i - 1][j]</strong></li>
+<li>真相已经浮出水面了：在复杂度为O(mn)的算法里<strong>dp[i][j - v[i]]的值可能本来就包含了（装了）若干个值为v[i]的物品</strong>，这就避免了复杂度为O($m n\times \frac{m}{v[i]}$)算法中许多的max计算</li>
+<li>再来说说完全背包的空间优化</li>
+<li>和01背包一样，可以把二维优化成一维的，但值得注意的是：j - v[i]的第一维是i，和01背包的i - 1不同，固它用的不是上一层的数据，而是刚更新的同层的下标在j之前的数据，所以第二层于01背包不同，要顺着遍历，即从小到达遍历</li>
+<li>代码与<strong>分析1</strong>中的最终代码是一样的</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>for (int j = 1; j &lt;= n; j++) {
+for (int i = v[j]; i &lt;= m; i++) {
+dp[i] = max(dp[i], dp[i - v[j]] + w[j]);
+}
+}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
+- 一个**重要的优化**
+- 对于0(mn)的复杂度应该说是非常优秀的了，但是O($m n\times \frac{m}{v[i]}$)在不换转移方程的思路下还是有别的优化方式的，能优化到O($nmlog\frac{m}{v[i]}$)
+- 采用一种**二进制的方式优化**
+  - 考虑这么一个数10，现在要你拆分成几个数，使得能够用这些数自由组合能够组合成和为1\~10的数。最简单的方式就是把10拆成10个1，就能将1\~10都能凑出来了
+  - 但是如果只拆成10个1就没有优化的意义了，现在要你拆分成最少的数使得自由组合能凑成1~10的数，有一种比较优秀的拆分方式，拆分的结果为：1，2，4，3；怎么分的？观察到第一个数是$2^0$，后面除了最后一个数依次是$2^1、2^2$，最后一个数是$10 - 2^0 - 2^1 - 2^2 = 3$得到的
+  - 这样做的好处是，这4个数，每个数只有选和不选两种选择，一次对应4个位数的二进制的数，例如0101就是选了2，3，于是就凑成了5
+- 原话是这么说的：“这是二进制的思想。因为，不管最优策略选几件第i 种物品，其件数写成二进制后，总可以表示成若干个$2^k$件物品的和”
+- 至于价值当然也要变成对应的倍数价格啦
+- 对于每个拆分出来的新物品只有选和不选的两种决策，不就是01背包了嘛
+- 其余的有点难解释，看代码细细地品吧
+
+```c++
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+const int Max = 1010;
+int n, m, dp[100005][Max], v, w;
+
+struct goods{
+    int v, w;
+    goods(int v = 0, int w = 0) : v(v), w(w) {}
+};
+vector&lt;goods&gt; good;
+
+int main() {
+    scanf(&#34;%d%d&#34;, &amp;n, &amp;m);
+    good.push_back(goods(0, 0));
+    for (int i = 0; i &lt; n; i++) {
+        scanf(&#34;%d%d&#34;, &amp;v, &amp;w);
+        int num = m / v;
+        for (int j = 1; j &lt;= num; j &lt;&lt;= 1) {
+            num -= j;
+            good.push_back(goods(j * v, j * w));
+        }
+        if (num) good.push_back(goods(num * v, num * w));
+    }
+    int len = good.size();
+    for (int i = 1; i &lt;= len; i++) {//01背包代码
+        for (int j = 0; j &lt;= m; j++) {
+            dp[i][j] = dp[i - 1][j]; // 不选
+            if (j &gt;= good[i].v) dp[i][j] = max(dp[i][j], dp[i][j - good[i].v] + good[i].w); // 选
+        }
+    }
+    printf(&#34;%d&#34;, dp[len][m]);
+    return 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>假设对于每个物品平均最多只能装num件，则这个代码的复杂度为O($mnlognum$)，这样的优化完全足够ac的，当然还能做的就是像01背包一样把二维优化成一维的空间优化，在这里直接把第一维未知的大小直接省去，达到一个非常大的空间优化效果，固01背包代码就要换成这样、答案最终为dp[m]</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包代码
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="多重背包">多重背包</h2>
+<ul>
+<li>和01背包不同，01背包是每个物品都只有一个，但多重背包的每个物品都有若干个</li>
+</ul>
+<h3 id="例题1acwing-4-多重背包问题-ihttpswwwacwingcomproblemcontent4">【例题1】<a href="https://www.acwing.com/problem/content/4/" target="_blank" rel="noopener noreffer">AcWing 4. 多重背包问题 I</a></h3>
+<ul>
+<li>
+<p>题意不多讲，但是值得一提的是，多重背包被分为了三种等级，对应的数据范围不同，本题数据范围是三种之中最小的</p>
+</li>
+<li>
+<p>分析：</p>
+<ul>
+<li>当成<strong>完全背包</strong>里的<strong>分析方式2</strong>一开始介绍的思路来做，每个物品有$s_i$个，只需改一下第三重循环便可</li>
+<li>下面的代码顺便把空间也优化了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">110</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包逆着来
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">w</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度为O(mns)，速度比较慢，对于本题物品个数不超过100个，足够跑了</li>
+</ul>
+</li>
+</ul>
+<h3 id="例题2acwing-5-多重背包问题-iihttpswwwacwingcomproblemcontent5">【例题2】<a href="https://www.acwing.com/problem/content/5/" target="_blank" rel="noopener noreffer">AcWing 5. 多重背包问题 II</a></h3>
+<ul>
+<li>
+<p>本题和【例题1】的题意是一样的，只不过数据范围直接大了一位数</p>
+</li>
+<li>
+<p>分析：</p>
+<ul>
+<li>再用刚刚的思想完全是不够用的了，直接TLE了</li>
+<li>还记得<strong>完全背包的二进制优化吗</strong>吗，利用那个思想，就能优化成O($mnlogs$)的复杂度了</li>
+<li>具体代码如下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="nc">goods</span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+  <span class="n">goods</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">v</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">w</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">goods</span><span class="o">&gt;</span> <span class="n">good</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="c1">//二进制优化
+</span><span class="c1"></span>            <span class="n">s</span> <span class="o">-=</span> <span class="n">j</span><span class="p">;</span>
+            <span class="n">good</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">goods</span><span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">v</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="n">w</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">good</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">goods</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span> <span class="o">*</span> <span class="n">w</span><span class="p">));</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">g</span> <span class="p">:</span> <span class="n">good</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">g</span><span class="p">.</span><span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">g</span><span class="p">.</span><span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">g</span><span class="p">.</span><span class="n">w</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>总结：通过多次用到了01背包的思想可以看出01背包的重要性</p>
+</li>
+</ul>
+<h3 id="例题36-多重背包问题-iiihttpswwwacwingcomproblemcontentdescription6">【例题3】<a href="https://www.acwing.com/problem/content/description/6/" target="_blank" rel="noopener noreffer">6. 多重背包问题 III</a></h3>
+<ul>
+<li>题意和【例题1】也是一样，但这题的数据范围更大，达到了2e5</li>
+<li>这题需要用到单调队列优化（单调队列是什么？自学吧）</li>
+<li>仔细看下面我截取例题1时的代码的部分</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包逆着来
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>不难发现$j$只会利用到$j - k \times v$来转化，这就意味着$j$只会和与$j(mod \ \ v)$同余的$dp$容量来转移，例如$j = 9, v = 2$则他只可能会利用容量为$7,5,3,1$的$dp$来转移</li>
+<li>同时注意到第二重循环的第一个循环条件$k \le s$，这就意味着$j$利用到的与$j(mod \ \ v)$同余的容量的个数是有限的，不超过$s$个，例如$j = 9, v = 2, s = 2$时，则只可能会利用容量为$7,5$的$dp$来转移</li>
+<li>综上，是不是觉得很像一个在固定窗口大小里面找一个最大值？</li>
+<li>直接先看代码，然后再解刨</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">2e4</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 枚举余数
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// 单调队列的左右指针
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">k</span> <span class="o">+=</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 枚举容量
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="n">q</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">++</span><span class="n">l</span><span class="p">;</span><span class="c1">// 窗口范围必须是[k - s * v, k - v]
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">q</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="o">/</span> <span class="n">v</span> <span class="o">*</span> <span class="n">w</span><span class="p">);</span>
+                <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="n">tmp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">q</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">/</span> <span class="n">v</span> <span class="o">*</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">--</span><span class="n">r</span><span class="p">;</span>
+                <span class="n">q</span><span class="p">[</span><span class="o">++</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>下面对代码进行解刨</li>
+<li>首先，由于我们之前说的$j$在只会利用到比他小的同余数，所以我们转移时必选顺着转移，不能再逆着来了，这时就要用到之前01背包说的第三种空间优化来达到顺着转移的目的了</li>
+<li>目光移到第16行代码（枚举余数），把相同余数的容量同时一起转移，固第18行的循环中是<code>k += v</code>这样就保证了每次的余数都是<code>j</code>（当前解说的代码的<code>j</code>）</li>
+<li>然后就是第18行循环的内部循环了，首先学过单调队列的同学都知道，我们为了方便处理队列，我们在队列内存的不是对应的值，而知下标（在这题下标就是容量）。前面说到我们窗口的大小是有限制的，不能超过<code>s</code>个，固对应下标的范围就是$[k - s\times v,k - v]$，固若<code>q[l] &lt; k - s * v</code>则弹出队头元素</li>
+<li>然后就是20行的简单易懂的更新操作，用上一个状态和当前选取<code>(k - q[l])/v</code>个当前物品的状态进行对比转移</li>
+<li>21和22行都是单调队列的入队操作，队尾弹出的条件就是容量为<code>q[l]</code>的状态加上<code>(k - q[r]) / v * w</code>的价值都没有当前<code>k</code>容量的状态价值大（小于等于）</li>
+</ul>
+<h2 id="混合背包">混合背包</h2>
+<ul>
+<li>混合背包就是有些物品只能选1次，有些物品最多只能选s次，有些物品无限次，分别对应01背包，多重背包，完全背包</li>
+</ul>
+<h3 id="例题-混合背包问题httpswwwacwingcomproblemcontent7">【例题】<a href="https://www.acwing.com/problem/content/7/" target="_blank" rel="noopener noreffer"> 混合背包问题</a></h3>
+<ul>
+<li>解决方法很简单，全部转化为01背包就好了，对于本来就是01背包的不作处理，对于多重背包的物品可以用二进制优化变成01背包，完全背包同理可以转化为最多只能选$\frac{m}{v}$次的多重背包后再用二进制优化</li>
+<li>代码略</li>
+</ul>
+<h2 id="二维费用背包">二维费用背包</h2>
+<ul>
+<li>就是一个多了体积限制的背包罢了</li>
+</ul>
+<h3 id="例题-二维费用的背包问题httpswwwacwingcomproblemcontent8">【例题】<a href="https://www.acwing.com/problem/content/8/" target="_blank" rel="noopener noreffer"> 二维费用的背包问题</a></h3>
+<ul>
+<li>很简单，多加一维体积的数组，转移时和01背包相同</li>
+<li>直接看代码就好了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">110</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">][</span><span class="n">Maxn</span><span class="p">];</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">V</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">M</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">M</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> 
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">v</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">m</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">V</span><span class="p">][</span><span class="n">M</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="分组背包">分组背包</h2>
+<ul>
+<li>分组背包就是有若干组物品，对于每组物品都有若干件物品，每组物品最多选一个物品，问你容量不超过c的能装的最大价值</li>
+</ul>
+<h3 id="例题acwing9-分组背包问题httpswwwacwingcomproblemcontentdescription9">【例题】<a href="https://www.acwing.com/problem/content/description/9/" target="_blank" rel="noopener noreffer">AcWing9. 分组背包问题</a></h3>
+<ul>
+<li>
+<p>题意不多说，就是一个赤果果的分组背包问题</p>
+</li>
+<li>
+<p>分析：</p>
+<ul>
+<li>可以把每一组物品看成一个物品，然后当成01背包来做，不同的是对于每种容量的背包，都要考虑每组物品的每一个物品</li>
+<li>也可以这么理解，对于每组物品，都假设只有一个物品，这一组物品就是一个物品了，然后不就是01背包了吗</li>
+</ul>
+<div class="highlight line-numbers"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">105</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">[</span><span class="mi">105</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="mi">105</span><span class="p">],</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">//01背包
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//假设当前组只有这一个物品
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>值得注意的是第18行和19行的代码是<strong>不可以互换的</strong>，因为一维01背包是从大到小遍历的，保持小的下标是之前的数据。若是调换过来就相当于把每件物品都看成了一件物品，而不是隶属于某一组的物品</li>
+</ul>
+</li>
+<li>
+<p>还有一点很重要的就是分组背包的思想可以迁移到树形背包（有依赖的背包问题）的</p>
+</li>
+</ul>
+<h2 id="有依赖的背包问题">有依赖的背包问题</h2>
+<ul>
+<li>就是一个树形背包，即如果要选一个结点，则其父亲节点必须要被选</li>
+</ul>
+<h3 id="例题-有依赖的背包问题httpswwwacwingcomproblemcontent10">【例题】<a href="https://www.acwing.com/problem/content/10/" target="_blank" rel="noopener noreffer"> 有依赖的背包问题</a></h3>
+<ul>
+<li>核心：把一个结点的每个孩子结点看做不同的组，即可以当成分组背包来自，那么组内的物品是什么呢，答案就是每组的一个决策就是一个物品（就这题而言就是每一个dp容量值就是一个物品），注意：这个思想很重要，他是所有（应该是所有）树形背包dp的共同特点</li>
+<li>先看代码再解刨</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#define ll long long
+</span><span class="cp">#define pb emplace_back
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">105</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">inf</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">root</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="n">M</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="c1">// 记录本棵树的物品总重量
+</span><span class="c1"></span>    <span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">son</span> <span class="p">:</span> <span class="n">mp</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">siz</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">son</span><span class="p">);</span><span class="c1">// 计算孩子节点的决策，并获取他的物品总重量
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">siz</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span> <span class="c1">// 还记得01背包的空间优化3吗
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">siz</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 这棵孩子子树选取i容量的物品
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">sum</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 之前组选取的容量j
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span> <span class="c1">// 超过背包容量的不用转移
+</span><span class="c1"></span>                <span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">son</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">siz</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span> <span class="c1">//返回本树的总容量
+</span><span class="c1"></span><span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">mp</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">pb</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="c1">//存树
+</span><span class="c1"></span>        <span class="k">else</span> <span class="n">root</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="n">min</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">m</span><span class="p">)]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>核心就是dfs内的函数，就直接解刨里面的吧</li>
+<li>先来解释<code>dp</code>的含义<code>dp[u][v]</code>表示在u结点这颗子树中选取容量为<code>v</code>的最大价值</li>
+<li>13行不解释，14行的话很显然，由于要选本结点的子结点则本结点必选，所以就有了14行的初始化</li>
+<li>然后是17行，这是之前在01背包中第三种空间优化的一种手段，这样做的好处有：1、更新本结点的<code>dp</code>时可以顺着来更新（好理解），2、可以防止不必要的转移（具体看第21行dp的第二维转移方式）且保证了整个复杂度不高于$O(nm)$，既保证了每个（点）都只会在题目的LCA上计算一次，否则可能会使复杂度退化到O($nm^2$)，后面会解释</li>
+<li>然后就是转移思想可以参考<a href="https://blog.csdn.net/hao_6_6/article/details/114259329?spm=1001.2014.3001.5502" target="_blank" rel="noopener noreffer">树形背包思考模型</a></li>
+<li>接下来状态转移，先说说为什么这样转移，需要提前知道的是下面两个转移方程会导致复杂度不同</li>
+</ul>
+<p>$$
+dp[u][j] = max(dp[u][j], \ \ dp[son][i] + dp[u][j - i])  \tag{1}\<br>
+$$</p>
+<p>$$
+dp[u][i + j] = max(dp[u][i + j],\ \  dp[son][i] + dp[u][j]) \tag{2}
+$$</p>
+<ul>
+<li>有经验的小伙伴可能知道，式子(1)是填表法，式子(2)是<strong>刷表法</strong>。对于树形背包问题有个很玄学的优化就是利用刷表法来更新当前结点，这样就能保证复杂度是O($nm$)而不是O($nm^2$)，我的理解就是刷表法保证了本结点的合法性，并且使得所有结点都只会在他们的LCA上被算一次。反观填表法在有些题目上十分难以拿捏本结点的合法性</li>
+<li>固以上就是我选择18行到23内部循环的方式的原因</li>
+<li>没了</li>
+</ul>
+<h2 id="背包问题求方案数">背包问题求方案数</h2>
+<ul>
+<li>题意就是让我们求01背包最优解的方案</li>
+</ul>
+<h3 id="例题-背包问题求方案数httpswwwacwingcomproblemcontent11">【例题】<a href="https://www.acwing.com/problem/content/11/" target="_blank" rel="noopener noreffer"> 背包问题求方案数</a></h3>
+<ul>
+<li>多建立一个数组<code>f[i][j]</code>表示前<code>i</code>个物品选取容量为<code>j</code>的最优解方案数</li>
+<li>注意初始化<code>f[0][j]</code>应当都初始化为1，因为是不超过m容量，所以这样初始化就保证了第一个物品转移有效</li>
+<li>直接看代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cctype&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#define ll long long
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">inf</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="n">M</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">f</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 不选
+</span><span class="c1"></span>            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>  <span class="c1">//不选
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span> <span class="o">==</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">])</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span> <span class="c1">//如果相等就相加
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span> <span class="o">&gt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">];</span> <span class="c1">// 否则更新值
+</span><span class="c1"></span>                	<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">;</span>
+                <span class="p">}</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>当然此题也可以空间优化</li>
+</ul>
+<h2 id="背包问题求具体方案">背包问题求具体方案</h2>
+<ul>
+<li>题意是让我们求01背包最优解的一个具体方案，并且输出字典序最小的那个</li>
+</ul>
+<h3 id="例题背包问题求具体方案httpswwwacwingcomproblemcontent12">【例题】<a href="https://www.acwing.com/problem/content/12/" target="_blank" rel="noopener noreffer">背包问题求具体方案</a></h3>
+<ul>
+<li>求解具体方案如果只是随便找，则直接在转移结束后倒过来找就好了，但是题目要求的是字典序最小，那么我们要在转移顺序上做一些改动，即从最后一个物品到第一个物品转移，然后再贪心找字典序最小的方案就好了</li>
+<li>一下递归找方案个人比较喜欢</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#define pb emplace_back
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">inf</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="n">M</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span> <span class="c1">//记录答案
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">num</span> <span class="o">==</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">ans</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//结束程序
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dp</span><span class="p">[</span><span class="n">num</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">==</span> <span class="n">dp</span><span class="p">[</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">num</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">num</span><span class="p">])</span> <span class="p">{</span> <span class="c1">// 如果符合转移
+</span><span class="c1"></span>        <span class="n">ans</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="n">num</span><span class="p">);</span><span class="c1">//记录答案
+</span><span class="c1"></span>        <span class="n">solve</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">num</span><span class="p">]);</span>
+        <span class="n">ans</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span> <span class="c1">// 回溯
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="n">solve</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d&#34;</span><span class="p">,</span> <span class="n">v</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>注意，这题不能空间优化了</li>
+</ul>
+<h2 id="结语">结语</h2>
+<ul>
+<li>写了好久好久，早就有把acwing上的背包总结博客写好的念头了，结果从开始计划到现在过了两三个月参完工，我太懒了。</li>
+<li>这篇博客严格上来说其实并不是所有的背包问题的总结，还有其他背包中比较深究的问题，比如说求解背包问题求解次优解，第k优解等等比较深入的问题，太菜了没学。</li>
+<li>就这样告一段落吧</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E8%83%8C%E5%8C%85/">背包</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>更新于 2021-03-26</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" data-title="背包问题" data-hashtags="背包"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" data-hashtag="背包"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" data-title="背包问题" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/" class="prev" rel="prev" title="主席树"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2021/05/dsu%E5%88%B7%E9%A2%98/" class="next" rel="next" title="树上dsu总结">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="valine"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.min.js?version=1.0.1', { scope: '/' })
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Registered');
+        }, err => console.error('haofish\u00A0Service Worker registration failed: ', err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Ready');
+        });
+}
+</script>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/valine/Valine.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/typeit/typeit.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":5},"comment":{"valine":{"appId":"UEWBV1gTCf9VzQHTH13chcGE-gzGzoHsz","appKey":"VDomK0X3UPsfl7r7TAPGLRR1","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧","recordIP":true,"visitor":true}},"data":{"id-1":"haofish","id-2":"haofish"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":200}};</script><script src="/js/theme.min.js"></script></body>
+</html>

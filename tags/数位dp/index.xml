@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>数位dp - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E6%95%B0%E4%BD%8Ddp/</link>
+        <description>数位dp - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%95%B0%E4%BD%8Ddp/" rel="self" type="application/rss+xml" /><item>
+    <title>数位dp总结</title>
+    <link>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</link>
+    <pubDate>Mon, 19 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/</guid>
+    <description><![CDATA[数位dp总结 数位dp思考形式与套路 对于区间的询问，一般利用的是前缀和的思想来求得答案 在求解答案时，一般是从高位到低位开始对答案进行累计 求解数]]></description>
+</item>
+</channel>
+</rss>

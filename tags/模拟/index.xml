@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>模拟 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/</link>
+        <description>模拟 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA804</title>
+    <link>https://haofish.github.io/2020/08/uva804/</link>
+    <pubDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva804/</guid>
+    <description><![CDATA[Petri Net Simulation 每个T变迁都有限制，必须是指定的P库有足够的token才行（注意，T指定的P库不一定只有一个），直接模拟就好了 1 2 3 4 5 6 7 8 9 10 11 12]]></description>
+</item>
+<item>
+    <title>Olympiad</title>
+    <link>https://haofish.github.io/2020/07/olympiad/</link>
+    <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>
+    <description><![CDATA[传送门 题意：给你两个同长数组代表n个人两场比赛的成绩，再给你一个x，某两个数组的和$a_i + b_j \ge x$，问你两数组组合成满足式子的排名最高和最]]></description>
+</item>
+<item>
+    <title>Cosmic_Tables</title>
+    <link>https://haofish.github.io/2020/07/cosmic_tables/</link>
+    <pubDate>Fri, 24 Jul 2020 16:26:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/cosmic_tables/</guid>
+    <description><![CDATA[传送门 题意：给你一个矩阵，每次进行与行之间的交换，或者是列与列之间的交换，或者查询(x, y)点的值 思路：一开始想着是不是直接就纯模拟算了，后]]></description>
+</item>
+<item>
+    <title>Shooshuns_and_Sequence</title>
+    <link>https://haofish.github.io/2020/07/shooshuns_and_sequence/</link>
+    <pubDate>Fri, 24 Jul 2020 15:15:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/shooshuns_and_sequence/</guid>
+    <description><![CDATA[传送门 什么鬼，div2也出水题？还是我变强了？😂 题意：给你一个长为n的序列，再给你一个k，你每次都必须要这样做：选择第k个数，把他复制到序列]]></description>
+</item>
+<item>
+    <title>Tourist&#39;s_Notes</title>
+    <link>https://haofish.github.io/2020/07/tourists_notes/</link>
+    <pubDate>Fri, 24 Jul 2020 09:56:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/tourists_notes/</guid>
+    <description><![CDATA[传送门 题意：旅行者每天都会记录自己的海拔高度，他每天规定走海拔相差不超过1的路线，有一天他的记录丢失了，只剩下几天的，问你他之前有可能到达的]]></description>
+</item>
+<item>
+    <title>Quasi_Binary</title>
+    <link>https://haofish.github.io/2020/07/quasi_binary/</link>
+    <pubDate>Thu, 23 Jul 2020 21:08:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/quasi_binary/</guid>
+    <description><![CDATA[传送门 题意：一个只由1和0组成的十进制数叫做Quasi Binary，例如11（十一）就是，现在给你一个n，让你求出他可能有哪些Quasi Bi]]></description>
+</item>
+<item>
+    <title>C. A Cookie for You题解</title>
+    <link>https://haofish.github.io/2020/07/654div2problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/654div2problemc/</guid>
+    <description><![CDATA[传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &gt;]]></description>
+</item>
+<item>
+    <title>B. Multiply by 2, divide by 6题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemb/</link>
+    <pubDate>Mon, 06 Jul 2020 15:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemb/</guid>
+    <description><![CDATA[传送门 题意 给一个数 n,问你只进行以下两种操作，要操作最少多少次能够使得 n 为 1： 把 n 除以 6 （前提是可以整除） 把 n 乘 2 输出最少的操作次数，如果无]]></description>
+</item>
+</channel>
+</rss>

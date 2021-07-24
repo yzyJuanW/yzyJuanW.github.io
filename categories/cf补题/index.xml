@@ -1,0 +1,37 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cf补题 - 分类 - haofish</title>
+        <link>https://haofish.github.io/categories/cf%E8%A1%A5%E9%A2%98/</link>
+        <description>cf补题 - 分类 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/cf%E8%A1%A5%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>C. A Cookie for You题解</title>
+    <link>https://haofish.github.io/2020/07/654div2problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/654div2problemc/</guid>
+    <description><![CDATA[传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &gt;]]></description>
+</item>
+<item>
+    <title>E1. Reading Books (easy version)题解</title>
+    <link>https://haofish.github.io/2020/07/653div3probleme1/</link>
+    <pubDate>Mon, 06 Jul 2020 18:00:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3probleme1/</guid>
+    <description><![CDATA[传送门 题意 小A和小B要读书，现在共又 n 本书，对于每本书都有三个参数，$t_i$：阅读的时间、$a_i$：小A喜欢读的书、$b_i$：小B喜欢]]></description>
+</item>
+<item>
+    <title>D. Zero Remainder Array题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemd/</link>
+    <pubDate>Mon, 06 Jul 2020 16:58:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemd/</guid>
+    <description><![CDATA[传送门 题意 给你一个长度为 n 的数组$a_n$，和一个 k，你有一个 x（一开始为0），你有以下两种操作 给 x 加上 1，即$x = x + 1$ 选择一个任意一个$]]></description>
+</item>
+<item>
+    <title>C. Move Brackets题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemc/</link>
+    <pubDate>Mon, 06 Jul 2020 15:59:43 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemc/</guid>
+    <description><![CDATA[传送门 题意 给你一串字符串，只有&quot;(&quot; h和&quot;)&ldquo;组成，你每次都能选择一个字符把它移到最左边或者最右边]]></description>
+</item>
+<item>
+    <title>B. Multiply by 2, divide by 6题解</title>
+    <link>https://haofish.github.io/2020/07/653div3problemb/</link>
+    <pubDate>Mon, 06 Jul 2020 15:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/653div3problemb/</guid>
+    <description><![CDATA[传送门 题意 给一个数 n,问你只进行以下两种操作，要操作最少多少次能够使得 n 为 1： 把 n 除以 6 （前提是可以整除） 把 n 乘 2 输出最少的操作次数，如果无]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>acm常用数学总结 - haofish</title><meta name="description" content="description."><meta property="og:title" content="acm常用数学总结" />
+<meta property="og:description" content="description." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haofish.github.io/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-21T17:31:50+08:00" />
+<meta property="article:modified_time" content="2020-09-21T17:31:50+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="acm常用数学总结"/>
+<meta name="twitter:description" content="description."/>
+<meta name="application-name" content="FeelIt">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" /><link rel="prev" href="https://haofish.github.io/2020/09/uva1625/" /><link rel="next" href="https://haofish.github.io/2021/01/%E5%AF%92%E5%81%87cf%E5%88%B7%E9%A2%98%E5%BD%95/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "acm常用数学总结",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/haofish.github.io\/2020\/09\/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93\/"
+        },"genre": "posts","keywords": "数学","wordcount":  776 ,
+        "url": "https:\/\/haofish.github.io\/2020\/09\/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93\/","datePublished": "2020-09-21T17:31:50+08:00","dateModified": "2020-09-21T17:31:50+08:00","publisher": {
+            "@type": "Organization",
+            "name": "幼稚园卷王"},"author": {
+                "@type": "Person",
+                "name": "幼稚园卷王"
+            },"description": "description."
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/posts/" title="显示所有文章"> 文章 </a><a class="menu-item" href="/tags/" title="显示标签"> 标签 </a><a class="menu-item" href="/categories/" title="显示分类"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/posts/" title="显示所有文章">文章</a><a class="menu-item" href="/tags/" title="显示标签">标签</a><a class="menu-item" href="/categories/" title="显示分类">分类</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">acm常用数学总结</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-21">2020-09-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 776 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="acm常用数学总结">
+                            <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                        </span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>目录</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#常见的基础名词">常见的基础名词</a>
+      <ul>
+        <li><a href="#质数素数"><strong>质数</strong>（素数）</a></li>
+        <li><a href="#中位数">中位数</a></li>
+        <li><a href="#完全数完备数">完全数（完备数）</a></li>
+        <li><a href="#排列组合">排列组合</a></li>
+        <li><a href="#卡特兰数">卡特兰数</a></li>
+        <li><a href="#斯特林数">斯特林数</a></li>
+        <li><a href="#反素数">反素数</a></li>
+        <li><a href="#错位排列问题">错位排列问题</a></li>
+        <li><a href="#算两次技巧">算两次技巧</a></li>
+        <li><a href="#抽屉原理">抽屉原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#定理">定理</a>
+      <ul>
+        <li><a href="#算术基本定理"><strong>算术基本定理</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<ul>
+<li>本博客主要记录和总结一些常用的数学数论知识</li>
+<li>部分专业定义参考百度和其他大牛的博客</li>
+</ul>
+<h2 id="常见的基础名词">常见的基础名词</h2>
+<h3 id="质数素数"><strong>质数</strong>（素数）</h3>
+<ul>
+<li>对于一个大于1的自然数，当其的正因数（正约数）只有1和它本身时，则称该数为质数（素数）</li>
+<li>注：1既不是质数也不是合数</li>
+<li>有用的特性：
+<ul>
+<li>质数的因数是只有1和它本身</li>
+<li>初等数学基本定理：任一大于1的自然数，要么本身是质数，要么可以分解为几个质数之积，且这种分解是唯一的</li>
+<li>10以后的质数尾数都是1，3，7，9</li>
+<li>质数的个数的无限的</li>
+<li>对于$n(n &gt; 0)$，$n^2$和$(n + 1)^2$之间至少有一个质数</li>
+</ul>
+</li>
+</ul>
+<h3 id="中位数">中位数</h3>
+<h3 id="完全数完备数">完全数（完备数）</h3>
+<h3 id="排列组合">排列组合</h3>
+<h3 id="卡特兰数">卡特兰数</h3>
+<h3 id="斯特林数">斯特林数</h3>
+<ul>
+<li>对于一个自然数，它等于它所有真因数的和（除他本身的正因数）则称它为完全数</li>
+<li>例如：$6 = 1 + 2 + 3，28 = 1 + 2 + 4 + 7 + 14$</li>
+</ul>
+<h3 id="反素数">反素数</h3>
+<h3 id="错位排列问题">错位排列问题</h3>
+<h3 id="算两次技巧">算两次技巧</h3>
+<h3 id="抽屉原理">抽屉原理</h3>
+<h2 id="定理">定理</h2>
+<h3 id="算术基本定理"><strong>算术基本定理</strong></h3>
+<ul>
+<li>任何一个大于 1 的自然数可以分解成一些素数的乘积；并且在不计次序的情况下，这种分解方式是唯一的。——百度百科</li>
+<li>内容：任何一个大于1的自然数N，如果N不为质数，则有</li>
+</ul>
+<p>$$
+N = {P_1}^{k_1} \times{P_2}^{k_2} \times {P_3}^{k_3} \cdots \times {P_n}^{k_n} \ \ , \ \ P_1 &lt; P_2 &lt; P_3 &lt; \cdots &lt; P_n
+$$</p>
+<ul>
+<li>
+<p>其中，$P_1,P_2 \cdots P_n$都是质数</p>
+</li>
+<li>
+<p>定理应用：</p>
+<ul>
+<li>①N的正因数（约数）个数为</li>
+</ul>
+<p>$$
+(k_1 + 1) \times (k_2 + 1) \times (k_3 + 1) \times \cdots \times (k_n + 1)
+$$</p>
+<ul>
+<li>理解：对于每一个一个质因数的出现次数可能为n次，则$n \in 0, 1, 2, 3, \cdots k_n$（排列组合的思想），即对于一个质因数$P_n$，可能会出现$k_n + 1$次</li>
+<li>②N的所有正因数的和为</li>
+</ul>
+<p>$$
+({P_1} ^ {0} + {P_1} ^ {1} + {P_1} ^ {2} \cdots + {P_1} ^ {k_1})\times ({P_2} ^ {0} + {P_2} ^ {1} + {P_2} ^ {2} \cdots + {P_2} ^ {k_2}) \times \cdots \times ({P_n} ^ {0} + {P_n} ^ {1} + {P_n} ^ {2} \cdots + {P_n} ^ {k_n})
+$$</p>
+<ul>
+<li>理解：举个非常简单的例子，对于一个数36，则其正因数分别为：1，2，3，4，6，9，12，18，36，则其所有正因数的和为91，即$1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 + 36= 91$，用公式就是$(1 + 2 + 4) \times (1 + 3 + 9)$，对这个式子去括号就是上面直接求和的式子</li>
+</ul>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>更新于 2020-09-21</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" data-title="acm常用数学总结" data-hashtags="数学"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" data-hashtag="数学"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2020/09/acm%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/" data-title="acm常用数学总结" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2020/09/uva1625/" class="prev" rel="prev" title="UVA1625"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2021/01/%E5%AF%92%E5%81%87cf%E5%88%B7%E9%A2%98%E5%BD%95/" class="next" rel="next" title="寒假cf刷题">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="valine"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.min.js?version=1.0.1', { scope: '/' })
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Registered');
+        }, err => console.error('haofish\u00A0Service Worker registration failed: ', err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Ready');
+        });
+}
+</script>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/valine/Valine.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/typeit/typeit.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":5},"comment":{"valine":{"appId":"UEWBV1gTCf9VzQHTH13chcGE-gzGzoHsz","appKey":"VDomK0X3UPsfl7r7TAPGLRR1","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧","recordIP":true,"visitor":true}},"data":{"id-1":"haofish","id-2":"haofish"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":200}};</script><script src="/js/theme.min.js"></script></body>
+</html>

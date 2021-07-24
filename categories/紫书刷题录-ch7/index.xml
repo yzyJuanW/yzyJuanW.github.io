@@ -1,0 +1,67 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>紫书刷题录-ch7 - 分类 - haofish</title>
+        <link>https://haofish.github.io/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch7/</link>
+        <description>紫书刷题录-ch7 - 分类 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 15 Aug 2020 17:16:11 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch7/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA12113</title>
+    <link>https://haofish.github.io/2020/08/uva12113/</link>
+    <pubDate>Sat, 15 Aug 2020 17:16:11 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12113/</guid>
+    <description><![CDATA[Overlapping Squares 题意：给你个$4 \times 4$的网格图，问你有没有可能用不超过6张$2 \times 2$的纸叠成给的样子 一开始想破脑袋都想不出来应该怎么验证是否相同，没办法]]></description>
+</item>
+<item>
+    <title>UVA690</title>
+    <link>https://haofish.github.io/2020/08/uva690/</link>
+    <pubDate>Fri, 14 Aug 2020 12:22:46 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva690/</guid>
+    <description><![CDATA[Pipeline Scheduling 历经千辛万苦终于a了这题 题意：一台电脑有5个工作单元(unit0 ~ unit4)，有10(0 ~ 9)个程序需要完成，每个程序都要在n$(n &lt;]]></description>
+</item>
+<item>
+    <title>UVA211</title>
+    <link>https://haofish.github.io/2020/08/uva211/</link>
+    <pubDate>Thu, 13 Aug 2020 14:46:51 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva211/</guid>
+    <description><![CDATA[The Domino Effect 题意：一个多米诺骨牌有两个面，一共有28个不同的多米诺骨牌，放在那，可能横着，可能竖着，这样就形成了一个$7 \times 8$的一个数字图，问你所]]></description>
+</item>
+<item>
+    <title>UVA225</title>
+    <link>https://haofish.github.io/2020/08/uva225/</link>
+    <pubDate>Wed, 12 Aug 2020 15:54:08 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva225/</guid>
+    <description><![CDATA[Golygons 题意：一个网格图，现在给你图中$k(k \le 50)$个障碍的坐标（坐标可能为负），不能继续上次的方向继续走也不能后退，这就意味着只能左右走，第]]></description>
+</item>
+<item>
+    <title>UVA208</title>
+    <link>https://haofish.github.io/2020/08/uva208/</link>
+    <pubDate>Wed, 12 Aug 2020 10:24:20 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva208/</guid>
+    <description><![CDATA[Firetruck 题意：给你一个无向图，让你求出从1号节点到n号节点的所有路径，按顺序输出，具体看样例 DFS和BFS都可以，这里我用了DFS，利用了一个an]]></description>
+</item>
+<item>
+    <title>UVA11212</title>
+    <link>https://haofish.github.io/2020/08/uva11212/</link>
+    <pubDate>Tue, 11 Aug 2020 10:02:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11212/</guid>
+    <description><![CDATA[Editing a Book 题意：给你一个排列，你一次能够剪切一段字串，然后在别的地方插入粘贴，让你求最少的剪切粘贴次数使得排列是1~n按顺序的 IDA*的题，每次]]></description>
+</item>
+<item>
+    <title>UVA10603</title>
+    <link>https://haofish.github.io/2020/08/uva10603/</link>
+    <pubDate>Sun, 09 Aug 2020 20:37:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10603/</guid>
+    <description><![CDATA[Fill 题意：给你3个没有刻度的杯子，每个杯子的都有自己的容量，现利用这三个杯子量出体积为d的水，现在问最少的倒水量，如果量不到d，就量和d想接近]]></description>
+</item>
+<item>
+    <title>UVA1354</title>
+    <link>https://haofish.github.io/2020/08/uva1354/</link>
+    <pubDate>Sun, 09 Aug 2020 15:45:24 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1354/</guid>
+    <description><![CDATA[Mobile Computing 题意：有一个房间，有长为1的木棍，用天平的方式放一些物品，让你求出不超过房间的宽度的最长宽度的，如果误解输出-1 做了两天，习得了两种df]]></description>
+</item>
+<item>
+    <title>UVA140</title>
+    <link>https://haofish.github.io/2020/08/uva140/</link>
+    <pubDate>Fri, 07 Aug 2020 19:53:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva140/</guid>
+    <description><![CDATA[Bandwidth 题意：给你一个无向图，让你输出一种序列使得每个节点到该节点在图中相连的节点的最远距离的最小值，直接看题目比较好懂 dfs遍历所有可能的序列，]]></description>
+</item>
+<item>
+    <title>UVA129</title>
+    <link>https://haofish.github.io/2020/08/uva129/</link>
+    <pubDate>Fri, 07 Aug 2020 11:57:39 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva129/</guid>
+    <description><![CDATA[Krypton Factor 定义一个串是容易串：有相邻的相同的字串；反之就是困难串 让你求只利用前k个大写字母的第n个困难串 dfs模拟一下，值得注意的是剪枝时只看当前]]></description>
+</item>
+</channel>
+</rss>

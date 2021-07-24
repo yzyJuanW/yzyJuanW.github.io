@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>暴力 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E6%9A%B4%E5%8A%9B/</link>
+        <description>暴力 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 23 Jul 2020 20:08:59 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%9A%B4%E5%8A%9B/" rel="self" type="application/rss+xml" /><item>
+    <title>Cutting_Banner</title>
+    <link>https://haofish.github.io/2020/07/cutting_banner/</link>
+    <pubDate>Thu, 23 Jul 2020 20:08:59 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/cutting_banner/</guid>
+    <description><![CDATA[传送门 题意：给你个字符串，减去一段子串，是否能将剩下的不改变顺序拼成&quot;CODEFORCES&quot;，能则输出&quot;YES]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,67 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>思维 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/</link>
+        <description>思维 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA11572</title>
+    <link>https://haofish.github.io/2020/08/uva11572/</link>
+    <pubDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11572/</guid>
+    <description><![CDATA[Unique Snowflakes 题意：给你一个长度为$n(n \le 1000000)$的数组，问你最长有不重复数字的连续子序列有多长 用set和map的速度都差不多，set记录]]></description>
+</item>
+<item>
+    <title>UVA11054</title>
+    <link>https://haofish.github.io/2020/08/uva11054/</link>
+    <pubDate>Tue, 18 Aug 2020 10:55:44 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11054/</guid>
+    <description><![CDATA[Wine trading in Gergovia 题意：有n个村庄，每个村庄都有对酒的需求，正数代表要送出多少酒，负数代表需要多少酒，把k单位的酒运到相邻的村庄要k单位的体力，让你计]]></description>
+</item>
+<item>
+    <title>UVA1152</title>
+    <link>https://haofish.github.io/2020/08/uva1152/</link>
+    <pubDate>Mon, 17 Aug 2020 19:54:27 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1152/</guid>
+    <description><![CDATA[4 Values whose Sum is 0 题意：给你4个长度为$n(n \le 4000)$的集合，让你在4个集合里分别取a、b、c、d，使得$a + b + c + d = 0$，问你有多少种]]></description>
+</item>
+<item>
+    <title>UVA1605</title>
+    <link>https://haofish.github.io/2020/08/uva1605/</link>
+    <pubDate>Mon, 17 Aug 2020 11:43:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1605/</guid>
+    <description><![CDATA[Building for UN 题意：有一栋楼，有$n(n \le 50)$个国家要开会，每个国家至少分配一个位置，让你输出一种方案，H层，每层W行L列，使得任意两个国家要能]]></description>
+</item>
+<item>
+    <title>UVA120</title>
+    <link>https://haofish.github.io/2020/08/uva120/</link>
+    <pubDate>Mon, 17 Aug 2020 11:16:52 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva120/</guid>
+    <description><![CDATA[Stacks of Flapjacks 题意：给你一个序列，每次选一个数k，从序列的后往前数第k个数然后把它及它之前时数都翻转一下，问你一种选法使得序列从小到大排好序 有点像选]]></description>
+</item>
+<item>
+    <title>UVA12166</title>
+    <link>https://haofish.github.io/2020/08/uva12166/</link>
+    <pubDate>Mon, 03 Aug 2020 20:27:46 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12166/</guid>
+    <description><![CDATA[Equilibrium Mobile 题意：给你一个天平，修改某些节点可以使得天平平衡，让你求出最小的修改数量 竟然是一道思维题，不行，这题要写写题解 思路： 假设这个数是一个满二]]></description>
+</item>
+<item>
+    <title>UVA679</title>
+    <link>https://haofish.github.io/2020/07/uva679/</link>
+    <pubDate>Fri, 31 Jul 2020 11:53:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva679/</guid>
+    <description><![CDATA[Dropping Balls 题意：小球在一个二叉树上下落，每个节点都有一个开关，起初全是关的，如果节点是开小球往右走，反之往左走，让你求最后一个球落到了哪个节点 如果]]></description>
+</item>
+<item>
+    <title>Olympiad</title>
+    <link>https://haofish.github.io/2020/07/olympiad/</link>
+    <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>
+    <description><![CDATA[传送门 题意：给你两个同长数组代表n个人两场比赛的成绩，再给你一个x，某两个数组的和$a_i + b_j \ge x$，问你两数组组合成满足式子的排名最高和最]]></description>
+</item>
+<item>
+    <title>Cosmic_Tables</title>
+    <link>https://haofish.github.io/2020/07/cosmic_tables/</link>
+    <pubDate>Fri, 24 Jul 2020 16:26:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/cosmic_tables/</guid>
+    <description><![CDATA[传送门 题意：给你一个矩阵，每次进行与行之间的交换，或者是列与列之间的交换，或者查询(x, y)点的值 思路：一开始想着是不是直接就纯模拟算了，后]]></description>
+</item>
+<item>
+    <title>Shooshuns_and_Sequence</title>
+    <link>https://haofish.github.io/2020/07/shooshuns_and_sequence/</link>
+    <pubDate>Fri, 24 Jul 2020 15:15:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/shooshuns_and_sequence/</guid>
+    <description><![CDATA[传送门 什么鬼，div2也出水题？还是我变强了？😂 题意：给你一个长为n的序列，再给你一个k，你每次都必须要这样做：选择第k个数，把他复制到序列]]></description>
+</item>
+</channel>
+</rss>

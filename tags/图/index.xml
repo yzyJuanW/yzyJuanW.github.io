@@ -1,0 +1,43 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>图 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E5%9B%BE/</link>
+        <description>图 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%9B%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA804</title>
+    <link>https://haofish.github.io/2020/08/uva804/</link>
+    <pubDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva804/</guid>
+    <description><![CDATA[Petri Net Simulation 每个T变迁都有限制，必须是指定的P库有足够的token才行（注意，T指定的P库不一定只有一个），直接模拟就好了 1 2 3 4 5 6 7 8 9 10 11 12]]></description>
+</item>
+<item>
+    <title>UVA1600</title>
+    <link>https://haofish.github.io/2020/08/uva1600/</link>
+    <pubDate>Mon, 03 Aug 2020 16:26:13 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1600/</guid>
+    <description><![CDATA[Patrol Robot BFS进阶题 题意：有个移动的机器人，从（1， 1）点出发，目标是（m， n）点，0为可以通过的点，1为障碍点，机器人一次最多只能穿越k障碍，]]></description>
+</item>
+<item>
+    <title>UVA439</title>
+    <link>https://haofish.github.io/2020/08/uva439/</link>
+    <pubDate>Sun, 02 Aug 2020 16:15:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva439/</guid>
+    <description><![CDATA[Knight Moves 题意：在象棋里，给马的起点和终点，计算最小移动步数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43]]></description>
+</item>
+<item>
+    <title>UVA816</title>
+    <link>https://haofish.github.io/2020/08/uva816/</link>
+    <pubDate>Sat, 01 Aug 2020 15:56:21 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva816/</guid>
+    <description><![CDATA[Abbott&rsquo;s Revenge 题意：给你起点和终点，每个点面向不同的方向有不用的指定方向，问你从起点到终点最短路 BFS就好，但是要注意的是每个点都有不用的方向，所以要]]></description>
+</item>
+<item>
+    <title>UVA10305</title>
+    <link>https://haofish.github.io/2020/08/uva10305/</link>
+    <pubDate>Sat, 01 Aug 2020 09:47:35 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10305/</guid>
+    <description><![CDATA[Ordering Tasks 题意：给你一堆未知数的大小关系，让你输出可能的总体大小关系 简化了拓扑排序，只因根据题中的意思了解到一定是DAG 1 2 3 4 5 6 7 8 9 10 11 12 13]]></description>
+</item>
+<item>
+    <title>UVA572</title>
+    <link>https://haofish.github.io/2020/07/uva572/</link>
+    <pubDate>Fri, 31 Jul 2020 20:13:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva572/</guid>
+    <description><![CDATA[Oil Deposits 给你一个矩形图，让你求连通的“@”块，一个连通的定义是该点的八个方向都是连通的，dfs就行了 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22]]></description>
+</item>
+</channel>
+</rss>
