@@ -116,43 +116,41 @@
   - 思路：一道很简单的贪心，先从力量小的龙开始打，看看能不能打完就好了
   
 - 代码如下
-  
-  ```cpp
-  #include <algorithm>
-  #include <cstdio>
-  #include <utility>
-  #include <vector>
-  #define all(x) x.begin(), x.end()
-  using namespace std;
-  
-  vector<pair<int, int>> dr;
-int n, s;
-  
-  int main() {
-      scanf("%d%d", &s, &n);
-      for (int i = 0; i < n; i++) {
-          int x, y;
-          scanf("%d%d", &x, &y);
-          dr.push_back(make_pair(x, y));
-      }
-      bool win = true;
-      sort(all(dr));
-      for (int i = 0; i < n; i++) {
-          if (s > dr[i].first) {
-              s += dr[i].second;
-          } else {
-              win = false;
-              puts("NO");
-              break;
-          }
-      }
-      if (win) puts("YES");
-      return 0;
-  }
-  ```
 
-  
-  
+```cpp
+#include <algorithm>
+#include <cstdio>
+#include <utility>
+#include <vector>
+#define all(x) x.begin(), x.end()
+using namespace std;
+
+vector<pair<int, int>> dr;
+int n, s;
+
+int main() {
+    scanf("%d%d", &s, &n);
+    for (int i = 0; i < n; i++) {
+        int x, y;
+        scanf("%d%d", &x, &y);
+        dr.push_back(make_pair(x, y));
+    }
+    bool win = true;
+    sort(all(dr));
+    for (int i = 0; i < n; i++) {
+        if (s > dr[i].first) {
+            s += dr[i].second;
+        } else {
+            win = false;
+            puts("NO");
+            break;
+        }
+    }
+    if (win) puts("YES");
+    return 0;
+}
+```
+
 - [例题4：51Nod - 1117 聪明的木匠](https://www.51nod.com/Challenge/Problem.html#problemId=1117)
   
   - 题意：一个木段，现要锯成$L_1, L_2, L_3 …… L_n$的长度，但是据一段木段需要消耗相应的体力，例如要把长为8的木段锯成 3 和 5 的话需要消耗3 + 5 = 8的体力，现在问你最少要消耗多少体力锯好
@@ -403,12 +401,26 @@ int main() {
   $$
   - 固我们直接这样排序就可以了(这就是邻项交换法)，当然网上还有对上式继续化简后的不等式，据说是Johnson不等式（我也不是很懂这个不等式，总之挺有意思的）
   $$
-  max(a_i + b_i, a_i + a_j) + b_j < max(a_j + b_j, a_j + a_i) + b_i \\
-  \Rightarrow max(b_i,a_j) + a_i + b_j < max(b_j, a_i) + a_j + b_i\\
-  \Rightarrow max(b_i,a_j) - a_j - b_i < max(b_j, a_i) - a_i - b_j\\
-  \Rightarrow max(-a_j,-b_i) < max(-a_i, -b_j)\\
+  max(a_i + b_i, a_i + a_j) + b_j < max(a_j + b_j, a_j + a_i) + b_i
+  $$
+  $$
+  \Rightarrow max(b_i,a_j) + a_i + b_j < max(b_j, a_i) + a_j + b_i
+  $$
+  
+  $$
+  \Rightarrow max(b_i,a_j) - a_j - b_i < max(b_j, a_i) - a_i - b_j
+$$
+  
+  
+$$
+  \Rightarrow max(-a_j,-b_i) < max(-a_i, -b_j)
+$$
+  
+$$
   \Rightarrow min(a_j, b_i) > min(a_i, b_j)
   $$
+
+
   - 以上式子均可以放到sort中作为排序的依据
   - ac代码
 
@@ -625,9 +637,7 @@ int main() {
 	    return 0;
 	}
 	```
-	
-	
-	
+
 - 优化方案二 （并查集）
   - 上面用线段树无非就是为了找从$1$到$ddl$的最大值
   - 这个过程其实可以用并查集来做，即初始化从$1$到$ddl$的时间里面最大值都是他们自己，当这个时间被用了之后，就让其父亲指向前一个时间

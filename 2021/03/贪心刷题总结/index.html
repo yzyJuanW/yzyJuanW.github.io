@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>贪心刷题总结 - haofish</title><meta name="description" content="description."><meta property="og:title" content="贪心刷题总结" />
-<meta property="og:description" content="description." />
+        <title>贪心刷题总结 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="贪心刷题总结" />
+<meta property="og:description" content="对常见的贪心的刷题总结" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2021/03/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-23T12:22:01+08:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="贪心刷题总结"/>
-<meta name="twitter:description" content="description."/>
+<meta name="twitter:description" content="对常见的贪心的刷题总结"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/03/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" /><link rel="prev" href="https://haofish.github.io/2021/03/%E4%BA%8C%E5%88%86%E5%9B%BE/" /><link rel="next" href="https://haofish.github.io/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/03\/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "贪心","wordcount":  6559 ,
+        },"genre": "posts","keywords": "贪心","wordcount":  6668 ,
         "url": "https:\/\/haofish.github.io\/2021\/03\/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93\/","datePublished": "2021-03-23T12:22:01+08:00","dateModified": "2021-03-23T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "description."
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">贪心刷题总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-23">2021-03-23</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6559 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-23">2021-03-23</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6668 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 14 分钟</span>&nbsp;<span id="/2021/03/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="贪心刷题总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -338,16 +338,41 @@
 </li>
 <li>
 <p>代码如下</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
@@ -358,339 +383,300 @@
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">dr</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<p>int n, s;</p>
-<p>int main() {
-scanf(&quot;%d%d&quot;, &amp;s, &amp;n);
-for (int i = 0; i &lt; n; i++) {
-int x, y;
-scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
-dr.push_back(make_pair(x, y));
-}
-bool win = true;
-sort(all(dr));
-for (int i = 0; i &lt; n; i++) {
-if (s &gt; dr[i].first) {
-s += dr[i].second;
-} else {
-win = false;
-puts(&ldquo;NO&rdquo;);
-break;
-}
-}
-if (win) puts(&ldquo;YES&rdquo;);
-return 0;
-}</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
 
-
-- [例题4：51Nod - 1117 聪明的木匠](https://www.51nod.com/Challenge/Problem.html#problemId=1117)
-
-- 题意：一个木段，现要锯成$L_1, L_2, L_3 …… L_n$的长度，但是据一段木段需要消耗相应的体力，例如要把长为8的木段锯成 3 和 5 的话需要消耗3 + 5 = 8的体力，现在问你最少要消耗多少体力锯好
-- 错误的思路：一开始想不出来，单纯的觉得是一个简短的排序不等式的的贪心题，只要先据出最大的目标值，然后一直据下去就是最优解，但这是不对的，最多也就过个他给的样例。
-- 正确的思路①：仔细想想，如果是没按要求切成题目要求目标长度切，那样的话当然是希望一切下去可以让后面的体力没这么多，比如要分成2 2 3 3，这样的话应该是先 5 5 再 2 3 5 最后就 2 3 2 3这样就是最小的，消耗为20， 如果是按照先前的想法就是21，所以先前的思路显然是不对的。那这个思路怎么实现呢，dfs？显然很难实现
-- 正确的思路②：回忆上上题的总结，正难则反，反过来想，现在把问题改成拼成一个完整的木段，消耗最小，这样的话就是拼当前最小的两小木段，最终的答案就是最小的
-
-- 代码如下(注释的部分是一开始错误的思路，交上去才发现思路不对)
-
-```cpp
-#include &lt;algorithm&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;queue&gt;
-
-using namespace std;
-using ll = long long;
-int n, arr[50010], sum[50010];
-priority_queue&lt;int&gt; heap;
-int main() {
-    scanf(&#34;%d&#34;, &amp;n);
-    for (int i = 0; i &lt; n; i++) {
-        // scanf(&#34;%d&#34;, &amp;arr[i]);
-        int x;
-        scanf(&#34;%d&#34;, &amp;x);
-        heap.push(-x);
-    }
-    int ans = 0;
-    while (heap.size()) {
-        int x = -heap.top();
-        heap.pop();
-        int y = -heap.top();
-        heap.pop();
-      ans += x + y;
-
-        if (heap.size()) heap.push(-(x + y));
-    }
-    printf(&#34;%d&#34;, ans);
-    /* sort(arr, arr + n);
-    for (int i = 0; i &lt; n; i++) {
-        sum[i + 1] = sum[i] + arr[i];
-    }
-    ll ans = 0;
-    for (int i = n - 1; i &gt;= 1; i--) {
-        ans = ans + arr[i] + sum[i] - sum[0];
-    }
-    printf(&#34;%lld\n&#34;, ans); */
-    return 0;
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+        <span class="n">dr</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">win</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">dr</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">dr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="n">dr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="n">puts</span><span class="p">(</span><span class="s">&#34;NO&#34;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;YES&#34;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6709" target="_blank" rel="noopener noreffer">例题5：HDU 6709 Fishing Master</a></p>
+<p><a href="https://www.51nod.com/Challenge/Problem.html#problemId=1117" target="_blank" rel="noopener noreffer">例题4：51Nod - 1117 聪明的木匠</a></p>
 <ul>
-<li>题意：钓鱼家有一个锅和一个鱼竿，他有 n 条鱼要钓，钓一条鱼需要 k 时间，他的任务就是把这些鱼都钓上来，并且把它们都煮了，第i条鱼的煮熟所需要的时间为$t_i$，他钓鱼的时候不能往锅里放鱼并且要等他掉好k时间才可做下一件事，他可以在煮鱼的时候钓鱼，他可以同时拥有很多鱼，即他钓好后可以放在身边，因为锅一次只能煮一条鱼。现在问你他至少要花多少时间煮好n条鱼。</li>
-<li>思路：
-<ul>
-<li>一开始看错题，wa了一下午，<del>英语太差的锅</del>。回归正题，显然第一条鱼是钓的时间是不可避免的，全部煮鱼的时间也是不可避免的。可以优化的就只有钓鱼多出来的时间了。</li>
-<li>注意到只要我煮的鱼时间足够长，那么我就可以在煮鱼的这个空档里面钓足够多的鱼，即可以钓$t_i / k$条，如果鱼快煮好了，即再过$x(x &lt; k)$的时间就煮好鱼了，不难发现这里的$x = t_i % k$，那么这时候是继续钓鱼呢，还是选择去等鱼煮好然后放下一条（前提是你手上有钓好的鱼）
-<ul>
-<li>如果你选择继续钓鱼，那时间就会多花$k - t_i % k$的时间</li>
-<li>如果你选择去等待的话，那你手上就必须要有鱼，没鱼怎么办，那只能选择上个选择，即继续钓鱼</li>
-</ul>
-</li>
-<li>画图出来可能比较直观
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster%e9%85%8d%e5%9b%be.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster%e9%85%8d%e5%9b%be.png, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster%e9%85%8d%e5%9b%be.png 1.5x, https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster%e9%85%8d%e5%9b%be.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster配图.png"
-        title="fishing master配图" /></li>
-<li>对于这个配图，即便是$t_i &lt; k$公式依旧成立</li>
-<li>显然，根据图，我们贪心的策略就是在煮鱼的空档里尽可能多地钓鱼,比如上图，就是钓2条，然后去等待鱼煮好就放下一条，假设这样下去我们总共在钓鱼的空档里钓的鱼数量为$num$</li>
-<li>正如上述第一条鱼钓的时间是不可避免的，所以接下来只剩下n - 1条鱼需要我们在煮鱼的空档时钓上来，假设$num \ge n - 1$，即我们在空档里钓的鱼比我们需要钓的鱼还多，那最终答案就是$k + \sum{t_i}$</li>
-<li>若$num &lt; n - 1$，即我们在空档的时候钓的鱼不够我们需要钓的，那我们就要在煮鱼的空档多钓一条了，如上图就是钓3条，这样的操作需要我们进行$n - 1 - num$次，很显然，我们希望总时间尽可能地短，那就必须让$k - t_i % k$尽可能地小</li>
-<li>对于上述的操作，代码里面只要用个数组mor记录$k - t_i % k$，然后再ans里面加上前$n - 1 - num$小的$k - t_i % k$就好了</li>
-</ul>
-</li>
-<li>这题说得有点多了，因为自己一开始真的觉得有点难</li>
-<li>但是听说还有另一种解法就是一种我所不知道的<strong>带反悔的贪心</strong>法
-<ul>
-<li>具体做法就是将鱼根据他们的煮的时间从大小排序，并且按顺序这样钓上来</li>
-<li>然后幻想自己顺畅无阻地把0到n - 1的鱼一个一个地煮并且可以在每条鱼煮好后可以马上放下一条鱼（即幻想自己每条鱼都能在其空档期间充分钓足够的鱼为下一次煮鱼做准备）</li>
-<li>而现实却不尽人意，所以需要每次记录在煮鱼的空档期间总共可以钓的鱼$num$，如果$num$小于我们幻想钓的鱼的数量就反悔，即穿越时空去我在前面其中一个煮鱼的空档里面多钓一条鱼，这个空档的条件依旧是和我的思路一样，即$k - t_i % k$尽可能地小</li>
-<li>这个需要优先队列，具体代码也放出来吧，但是这代码不是我自己写的，是直接复制某大佬的<del>懒得自己再写了</del><a href="https://www.cnblogs.com/QAQorz/p/11548854.html" target="_blank" rel="noopener noreffer">转载传送门</a></li>
-</ul>
-</li>
+<li>题意：一个木段，现要锯成$L_1, L_2, L_3 …… L_n$的长度，但是据一段木段需要消耗相应的体力，例如要把长为8的木段锯成 3 和 5 的话需要消耗3 + 5 = 8的体力，现在问你最少要消耗多少体力锯好</li>
+<li>错误的思路：一开始想不出来，单纯的觉得是一个简短的排序不等式的的贪心题，只要先据出最大的目标值，然后一直据下去就是最优解，但这是不对的，最多也就过个他给的样例。</li>
+<li>正确的思路①：仔细想想，如果是没按要求切成题目要求目标长度切，那样的话当然是希望一切下去可以让后面的体力没这么多，比如要分成2 2 3 3，这样的话应该是先 5 5 再 2 3 5 最后就 2 3 2 3这样就是最小的，消耗为20， 如果是按照先前的想法就是21，所以先前的思路显然是不对的。那这个思路怎么实现呢，dfs？显然很难实现</li>
+<li>正确的思路②：回忆上上题的总结，正难则反，反过来想，现在把问题改成拼成一个完整的木段，消耗最小，这样的话就是拼当前最小的两小木段，最终的答案就是最小的</li>
 </ul>
 </li>
 <li>
-<p>代码如下</p>
-</li>
-</ul>
+<p>代码如下(注释的部分是一开始错误的思路，交上去才发现思路不对)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>#include <queue></p>
+<p>using namespace std;
+using ll = long long;
+int n, arr[50010], sum[50010];
+priority_queue<int> heap;
+int main() {
+scanf(&quot;%d&quot;, &amp;n);
+for (int i = 0; i &lt; n; i++) {
+// scanf(&quot;%d&quot;, &amp;arr[i]);
+int x;
+scanf(&quot;%d&quot;, &amp;x);
+heap.push(-x);
+}
+int ans = 0;
+while (heap.size()) {
+int x = -heap.top();
+heap.pop();
+int y = -heap.top();
+heap.pop();
+ans += x + y;</p>
+<pre><code>      if (heap.size()) heap.push(-(x + y));
+  }
+  printf(&quot;%d&quot;, ans);
+  /* sort(arr, arr + n);
+  for (int i = 0; i &lt; n; i++) {
+      sum[i + 1] = sum[i] + arr[i];
+  }
+  ll ans = 0;
+  for (int i = n - 1; i &gt;= 1; i--) {
+      ans = ans + arr[i] + sum[i] - sum[0];
+  }
+  printf(&quot;%lld\n&quot;, ans); */
+  return 0;
+</code></pre>
+<p>}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
 
-<span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">k</span><span class="p">,</span> <span class="n">tim</span><span class="p">[</span><span class="mi">100005</span><span class="p">],</span> <span class="n">mor</span><span class="p">[</span><span class="mi">100005</span><span class="p">];</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="cp">#ifndef ONLINE_JUDGE
-</span><span class="cp"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;test.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
-    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;test.out&#34;</span><span class="p">,</span> <span class="s">&#34;w&#34;</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
-<span class="cp">#endif
-</span><span class="cp"></span>    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">tim</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">ans</span> <span class="o">+=</span> <span class="n">tim</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="n">num</span> <span class="o">+=</span> <span class="n">tim</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">k</span><span class="p">;</span>
-            <span class="n">mor</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="n">tim</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">k</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">sort</span><span class="p">(</span><span class="n">mor</span><span class="p">,</span> <span class="n">mor</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">ans</span> <span class="o">+=</span> <span class="n">mor</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">mor</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">mor</span><span class="p">);</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">tim</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">tim</span><span class="p">);</span>
-  <span class="p">}</span>
+- [例题5：HDU 6709 Fishing Master](http://acm.hdu.edu.cn/showproblem.php?pid=6709)
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+- 题意：钓鱼家有一个锅和一个鱼竿，他有 n 条鱼要钓，钓一条鱼需要 k 时间，他的任务就是把这些鱼都钓上来，并且把它们都煮了，第i条鱼的煮熟所需要的时间为$t_i$，他钓鱼的时候不能往锅里放鱼并且要等他掉好k时间才可做下一件事，他可以在煮鱼的时候钓鱼，他可以同时拥有很多鱼，即他钓好后可以放在身边，因为锅一次只能煮一条鱼。现在问你他至少要花多少时间煮好n条鱼。
+- 思路：
+  - 一开始看错题，wa了一下午，~~英语太差的锅~~。回归正题，显然第一条鱼是钓的时间是不可避免的，全部煮鱼的时间也是不可避免的。可以优化的就只有钓鱼多出来的时间了。
+  - 注意到只要我煮的鱼时间足够长，那么我就可以在煮鱼的这个空档里面钓足够多的鱼，即可以钓$t_i / k$条，如果鱼快煮好了，即再过$x(x &lt; k)$的时间就煮好鱼了，不难发现这里的$x = t_i \% k$，那么这时候是继续钓鱼呢，还是选择去等鱼煮好然后放下一条（前提是你手上有钓好的鱼）
+    - 如果你选择继续钓鱼，那时间就会多花$k - t_i \% k$的时间
+    - 如果你选择去等待的话，那你手上就必须要有鱼，没鱼怎么办，那只能选择上个选择，即继续钓鱼
+  - 画图出来可能比较直观
+  ![fishing master配图](https://cdn.jsdelivr.net/gh/haofish/ImgHosting/haofishPICFishintMaster配图.png)
+  - 对于这个配图，即便是$t_i &lt; k$公式依旧成立
+  - 显然，根据图，我们贪心的策略就是在煮鱼的空档里尽可能多地钓鱼,比如上图，就是钓2条，然后去等待鱼煮好就放下一条，假设这样下去我们总共在钓鱼的空档里钓的鱼数量为$num$
+  - 正如上述第一条鱼钓的时间是不可避免的，所以接下来只剩下n - 1条鱼需要我们在煮鱼的空档时钓上来，假设$num \ge n - 1$，即我们在空档里钓的鱼比我们需要钓的鱼还多，那最终答案就是$k + \sum{t_i}$
+  - 若$num &lt; n - 1$，即我们在空档的时候钓的鱼不够我们需要钓的，那我们就要在煮鱼的空档多钓一条了，如上图就是钓3条，这样的操作需要我们进行$n - 1 - num$次，很显然，我们希望总时间尽可能地短，那就必须让$k - t_i \% k$尽可能地小
+  - 对于上述的操作，代码里面只要用个数组mor记录$k - t_i \% k$，然后再ans里面加上前$n - 1 - num$小的$k - t_i \% k$就好了
+- 这题说得有点多了，因为自己一开始真的觉得有点难
+- 但是听说还有另一种解法就是一种我所不知道的**带反悔的贪心**法
+  - 具体做法就是将鱼根据他们的煮的时间从大小排序，并且按顺序这样钓上来
+  - 然后幻想自己顺畅无阻地把0到n - 1的鱼一个一个地煮并且可以在每条鱼煮好后可以马上放下一条鱼（即幻想自己每条鱼都能在其空档期间充分钓足够的鱼为下一次煮鱼做准备）
+  - 而现实却不尽人意，所以需要每次记录在煮鱼的空档期间总共可以钓的鱼$num$，如果$num$小于我们幻想钓的鱼的数量就反悔，即穿越时空去我在前面其中一个煮鱼的空档里面多钓一条鱼，这个空档的条件依旧是和我的思路一样，即$k - t_i \% k$尽可能地小
+  - 这个需要优先队列，具体代码也放出来吧，但是这代码不是我自己写的，是直接复制某大佬的~~懒得自己再写了~~[转载传送门](https://www.cnblogs.com/QAQorz/p/11548854.html)
 
-<span class="c1">//下面是大佬的代码
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp">#define INF 0x3f3f3f3f
-</span><span class="cp">#define debug(x) cout &lt;&lt; #x &lt;&lt; &#34; = &#34; &lt;&lt; x &lt;&lt; endl;
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+- 代码如下
 
-<span class="k">const</span> <span class="kt">int</span> <span class="n">mx</span> <span class="o">=</span> <span class="mf">1e5</span><span class="o">+</span><span class="mi">7</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">mx</span><span class="p">];</span>
-<span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+```cpp
+#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">){</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-        <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
-        <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-            <span class="n">ans</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="n">num</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">k</span><span class="p">;</span>
-            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">k</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">){</span>
-                <span class="n">ans</span> <span class="o">+=</span> <span class="n">k</span><span class="o">-</span><span class="n">q</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-                <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+using namespace std;
+using ll = long long;
+
+int t, n;
+ll k, tim[100005], mor[100005];
+
+int main() {
+#ifndef ONLINE_JUDGE
+  freopen(&#34;test.in&#34;, &#34;r&#34;, stdin);
+  freopen(&#34;test.out&#34;, &#34;w&#34;, stdout);
+#endif
+  scanf(&#34;%d&#34;, &amp;t);
+  while (t--) {
+      scanf(&#34;%d%lld&#34;, &amp;n, &amp;k);
+      for (int i = 0; i &lt; n; i++) {
+          scanf(&#34;%lld&#34;, tim + i);
+      }
+      ll ans = k, num = 0;
+      for (int i = 0; i &lt; n; i++) {
+          ans += tim[i];
+          num += tim[i] / k;
+          mor[i] = k - tim[i] % k;
+      }
+      if (num &lt; n - 1) {
+          sort(mor, mor + n);
+          for (int i = 0; i &lt; n - 1 - num; i++) {
+              ans += mor[i];
+          }
+      }
+      printf(&#34;%lld\n&#34;, ans);
+      memset(mor, 0, sizeof mor);
+      memset(tim, 0, sizeof tim);
+}
+
+  return 0;
+}
+
+//下面是大佬的代码
+#include &lt;bits/stdc++.h&gt;
+#define INF 0x3f3f3f3f
+#define debug(x) cout &lt;&lt; #x &lt;&lt; &#34; = &#34; &lt;&lt; x &lt;&lt; endl;
+using namespace std;
+typedef long long LL;
+
+const int mx = 1e5+7;
+int a[mx];
+priority_queue&lt;int&gt; q;
+
+int main(){
+  int t, n, k;
+  scanf(&#34;%d&#34;, &amp;t);
+  while (t--){
+      while (!q.empty()) q.pop();
+      scanf(&#34;%d%d&#34;, &amp;n, &amp;k);
+      for (int i = 1; i &lt;= n; i++) scanf(&#34;%d&#34;, &amp;a[i]);
+      sort(a+1, a+n+1, greater&lt;int&gt;());
+      LL ans = k, num = 1;
+      for (int i = 1; i &lt;= n; i++){
+          ans += a[i];
+          num += a[i] / k;
+          q.push(a[i] % k);
+          if (num &lt; i){
+              ans += k-q.top();
+              q.pop();
+          }
+      }
+      printf(&#34;%lld\n&#34;, ans);
+  }
+  return 0;
+}
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -861,12 +847,24 @@ max(a_i + b_i, a_i + a_j) + b_j &lt; max(a_j + b_j, a_j + a_i) + b_i
 $$</li>
 <li>固我们直接这样排序就可以了(这就是邻项交换法)，当然网上还有对上式继续化简后的不等式，据说是Johnson不等式（我也不是很懂这个不等式，总之挺有意思的）
 $$
-max(a_i + b_i, a_i + a_j) + b_j &lt; max(a_j + b_j, a_j + a_i) + b_i \<br>
-\Rightarrow max(b_i,a_j) + a_i + b_j &lt; max(b_j, a_i) + a_j + b_i\<br>
-\Rightarrow max(b_i,a_j) - a_j - b_i &lt; max(b_j, a_i) - a_i - b_j\<br>
-\Rightarrow max(-a_j,-b_i) &lt; max(-a_i, -b_j)\<br>
-\Rightarrow min(a_j, b_i) &gt; min(a_i, b_j)
+max(a_i + b_i, a_i + a_j) + b_j &lt; max(a_j + b_j, a_j + a_i) + b_i
+$$
+$$
+\Rightarrow max(b_i,a_j) + a_i + b_j &lt; max(b_j, a_i) + a_j + b_i
 $$</li>
+</ul>
+<p>$$
+\Rightarrow max(b_i,a_j) - a_j - b_i &lt; max(b_j, a_i) - a_i - b_j
+$$</p>
+</li>
+</ul>
+<p>$$
+\Rightarrow max(-a_j,-b_i) &lt; max(-a_i, -b_j)
+$$</p>
+<p>$$
+\Rightarrow min(a_j, b_i) &gt; min(a_i, b_j)
+$$</p>
+<ul>
 <li>以上式子均可以放到sort中作为排序的依据</li>
 <li>ac代码</li>
 </ul>
@@ -978,9 +976,7 @@ $$</li>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h2 id="ddl贪心">ddl贪心</h2>
+</div><h2 id="ddl贪心">ddl贪心</h2>
 <ul>
 <li>
 <p><a href="https://loj.ac/p/10004" target="_blank" rel="noopener noreffer">例题1：智力大冲浪</a></p>
@@ -1286,13 +1282,9 @@ $$</li>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
-
-
 </code></pre></td></tr></table>
 </div>
 </div></li>

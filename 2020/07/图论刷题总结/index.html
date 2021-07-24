@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>图论刷题总结 - haofish</title><meta name="description" content="description."><meta property="og:title" content="图论刷题总结" />
-<meta property="og:description" content="description." />
+        <title>图论刷题总结 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="图论刷题总结" />
+<meta property="og:description" content="图论基础的刷题总结（目前只有最短路）" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2020/07/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-07-21T22:22:01+08:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="图论刷题总结"/>
-<meta name="twitter:description" content="description."/>
+<meta name="twitter:description" content="图论基础的刷题总结（目前只有最短路）"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/07/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" /><link rel="prev" href="https://haofish.github.io/2020/07/654div2problemc/" /><link rel="next" href="https://haofish.github.io/2020/07/cutting_banner/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2020\/07\/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "图论","wordcount":  4517 ,
+        },"genre": "posts","keywords": "图论","wordcount":  4500 ,
         "url": "https:\/\/haofish.github.io\/2020\/07\/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93\/","datePublished": "2020-07-21T22:22:01+08:00","dateModified": "2020-07-21T22:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "description."
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">图论刷题总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-21">2020-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4517 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟</span>&nbsp;<span id="/2020/07/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="图论刷题总结">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-21">2020-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4500 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟</span>&nbsp;<span id="/2020/07/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="图论刷题总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -140,22 +140,10 @@
         <li><a href="#spfa">Spfa</a></li>
       </ul>
     </li>
+    <li><a href="#未完待续">未完待续</a></li>
   </ul>
 </nav></div>
-                </div><div class="content" id="content"><ul>
-<li><a href="#%e5%89%8d%e8%a8%80" rel="">前言</a></li>
-<li><a href="#%e6%80%bb%e7%bb%93" rel="">总结</a></li>
-<li><a href="#%e6%9c%80%e7%9f%ad%e8%b7%af" rel="">最短路</a>
-<ul>
-<li><a href="#dijkstra" rel="">Dijkstra</a></li>
-<li><a href="#bellman-ford" rel="">Bellman-Ford</a></li>
-<li><a href="#floyd" rel="">Floyd</a></li>
-<li><a href="#spfa" rel="">Spfa</a></li>
-</ul>
-</li>
-<li><a href="#%e6%9c%aa%e5%ae%8c%e5%be%85%e7%bb%ad" rel="">未完待续</a></li>
-</ul>
-<h2 id="前言">前言</h2>
+                </div><div class="content" id="content"><h2 id="前言">前言</h2>
 <ul>
 <li>起因是一次力扣周赛时被一道最短论的题给整蒙了，决定这几天恶补图论，正好POJ的刷题题单刷到了图</li>
 <li>打算学习图论从零开始，目前刷的题不多</li>
@@ -1413,6 +1401,8 @@
 <li>上面的Bellman - Ford算法的例题，除了存图的方式不同，松弛的操作还是不变</li>
 <li>直接上代码</li>
 </ul>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1491,9 +1481,10 @@
 </span><span class="lnt">74
 </span><span class="lnt">75
 </span><span class="lnt">76
+</span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
@@ -1569,22 +1560,11 @@
         <span class="n">e</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<p>}</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
-## 未完待续
-</code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h2 id="未完待续">未完待续</h2>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
                 <span>更新于 2020-07-21</span>

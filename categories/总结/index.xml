@@ -55,13 +55,13 @@
     <title>背包问题</title>
     <link>https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</link>
     <pubDate>Fri, 26 Mar 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[背包问题总结 本文从dp总结中搬出 背包问题是一类非常经典的动规问题，包括了01背包、完全背包、多重背包、混合背包、二维费用背包、分组背包、有依]]></description>
+    <description><![CDATA[对九类背包问题的总结]]></description>
 </item>
 <item>
     <title>主席树</title>
     <link>https://haofish.github.io/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/</link>
     <pubDate>Tue, 23 Mar 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/</guid>
-    <description><![CDATA[主席树 简介 主席树是用来求区间第k大的一个可持续化数据结构 主要思想就是权值线段树+前缀和思想 几个问题 1. 用权值线段树+前缀和的原因 首先、如果我们]]></description>
+    <description><![CDATA[初学时对主席树的理解和总结]]></description>
 </item>
 </channel>
 </rss>

@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>动态规划刷题总结 - haofish</title><meta name="description" content="description."><meta property="og:title" content="动态规划刷题总结" />
-<meta property="og:description" content="description." />
+        <title>动态规划刷题总结 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="动态规划刷题总结" />
+<meta property="og:description" content="一个没什么用的dp总结（第一篇博客）" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2020/06/dynamicprogramming/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-27T00:00:00+00:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="动态规划刷题总结"/>
-<meta name="twitter:description" content="description."/>
+<meta name="twitter:description" content="一个没什么用的dp总结（第一篇博客）"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/06/dynamicprogramming/" /><link rel="next" href="https://haofish.github.io/2020/07/653div3problemb/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2020\/06\/dynamicprogramming\/"
-        },"genre": "posts","keywords": "动态规划","wordcount":  1897 ,
+        },"genre": "posts","keywords": "动态规划","wordcount":  1850 ,
         "url": "https:\/\/haofish.github.io\/2020\/06\/dynamicprogramming\/","datePublished": "2020-06-27T00:00:00+00:00","dateModified": "2020-06-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "description."
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">动态规划刷题总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%88%90%E9%95%BF%E5%BF%83%E5%BE%97/"><i class="far fa-folder fa-fw"></i>成长心得</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1897 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1850 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟</span>&nbsp;<span id="/2020/06/dynamicprogramming/" class="leancloud_visitors" data-flag-title="动态规划刷题总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -145,22 +145,7 @@
     </li>
   </ul>
 </nav></div>
-                </div><div class="content" id="content"><ul>
-<li><a href="#1%e5%86%99%e5%9c%a8%e5%89%8d%e9%9d%a2" rel="">1、写在前面</a></li>
-<li><a href="#2%e6%88%91%e5%af%b9dp%e7%9a%84%e7%9c%8b%e6%b3%95%e5%92%8c%e7%90%86%e8%a7%a3" rel="">2、我对dp的看法和理解</a></li>
-<li><a href="#3%e5%85%b8%e5%9e%8b%e4%be%8b%e9%a2%98" rel="">3、典型例题</a>
-<ul>
-<li><a href="#%e7%88%ac%e6%a5%bc%e6%a2%afleetcode-70" rel="">①爬楼梯（leetcode #70）</a>
-<ul>
-<li><a href="#%e9%a2%98%e6%84%8f" rel="">题意</a></li>
-<li><a href="#%e5%88%86%e6%9e%90" rel="">分析</a></li>
-<li><a href="#%e5%b0%8f%e7%bb%93" rel="">小结</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="1写在前面">1、写在前面</h2>
+                </div><div class="content" id="content"><h2 id="1写在前面">1、写在前面</h2>
 <p>这几天疯狂刷leetcode的dp题，刷到我都想吐了，看到一个题就先往dp想，感觉中毒不浅，话不多说，赶紧开始总结一下我的成长<del>历程</del>心得。</p>
 <h2 id="2我对dp的看法和理解">2、我对dp的看法和理解</h2>
 <ul>

@@ -1,15 +1,6 @@
 # 图论刷题总结
 
 
-- [前言](#前言)
-- [总结](#总结)
-- [最短路](#最短路)
-  - [Dijkstra](#dijkstra)
-  - [Bellman-Ford](#bellman-ford)
-  - [Floyd](#floyd)
-  - [Spfa](#spfa)
-- [未完待续](#未完待续)
-
 ## 前言
 
 - 起因是一次力扣周赛时被一道最短论的题给整蒙了，决定这几天恶补图论，正好POJ的刷题题单刷到了图
@@ -658,85 +649,89 @@
   - 上面的Bellman - Ford算法的例题，除了存图的方式不同，松弛的操作还是不变
   - 直接上代码
 
-  ```c++
-  #include <algorithm>
-  #include <cstdio>
-  #include <cstring>
-  #include <queue>
-  #include <vector>
-  
-  using namespace std;
-  
-  const int M = 2e4;
-  int n, m, ww, f, dis[510], head[510], cnt = 0;
-  
-  struct es {
-      int to, w, next;
-      es(int a = 0, int b = 0, int c = -1) : to(a), w(b), next(c) {}
-  };
-  
-  vector<es> e;
-  
-  void add(int u, int v, int w) {
-      e[++cnt] = es(v, w, head[u]);
-      head[u] = cnt;
-  }
-  
-  bool spfa() {
-      queue<int> q;
-      vector<bool> inq(n + 1);
-      vector<int> nums(n + 1, 0);
-      q.push(1);
-      inq[1] = true;
-      nums[1]++;
-      while (q.size()) {
-          int u = q.front();
-          q.pop();
-          inq[u] = false;
-          for (int i = head[u]; ~i; i = e[i].next) {
-              int v = e[i].to, w = e[i].w;
-              if (dis[v] > dis[u] + w) {
-                  dis[v] = dis[u] + w;
-                  if (!inq[v]) {
-                      q.push(v);
-                      inq[v] = true;
-                      nums[v]++;
-                      if (nums[v] >= n)
-                          return true;
-                  }
-              }
-          }
-      }
-      return false;
-  }
-  
-  int main() {
-      scanf("%d", &f);
-      while (f--) {
-          cnt = 0;
-          memset(head, -1, sizeof head);
-          scanf("%d%d%d", &n, &m, &ww);
-          e = vector<es>(m + m + ww + 1);
-          int u, v, w;
-          for (int i = 0; i < m; i++) {
-              scanf("%d%d%d", &u, &v, &w);
-              add(u, v, w);
-              add(v, u, w);
-          }
-          for (int i = 0; i < ww; i++) {
-              scanf("%d%d%d", &u, &v, &w);
-              add(u, v, -w);
-          }
-          memset(dis, 0x3f, sizeof dis);
-          dis[1] = 0;
-          if (spfa()) puts("YES");
-          else puts("NO");
-  
-          e.clear();
-      }
-      return 0;
+
+```cpp
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+const int M = 2e4;
+int n, m, ww, f, dis[510], head[510], cnt = 0;
+
+struct es {
+    int to, w, next;
+    es(int a = 0, int b = 0, int c = -1) : to(a), w(b), next(c) {}
+};
+
+vector<es> e;
+
+void add(int u, int v, int w) {
+    e[++cnt] = es(v, w, head[u]);
+    head[u] = cnt;
 }
-  ```
+
+bool spfa() {
+    queue<int> q;
+    vector<bool> inq(n + 1);
+    vector<int> nums(n + 1, 0);
+    q.push(1);
+    inq[1] = true;
+    nums[1]++;
+    while (q.size()) {
+        int u = q.front();
+        q.pop();
+        inq[u] = false;
+        for (int i = head[u]; ~i; i = e[i].next) {
+            int v = e[i].to, w = e[i].w;
+            if (dis[v] > dis[u] + w) {
+                dis[v] = dis[u] + w;
+                if (!inq[v]) {
+                    q.push(v);
+                    inq[v] = true;
+                    nums[v]++;
+                    if (nums[v] >= n)
+                        return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+int main() {
+    scanf("%d", &f);
+    while (f--) {
+        cnt = 0;
+        memset(head, -1, sizeof head);
+        scanf("%d%d%d", &n, &m, &ww);
+        e = vector<es>(m + m + ww + 1);
+        int u, v, w;
+        for (int i = 0; i < m; i++) {
+            scanf("%d%d%d", &u, &v, &w);
+            add(u, v, w);
+            add(v, u, w);
+        }
+        for (int i = 0; i < ww; i++) {
+            scanf("%d%d%d", &u, &v, &w);
+            add(u, v, -w);
+        }
+        memset(dis, 0x3f, sizeof dis);
+        dis[1] = 0;
+        if (spfa()) puts("YES");
+        else puts("NO");
+
+        e.clear();
+    }
+    return 0;
+}
+```
+
+
 
 ## 未完待续
+
 

@@ -7,7 +7,7 @@
     <title>FHQ树</title>
     <link>https://haofish.github.io/2021/03/fhqtreap/</link>
     <pubDate>Tue, 09 Mar 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/03/fhqtreap/</guid>
-    <description><![CDATA[FHQ Treap 简介 fhq treap主要有两个操作：分裂、合并 作为平衡树，他所有的平衡树操作都是基于这两个操作实现的 关于结点的存储与生成新的结点 由于一个结点]]></description>
+    <description><![CDATA[记录初学时对FHQ树的理解和总结]]></description>
 </item>
 </channel>
 </rss>

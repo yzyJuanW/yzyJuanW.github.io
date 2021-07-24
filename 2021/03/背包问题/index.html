@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>背包问题 - haofish</title><meta name="description" content="description."><meta property="og:title" content="背包问题" />
-<meta property="og:description" content="description." />
+        <title>背包问题 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="背包问题" />
+<meta property="og:description" content="对九类背包问题的总结" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-26T12:22:01+08:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="背包问题"/>
-<meta name="twitter:description" content="description."/>
+<meta name="twitter:description" content="对九类背包问题的总结"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" /><link rel="prev" href="https://haofish.github.io/2021/03/%E4%B8%BB%E5%B8%AD%E6%A0%91/" /><link rel="next" href="https://haofish.github.io/2021/05/dsu%E5%88%B7%E9%A2%98/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/03\/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98\/"
-        },"genre": "posts","keywords": "背包","wordcount":  11105 ,
+        },"genre": "posts","keywords": "背包","wordcount":  11079 ,
         "url": "https:\/\/haofish.github.io\/2021\/03\/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98\/","datePublished": "2021-03-26T12:22:01+08:00","dateModified": "2021-03-26T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "description."
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">背包问题</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-26">2021-03-26</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 11105 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-26">2021-03-26</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 11079 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 23 分钟</span>&nbsp;<span id="/2021/03/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="背包问题">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -138,6 +138,11 @@
     <li><a href="#完全背包">完全背包</a>
       <ul>
         <li><a href="#例题1acwing-3-完全背包问题httpswwwacwingcomproblemcontent3">【例题1】<a href="https://www.acwing.com/problem/content/3/">AcWing 3. 完全背包问题</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#多重背包">多重背包</a>
+      <ul>
+        <li><a href="#例题1acwing-4-多重背包问题-ihttpswwwacwingcomproblemcontent4">【例题1】<a href="https://www.acwing.com/problem/content/4/">AcWing 4. 多重背包问题 I</a></a></li>
         <li><a href="#例题2acwing-5-多重背包问题-iihttpswwwacwingcomproblemcontent5">【例题2】<a href="https://www.acwing.com/problem/content/5/">AcWing 5. 多重背包问题 II</a></a></li>
         <li><a href="#例题36-多重背包问题-iiihttpswwwacwingcomproblemcontentdescription6">【例题3】<a href="https://www.acwing.com/problem/content/description/6/">6. 多重背包问题 III</a></a></li>
       </ul>
@@ -891,21 +896,39 @@ $$</li>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>
-<p>假设对于每个物品平均最多只能装num件，则这个代码的复杂度为O($mnlognum$)，这样的优化完全足够ac的，当然还能做的就是像01背包一样把二维优化成一维的空间优化，在这里直接把第一维未知的大小直接省去，达到一个非常大的空间优化效果，固01背包代码就要换成这样、答案最终为dp[m]</p>
+<li>假设对于每个物品平均最多只能装num件，则这个代码的复杂度为O($mnlognum$)，这样的优化完全足够ac的，当然还能做的就是像01背包一样把二维优化成一维的空间优化，在这里直接把第一维未知的大小直接省去，达到一个非常大的空间优化效果，固01背包代码就要换成这样、答案最终为dp[m]</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包代码
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">good</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div></li>
+</div><h2 id="多重背包">多重背包</h2>
+<ul>
+<li>和01背包不同，01背包是每个物品都只有一个，但多重背包的每个物品都有若干个</li>
 </ul>
-<p>for (int i = 1; i &lt;= len; i++) {//01背包代码
-for (int j = m; j &gt;= good[i].v; j&ndash;) {
-dp[j] = max(dp[j], dp[j - good[i].v] + good[i].w);
-}
-}</p>
+<h3 id="例题1acwing-4-多重背包问题-ihttpswwwacwingcomproblemcontent4">【例题1】<a href="https://www.acwing.com/problem/content/4/" target="_blank" rel="noopener noreffer">AcWing 4. 多重背包问题 I</a></h3>
+<ul>
+<li>
+<p>题意不多讲，但是值得一提的是，多重背包被分为了三种等级，对应的数据范围不同，本题数据范围是三种之中最小的</p>
+</li>
+<li>
+<p>分析：</p>
+<ul>
+<li>当成<strong>完全背包</strong>里的<strong>分析方式2</strong>一开始介绍的思路来做，每个物品有$s_i$个，只需改一下第三重循环便可</li>
+<li>下面的代码顺便把空间也优化了</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -930,60 +953,36 @@ dp[j] = max(dp[j], dp[j - good[i].v] + good[i].w);
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
-## 多重背包
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-- 和01背包不同，01背包是每个物品都只有一个，但多重背包的每个物品都有若干个
+<span class="k">const</span> <span class="kt">int</span> <span class="n">Maxn</span> <span class="o">=</span> <span class="mi">110</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">Maxn</span><span class="p">];</span>
 
-### 【例题1】[AcWing 4. 多重背包问题 I](https://www.acwing.com/problem/content/4/)
-
-- 题意不多讲，但是值得一提的是，多重背包被分为了三种等级，对应的数据范围不同，本题数据范围是三种之中最小的
-- 分析：
-- 当成**完全背包**里的**分析方式2**一开始介绍的思路来做，每个物品有$s_i$个，只需改一下第三重循环便可
-- 下面的代码顺便把空间也优化了
-
-```c++
-#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-const int Maxn = 110;
-int n, m, dp[Maxn];
-
-int main () {
-    scanf(&#34;%d%d&#34;, &amp;n, &amp;m);
-    for (int i = 1; i &lt;= n; i++) {
-        int v, w, s;
-        scanf(&#34;%d%d%d&#34;, &amp;v, &amp;w, &amp;s);
-        for (int j = m; j &gt;= v; j--) {//01背包逆着来
-            for (int k = 1; k &lt;= s &amp;&amp; k * v &lt;= j; k++) {
-                dp[j] = max(dp[j], dp[j - k * v] + k * w);
-            }
-        }
-    }
-    printf(&#34;%d&#34;, dp[m]);
-    return 0;
-}
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span><span class="c1">//01背包逆着来
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">w</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>时间复杂度为O(mns)，速度比较慢，对于本题物品个数不超过100个，足够跑了</li>
+</ul>
+</li>
 </ul>
 <h3 id="例题2acwing-5-多重背包问题-iihttpswwwacwingcomproblemcontent5">【例题2】<a href="https://www.acwing.com/problem/content/5/" target="_blank" rel="noopener noreffer">AcWing 5. 多重背包问题 II</a></h3>
 <ul>
