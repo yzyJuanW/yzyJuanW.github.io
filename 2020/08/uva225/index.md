@@ -57,10 +57,6 @@ void dfs(int a, int b, int n, int d) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     scanf("%d", &t);
     while (t--) {
         init();

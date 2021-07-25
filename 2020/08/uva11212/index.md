@@ -58,10 +58,6 @@ bool DFS(int d, int Max) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         for (int i = 0; i < n; i++) { scanf("%d", arr + i); }
         if (check()) { printf("Case %d: 0\n", ++kase); continue; }

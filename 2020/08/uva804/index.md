@@ -21,10 +21,6 @@ struct T {
 };
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     for (; scanf("%d", &np), np;) {
         for (int i = 1; i <= np; i++) {
             scanf("%d", p + i);

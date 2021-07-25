@@ -20,10 +20,6 @@ int n;
 ll arr[M], ans;
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         ans = 0;
         for (int i = 0; i < n; i++) { scanf("%lld", arr + i); }

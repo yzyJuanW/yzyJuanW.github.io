@@ -13,10 +13,6 @@ using namespace std;
 int t;
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     scanf("%d", &t);
     getchar();
     while (t--) {

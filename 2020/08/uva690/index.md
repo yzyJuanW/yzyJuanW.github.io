@@ -56,10 +56,6 @@ inline void init(){
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         for (int i = 0; i < 5; i++) { scanf("%s", unit[i]); }
         init();
@@ -122,10 +118,6 @@ inline void init(){
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         for (int i = 0; i < 5; i++) { scanf("%s", unit[i]); }
         init();
@@ -179,10 +171,6 @@ inline void init(){
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         init();
         for (int i = 0; i < 5; i++) {
@@ -244,10 +232,6 @@ inline void init(){
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         init();
         for (int i = 0; i < 5; i++) {

@@ -184,7 +184,7 @@ int main() {
         heap.pop();
         int y = -heap.top();
         heap.pop();
-      ans += x + y;
+      	ans += x + y;
 
         if (heap.size()) heap.push(-(x + y));
     }

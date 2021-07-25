@@ -7,13 +7,13 @@
     <title>UVA12558</title>
     <link>https://haofish.github.io/2020/08/uva12558/</link>
     <pubDate>Sun, 16 Aug 2020 21:28:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12558/</guid>
-    <description><![CDATA[Egyptian Fractions (HARD version) 题意：埃及分数问题困难版，问你一个真分数$a/b$，在表达成$a/b = 1/c + 1/d ……$，选的分数尽量少，相同情况下自小的分数尽量大，限制]]></description>
+    <description><![CDATA[UVA12558 Egyptian Fractions，记录刷题代码]]></description>
 </item>
 <item>
     <title>UVA11212</title>
     <link>https://haofish.github.io/2020/08/uva11212/</link>
     <pubDate>Tue, 11 Aug 2020 10:02:22 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11212/</guid>
-    <description><![CDATA[Editing a Book 题意：给你一个排列，你一次能够剪切一段字串，然后在别的地方插入粘贴，让你求最少的剪切粘贴次数使得排列是1~n按顺序的 IDA*的题，每次]]></description>
+    <description><![CDATA[UVA11212 Editing a Book，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

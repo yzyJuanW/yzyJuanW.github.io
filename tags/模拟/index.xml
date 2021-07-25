@@ -3,7 +3,13 @@
         <title>模拟 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/</link>
         <description>模拟 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA804</title>
+    <link>https://haofish.github.io/2020/08/uva804/</link>
+    <pubDate>Tue, 04 Aug 2020 14:26:40 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva804/</guid>
+    <description><![CDATA[UVA804 Petri Net Simulation，记录刷题代码]]></description>
+</item>
+<item>
     <title>Olympiad</title>
     <link>https://haofish.github.io/2020/07/olympiad/</link>
     <pubDate>Fri, 24 Jul 2020 19:25:00 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/olympiad/</guid>

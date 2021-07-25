@@ -57,10 +57,6 @@ bool check(int n = 1) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (~scanf("%d", &t)) {
         printf("CASE %d:\n", ++Kase);
         int u, v;

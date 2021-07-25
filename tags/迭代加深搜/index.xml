@@ -7,7 +7,7 @@
     <title>UVA12558</title>
     <link>https://haofish.github.io/2020/08/uva12558/</link>
     <pubDate>Sun, 16 Aug 2020 21:28:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12558/</guid>
-    <description><![CDATA[Egyptian Fractions (HARD version) 题意：埃及分数问题困难版，问你一个真分数$a/b$，在表达成$a/b = 1/c + 1/d ……$，选的分数尽量少，相同情况下自小的分数尽量大，限制]]></description>
+    <description><![CDATA[UVA12558 Egyptian Fractions，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

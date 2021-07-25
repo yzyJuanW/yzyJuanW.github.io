@@ -45,10 +45,6 @@ void dfs(int cur, int *A) {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     arr[0] = 1;
     bool f = true;
     while (~scanf("%d", &n)) {

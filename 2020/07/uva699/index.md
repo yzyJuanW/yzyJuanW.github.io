@@ -11,7 +11,7 @@
 
 using namespace std;
 
-const int M = 5e5;
+const int M = 5e5 + 5;
 int node[M], t = 0;
 
 void build(int mid) {
@@ -35,10 +35,6 @@ bool read() {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (read()) {
         int indx = 0, f = 1;
         while (!node[indx]) indx++;

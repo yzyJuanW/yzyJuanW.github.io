@@ -57,10 +57,6 @@ void dfs(int r1, int c1, int r2, int c2, ll all, int d, int pos) {
 
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     bool flag = true;
     for (; scanf("%d", &n), n;) {
         if (flag) flag = !flag;

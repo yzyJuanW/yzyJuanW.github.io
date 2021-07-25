@@ -7,13 +7,13 @@
     <title>UVA1601</title>
     <link>https://haofish.github.io/2020/08/uva1601/</link>
     <pubDate>Mon, 10 Aug 2020 17:00:48 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1601/</guid>
-    <description><![CDATA[The Morning after Halloween 题意：给你一个图，&quot;#&ldquo;为障碍物，&rdquo; &ldquo;为通路，图里面最多有3个小写字母（a, b, c）和于]]></description>
+    <description><![CDATA[UVA1601 The Morning after Halloween，记录刷题代码]]></description>
 </item>
 <item>
     <title>UVA10603</title>
     <link>https://haofish.github.io/2020/08/uva10603/</link>
     <pubDate>Sun, 09 Aug 2020 20:37:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10603/</guid>
-    <description><![CDATA[Fill 题意：给你3个没有刻度的杯子，每个杯子的都有自己的容量，现利用这三个杯子量出体积为d的水，现在问最少的倒水量，如果量不到d，就量和d想接近]]></description>
+    <description><![CDATA[UVA10603 Fill，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

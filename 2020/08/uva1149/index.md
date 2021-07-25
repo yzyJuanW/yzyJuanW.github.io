@@ -18,10 +18,6 @@ const int M = 1e5 + 5;
 int n, w, wi[M];
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     int t;
     scanf("%d", &t);
     while (t--) {

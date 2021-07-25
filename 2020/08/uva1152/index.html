@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>UVA1152 - haofish</title><meta name="description" content="description."><meta property="og:title" content="UVA1152" />
-<meta property="og:description" content="description." />
+        <title>UVA1152 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="UVA1152" />
+<meta property="og:description" content="UVA1152 4 Values whose Sum is 0，记录刷题代码" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2020/08/uva1152/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-17T19:54:27+08:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="UVA1152"/>
-<meta name="twitter:description" content="description."/>
+<meta name="twitter:description" content="UVA1152 4 Values whose Sum is 0，记录刷题代码"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/08/uva1152/" /><link rel="prev" href="https://haofish.github.io/2020/08/uva1605/" /><link rel="next" href="https://haofish.github.io/2020/08/uva11054/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2020\/08\/uva1152\/"
-        },"genre": "posts","keywords": "题解, 思维, 哈希","wordcount":  528 ,
+        },"genre": "posts","keywords": "题解, 思维, 哈希","wordcount":  515 ,
         "url": "https:\/\/haofish.github.io\/2020\/08\/uva1152\/","datePublished": "2020-08-17T19:54:27+08:00","dateModified": "2020-08-17T19:54:27+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "description."
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">UVA1152</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch8/"><i class="far fa-folder fa-fw"></i>紫书刷题录-ch8</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 528 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 515 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2020/08/uva1152/" class="leancloud_visitors" data-flag-title="UVA1152">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -196,10 +196,6 @@
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
@@ -245,11 +241,7 @@
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="cp">#ifndef ONLINE_JUDGE
-</span><span class="cp"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:/MYCODE/vsCode-c/test.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
-    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:/MYCODE/vsCode-c/test.out&#34;</span><span class="p">,</span> <span class="s">&#34;w&#34;</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
-<span class="cp">#endif
-</span><span class="cp"></span>    <span class="kt">int</span> <span class="n">T</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">T</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="n">f</span> <span class="o">=</span> <span class="o">!</span><span class="n">f</span><span class="p">;</span>

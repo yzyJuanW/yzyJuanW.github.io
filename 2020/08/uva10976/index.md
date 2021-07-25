@@ -16,10 +16,6 @@ using ll = long long;
 ll n;
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (~scanf("%lld", &n)) {
         vector<ll> a, b;
         for (ll i = n + 1; i <= n + n; i++) {

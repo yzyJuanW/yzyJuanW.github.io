@@ -7,7 +7,7 @@
     <title>UVA1152</title>
     <link>https://haofish.github.io/2020/08/uva1152/</link>
     <pubDate>Mon, 17 Aug 2020 19:54:27 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1152/</guid>
-    <description><![CDATA[4 Values whose Sum is 0 题意：给你4个长度为$n(n \le 4000)$的集合，让你在4个集合里分别取a、b、c、d，使得$a + b + c + d = 0$，问你有多少种]]></description>
+    <description><![CDATA[UVA1152 4 Values whose Sum is 0，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

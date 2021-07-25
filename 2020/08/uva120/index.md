@@ -51,10 +51,6 @@ bool read() {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (read()) solve();
     return 0;
 }

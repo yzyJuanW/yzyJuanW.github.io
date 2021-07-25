@@ -87,10 +87,6 @@ void init() {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (scanf("%s", str), str[0] != '#') {
         init();
         char *tmp = str;

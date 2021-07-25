@@ -75,10 +75,6 @@ int DP(int u) {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (read()) {
         int ans = 0;
         for (int i = 0; i < 3 * n; i++) ans = max(ans, DP(i));

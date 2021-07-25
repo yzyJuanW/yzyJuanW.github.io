@@ -27,10 +27,6 @@ void dfs(int u) {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (scanf("%d%d", &m, &n), m + n) {
         int x, y;
         for (int i = 0; i < n; i++) {

@@ -17,10 +17,6 @@ using ll = long long;
 int n, kase = 0;
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while(~scanf("%d", &n)) {
         ll Max = 0;
         vector<ll> arr(n);

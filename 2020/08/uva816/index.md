@@ -82,10 +82,6 @@ void init() {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     char str[100], w, ch[100];
     int x, y;
     while (1) {

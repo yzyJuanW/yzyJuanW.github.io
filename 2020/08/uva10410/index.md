@@ -14,10 +14,6 @@ using namespace std;
 
 int n, x;
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     for (; ~scanf("%d", &n);) {
         vector<int> node[1010], dfs(n), bfs(n + 1);
         for (int i = 1; i <= n; i++) {

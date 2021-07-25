@@ -80,10 +80,6 @@ int DP(int p, int tim) {
 
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (read()) {
         int ans = DP(1, 0);
         if (ans >= INF) printf("Case Number %d: impossible\n", ++kase);

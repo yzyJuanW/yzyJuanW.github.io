@@ -47,10 +47,6 @@ void dfs(int r, int c, int num) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     int cnt = 0;
     bool ok = true, f = true;
     for (int i = 0; i <= 6; i++) {

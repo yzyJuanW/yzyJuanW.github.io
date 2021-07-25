@@ -3,11 +3,65 @@
         <title>树 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E6%A0%91/</link>
         <description>树 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Aug 2020 10:12:16 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+    <title>UVA10410</title>
+    <link>https://haofish.github.io/2020/08/uva10410/</link>
+    <pubDate>Wed, 05 Aug 2020 10:12:16 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10410/</guid>
+    <description><![CDATA[UVA10410 The Reconstruction，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA806</title>
+    <link>https://haofish.github.io/2020/08/uva806/</link>
+    <pubDate>Tue, 04 Aug 2020 18:02:01 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva806/</guid>
+    <description><![CDATA[UVA806 Spatial Structures，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA12166</title>
+    <link>https://haofish.github.io/2020/08/uva12166/</link>
+    <pubDate>Mon, 03 Aug 2020 20:27:46 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12166/</guid>
+    <description><![CDATA[UVA12166 Equilibrium Mobile，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA536</title>
+    <link>https://haofish.github.io/2020/08/uva536/</link>
+    <pubDate>Sun, 02 Aug 2020 15:35:18 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva536/</guid>
+    <description><![CDATA[UVA536 Tree Recovery，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA712</title>
+    <link>https://haofish.github.io/2020/08/uva712/</link>
+    <pubDate>Sun, 02 Aug 2020 14:41:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva712/</guid>
+    <description><![CDATA[UVA712 S-Trees，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA699</title>
+    <link>https://haofish.github.io/2020/07/uva699/</link>
+    <pubDate>Fri, 31 Jul 2020 19:38:47 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva699/</guid>
+    <description><![CDATA[UVA699 The Falling Leaves，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA839</title>
+    <link>https://haofish.github.io/2020/07/uva839/</link>
+    <pubDate>Fri, 31 Jul 2020 17:53:32 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva839/</guid>
+    <description><![CDATA[UVA839 Not so Mobile，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA679</title>
+    <link>https://haofish.github.io/2020/07/uva679/</link>
+    <pubDate>Fri, 31 Jul 2020 11:53:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva679/</guid>
+    <description><![CDATA[UVA679 Dropping Balls，记录刷题代码]]></description>
+</item>
+<item>
+    <title>UVA548</title>
+    <link>https://haofish.github.io/2020/07/uva548/</link>
+    <pubDate>Fri, 31 Jul 2020 11:50:26 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva548/</guid>
+    <description><![CDATA[UVA548 Tree，记录刷题代码]]></description>
+</item>
+<item>
     <title>UVA122</title>
     <link>https://haofish.github.io/2020/07/uva122/</link>
     <pubDate>Fri, 31 Jul 2020 11:19:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/07/uva122/</guid>
-    <description><![CDATA[UVA122 Trees on the level题解]]></description>
+    <description><![CDATA[UVA122 Trees on the level，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

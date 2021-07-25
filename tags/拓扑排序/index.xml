@@ -7,7 +7,7 @@
     <title>UVA10305</title>
     <link>https://haofish.github.io/2020/08/uva10305/</link>
     <pubDate>Sat, 01 Aug 2020 09:47:35 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva10305/</guid>
-    <description><![CDATA[Ordering Tasks 题意：给你一堆未知数的大小关系，让你输出可能的总体大小关系 简化了拓扑排序，只因根据题中的意思了解到一定是DAG 1 2 3 4 5 6 7 8 9 10 11 12 13]]></description>
+    <description><![CDATA[UVA10305 Ordering Tasks，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

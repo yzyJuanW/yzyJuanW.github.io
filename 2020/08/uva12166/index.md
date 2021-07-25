@@ -44,10 +44,6 @@ void dfs(int l, int r, ll d) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     scanf("%d", &t);
     while (t--) {
         myhash.clear();

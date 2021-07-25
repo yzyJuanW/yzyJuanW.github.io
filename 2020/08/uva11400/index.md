@@ -32,10 +32,6 @@
   }lamp[1010];
 
   int main() {
-  #ifndef ONLINE_JUDGE
-      freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-      freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-  #endif
       while (scanf("%d", &n), n) {
           for (int i = 1; i <= n; i++)
               scanf("%d%d%d%d", &lamp[i].v, &lamp[i].k, &lamp[i].c, &lamp[i].l);

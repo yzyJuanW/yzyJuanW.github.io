@@ -64,10 +64,6 @@ void BFS() {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     while (scanf("%d%d%d", &w, &h, &n), w + h + n) {
         int cnt = 0;
         for (int i = 0; i < h; i++) {

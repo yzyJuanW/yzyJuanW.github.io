@@ -57,10 +57,6 @@ bool dfs(int num) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     int kase = 0;
     while(init()) {
         printf("Case %d: ", ++kase);

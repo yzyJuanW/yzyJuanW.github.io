@@ -42,10 +42,6 @@ bool check(int a) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     bool f = true;
     while (scanf("%d", &n), n) {
         if (f) f = false;

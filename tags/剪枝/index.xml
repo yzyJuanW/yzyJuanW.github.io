@@ -7,7 +7,7 @@
     <title>UVA140</title>
     <link>https://haofish.github.io/2020/08/uva140/</link>
     <pubDate>Fri, 07 Aug 2020 19:53:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva140/</guid>
-    <description><![CDATA[Bandwidth 题意：给你一个无向图，让你输出一种序列使得每个节点到该节点在图中相连的节点的最远距离的最小值，直接看题目比较好懂 dfs遍历所有可能的序列，]]></description>
+    <description><![CDATA[UVA140 Bandwidth，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

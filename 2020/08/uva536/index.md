@@ -24,10 +24,6 @@ void dfs(int a, int b, int c, int d) {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (~scanf("%s%s", pre, in)) {
         int len = strlen(pre);
         dfs(0, len - 1, 0, len - 1);

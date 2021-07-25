@@ -45,10 +45,6 @@ void init(int *A) {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (getline(cin, str)) {
         init(ino);
         getline(cin, str);

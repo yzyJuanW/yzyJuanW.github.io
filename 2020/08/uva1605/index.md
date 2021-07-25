@@ -31,10 +31,6 @@ void solve() {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     for (int i = 0; i < 26; i++) str[i] = 'a' + i;
     for (int i = 0; i < 26; i++) str[26 + i] = 'A' + i;
     while (~scanf("%d", &n)) solve();

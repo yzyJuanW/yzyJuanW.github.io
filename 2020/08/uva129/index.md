@@ -49,10 +49,6 @@ void dfs(int cur) {
     }
 }
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (scanf("%d%d", &n, &L), n + L) {
         num = 0;
         dfs(0);

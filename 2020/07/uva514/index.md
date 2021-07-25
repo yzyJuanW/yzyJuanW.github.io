@@ -17,10 +17,6 @@ const int M = 1e3 + 10;
 int n, arr[M];
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     while (scanf("%d", &n), n) {
         while (scanf("%d", &arr[1]), arr[1]) {
             for (int i = 2; i <= n; i++) {
@@ -48,7 +44,6 @@ int main() {
         }
         puts("");
     }
-
     return 0;
 }
 ```

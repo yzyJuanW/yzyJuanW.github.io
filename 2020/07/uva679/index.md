@@ -15,10 +15,6 @@ using namespace std;
 int d, n, t;
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    freopen("test.out", "w", stdout);
-#endif
     scanf("%d", &t);
     while (t--) {
         scanf("%d%d", &d, &n);
