@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>计算几何板子 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="计算几何板子" />
+<meta property="og:description" content="记录一些常用的计算几何板子，整合成了一份代码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haofish.github.io/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-27T20:45:06+08:00" />
+<meta property="article:modified_time" content="2021-07-27T20:45:06+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="计算几何板子"/>
+<meta name="twitter:description" content="记录一些常用的计算几何板子，整合成了一份代码"/>
+<meta name="application-name" content="FeelIt">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/" /><link rel="prev" href="https://haofish.github.io/2021/07/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%BF%E5%AD%90/" /><link rel="next" href="https://haofish.github.io/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "计算几何板子",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/haofish.github.io\/2021\/07\/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90\/"
+        },"genre": "posts","wordcount":  3855 ,
+        "url": "https:\/\/haofish.github.io\/2021\/07\/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90\/","datePublished": "2021-07-27T20:45:06+08:00","dateModified": "2021-07-27T20:45:06+08:00","publisher": {
+            "@type": "Organization",
+            "name": "幼稚园卷王"},"author": {
+                "@type": "Person",
+                "name": "幼稚园卷王"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/posts/" title="显示所有文章"> 文章 </a><a class="menu-item" href="/tags/" title="显示标签"> 标签 </a><a class="menu-item" href="/categories/" title="显示分类"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="haofish"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="输入你要搜索的文章标题或内容" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/posts/" title="显示所有文章">文章</a><a class="menu-item" href="/tags/" title="显示标签">标签</a><a class="menu-item" href="/categories/" title="显示分类">分类</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fas fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">计算几何板子</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a>&nbsp;<a href="/categories/%E6%A8%A1%E6%9D%BF/"><i class="far fa-folder fa-fw"></i>模板</a>&nbsp;<a href="/categories/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"><i class="far fa-folder fa-fw"></i>计算几何</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-27">2021-07-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3855 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟</span>&nbsp;<span id="/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/" class="leancloud_visitors" data-flag-title="计算几何板子">
+                            <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                        </span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>目录</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#二维几何未完善">二维几何（未完善）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#heading"></a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h4 id="二维几何未完善">二维几何（未完善）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cm">/**
+</span><span class="cm"> * 本板子属于半成品，有些功能并没有验证
+</span><span class="cm"> * 函数说明：
+</span><span class="cm"> *          关于点的函数
+</span><span class="cm"> * 点的Point(double, double) 构造函数
+</span><span class="cm"> * + 向量加法
+</span><span class="cm"> * - 向量减法
+</span><span class="cm"> * == 判断两个点是否相等
+</span><span class="cm"> * *(Point) 向量点乘
+</span><span class="cm"> * *(double) 向量伸长(没有除法，要用除法直接乘倒数)
+</span><span class="cm"> * ^ 向量叉乘
+</span><span class="cm"> * &lt; 点对点的比较
+</span><span class="cm"> * double len() 向量的长度，也可以用来求两个点的距离
+</span><span class="cm"> * Point rotate(double angle)  向量逆时针旋转angle弧度
+</span><span class="cm"> * Point rotate(Point, double)  点让点p逆时针旋转angle弧度
+</span><span class="cm"> * void print() 将点输出
+</span><span class="cm"> * int init() 输入点的坐标 返回值和scanf相同
+</span><span class="cm"> *          其他非结构体函数
+</span><span class="cm"> * angle(Point&amp;, Point&amp;) 计算两个向量的夹角
+</span><span class="cm"> * 
+</span><span class="cm"> *          关于线的函数
+</span><span class="cm"> * Line(Point, Point) 构造函数
+</span><span class="cm"> * Line(Point, double) 根据一个点和一个倾斜角 0 &lt;= angle &lt; PI确定直线 （未验证）
+</span><span class="cm"> * double len() 返回线段的长度
+</span><span class="cm"> * double point(double t)  返回距离点p向前t倍向量的点
+</span><span class="cm"> * double angle() 返回直线的倾斜角 范围[0, PI) (未验证)
+</span><span class="cm"> * double disPointToLine(const Point&amp;) 点到这条直线的距离
+</span><span class="cm"> * double disPointToSeg(const Point&amp;) 点到这条线段的距离（未验证）
+</span><span class="cm"> * Point getPro(const Point&amp;) 点在这条线上的投影 （未验证）
+</span><span class="cm"> * Point getSym(const Point&amp;) 点关于这条线的对称点 （未验证）
+</span><span class="cm"> * bool isOnLine(const Point&amp;) 验证该点是否在这条直线上（未验证）
+</span><span class="cm"> * bool isOnSeg(const Point&amp;) 验证该点是否在这条线段上（未验证）
+</span><span class="cm"> * Point cross(Line&amp;)  直线和这条直线的交点，前提是相交
+</span><span class="cm"> * void print()  输出这条线段
+</span><span class="cm"> * 
+</span><span class="cm"> *          其他非结构体
+</span><span class="cm"> * int LineAndLine(Line&amp;, Line&amp;)  直线和直线的关系 0平行 1重合 2相交 （未验证）
+</span><span class="cm"> * Point getLineInter(const Line&amp;, const Line&amp;) 求两直线的交点,必须相交才能调用 （此函数有问题）
+</span><span class="cm"> * int SegAndSeg(const Line&amp; l1, const Line&amp; l2) 两个线段的关系 0不相交 1非规范相交(其中一个线段的端点和另一个线段相交) 2规范相交 （未验证）
+</span><span class="cm"> * int LineAndSeg(const Line&amp; line, const Line&amp; seg) 直线和线段的关系，0不相交 1非规范相交 2规范相交 （未验证）
+</span><span class="cm"> * 
+</span><span class="cm"> *           关于圆的函数
+</span><span class="cm"> * Circle(Point, double) 构造函数
+</span><span class="cm"> * Circle(Point, Point, Point) 过三点的圆
+</span><span class="cm"> * double area() const; 返回圆的面积
+</span><span class="cm"> * double circum() const  返回圆的周长
+</span><span class="cm"> * int PointAndCircle(Point&amp;) 点和圆的关系 返回 0圆外 1圆上 2圆内
+</span><span class="cm"> * int LineAndCircle(Point&amp;)  点和圆的关系 返回 0不相交 1相交 2相交两个点（未验证）
+</span><span class="cm"> * int CircleAndCircle(Circle&amp;) 圆和圆的关系 返回 0内含 1内切 2相交两点 3外切 4外离 （未验证）
+</span><span class="cm"> * 
+</span><span class="cm"> *         关于三角形的函数
+</span><span class="cm"> * Triangle(Point, Point, Point) 构造函数
+</span><span class="cm"> * double area() const 返回三角形函数
+</span><span class="cm"> * Circle outerCircle() 获取三角形的外接圆
+</span><span class="cm"> * 
+</span><span class="cm"> *         关于多边形的函数
+</span><span class="cm"> * Polygon(vector&lt;Point&gt;&amp;) 构造函数
+</span><span class="cm"> * double circum();  求凸包的周长
+</span><span class="cm"> * void graham(Polygon&amp;) 求凸包 传入值为需要求出的凸包的点集
+</span><span class="cm"> * int PointAndPolgon(Point&amp;) 判断点与多边形的关系，0外 1内 2边上 3点上 （未实现）
+</span><span class="cm"> * double minRectCover() 点集的最小矩形覆盖，自己必须是（逆时针）凸包才能调用 （未实现）
+</span><span class="cm"> * Circle minCircleCover() 点集的最小圆覆盖
+</span><span class="cm">*/</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">double</span> <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">dcmp</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/******************************点*******************************/</span>
+<span class="cm">/*
+</span><span class="cm">除了结构体内部函数还有
+</span><span class="cm">angle(Point&amp; a, Point&amp; b) // 两个向量的夹角
+</span><span class="cm">*/</span>
+<span class="k">struct</span> <span class="nc">Point</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">Point</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">Point</span> <span class="k">operator</span> <span class="o">+</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="n">Point</span> <span class="k">operator</span> <span class="o">-</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="k">operator</span> <span class="o">*</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>    <span class="c1">// 点乘
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="k">operator</span> <span class="o">^</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>    <span class="c1">// 叉乘
+</span><span class="c1"></span>    <span class="kt">bool</span> <span class="k">operator</span> <span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="k">operator</span> <span class="o">&lt;</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>  <span class="c1">// 排序需要
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="k">operator</span> <span class="o">*</span> <span class="p">(</span><span class="kt">double</span><span class="p">);</span>    <span class="c1">//向量伸长b倍
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">len</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="c1">// 向量的长度
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">rotate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>    <span class="c1">// 向量逆时针旋转a弧度后
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">Point</span><span class="o">&amp;</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span>    <span class="c1">// 点绕p点顺时针旋转a弧度后
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%.2f %.2f&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lf%lf&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
+<span class="n">Point</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">+</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Point</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">-</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 点乘
+</span><span class="c1"></span><span class="kt">double</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">*</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 叉乘
+</span><span class="c1"></span><span class="kt">double</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">^</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">==</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">bool</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">&lt;</span> <span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">))</span> <span class="o">?</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 向量的长度
+</span><span class="c1"></span><span class="kt">double</span> <span class="n">Point</span><span class="o">::</span><span class="n">len</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">);</span> <span class="p">}</span>
+<span class="c1">//向量伸长b倍
+</span><span class="c1"></span><span class="n">Point</span> <span class="n">Point</span><span class="o">::</span><span class="k">operator</span> <span class="o">*</span> <span class="p">(</span><span class="kt">double</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 向量逆时针旋转a弧度后
+</span><span class="c1">// cosx -sinx
+</span><span class="c1">// sinx cosx
+</span><span class="c1"></span><span class="n">Point</span> <span class="n">Point</span><span class="o">::</span><span class="n">rotate</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">x</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="c1">// 点绕p点顺时针旋转a弧度后
+</span><span class="c1"></span><span class="n">Point</span> <span class="n">Point</span><span class="o">::</span><span class="n">rotate</span><span class="p">(</span><span class="n">Point</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="o">-</span> <span class="n">p</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">vec</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">p</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 两个向量的夹角
+</span><span class="c1"></span><span class="kt">double</span> <span class="nf">angle</span><span class="p">(</span><span class="n">Point</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">acos</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">/</span> <span class="n">a</span><span class="p">.</span><span class="n">len</span><span class="p">()</span> <span class="o">/</span> <span class="n">b</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="cm">/******************************线*******************************/</span>
+<span class="cm">/*
+</span><span class="cm">除了结构体内部函数还有
+</span><span class="cm">int LineAndLine(Line&amp; l1, Line&amp;)  直线和直线的关系 0平行 1重合 2相交
+</span><span class="cm">Point getLineInter(const Line&amp; l1, const Line&amp; l2) 求两直线的交点,必须相交才能调用
+</span><span class="cm">int SegAndSeg(const Line&amp; l1, const Line&amp; l2) 两个线段的关系 0不相交 1非规范相交(其中一个线段的端点和另一个线段相交) 2规范相交
+</span><span class="cm">int LineAndSeg(const Line&amp; line, const Line&amp; seg) 直线和线段的关系，0不相交 1非规范相交 2规范相交
+</span><span class="cm">*/</span>
+<span class="k">struct</span> <span class="nc">Line</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">Line</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="n">Line</span><span class="p">(</span><span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span><span class="p">)</span> <span class="o">:</span> <span class="n">p1</span><span class="p">(</span><span class="n">p1</span><span class="p">),</span> <span class="n">p2</span><span class="p">(</span><span class="n">p2</span><span class="p">),</span> <span class="n">v</span><span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">Line</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span> <span class="c1">// 根据一个点和一个倾斜角0&lt;= angle &lt; PI确定直线
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">len</span><span class="p">();</span> <span class="c1">// 线段的长度
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">point</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>  <span class="c1">// P = p1 + vt
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">angle</span><span class="p">();</span> <span class="c1">// 直线的倾斜角[0, PI)
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">disPointToLine</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点到这条直线的距离
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">disPointToSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点到这条线段的距离
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">getPro</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点到这条线的投影
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">getSym</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点关于这条线的对称点
+</span><span class="c1"></span>    <span class="kt">bool</span> <span class="nf">isOnLine</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点是否在这条直线上
+</span><span class="c1"></span>    <span class="kt">bool</span> <span class="nf">isOnSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点是否在这条线段上
+</span><span class="c1"></span>    <span class="n">Point</span> <span class="nf">cross</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 直线和这条直线的交点，前提是相交才能调用
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">print</span><span class="p">();</span> <span class="c1">// 输出线段
+</span><span class="c1"></span><span class="p">};</span>
+<span class="n">Line</span><span class="o">::</span><span class="n">Line</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">,</span> <span class="kt">double</span> <span class="n">angle</span><span class="p">)</span> <span class="o">:</span> <span class="n">p1</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">angle</span> <span class="o">-</span> <span class="n">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">len</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">();</span> <span class="p">}</span>
+<span class="n">Point</span> <span class="n">Line</span><span class="o">::</span><span class="n">point</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">t</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="n">p1</span> <span class="o">+</span> <span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="n">t</span><span class="p">));</span> <span class="p">}</span>
+<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">angle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">p2</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">ret</span> <span class="o">+=</span> <span class="n">PI</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">ret</span> <span class="o">-</span> <span class="n">PI</span><span class="p">))</span> <span class="n">ret</span> <span class="o">-=</span> <span class="n">PI</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">Line</span><span class="o">::</span><span class="n">print</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;(%f,%f)-&gt;(%f,%f)&#34;</span><span class="p">,</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">disPointToLine</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">p1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">v</span> <span class="o">^</span> <span class="n">vec</span><span class="p">)</span> <span class="o">/</span> <span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">disPointToSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span> <span class="k">return</span> <span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p</span><span class="p">).</span><span class="n">len</span><span class="p">();</span>
+    <span class="n">Point</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">p1</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">p2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">(</span><span class="n">v1</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">v1</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">(</span><span class="n">v2</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">v2</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nf">disPointToLine</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Point</span> <span class="n">Line</span><span class="o">::</span><span class="n">getPro</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">()</span> <span class="o">*</span> <span class="n">v</span><span class="p">.</span><span class="n">len</span><span class="p">()));</span>
+<span class="p">}</span>
+<span class="n">Point</span> <span class="n">Line</span><span class="o">::</span><span class="n">getSym</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">q</span> <span class="o">=</span> <span class="n">getPro</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">q</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">q</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">bool</span> <span class="n">Line</span><span class="o">::</span><span class="n">isOnLine</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!</span><span class="n">dcmp</span><span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">p2</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kt">bool</span> <span class="n">Line</span><span class="o">::</span><span class="n">isOnSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">isOnLine</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">p2</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Point</span> <span class="n">Line</span><span class="o">::</span><span class="n">cross</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l</span><span class="p">.</span><span class="n">p1</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l</span><span class="p">.</span><span class="n">p1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">Point</span><span class="p">((</span><span class="n">p1</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">a2</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">a1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a1</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span><span class="n">a2</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">a1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a1</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="c1">// 直线和直线的关系 0平行 1重合 2相交 
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">LineAndLine</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span> <span class="n">l1</span><span class="p">,</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="n">l2</span><span class="p">.</span><span class="n">v</span><span class="p">))</span> <span class="k">return</span> <span class="n">l2</span><span class="p">.</span><span class="n">isOnLine</span><span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">p1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 求两个直线的交点，必须相交才能调用
+</span><span class="c1"></span><span class="n">Point</span> <span class="nf">getLineInter</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span> <span class="n">l1</span><span class="p">,</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">l1</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p1</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="n">vec</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="n">l2</span><span class="p">.</span><span class="n">v</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">l1</span><span class="p">.</span><span class="n">point</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 判断两个线段的关系
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">SegAndSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">l1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">d4</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">d1</span> <span class="o">^</span> <span class="n">d2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">d3</span> <span class="o">^</span> <span class="n">d4</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="n">d1</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">l2</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p2</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> 
+        <span class="p">(</span><span class="o">!</span><span class="n">d2</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">l2</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l2</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l1</span><span class="p">.</span><span class="n">p2</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> 
+        <span class="p">(</span><span class="o">!</span><span class="n">d3</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">l1</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p2</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span>
+        <span class="p">(</span><span class="o">!</span><span class="n">d4</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">l1</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l1</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">l2</span><span class="p">.</span><span class="n">p2</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 直线和线段的关系，0不相交 1非规范相交 2规范相交
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">LineAndSeg</span><span class="p">(</span><span class="k">const</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">line</span><span class="p">,</span> <span class="k">const</span> <span class="n">Line</span><span class="o">&amp;</span> <span class="n">seg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">seg</span><span class="p">.</span><span class="n">p1</span> <span class="o">-</span> <span class="n">line</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">v</span> <span class="o">^</span> <span class="p">(</span><span class="n">seg</span><span class="p">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">line</span><span class="p">.</span><span class="n">p1</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">d1</span> <span class="o">^</span> <span class="n">d2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">d1</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">d2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/******************************圆*******************************/</span>
+<span class="k">struct</span> <span class="nc">Circle</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">r</span><span class="p">;</span>
+    <span class="n">Circle</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">,</span> <span class="kt">double</span> <span class="n">r</span><span class="p">)</span> <span class="o">:</span> <span class="n">p</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">r</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="n">Point</span> <span class="p">,</span> <span class="n">Point</span><span class="p">);</span>  <span class="c1">// 过三点一个圆
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="c1">// 面积
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">circum</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="c1">// 周长
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">PointAndCircle</span><span class="p">(</span><span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 点和圆的关系 0圆外 1圆上 2圆内
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">LineAndCircle</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// 直线和圆的关系 0不相交 1相切 2相交两点
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">CircleAndCircle</span><span class="p">(</span><span class="n">Circle</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 圆和圆的关系 0内含 1内切 2相交两点 3外切 4外离
+</span><span class="c1"></span><span class="p">};</span>
+<span class="kt">double</span> <span class="n">Circle</span><span class="o">::</span><span class="n">area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">double</span> <span class="n">Circle</span><span class="o">::</span><span class="n">circum</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span><span class="n">r</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">Circle</span><span class="o">::</span><span class="n">Circle</span><span class="p">(</span><span class="n">Point</span> <span class="n">a</span><span class="p">,</span> <span class="n">Point</span> <span class="n">b</span><span class="p">,</span> <span class="n">Point</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">Line</span> <span class="nf">l1</span><span class="p">((</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">((</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="n">v1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">v1</span><span class="p">.</span><span class="n">x</span><span class="p">));</span>
+    <span class="n">Line</span> <span class="nf">l2</span><span class="p">((</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">((</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="n">v2</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">v2</span><span class="p">.</span><span class="n">x</span><span class="p">));</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">getLineInter</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">);</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">a</span><span class="p">).</span><span class="n">len</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">Circle</span><span class="o">::</span><span class="n">PointAndCircle</span><span class="p">(</span><span class="n">Point</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">p</span><span class="p">).</span><span class="n">len</span><span class="p">()</span> <span class="o">-</span> <span class="n">r</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">Circle</span><span class="o">::</span><span class="n">LineAndCircle</span><span class="p">(</span><span class="n">Line</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">disPointToLine</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="n">r</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">Circle</span><span class="o">::</span><span class="n">CircleAndCircle</span><span class="p">(</span><span class="n">Circle</span><span class="o">&amp;</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">p</span> <span class="o">-</span> <span class="n">p</span><span class="p">).</span><span class="n">len</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span><span class="p">.</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dcmp</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span><span class="p">.</span><span class="n">r</span><span class="p">))</span> <span class="k">return</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">l</span> <span class="o">=</span> <span class="n">fabs</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">c</span><span class="p">.</span><span class="n">r</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dcmp</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span><span class="p">.</span><span class="n">r</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">dcmp</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/****************************三角形******************************/</span>
+<span class="k">struct</span> <span class="nc">Triangle</span><span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="n">Triangle</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="n">Triangle</span><span class="p">(</span><span class="n">Point</span> <span class="n">A</span><span class="p">,</span> <span class="n">Point</span> <span class="n">B</span><span class="p">,</span> <span class="n">Point</span> <span class="n">C</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="k">const</span> <span class="p">;</span>  <span class="c1">// 三角形面积
+</span><span class="c1"></span>    <span class="n">Circle</span> <span class="nf">outerCircle</span><span class="p">();</span> <span class="c1">// 外接圆
+</span><span class="c1"></span><span class="p">};</span>
+<span class="n">Triangle</span><span class="o">::</span><span class="n">Triangle</span><span class="p">(</span><span class="n">Point</span> <span class="n">A</span><span class="p">,</span> <span class="n">Point</span> <span class="n">B</span><span class="p">,</span> <span class="n">Point</span> <span class="n">C</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">Triangle</span><span class="o">::</span><span class="n">area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">p</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// r = a * b * c / 4S
+</span><span class="c1">// 两条边的中垂线的交点，也可用kuangbin的方法，但此方法不需要再次调用Line的函数
+</span><span class="c1"></span><span class="n">Circle</span> <span class="n">Triangle</span><span class="o">::</span><span class="n">outerCircle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">A1</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="p">),</span> <span class="n">B1</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">y</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">A2</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">x</span><span class="p">),</span> <span class="n">B2</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">y</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">y</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">C1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">C1</span> <span class="o">+=</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>
+        <span class="n">C2</span> <span class="o">+=</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">x</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">y</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="n">C1</span> <span class="o">*</span> <span class="n">B2</span><span class="p">)</span> <span class="o">-</span> <span class="n">C2</span> <span class="o">*</span> <span class="n">B1</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">A1</span> <span class="o">*</span> <span class="n">B2</span><span class="p">)</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">B1</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="p">((</span><span class="n">A1</span> <span class="o">*</span> <span class="n">C2</span><span class="p">)</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">C1</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">A1</span> <span class="o">*</span> <span class="n">B2</span><span class="p">)</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">B1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">Circle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="n">len</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************多边形/点集******************************/</span>
+
+<span class="k">struct</span> <span class="nc">Polygon</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">;</span>
+    <span class="c1">// vector&lt;Line&gt; l;
+</span><span class="c1"></span>    <span class="n">Polygon</span><span class="p">(){}</span>
+    <span class="n">Polygon</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="o">:</span> <span class="n">p</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{};</span>
+    <span class="kt">double</span> <span class="nf">circum</span><span class="p">();</span> <span class="c1">// 求凸包的周长
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">graham</span><span class="p">(</span><span class="n">Polygon</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 凸包
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">PointAndPolygon</span><span class="p">(</span><span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 判断点与多边形的关系，0外 1内 2边上 3点上
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="nf">minRectCover</span><span class="p">();</span> <span class="c1">// 最小矩形覆盖，自己必须是（逆时针）凸包才能调用
+</span><span class="c1"></span>    <span class="n">Circle</span> <span class="nf">minCircleCover</span><span class="p">();</span> <span class="c1">// 点集的最小圆覆盖
+</span><span class="c1"></span><span class="p">};</span>
+<span class="kt">double</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">circum</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]).</span><span class="n">len</span><span class="p">();</span>
+    <span class="kt">double</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="p">(</span><span class="n">p</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]).</span><span class="n">len</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">graham</span><span class="p">(</span><span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">[</span><span class="n">indx</span><span class="p">])</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">indx</span><span class="p">]);</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Point</span><span class="o">&amp;</span> <span class="n">i</span><span class="p">,</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dcmp</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="n">i</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">atan2</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="n">j</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">return</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">i</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">dcmp</span><span class="p">((</span><span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">^</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="o">--</span><span class="n">x</span><span class="p">;</span>
+            <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="n">res</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">Circle</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">minCircleCover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">random_shuffle</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">p</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">Circle</span> <span class="nf">res</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">PointAndCircle</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 在圆内
+</span><span class="c1"></span>        <span class="n">res</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">PointAndCircle</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 在圆内
+</span><span class="c1"></span>            <span class="n">res</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]).</span><span class="n">len</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">PointAndCircle</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 在圆内
+</span><span class="c1"></span>                <span class="n">res</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">vt</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Point</span> <span class="n">p</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">p</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+            <span class="n">vt</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">Polygon</span> <span class="n">pol</span><span class="p">(</span><span class="n">vt</span><span class="p">),</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">pol</span><span class="p">.</span><span class="n">graham</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">.</span><span class="n">circum</span><span class="p">());</span>
+        <span class="n">vt</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading"></h2>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
+                <span>更新于 2021-07-27</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/" data-title="计算几何板子"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2021/07/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/" data-title="计算几何板子" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2021/07/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%BF%E5%AD%90/" class="prev" rel="prev" title="字符串板子"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/" class="next" rel="next" title="动态规划套路板子">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="valine"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.min.js?version=1.0.1', { scope: '/' })
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Registered');
+        }, err => console.error('haofish\u00A0Service Worker registration failed: ', err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('haofish\u00A0Service Worker Ready');
+        });
+}
+</script>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/valine/Valine.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/typeit/typeit.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":5},"comment":{"valine":{"appId":"UEWBV1gTCf9VzQHTH13chcGE-gzGzoHsz","appKey":"VDomK0X3UPsfl7r7TAPGLRR1","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧","recordIP":true,"visitor":true}},"data":{"id-1":"haofish","id-2":"haofish"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":200}};</script><script src="/js/theme.min.js"></script></body>
+</html>

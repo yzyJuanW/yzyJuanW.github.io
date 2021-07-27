@@ -14,7 +14,7 @@
 
 ## gcd
 
-1. $gcd(a, b) = gcd(b, a \% b)$
+1. $gcd(a, b) = gcd(b, a \bmod b)$
 2. $gcd(a, b) = gcd(a, b - a)$
 3. 由算术基本定理：
    1. 假设$N = {P_1}^{a_1} \times{P_2}^{a_2} \times {P_3}^{a_3} \cdots \times {P_n}^{a_n}$

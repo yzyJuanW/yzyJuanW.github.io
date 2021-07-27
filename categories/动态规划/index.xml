@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>动态规划 - 分类 - haofish</title>
+        <link>https://haofish.github.io/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+        <description>动态规划 - 分类 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Jul 2021 20:46:34 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="self" type="application/rss+xml" /><item>
+    <title>动态规划套路板子</title>
+    <link>https://haofish.github.io/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</link>
+    <pubDate>Tue, 27 Jul 2021 20:46:34 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</guid>
+    <description><![CDATA[虽然动态规划没有所谓的模板，但有些套路东西是固定的，固记录一些常用的动态规划套路模板]]></description>
+</item>
+</channel>
+</rss>

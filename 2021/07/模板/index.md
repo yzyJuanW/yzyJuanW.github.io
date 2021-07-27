@@ -1,11 +1,12 @@
-# 我的模板
+# 我的模板（整合版）
 
 
 # 常用模板（包括网络赛）
 
 ## 一、基础板子
 ### 1. 二分
-1. 整数二分.
+#### 整数二分
+
 ```cpp
 // 1
 while (l < r) {
@@ -26,7 +27,8 @@ while (l <= r) {
 	else r = mid - 1;
 }
 ```
-2. 浮点数二分
+#### 浮点数二分
+
 ```cpp
 // 通用版
 while (r - l > 1e-5) {
@@ -57,6 +59,8 @@ inline void id_table(int n, int *a, vector<int>& res) { // 打表, 注意，原�
 }
 ```
 ### 3. 高精
+
+#### 复杂版
 
 ```cpp {.line-numbers}
 #include <cstdio>
@@ -359,7 +363,7 @@ int main() {
 }
 ```
 
-- 简化版
+#### 简化版
 
 ```cpp
 #include <iostream>
@@ -697,7 +701,7 @@ ll minx(ll a, ll b, ll c) {
 ```
 
 ### 3. 素数筛
-- 埃式筛
+#### 埃式筛
 
 ```cpp
 const int M = 101000;
@@ -714,7 +718,8 @@ void table() {
     }
 }
 ```
-- 线性筛
+#### 线性筛
+
 ```cpp
 // 复杂度O(n)
 const int M = 1e5 + 10;
@@ -734,7 +739,7 @@ void table() {
 ```
 
 ### 4. 逆元
-1. 线性法
+#### 线性法
 
 ```cpp
 typedef long long ll;
@@ -747,7 +752,7 @@ void fny(const int &n, ll *inv, const ll mod) {
 }
 ```
 
-2. 扩欧法
+#### 扩欧法
 
 ```cpp
 typedef long long ll;
@@ -768,7 +773,7 @@ ll inverse(ll a, ll m) {//扩展欧几里得法求逆元，返回-1代表没有�
 }
 ```
 
-2. 费马小定理法
+#### 费马小定理法
 
 ```cpp
 //a ^ (p - 1) = 1 (mod p), p为素数
@@ -796,19 +801,16 @@ ll inverse(ll a, ll m) {
 ```cpp
 #define ll long long
 ll powf(ll a, ll b, const ll mod) {// 返回a^b % mod
-	a %= mod;
 	ll res = 1;
-	while (b) {
-		if (b & 1) res = res * a % mod;
-		a = a * a % mod, b >>= 1;
-	}
-	return res;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
 }
 ```
 
 ### 6. 矩阵快速幂
 
-- 结构体版
+#### 结构体版
 
 ```cpp
 const ll MOD = 1e9 + 7;
@@ -851,7 +853,7 @@ Mat pow_f(Mat a, ll b) { //a ^ b次幂
 }
 ```
 
-- vector 重载运算符版
+#### vector 重载运算符版
 
 ```cpp
 #define ll long long
@@ -880,7 +882,8 @@ Mat operator^ (Mat a, long long b) {
 ```
 
 ### 7. 高斯消元
-1. 普通浮点数高斯消元，洛谷模板题
+#### 普通浮点数高斯消元，洛谷模板题
+
 ```cpp
 // 洛谷模板题
 #include <algorithm>
@@ -939,7 +942,8 @@ int main() {
     return 0;
 }
 ```
-2. 浮点数高斯约旦消元法， 洛谷模板题
+#### 浮点数高斯约旦消元法， 洛谷模板题
+
 ```cpp
 // 洛谷模板题
 #include <cstdio>
@@ -986,7 +990,8 @@ int main() {
     return 0;
 }
 ```
-3. 模意义下的高斯消元法，POJ - 2065 SETI 
+#### 模意义下的高斯消元法，POJ - 2065 SETI 
+
 ```cpp
 // POJ - 2065 SETI 
 #include <cassert>
@@ -1067,7 +1072,7 @@ int main() {
     return 0;
 }
 ```
-4. 异或的高斯消元法（带解决自由变元的），POJ1681 Painter's Problem
+#### 异或的高斯消元法（带解决自由变元的），POJ1681 Painter's Problem
 
 ```cpp
 //POJ1681 Painter's Problem
@@ -1149,10 +1154,12 @@ int main() {
 }
 ```
 
-### 8. lucas
+### 8. 卢卡斯定理
+
+#### lucas
 
 ```cpp
-const ll mod = 10007;
+const ll mod = 10007;// 注意lucas算法，mod必须为质数
 ll fac[mod + 10], inv[mod + 10];
 void fny(const int &n, ll *inv, const ll mod) {
     fac[0] = fac[1] = inv[0] = inv[1] = 1;
@@ -1168,10 +1175,82 @@ ll comb(ll n, ll m) {
 }
 
 
-ll lucas(ll n, ll m) {
+ll lucas(ll n, ll m) { // 本函数不考虑comb的时间复杂度的话就是O(logmod)
     if (m == 0) return 1;
     if (n < mod) return comb(n, m);
     return comb(n % mod, m % mod) * lucas(n / mod, m / mod) % mod;
+}
+```
+
+#### exlucas
+
+```cpp
+ll powf(ll a, ll b, const ll mod) {// 返回a^b % mod
+	ll res = 1;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
+}
+void exgcd(ll a, ll b, ll &g, ll &x, ll &y) {
+    if (!b) {
+        g = a, x = 1, y = 0;
+        return;
+    }
+    exgcd(b, a % b, g, y, x);
+    y -= x * (a / b);
+}
+
+// ax=1(mod m)
+ll inverse(ll a, ll m) {//扩展欧几里得法求逆元，返回-1代表没有逆元
+    ll g, x, y;
+    exgcd(a, m, g, x, y);
+    return g == 1 ? (x % m + m) % m : -1;
+}
+ll crt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x， b[i]中互质， O(nlogn)
+    ll mul = 1, ret = 0;
+    for (int i = 0; i < n; ++i) mul *= b[i];
+    for (int i = 0; i < n; ++i) {
+        ll minlcm = mul / b[i];
+        ll inv = inverse(minlcm, b[i]); // 求逆元
+        ret = (ret +  minlcm * inv * a[i]) % mul;
+    }
+    return (ret + mul) % mul;
+}
+
+ll cal(ll n, ll p, ll pk) { // 计算n!中取出所有p因子后mod pk的结果
+    if (n == 0) return 1;
+    ll res = 1;
+    for (int i = 1; i < pk; ++i) {
+        if (i % p) res = res * i % pk;
+    }
+    res = powf(res, n / pk, pk);
+    int len = n % pk;
+    for (int i = 1; i <= len; ++i) {
+        if (i % p) res = res * i % pk;
+    }
+    return res * cal(n / p, p, pk) % pk;
+}
+
+ll comb(ll n, ll m, ll p, ll pk) {// 计算C(n, m) % pk的结果，其中p^k = pk
+    if (n < m) return 0;
+    ll up = cal(n, p, pk), down = cal(m, p, pk) * cal(n - m, p, pk) % pk, cnt = 0;
+    for (ll i = n; i; i /= p) cnt += i / p;
+    for (ll i = m; i; i /= p) cnt -= i / p;
+    for (ll i = n - m; i; i /= p) cnt -= i / p;
+    return up * inverse(down, pk) % pk * powf(p, cnt, pk) % pk;
+}
+//直接调用此函数即可
+ll exlucas(ll n, ll m, ll p) { // 计算C(n, m) % p，其中p不为质数
+    ll b[50], a[50], len = 0, tmp = p;
+    for (ll i = 2; i * i <= tmp; ++i) {
+        if (tmp % i) continue;
+        b[len] = 1;
+        while (tmp % i == 0) b[len] *= i, tmp /= i;
+        a[len] = comb(n, m, i, b[len]);
+        len += 1;
+    }
+    if (tmp > 1) b[len] = tmp, a[len] = comb(n, m, tmp, tmp), len += 1;
+    return crt(a, b, len);
 }
 ```
 
@@ -1243,10 +1322,12 @@ struct LB {
 };
 ```
 
-### 10. CRT
+### 10. 中国剩余定理
+
+#### Crt
 
 ```cpp
-ll crt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x， b[i]中互质
+ll crt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x， b[i]中互质， O(nlogn)
     ll mul = 1, ret = 0;
     for (int i = 0; i < n; ++i) mul *= b[i];
     for (int i = 0; i < n; ++i) {
@@ -1258,9 +1339,43 @@ ll crt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x， b[i]中互�
 }
 ```
 
+#### ExCrt
+
+```cpp
+ll mul(ll a, ll b, ll p) {
+    ll res = 0;
+    for (a %= p; b; b >>= 1) {
+        if (b & 1) res = (res + a) % p;
+        a = (a + a) % p;
+    }
+    return res;
+}
+void exgcd(ll a, ll b, ll &g, ll &x, ll &y) {
+    if (!b) {
+        g = a, x = 1, y = 0;
+        return;
+    }
+    exgcd(b, a % b, g, y, x);
+    y -= x * (a / b);
+}
+ll excrt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x
+    ll res = a[0], minlcm = b[0], x, y, g;
+    for (int i = 1; i < n; ++i) {
+        ll c = (a[i] - res % b[i] + b[i]) % b[i];
+        exgcd(minlcm, b[i], g, x, y);
+        if (c % g != 0) return -1; // 无解
+        x = mul(x, c / g, b[i] / g);// 快速乘
+        res += x * minlcm;
+        minlcm *= b[i] / g;
+        res = (res % minlcm + minlcm) % minlcm;
+    }
+    return (res % minlcm + minlcm) % minlcm;
+}
+```
+
 ### 11. 欧拉函数
 
-- 1. 线性O(n)
+#### 线性版O(n)
 
 ```cpp
 void getphi() {
@@ -1282,8 +1397,6 @@ void getphi() {
 
 ### 12. 求组合数
 
-- 递推
-
 ```cpp
 ll comb(ll n, ll m) {
     if (n < m) return 0;
@@ -1296,7 +1409,8 @@ ll comb(ll n, ll m) {
 ## 三、数据结构
 
 ### 1. 并查集
-1. 简便的路径压缩版
+#### 简便的路径压缩版
+
 ```cpp
 const int Max = 1e5 + 10;
 int fa[Max];
@@ -1313,7 +1427,8 @@ void Un(int a, int b) {
 }
 ```
 
-2. 网络赛版
+#### 网络赛版
+
 ```cpp
 class UF {
 public:
@@ -1357,7 +1472,8 @@ public:
 ```
 
 ### 2. 树状数组
-1. 单点修改与区间查询
+#### 单点修改与区间查询
+
 ```cpp
 // 修改复杂度与查询复杂度O(logn)
 #define lb(x) ((x) & (-x))
@@ -1392,14 +1508,15 @@ ll get(int index) {
 // 区间和查询
 ll get(int l, int r) { return get(r) - get(l - 1); }
 ```
-2. 区间修改，区间查询
-	1. 设$d[i] = a[i] - a[i - 1]$
-	2. 则 $a[ x ] = \sum_{i = 1}^{x}{d_i}$
-	3. 设 $sum[ x ] = \sum_{i = 1}^{x}{a_i}$
-	4. 即 $sum[ x ] = d[1] + d[1] + d[2] + d[1] + d[2] + d[3] + …… + d[1] + ……+ d[n]$
-	4. 化简得 $sum[ x ] = \sum_{i = 1}^{x}{d_i \times (n - i + 1)}$
-	5. 得 $sum[ x ] = (n + 1) \times \sum_{i = 1}^{x}{d_i} - \sum_{i = 1}^{x}{i \times d_i}$
-	6. 固开两个树状数组，一个维护差分数组$d_i$，一个维护$i \times d_i$
+#### 区间修改，区间查询
+
+1. 设$d[i] = a[i] - a[i - 1]$
+2. 则 $a[ x ] = \sum_{i = 1}^{x}{d_i}$
+3. 设 $sum[ x ] = \sum_{i = 1}^{x}{a_i}$
+4. 即 $sum[ x ] = d[1] + d[1] + d[2] + d[1] + d[2] + d[3] + …… + d[1] + ……+ d[n]$
+4. 化简得 $sum[ x ] = \sum_{i = 1}^{x}{d_i \times (n - i + 1)}$
+5. 得 $sum[ x ] = (n + 1) \times \sum_{i = 1}^{x}{d_i} - \sum_{i = 1}^{x}{i \times d_i}$
+6. 固开两个树状数组，一个维护差分数组$d_i$，一个维护$i \times d_i$
 
 ```cpp
 #define lb(x) ((x) & (-x))
@@ -1435,7 +1552,7 @@ int get(int l, int r) {
     return res;
 }
 ```
-- 网络赛类封装版
+#### 网络赛类封装版
 
 ```cpp
 template<class T>
@@ -1503,7 +1620,7 @@ public:
 ```
 
 ### 3. 线段树
-- 精简版
+#### 精简版
 
 ```cpp
 // 宏
@@ -1569,7 +1686,7 @@ ll get(int ql, int qr, int l, int r, int node) {
 }
 ```
 
-- 结构体版
+#### 结构体版
 
 ```cpp
 #include <bits/stdc++.h>
@@ -1650,7 +1767,7 @@ int main(){
 }
 ```
 
-- 类版-网络赛
+#### 类版-网络赛
 
 ```cpp
 #include <bits/stdc++.h>
@@ -1937,7 +2054,8 @@ int main() {
 }
 ```
 ### 7. 平衡树
-1. fhq treap
+#### fhq treap
+
 ```cpp
 // 洛谷板子题
 #include <cstdio>
@@ -2058,8 +2176,10 @@ int main() {
 }
 ```
 
-2. spaly
-3. 替罪羊
+#### spaly
+
+#### 替罪羊
+
 ### 8. 左偏树
 ### 9. 主席树
 1. 主席树（静态）洛谷模板题
@@ -2462,7 +2582,9 @@ inline void add(int u, int v, int w) {
 ```
 
 ### 1. 最短路
-1. dijkstra
+
+#### dijkstra
+
 ```cpp
 //顶点数和边数
 const int maxn = 1e5 + 10, maxm = 2e5 + 10;
@@ -2516,7 +2638,8 @@ void dij(int n, int s) {//n 为顶点数， m 为边数
 }
 ```
 
-2. bellman-ford
+#### bellman-ford
+
 ```cpp
 const int maxn = 1e5 + 10, maxm = 2e5 + 10, inf = 0x3f3f3f3f;
 int dis[maxn];
@@ -2548,7 +2671,8 @@ bool bf(int n, int m, int s) { // n个点， m个边， s为起点
 }
 ```
 
-3. spfa
+#### spfa
+
 ```cpp
 const int maxn = 1e5 + 10, maxm = 2e5 + 10, inf = 0x3f3f3f3f;
 int dis[maxn], num[maxn], head[maxn], cnt; //num 数组是判断是否有负环
@@ -2597,7 +2721,8 @@ bool spfa(int n, int s) {// n个点， s为起点
 }
 ```
 
-4. floyd
+#### floyd
+
 ```cpp
 const int M = 2e2;
 int n, m; //顶点数和边数
@@ -2622,7 +2747,8 @@ void init() {
 ```
 
 ### 2. 生成树
-1. kruskal 适合稀疏图
+#### kruskal 适合稀疏图
+
 ```cpp
 #define ll long long
 using namespace std;
@@ -2666,7 +2792,7 @@ int main() {
 
 ### 3. tarjan
 ### 4. 网络流
-1. Edmonds-Karp算法，速度较慢
+#### Edmonds-Karp算法，速度较慢
 
 ```cpp
 #define ll long long
@@ -2742,7 +2868,8 @@ int main() {
 }
 ```
 
-2. dinic, 当前弧优化+多路增广优化+炸点优化(模板题),复杂度$O(n^2m)$
+#### dinic, 当前弧优化+多路增广优化+炸点优化(模板题),复杂度$O(n^2m)$
+
 ```cpp
 inline long long IO() // 快读略
 const int N = 205, M = 1e4 + 5;
@@ -2828,7 +2955,7 @@ int main() {
     return 0;
 }
 ```
-3. 最小费用最大流，将ek算法中的bfs换成spfa
+#### 最小费用最大流，将ek算法中的bfs换成spfa
 
 ```cpp
 inline long long IO() // 快读代码略
@@ -2912,7 +3039,7 @@ int main() {
 
 ### 5. 二分图
 
-1. 匈牙利算法，时间复杂度$O(ev)$
+#### 匈牙利算法，时间复杂度$O(ev)$
 
 ```cpp
 int match[M];
@@ -3044,7 +3171,7 @@ void exkmp(char x[], int m, char y[], int n, int next[], int extend[]) {
 
 ## 六、 计算几何
 
-- 未完善
+#### 二维几何（未完善）
 
 ```cpp
 #include <cstdio>
@@ -3450,7 +3577,7 @@ int main() {
 ## 七、动态规划
 
 ### 1. 树形dp
-1. 树的最大独立集
+#### 树的最大独立集
 
 ```cpp
 /*
@@ -3466,21 +3593,7 @@ dp[i][1]表示第i号结点选时的最大的快乐值
 #include <cstring>
 using namespace std;
 const int M = 6e3 + 5;
-inline int read() {
-    int x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - 48);
-        c = getchar();
-    }
-    return f ? -x : x;
-}
-
+inline long long IO() {} // 快读略
 struct es{
     int to, nxt;
 }e[M << 1];
@@ -3524,7 +3637,7 @@ int main() {
 }
 ```
 
-2. 树的最小支配集
+#### 树的最小支配集
 
 ```cpp
 /*
@@ -3545,20 +3658,7 @@ dp[2][i]表示i点没被选上，但是去其中某几个儿子被选上了，�
 using namespace std;
 #define ll long long
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 
 const int maxn = 1e5, maxm = 1e5;
 const int INF = 0x3f3f3f3f;
@@ -3622,7 +3722,7 @@ int main() {
 }
 ```
 
-3. 树的最小点覆盖
+#### 树的最小点覆盖
 
 ```cpp
 /*
@@ -3639,20 +3739,7 @@ dp[1][i]表示选i点的最小选择数，则其 += min(dp[0][son], dp[1][son])
 using namespace std;
 #define ll long long
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 
 const int maxn = 1e5, maxm = 1e5;
 const int INF = 0x3f3f3f3f;
@@ -3707,7 +3794,7 @@ int main() {
 }
 ```
 
-4. 树的直径
+#### 树的直径
 
 - 两次搜索法
   - 该方法只适用于边权为正整数情况
@@ -3750,20 +3837,7 @@ Loj 10159
 using namespace std;
 #define ll long long
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 
 const int maxn = 2e5 + 5, maxm = 2e5 + 5;
 const int INF = 0x3f3f3f3f;
@@ -3849,13 +3923,15 @@ int main() {
 }
 ```
 
-5. 树的重心
-	- 树的重心的一些重要性质：
-	- 一棵树最少有一个重心，最多有两个重心，若有两个重心，则他们相邻（即连有直接边）
-	- 树上所有点到某个点的距离和里，到重心的距离和最小；若有两个重心，则其距离和相同
-	- 若以重心为根，则所有子树的大小都不超过整棵树的一半
-	- 在一棵树上添加或删除一个叶子节点，其重心最多平移一条边的距离
-	- 两棵树通过连一条边组合成新树，则新树重心在原来两棵树的重心的连线上
+#### 树的重心
+
+- 树的重心的一些重要性质：
+- 一棵树最少有一个重心，最多有两个重心，若有两个重心，则他们相邻（即连有直接边）
+- 树上所有点到某个点的距离和里，到重心的距离和最小；若有两个重心，则其距离和相同
+- 若以重心为根，则所有子树的大小都不超过整棵树的一半
+- 在一棵树上添加或删除一个叶子节点，其重心最多平移一条边的距离
+- 两棵树通过连一条边组合成新树，则新树重心在原来两棵树的重心的连线上
+
 ```cpp
 /*
 Poj 1655
@@ -3867,20 +3943,7 @@ Poj 1655
 #include <algorithm>
 #include <vector>
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 using namespace std;
 
 const int maxn = 1e5 + 5, maxm = 2e5 + 5, inf = 0x3f3f3f3f;
@@ -3932,7 +3995,7 @@ int main() {
 }
 ```
 
-6. 树的中心
+#### 树的中心
 
 ```cpp
 /*
@@ -4033,7 +4096,7 @@ int main() {
 
 ```
 
-7. 依赖背包问题
+#### 依赖背包问题
 
 ```cpp
 /*
@@ -4053,7 +4116,7 @@ dp[i][j]代表第i门课程选j个课的最大学分和
 #include <cstring>
 #include <algorithm>
 #include <vector>
-
+#define pb push_back
 using namespace std;
 #define ll long long
 #include <cctype>
@@ -4075,62 +4138,44 @@ inline long long IO() {
 const int maxn = 1e4, maxm = 1e4;
 const int INF = 0x3f3f3f3f;
 
-int head[maxn], cnt, dis[maxn];
-
-//初始化
-void init() {
-    memset(head, -1, sizeof head);
-    // memset(vis, false, sizeof vis);
-    cnt = 0;
-}
-
-struct edges {
-    int to, next;
-    int w;
-    edges(int to = 0, int next = -1, int w = 0) : to(to), next(next), w(w) {}
-}edge[maxm << 1]; //无向图则需要乘2
-
-inline void add_edges(int u, int v, int w) {
-    edge[++cnt] = edges(v, head[u], w);
-    head[u] = cnt;
-}
 const int M = 310;
-int n, m, dp[M][M];
-
+int n, m, dp[M][M], tmp[M], w[M];
+vector<int> mp[M];
 int dfs(int u) {
-    int num = 1; 
-    for (int i = head[u]; ~i; i = edge[i].next) {
-        int v = edge[i].to, w = edge[i].w;
-        int m = dfs(v);
-        for (int j = num + m; j; --j) {//01背包，反向循环
-            for (int k = max(0, j - num); k < j && k <= m; ++k) {
-                dp[u][j] = max(dp[u][j], dp[v][k] + dp[u][j - k - 1] + w);
+    dp[u][1] = w[u];//初始化
+    int num = 1;
+    for (int v : mp[u]) {
+        int siz = dfs(v);
+        for (int i = 1;  i <= num; ++i) tmp[i] = dp[u][i];
+        for (int i = 1;  i <= num; ++i) {
+            for (int j = 0; j <= siz; ++j) {
+                dp[u][i + j] = max(dp[u][i + j], tmp[i] + dp[v][j]);
             }
         }
-        num += m;
+        num += siz;
     }
     return num; //返回包括自己加上子树有多少个节点
 }
 
 int main() {
     n = IO(), m = IO();
-    init();
     for (int i = 1; i <= n; ++i) {
-        int u = IO(), w = IO();
-        add_edges(u, i, w);
+        int u = IO();
+        mp[u].pb(i), w[i] = IO();
     }
     dfs(0);
-    printf("%d", dp[0][m]);
+    printf("%d", dp[0][m + 1]); // 假设0号结点必选
     return 0;
 }
 ```
 
-8. 基环树dp
-9. 换根
+#### 基环树dp
+
+#### 换根
 
 ### 最长上升子序列
 
-1. 朴素动态规划
+#### 朴素动态规划
 
 ```cpp
 dp[N], ans = 1;
@@ -4145,13 +4190,13 @@ for (int i = 1; i <= n; ++i) {
 }
 ```
 
-2. 贪心
+#### 贪心
 
 ```cpp
-
+// 坑（未补）
 ```
 
-3. 树状数组（或线段树）优化动态规划（直接优化）
+#### 树状数组（或线段树）优化动态规划（直接优化）
 
 ```cpp
 inline long long IO() {}
@@ -4205,7 +4250,7 @@ int main() {
 }
 ```
 
-4. 树状数组（或线段树）优化（将值排序，求下标的最长上升子序列）
+#### 树状数组（或线段树）优化（将值排序，求下标的最长上升子序列）
 
 ```cpp
 #define ll long long
