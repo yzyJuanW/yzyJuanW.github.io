@@ -49,10 +49,10 @@ ll minx(ll a, ll b, ll c) {
 #### 埃式筛
 
 ```cpp
-const int M = 101000;
+const int M = 1e5 + 5;
 int pri[M], cnt = 0;
 bool isp[M];
-// 复杂度O(nlogn)
+// 复杂度O(nloglogn)
 // true 为非素数， false 为素数
 void table() {
 	isp[0] = isp[1] = true;
@@ -76,7 +76,7 @@ void table() {
     isp[0] = isp[1] = 1;
     for (int i = 2; i < M; i++) {
         if (!isp[i]) pri[cnt++] = i;
-        for (int j = 0; j < cnt && i * pri[j] < M; j++) {
+        for (int j = 0; j < cnt && i * pri[j] < M; j++) {// 如果M较大需要注意i*pri[j]会爆int
             isp[i * pri[j]] = 1;
             if (!(i % pri[j])) break;
         }
@@ -751,6 +751,8 @@ void getphi() {
 
 ### 12. 求组合数
 
+#### 递推版，针对取余p为质数（如果有的话），且m较小的情况,O(m)
+
 ```cpp
 ll comb(ll n, ll m) {
     if (n < m) return 0;
@@ -760,3 +762,22 @@ ll comb(ll n, ll m) {
 }
 ```
 
+#### 素因子版，针对取余p不为质数，其n较小的情况，O(nlogn)
+
+```cpp
+// 计算分子分母的素数个数差来计算结果O(nlogn),需要用到质数表，和快速幂
+ll comb(int n, int m, int p) {// 求C(n, m) % p的结果，其中n, m <= 1e6, p <= 1e9
+    if (n < m) return 0;
+    ll res = 1;
+    for (int i = 0; i < cnt && pri[i] <= n; ++i) {
+        int num = 0;
+        for (int j = n; j; j /= pri[i]) num += j / pri[i];
+        for (int j = m; j; j /= pri[i]) num -= j / pri[i];
+        for (int j = n - m; j; j /= pri[i]) num -= j / pri[i];
+        res = res * powf(pri[i], num, p) % p;
+    }
+    return res;
+}
+```
+
+## 
