@@ -3,7 +3,43 @@
         <title>题解 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/</link>
         <description>题解 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E9%A2%98%E8%A7%A3/" rel="self" type="application/rss+xml" /><item>
+    <title>SPOJ GSS4 Can you answer these queries IV</title>
+    <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
+    <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+    <description><![CDATA[线段树暴力解决区间问题]]></description>
+</item>
+<item>
+    <title>POJ2777 Count Color</title>
+    <link>https://haofish.github.io/2021/07/poj2777-count-color/</link>
+    <pubDate>Fri, 30 Jul 2021 18:50:42 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj2777-count-color/</guid>
+    <description><![CDATA[线段树维护区间信息]]></description>
+</item>
+<item>
+    <title>POJ3321 Apple Tree</title>
+    <link>https://haofish.github.io/2021/07/poj3321-apple-tree/</link>
+    <pubDate>Fri, 30 Jul 2021 17:45:26 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj3321-apple-tree/</guid>
+    <description><![CDATA[线段树利用dfs序维护树上子树信息]]></description>
+</item>
+<item>
+    <title>Cf786B Legacy</title>
+    <link>https://haofish.github.io/2021/07/cf786b-legacy/</link>
+    <pubDate>Fri, 30 Jul 2021 17:07:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/cf786b-legacy/</guid>
+    <description><![CDATA[线段树优化建图]]></description>
+</item>
+<item>
+    <title>HDU1540 Tunnel Warfare</title>
+    <link>https://haofish.github.io/2021/07/hdu1540-tunnel-warfare/</link>
+    <pubDate>Fri, 30 Jul 2021 14:09:14 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/hdu1540-tunnel-warfare/</guid>
+    <description><![CDATA[线段树维护区间信息]]></description>
+</item>
+<item>
+    <title>AcWing260买票</title>
+    <link>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</link>
+    <pubDate>Thu, 29 Jul 2021 14:00:38 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+    <description><![CDATA[线段树or(树状数组+二分)]]></description>
+</item>
+<item>
     <title>UVA1625</title>
     <link>https://haofish.github.io/2020/09/uva1625/</link>
     <pubDate>Mon, 07 Sep 2020 20:44:19 &#43;0800</pubDate><guid>https://haofish.github.io/2020/09/uva1625/</guid>
@@ -26,42 +62,6 @@
     <link>https://haofish.github.io/2020/08/uva12563/</link>
     <pubDate>Fri, 21 Aug 2020 21:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva12563/</guid>
     <description><![CDATA[UVA12563 Jin Ge Jin Qu hao，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA116</title>
-    <link>https://haofish.github.io/2020/08/uva116/</link>
-    <pubDate>Fri, 21 Aug 2020 14:36:57 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva116/</guid>
-    <description><![CDATA[UVA116 Unidirectional TSP，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA437</title>
-    <link>https://haofish.github.io/2020/08/uva437/</link>
-    <pubDate>Fri, 21 Aug 2020 09:46:38 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva437/</guid>
-    <description><![CDATA[UVA437 The Tower of Babylon，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA1025</title>
-    <link>https://haofish.github.io/2020/08/uva1025/</link>
-    <pubDate>Thu, 20 Aug 2020 19:32:31 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1025/</guid>
-    <description><![CDATA[UVA1025 A Spy in the Metro，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA1149</title>
-    <link>https://haofish.github.io/2020/08/uva1149/</link>
-    <pubDate>Tue, 18 Aug 2020 15:50:53 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva1149/</guid>
-    <description><![CDATA[UVA1149 Bin Packing，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA11572</title>
-    <link>https://haofish.github.io/2020/08/uva11572/</link>
-    <pubDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11572/</guid>
-    <description><![CDATA[UVA11572 Unique Snowflakes，记录刷题代码]]></description>
-</item>
-<item>
-    <title>UVA11054</title>
-    <link>https://haofish.github.io/2020/08/uva11054/</link>
-    <pubDate>Tue, 18 Aug 2020 10:55:44 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva11054/</guid>
-    <description><![CDATA[UVA11054 Wine trading in Gergovia，记录刷题代码]]></description>
 </item>
 </channel>
 </rss>

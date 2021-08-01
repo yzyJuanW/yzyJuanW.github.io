@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>一些有用的数学公式与结论 - haofish</title><meta name="description" content="记录一些有用的数学公式"><meta property="og:title" content="一些有用的数学公式与结论" />
+        <title>一些有用的数学公式与结论 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="一些有用的数学公式与结论" />
 <meta property="og:description" content="记录一些有用的数学公式" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
@@ -26,13 +26,13 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/"
-        },"genre": "posts","keywords": "数学","wordcount":  1149 ,
+        },"genre": "posts","keywords": "数学","wordcount":  1454 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/","datePublished": "2021-07-21T12:22:01+08:00","dateModified": "2021-07-21T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
                 "name": "幼稚园卷王"
-            },"description": "记录一些有用的数学公式"
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">一些有用的数学公式与结论</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1149 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1454 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟</span>&nbsp;<span id="/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/" class="leancloud_visitors" data-flag-title="一些有用的数学公式与结论">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -193,6 +193,17 @@
 </ol>
 <h2 id="斯特林数">斯特林数</h2>
 <h2 id="欧拉函数">欧拉函数</h2>
+<ol>
+<li>性质1：若p为质数则$phi(p) = p - 1$</li>
+<li>性质2：若p为质数则$phi(p^a) = (p - 1) \times p^{a - 1}$</li>
+<li>性质3：当$n$，$m$互质时，则有$phi(nm) = phi(n) \times phi(m)$</li>
+<li>性质4：若$a$，$m$互质时，则有$a^{phi(m)} \equiv 1 \pmod m$</li>
+<li>性质5：若$p$为质数，且$i \bmod p = 0$，则$phi(i \times p) = p \times phi(i)$</li>
+<li>性质6：若$p$为质数，且$i \bmod p \ne 0$，则$phi(i \times p) = phi(i) \times (p - 1)$</li>
+<li>性质7：若$n$为奇数，则$phi(2n) = phi(n)$</li>
+<li>性质8：若$n$、$p$互质，则$p-n$也与$p$互质，因此小于$p$且与$p$互质的数之和为$phi(n) \times n / 2$</li>
+<li>性质9：若$n &gt; 1$，则小于$n$且与其互质的所有正整数之和为$phi(n) \times n / 2$</li>
+</ol>
 <h2 id="概率">概率</h2>
 <ol>
 <li>假设有一个整数随机变量X，则有$p(X = k) = p(X \ge k) - p(X &gt; k)$</li>
@@ -202,7 +213,8 @@
 <li>期望的线性：$E(X + Y) = E(X) + E(Y)$</li>
 <li>同理，如果$X_1 + X_2 = X$，则$E(X) = E(X_1) + E(X_2)$</li>
 <li>假如X是一个随机正整数变量，则$E(X) = \sum_{i = 1}^{\infty}{P(X \ge i)}$</li>
-</ol></div><div class="post-footer" id="post-footer">
+</ol>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
                 <span>更新于 2021-07-21</span>

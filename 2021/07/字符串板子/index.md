@@ -105,4 +105,3 @@ void exkmp(char x[], int m, char y[], int n, int next[], int extend[]) {
 }
 ```
 
-## 

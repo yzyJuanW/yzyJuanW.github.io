@@ -1095,7 +1095,7 @@ int get(int ql, int qr, int l = 1, int r = n, int node = 1) {
     return res;
 }
 /********************************树上操作**********************************/
-void update_chain(int x, int y, ll z) {
+void update_chain(int x, int y, ll z) {// 将树从 x 到 y 结点最短路径上所有节点的值都加上 z。
     while (top[x] != top[y]) {
         if (dep[top[x]] < dep[top[y]]) swap(x, y);
         update(dfn[top[x]], dfn[x], z);
@@ -1105,7 +1105,7 @@ void update_chain(int x, int y, ll z) {
     update(dfn[x], dfn[y], z);
 }
 
-ll get_chain(int x, int y) {
+ll get_chain(int x, int y) {//求树从 x 到 y 结点最短路径上所有节点的值之和。
     int res = 0;
     while (top[x] != top[y]) {
         if (dep[top[x]] < dep[top[y]]) swap(x, y);
@@ -1116,10 +1116,10 @@ ll get_chain(int x, int y) {
     return op(res, get(dfn[x], dfn[y]));
 }
 
-void update_son(int x, ll z) {
+void update_son(int x, ll z) {// 将以 x 为根节点的子树内所有节点值都加上 z
     update(dfn[x], dfn[x] + siz[x] - 1, z);
 }
-ll get_son(int x) {
+ll get_son(int x) {// 求以 x 为根节点的子树内所有节点值之和
     return get(dfn[x], dfn[x] + siz[x] - 1);
 }
 /********************************主函数************************************/
@@ -1158,4 +1158,3 @@ int main() {
 }
 ```
 
-## 

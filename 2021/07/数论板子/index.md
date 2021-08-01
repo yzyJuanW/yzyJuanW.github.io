@@ -148,13 +148,10 @@ ll inverse(ll a, ll m) {
 ```cpp
 #define ll long long
 ll powf(ll a, ll b, const ll mod) {// 返回a^b % mod
-	a %= mod;
 	ll res = 1;
-	while (b) {
-		if (b & 1) res = res * a % mod;
-		a = a * a % mod, b >>= 1;
-	}
-	return res;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
 }
 ```
 
@@ -780,4 +777,4 @@ ll comb(int n, int m, int p) {// 求C(n, m) % p的结果，其中n, m <= 1e6, p 
 }
 ```
 
-## 
+​	

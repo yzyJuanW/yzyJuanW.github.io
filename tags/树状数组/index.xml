@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>树状数组 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+        <description>树状数组 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Jul 2021 14:00:38 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" rel="self" type="application/rss+xml" /><item>
+    <title>AcWing260买票</title>
+    <link>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</link>
+    <pubDate>Thu, 29 Jul 2021 14:00:38 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+    <description><![CDATA[线段树or(树状数组+二分)]]></description>
+</item>
+</channel>
+</rss>

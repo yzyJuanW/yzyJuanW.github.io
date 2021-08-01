@@ -644,6 +644,7 @@ void getstr(string &s) { // 字符串快读
     int c = getchar();
     while (c < 33 && c != -1) c = getchar();
     //if (c == -1) exit(0);
+    s.clear();
     for(;c > 32; c = getchar()) s.push_back(c);
 }
 void print(ll x) {
@@ -656,4 +657,3 @@ template <typename T>
 void print(T x, char c) { print(x); putchar(c); }
 ```
 
-## 

@@ -3,9 +3,45 @@
         <title>haofish</title>
         <link>https://haofish.github.io/</link>
         <description>一个手残党的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Jul 2021 20:46:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</lastBuildDate>
             <atom:link href="https://haofish.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>SPOJ GSS4 Can you answer these queries IV</title>
+    <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
+    <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+    <description><![CDATA[线段树暴力解决区间问题]]></description>
+</item>
+<item>
+    <title>POJ2777 Count Color</title>
+    <link>https://haofish.github.io/2021/07/poj2777-count-color/</link>
+    <pubDate>Fri, 30 Jul 2021 18:50:42 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj2777-count-color/</guid>
+    <description><![CDATA[线段树维护区间信息]]></description>
+</item>
+<item>
+    <title>POJ3321 Apple Tree</title>
+    <link>https://haofish.github.io/2021/07/poj3321-apple-tree/</link>
+    <pubDate>Fri, 30 Jul 2021 17:45:26 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj3321-apple-tree/</guid>
+    <description><![CDATA[线段树利用dfs序维护树上子树信息]]></description>
+</item>
+<item>
+    <title>Cf786B Legacy</title>
+    <link>https://haofish.github.io/2021/07/cf786b-legacy/</link>
+    <pubDate>Fri, 30 Jul 2021 17:07:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/cf786b-legacy/</guid>
+    <description><![CDATA[线段树优化建图]]></description>
+</item>
+<item>
+    <title>HDU1540 Tunnel Warfare</title>
+    <link>https://haofish.github.io/2021/07/hdu1540-tunnel-warfare/</link>
+    <pubDate>Fri, 30 Jul 2021 14:09:14 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/hdu1540-tunnel-warfare/</guid>
+    <description><![CDATA[线段树维护区间信息]]></description>
+</item>
+<item>
+    <title>AcWing260买票</title>
+    <link>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</link>
+    <pubDate>Thu, 29 Jul 2021 14:00:38 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+    <description><![CDATA[线段树or(树状数组+二分)]]></description>
+</item>
+<item>
     <title>动态规划套路板子</title>
     <link>https://haofish.github.io/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</link>
     <pubDate>Tue, 27 Jul 2021 20:46:34 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</guid>
@@ -28,42 +64,6 @@
     <link>https://haofish.github.io/2021/07/%E5%9B%BE%E8%AE%BA%E6%9D%BF%E5%AD%90/</link>
     <pubDate>Tue, 27 Jul 2021 20:42:27 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E5%9B%BE%E8%AE%BA%E6%9D%BF%E5%AD%90/</guid>
     <description><![CDATA[记录一些常用的图论板子]]></description>
-</item>
-<item>
-    <title>数据结构板子</title>
-    <link>https://haofish.github.io/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/</link>
-    <pubDate>Tue, 27 Jul 2021 20:40:18 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/</guid>
-    <description><![CDATA[记录一些常用的数据结构板子]]></description>
-</item>
-<item>
-    <title>数论板子</title>
-    <link>https://haofish.github.io/2021/07/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/</link>
-    <pubDate>Tue, 27 Jul 2021 16:16:45 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/</guid>
-    <description><![CDATA[记录一些常用的数论板子]]></description>
-</item>
-<item>
-    <title>基础板子</title>
-    <link>https://haofish.github.io/2021/07/%E5%9F%BA%E7%A1%80%E6%9D%BF%E5%AD%90/</link>
-    <pubDate>Tue, 27 Jul 2021 16:13:55 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E5%9F%BA%E7%A1%80%E6%9D%BF%E5%AD%90/</guid>
-    <description><![CDATA[记录一些常用的基础板子]]></description>
-</item>
-<item>
-    <title>我的模板（整合版）</title>
-    <link>https://haofish.github.io/2021/07/%E6%A8%A1%E6%9D%BF/</link>
-    <pubDate>Thu, 22 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A8%A1%E6%9D%BF/</guid>
-    <description><![CDATA[记录一些常用的板子，整合版本]]></description>
-</item>
-<item>
-    <title>一些有用的数学公式与结论</title>
-    <link>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</link>
-    <pubDate>Wed, 21 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</guid>
-    <description><![CDATA[记录一些有用的数学公式]]></description>
-</item>
-<item>
-    <title>树形dp总结</title>
-    <link>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</link>
-    <pubDate>Tue, 20 Jul 2021 12:22:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2dp/</guid>
-    <description><![CDATA[本人对树形背包转移的理解]]></description>
 </item>
 </channel>
 </rss>

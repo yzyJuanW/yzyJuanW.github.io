@@ -310,10 +310,6 @@ void problem(ll l, ll r) {
 
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     int n = 1, l, r;
     while (~scanf("%d %d", &l, &r)) problem(l, r);
     return 0;
@@ -392,10 +388,6 @@ void problem() {
 
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("D:/MYCODE/vsCode-c/test.in", "r", stdin);
-    freopen("D:/MYCODE/vsCode-c/test.out", "w", stdout);
-#endif
     int n = 1;
     while (n--) problem();
     return 0;
