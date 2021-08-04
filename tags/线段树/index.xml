@@ -3,7 +3,31 @@
         <title>线段树 - 标签 - haofish</title>
         <link>https://haofish.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
         <description>线段树 - 标签 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 03 Aug 2021 23:29:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+    <title>AcWing 246 区间最大公约数</title>
+    <link>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
+    <pubDate>Tue, 03 Aug 2021 23:29:19 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
+    <description><![CDATA[线段树and数论技巧]]></description>
+</item>
+<item>
+    <title>HDU 5649 DZY Loves Sorting</title>
+    <link>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</link>
+    <pubDate>Tue, 03 Aug 2021 20:38:47 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</guid>
+    <description><![CDATA[线段树+二分的一道思维题]]></description>
+</item>
+<item>
+    <title>SPOJ GSS5 Can you answer these queries V</title>
+    <link>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</link>
+    <pubDate>Tue, 03 Aug 2021 18:42:24 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</guid>
+    <description><![CDATA[线段树解决另类区间最大字段和]]></description>
+</item>
+<item>
+    <title>SPOJ GSS3 Can you answer these queries III</title>
+    <link>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</link>
+    <pubDate>Tue, 03 Aug 2021 17:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</guid>
+    <description><![CDATA[线段树解决区间最大字段和]]></description>
+</item>
+<item>
     <title>SPOJ GSS4 Can you answer these queries IV</title>
     <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
     <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>

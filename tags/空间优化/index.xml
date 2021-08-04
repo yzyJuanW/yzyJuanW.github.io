@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>空间优化 - 标签 - haofish</title>
+        <link>https://haofish.github.io/tags/%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96/</link>
+        <description>空间优化 - 标签 - haofish</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Aug 2021 11:17:06 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96/" rel="self" type="application/rss+xml" /><item>
+    <title>POJ 1159 Palindrome</title>
+    <link>https://haofish.github.io/2021/08/poj-1159-palindrome/</link>
+    <pubDate>Wed, 04 Aug 2021 11:17:06 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/poj-1159-palindrome/</guid>
+    <description><![CDATA[一道简单的区间dp，要用到空间优化]]></description>
+</item>
+</channel>
+</rss>

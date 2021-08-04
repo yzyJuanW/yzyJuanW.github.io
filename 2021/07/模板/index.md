@@ -1577,64 +1577,43 @@ int get(int l, int r) {
 ```cpp
 template<class T>
 class BIT{
-    #define lb(x) ((x) & (-x))
-    vector<T> sum, maxv, arr;
-    const int inf = 0x3f3f3f3f;
+    inline int lb(int x) { return x & (-x); }
+    vector<T> bit;
     T getSum(int i) {
         T ret = 0;
-        while (i) {
-            ret += sum[i];
+        while (i > 0) {
+            ret += bit[i];
             i -= lb(i);
         }
         return ret;
     }
     int n;
 public:
-    BIT(int n, T *a) : sum(n + 1, 0), maxv(n + 1, -inf), arr(n + 1), n(n) {
-        for (int i = 1; i <= n; ++i) arr[i] = a[i];
+    BIT (int n, T val) : bit(n + 1, val), n(n) {};
+    BIT (int n, T *a) { rebuild(n, a); }
+    void rebuild(int n, T *a) {
+        bit.clear();
+        bit.push_back();
+        this->n = n;
         for (int i = 1; i <= n; ++i) {
-            sum[i] += a[i];                 //求和
-            maxv[i] = max(maxv[i], a[i]);   //最大值
-            int j = i + lb(i);
-            if (j <= n) {
-                sum[j] += sum[i];
-                maxv[j] = max(maxv[i], maxv[j]);
+            bit.push_back(a[i]);
+        }
+        for (int i = 1; i <= n; ++i) {
+            if (i + lb(i) <= n) {
+                bit[i + lb(i)] += bit[i];
             }
         }
     }
-    BIT(int n) : sum(n + 1, 0), maxv(n + 1, -inf), arr(n + 1, 0), n(n) {}
-    void update(int indx, T val) { // 将indx下标的数加v
-        int i = indx;
-        T &tmp = arr[indx];
-        tmp += val;
-        while (i <= n) {
-            sum[i] += val;
-            maxv[i] = arr[i];
-            for (int j = 1; j < lb(i); j <<= 1) {
-                maxv[i] = max(maxv[i], maxv[i - j]);
-            }
-            i += lb(i);
+    void point_update(int index, T val) {
+        while (index <= n) {
+            bit[index] += val;
+            index += lb(index);
         }
     }
 
-    T getSum(int l, int r) {
+    T get(int l, int r) {
+        if (l > r) return 0;
         return getSum(r) - getSum(l - 1);
-    }
-
-    T getMax(int l, int r) {
-        T ret = arr[r];
-        while(r >= l) {
-            ret = max(arr[r], ret);
-            for (r--; r - lb(r) >= l; r -= lb(r)) ret = max(maxv[r], ret);
-        }
-        return ret;
-    }
-
-    T getMax(int i) { return getMax(1, i); }
-    void clear() {
-        fill(sum.begin(), sum.end(), 0);
-        fill(arr.begin(), arr.end(), 0);
-        fill(maxv.begin(), maxv.end(), -inf);
     }
 };
 ```
