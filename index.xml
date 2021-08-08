@@ -3,9 +3,21 @@
         <title>haofish</title>
         <link>https://haofish.github.io/</link>
         <description>一个手残党的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Aug 2021 20:30:19 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Aug 2021 22:52:29 &#43;0800</lastBuildDate>
             <atom:link href="https://haofish.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>洛谷 P2617</title>
+    <link>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/</link>
+    <pubDate>Sun, 08 Aug 2021 22:52:29 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/</guid>
+    <description><![CDATA[一道动态求解区间第k大的板子题]]></description>
+</item>
+<item>
+    <title>HDU 4417 Super Mario</title>
+    <link>https://haofish.github.io/2021/08/hdu-4417-super-mario/</link>
+    <pubDate>Sat, 07 Aug 2021 17:39:53 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-4417-super-mario/</guid>
+    <description><![CDATA[利用主席树来求解区间中有多少个数不超过k的]]></description>
+</item>
+<item>
     <title>HDU 1421 搬寝室</title>
     <link>https://haofish.github.io/2021/08/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</link>
     <pubDate>Wed, 04 Aug 2021 20:30:19 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</guid>
@@ -52,18 +64,6 @@
     <link>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</link>
     <pubDate>Tue, 03 Aug 2021 17:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</guid>
     <description><![CDATA[线段树解决区间最大字段和]]></description>
-</item>
-<item>
-    <title>SPOJ GSS4 Can you answer these queries IV</title>
-    <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
-    <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>
-    <description><![CDATA[线段树暴力解决区间问题]]></description>
-</item>
-<item>
-    <title>POJ2777 Count Color</title>
-    <link>https://haofish.github.io/2021/07/poj2777-count-color/</link>
-    <pubDate>Fri, 30 Jul 2021 18:50:42 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj2777-count-color/</guid>
-    <description><![CDATA[线段树维护区间信息]]></description>
 </item>
 </channel>
 </rss>
