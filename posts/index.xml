@@ -3,7 +3,19 @@
         <title>所有文章 - haofish</title>
         <link>https://haofish.github.io/posts/</link>
         <description>所有文章 | haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Aug 2021 22:52:29 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Aug 2021 10:37:01 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>洛谷-1972 HH的项链</title>
+    <link>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/</link>
+    <pubDate>Tue, 10 Aug 2021 10:37:01 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/</guid>
+    <description><![CDATA[区间查询不同数的个数]]></description>
+</item>
+<item>
+    <title>Cf840D Destiny</title>
+    <link>https://haofish.github.io/2021/08/cf840d-destiny/</link>
+    <pubDate>Tue, 10 Aug 2021 09:37:29 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/cf840d-destiny/</guid>
+    <description><![CDATA[一道询问区间最小出现某次数的数的题]]></description>
+</item>
+<item>
     <title>洛谷 P2617</title>
     <link>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/</link>
     <pubDate>Sun, 08 Aug 2021 22:52:29 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/</guid>
@@ -50,18 +62,6 @@
     <link>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</link>
     <pubDate>Tue, 03 Aug 2021 20:38:47 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</guid>
     <description><![CDATA[线段树+二分的一道思维题]]></description>
-</item>
-<item>
-    <title>SPOJ GSS5 Can you answer these queries V</title>
-    <link>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</link>
-    <pubDate>Tue, 03 Aug 2021 18:42:24 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</guid>
-    <description><![CDATA[线段树解决另类区间最大字段和]]></description>
-</item>
-<item>
-    <title>SPOJ GSS3 Can you answer these queries III</title>
-    <link>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</link>
-    <pubDate>Tue, 03 Aug 2021 17:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</guid>
-    <description><![CDATA[线段树解决区间最大字段和]]></description>
 </item>
 </channel>
 </rss>

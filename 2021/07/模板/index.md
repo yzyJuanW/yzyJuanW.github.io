@@ -46,17 +46,21 @@ for (int i = 0; i < 100; ++i) {
 
 ### 2. 离散化
 ```cpp
-vector<int> vt;
-//二分找离散化值
-inline int get_id(int x) { return lower_bound(vt.begin(), vt.end(), x) - vt.begin() + 1; }
-inline void erase_vt() { // 离散化后去重
-    sort(vt.begin(), vt.end());
-    vt.erase(unique(vt.begin(), vt.end()), vt.end());
-}
-inline void id_table(int n, int *a, vector<int>& res) { // 打表, 注意，原数组下标要从1开始，返回离散化后的表
-    res.emplace_back(0);
-    for (int i = 1; i <= n; ++i) res.emplace_back(get_id(a[i]));
-}
+template<class T>
+struct discrete {
+    vector<T> v;
+    int init() { // 离散化，返回离散化后的个数
+        sort(v.begin(), v.end());
+        v.erase(unique(v.begin(), v.end()), v.end());
+        return v.size();
+    }
+    int size() { return v.size(); }
+    void add(const T x) { v.push_back(x); }
+    int operator[] (const T x) {// 查找一个值离散化后的值
+        return lower_bound(v.begin(), v.end(), x) - v.begin() + 1;
+    }
+    T kth(int k) { return v[k - 1]; } // 查找排第k的是多少，查找范围[1, n]
+};
 ```
 ### 3. 高精
 

@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E6%A8%A1%E6%9D%BF\/"
-        },"genre": "posts","wordcount":  29403 ,
+        },"genre": "posts","wordcount":  29418 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E6%A8%A1%E6%9D%BF\/","datePublished": "2021-07-22T12:22:01+08:00","dateModified": "2021-07-22T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">我的模板（整合版）</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a>&nbsp;<a href="/categories/%E6%A8%A1%E6%9D%BF/"><i class="far fa-folder fa-fw"></i>模板</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-22">2021-07-22</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 29403 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-22">2021-07-22</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 29418 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 59 分钟</span>&nbsp;<span id="/2021/07/%E6%A8%A1%E6%9D%BF/" class="leancloud_visitors" data-flag-title="我的模板（整合版）">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -413,19 +413,27 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vt</span><span class="p">;</span>
-<span class="c1">//二分找离散化值
-</span><span class="c1"></span><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">vt</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vt</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">vt</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
-<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">erase_vt</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// 离散化后去重
-</span><span class="c1"></span>    <span class="n">sort</span><span class="p">(</span><span class="n">vt</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vt</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-    <span class="n">vt</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">vt</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vt</span><span class="p">.</span><span class="n">end</span><span class="p">()),</span> <span class="n">vt</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="p">}</span>
-<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">id_table</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 打表, 注意，原数组下标要从1开始，返回离散化后的表
-</span><span class="c1"></span>    <span class="n">res</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">res</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">get_id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
-<span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">discrete</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// 离散化，返回离散化后的个数
+</span><span class="c1"></span>        <span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">()),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">size</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 查找一个值离散化后的值
+</span><span class="c1"></span>        <span class="k">return</span> <span class="nf">lower_bound</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">T</span> <span class="nf">kth</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span> <span class="p">}</span> <span class="c1">// 查找排第k的是多少，查找范围[1, n]
+</span><span class="c1"></span><span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="3-高精">3. 高精</h3>

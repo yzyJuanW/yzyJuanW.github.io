@@ -4,30 +4,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>洛谷 P2617 - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="洛谷 P2617" />
-<meta property="og:description" content="一道动态求解区间第k大的板子题" />
+        <title>Cf840D Destiny - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="Cf840D Destiny" />
+<meta property="og:description" content="一道询问区间最小出现某次数的数的题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-08-08T22:52:29+08:00" />
-<meta property="article:modified_time" content="2021-08-08T22:52:29+08:00" />
+<meta property="og:url" content="https://haofish.github.io/2021/08/cf840d-destiny/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-10T09:37:29+08:00" />
+<meta property="article:modified_time" content="2021-08-10T09:37:29+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
-<meta name="twitter:title" content="洛谷 P2617"/>
-<meta name="twitter:description" content="一道动态求解区间第k大的板子题"/>
+<meta name="twitter:title" content="Cf840D Destiny"/>
+<meta name="twitter:description" content="一道询问区间最小出现某次数的数的题"/>
 <meta name="application-name" content="FeelIt">
-<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" /><link rel="prev" href="https://haofish.github.io/2021/08/hdu-4417-super-mario/" /><link rel="next" href="https://haofish.github.io/2021/08/cf840d-destiny/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/08/cf840d-destiny/" /><link rel="prev" href="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" /><link rel="next" href="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "洛谷 P2617",
+        "headline": "Cf840D Destiny",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/haofish.github.io\/2021\/08\/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings\/"
-        },"genre": "posts","keywords": "题解, 主席树, 树状数组, 树套树","wordcount":  2435 ,
-        "url": "https:\/\/haofish.github.io\/2021\/08\/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings\/","datePublished": "2021-08-08T22:52:29+08:00","dateModified": "2021-08-08T22:52:29+08:00","publisher": {
+            "@id": "https:\/\/haofish.github.io\/2021\/08\/cf840d-destiny\/"
+        },"genre": "posts","keywords": "题解, 主席树","wordcount":  1935 ,
+        "url": "https:\/\/haofish.github.io\/2021\/08\/cf840d-destiny\/","datePublished": "2021-08-10T09:37:29+08:00","dateModified": "2021-08-10T09:37:29+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
@@ -115,10 +115,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">洛谷 P2617</h2><div class="post-meta">
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">Cf840D Destiny</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%88%B7%E9%A2%98/"><i class="far fa-folder fa-fw"></i>刷题</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-08">2021-08-08</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2435 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟</span>&nbsp;<span id="/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" class="leancloud_visitors" data-flag-title="洛谷 P2617">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-10">2021-08-10</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1935 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟</span>&nbsp;<span id="/2021/08/cf840d-destiny/" class="leancloud_visitors" data-flag-title="Cf840D Destiny">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -130,13 +130,9 @@
                     </div>
                     <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
                 </div><div class="content" id="content"><ul>
-<li>题意：求解一个区间中的第k大，本题带单点修改</li>
-<li>考虑如果是静态主席树的话，其本质是利用了前缀和思想，但我们知道前缀和只能查询不能再短时间内单点修改，这个时候就可以考虑不用前缀和来维护主席树了。</li>
-<li>想到可以单点修改又可以区间查询的数据结构就有线段树和树状数组了</li>
-<li>为了方便起见，我们用树状数组来维护主席树</li>
-<li>想象树状数组每个下标都是一个主席树，这样就可以做到单点树修改和区间树查询了</li>
-<li>值得注意的是：之前的前缀和主席树是当前树的相同结点是继承上一棵树的，他是利用前一个树来创建一颗新的树。但我们用树状数组就是更新式的，他并没有用到上一棵树的信息，同样还是试想树状数组每一个下标都是一颗树，每次都是更新那棵树，而不是创一颗树，这样理解会好一些。</li>
-<li>主要直接看模板代码区</li>
+<li>题意：给你一个数组，问你区间 <code>[l,r]</code> 中出现次数超过 <code>(r - l + 1) / k</code> 次的最小的数，不存在输出-1</li>
+<li>在修改一下普通主席树的询问便可，先从主席树的左边开始找，如果左边的个数和都小于了 <code>(r - l + 1) / k</code> 那就不用找了，但如果找到了，则右子树就不用找了</li>
+<li>直接看模板区代码</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -312,52 +308,6 @@
 </span><span class="lnt">170
 </span><span class="lnt">171
 </span><span class="lnt">172
-</span><span class="lnt">173
-</span><span class="lnt">174
-</span><span class="lnt">175
-</span><span class="lnt">176
-</span><span class="lnt">177
-</span><span class="lnt">178
-</span><span class="lnt">179
-</span><span class="lnt">180
-</span><span class="lnt">181
-</span><span class="lnt">182
-</span><span class="lnt">183
-</span><span class="lnt">184
-</span><span class="lnt">185
-</span><span class="lnt">186
-</span><span class="lnt">187
-</span><span class="lnt">188
-</span><span class="lnt">189
-</span><span class="lnt">190
-</span><span class="lnt">191
-</span><span class="lnt">192
-</span><span class="lnt">193
-</span><span class="lnt">194
-</span><span class="lnt">195
-</span><span class="lnt">196
-</span><span class="lnt">197
-</span><span class="lnt">198
-</span><span class="lnt">199
-</span><span class="lnt">200
-</span><span class="lnt">201
-</span><span class="lnt">202
-</span><span class="lnt">203
-</span><span class="lnt">204
-</span><span class="lnt">205
-</span><span class="lnt">206
-</span><span class="lnt">207
-</span><span class="lnt">208
-</span><span class="lnt">209
-</span><span class="lnt">210
-</span><span class="lnt">211
-</span><span class="lnt">212
-</span><span class="lnt">213
-</span><span class="lnt">214
-</span><span class="lnt">215
-</span><span class="lnt">216
-</span><span class="lnt">217
-</span><span class="lnt">218
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
@@ -371,8 +321,8 @@
 </span><span class="cp">#define uset unordered_set
 </span><span class="cp">#define vi vector
 </span><span class="cp">#define all(x) x.begin(), x.end()
-</span><span class="cp">#define lb(x) ((x) &amp; (-x))
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 
 <span class="cm">/*++++++++++++++++++++++++++++++快读与快输++++++++++++++++++++++++++++++*/</span>
@@ -433,12 +383,11 @@
 <span class="cm">/*++++++++++++++++++++++++++++++可修改区++++++++++++++++++++++++++++++*/</span>
 <span class="c1">// 自定义结构体
 </span><span class="c1"></span><span class="k">struct</span> <span class="nc">pii</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-    <span class="c1">// int x, y;
-</span><span class="c1"></span>    <span class="c1">// bool operator&lt; (const pii&amp; j) {
-</span><span class="c1"></span>    <span class="c1">//     return x != j.x ? x &lt; j.x : y &lt; j.y;
-</span><span class="c1"></span>    <span class="c1">// }
-</span><span class="c1"></span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span> <span class="p">(</span><span class="k">const</span> <span class="n">pii</span><span class="o">&amp;</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">j</span><span class="p">.</span><span class="n">x</span> <span class="o">?</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">.</span><span class="nl">x</span> <span class="p">:</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 <span class="cm">/*------------------------------可修改区------------------------------*/</span>
 
 
@@ -453,11 +402,8 @@
 <span class="k">const</span> <span class="kt">double</span> <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">dx</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// 上左下右，顺时针
 </span><span class="c1"></span><span class="k">const</span> <span class="kt">int</span> <span class="n">dy</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">2e4</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">ram</span><span class="p">,</span> <span class="n">root</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">rnk</span><span class="p">[</span><span class="n">N</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">];</span>
-<span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ms</span><span class="p">;</span>
-<span class="n">umap</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">;</span>
-<span class="n">pii</span> <span class="n">p</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">3e5</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">ram</span><span class="p">,</span> <span class="n">root</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
 <span class="cm">/*------------------------------全局变量区------------------------------*/</span>
 
 
@@ -466,57 +412,33 @@
 
 
 <span class="cm">/*++++++++++++++++++++++++++++++模板代码区++++++++++++++++++++++++++++++*/</span>
-<span class="k">struct</span> <span class="nc">nodes</span><span class="p">{</span>
-    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="n">hjt</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">200</span><span class="p">];</span>
-
-<span class="kt">void</span> <span class="nf">push_up</span><span class="p">(</span><span class="kt">int</span> <span class="n">indx</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">hjt</span><span class="p">[</span><span class="n">indx</span><span class="p">].</span><span class="n">sum</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">indx</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span> <span class="o">+</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">indx</span><span class="p">].</span><span class="n">r</span><span class="p">].</span><span class="n">sum</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">pre</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">indx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">now</span> <span class="o">=</span> <span class="p">(</span><span class="n">pre</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="o">++</span><span class="nl">ram</span> <span class="p">:</span> <span class="n">pre</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">sum</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">now</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="k">struct</span> <span class="nc">nodes</span> <span class="p">{</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span> <span class="n">hjt</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">30</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">now</span> <span class="o">=</span> <span class="o">++</span><span class="n">ram</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">now</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">indx</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span> <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">l</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">indx</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
-    <span class="k">else</span> <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">indx</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
-    <span class="n">push_up</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+    <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">l</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+    <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">now</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">pre</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">indx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">now</span> <span class="o">=</span> <span class="o">++</span><span class="n">ram</span><span class="p">;</span>
+    <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">pre</span><span class="p">],</span> <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">sum</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">now</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">indx</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span> <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">l</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">indx</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">now</span><span class="p">].</span><span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">indx</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">now</span><span class="p">;</span>
 <span class="p">}</span>
 
-
-<span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="n">vi</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">tl</span><span class="p">,</span> <span class="n">vi</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">tl</span><span class="p">,</span> <span class="kt">int</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">tr</span><span class="p">].</span><span class="n">sum</span> <span class="o">-</span> <span class="n">hjt</span><span class="p">[</span><span class="n">tl</span><span class="p">].</span><span class="n">sum</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tl</span><span class="p">)</span> <span class="n">res</span> <span class="o">-=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tr</span><span class="p">)</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tl</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tr</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="n">tl</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tl</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">tr</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="n">tl</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">res</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">modify_tree</span><span class="p">(</span><span class="kt">int</span> <span class="n">indx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">mp</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">indx</span><span class="p">]];</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">indx</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">root</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">indx</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
-        <span class="n">indx</span> <span class="o">+=</span> <span class="n">lb</span><span class="p">(</span><span class="n">indx</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">query_tree</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">vi</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tl</span><span class="p">,</span> <span class="n">tr</span><span class="p">;</span>
-    <span class="c1">// 预处理有哪些树状数组的主席树要求和
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">tl</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> 
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">tr</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="n">tl</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">tr</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span> <span class="o">-</span> <span class="n">hjt</span><span class="p">[</span><span class="n">hjt</span><span class="p">[</span><span class="n">tl</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span><span class="p">,</span> <span class="n">ret</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">res</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">)</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">tl</span><span class="p">].</span><span class="n">l</span><span class="p">,</span> <span class="n">hjt</span><span class="p">[</span><span class="n">tr</span><span class="p">].</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="n">hjt</span><span class="p">[</span><span class="n">tl</span><span class="p">].</span><span class="n">r</span><span class="p">,</span> <span class="n">hjt</span><span class="p">[</span><span class="n">tr</span><span class="p">].</span><span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cm">/*------------------------------模板代码区------------------------------*/</span>
 
@@ -537,33 +459,15 @@
 <span class="cm">/*++++++++++++++++++++++++++++++主代码区++++++++++++++++++++++++++++++*/</span>
 <span class="kt">void</span> <span class="nf">problem</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">IO</span><span class="p">(),</span> <span class="n">m</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
+    <span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
-        <span class="n">ms</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">modify</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
     <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
-        <span class="n">getstr</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;Q&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">q</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">IO</span><span class="p">(),</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">k</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">q</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">IO</span><span class="p">(),</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
-            <span class="n">ms</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">ms</span><span class="p">)</span> <span class="n">mp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">,</span> <span class="n">rnk</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
-    <span class="c1">// 初始化建树，和寻常不同，这个树是更新式的，而不是继承式的（直接连接上一棵树的子结点，更新不一样的子结点）
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">modify_tree</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">q</span> <span class="o">==</span>  <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">print</span><span class="p">(</span><span class="n">rnk</span><span class="p">[</span><span class="n">query_tree</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">k</span><span class="p">,</span> <span class="n">cnt</span><span class="p">)],</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">modify_tree</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span>
-            <span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
-            <span class="n">modify_tree</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">IO</span><span class="p">(),</span> <span class="n">r</span> <span class="o">=</span> <span class="n">IO</span><span class="p">(),</span> <span class="n">k</span> <span class="o">=</span> <span class="n">IO</span><span class="p">();</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k</span><span class="p">;</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">query</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">root</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="cm">/*------------------------------主代码区------------------------------*/</span>
@@ -583,17 +487,15 @@
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>
                 </span><span><a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树</a>
-                </span><span><a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a>
-                </span><span><a href="/tags/%E6%A0%91%E5%A5%97%E6%A0%91/">树套树</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
-                <span>更新于 2021-08-08</span>
+                <span>更新于 2021-08-10</span>
             </div><div class="post-info-mod"><span>
-                            <a class="link-to-markdown" href="/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/2021/08/cf840d-destiny/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" data-title="洛谷 P2617" data-hashtags="题解,主席树,树状数组,树套树"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" data-title="洛谷 P2617" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
-        </div></div><div class="post-nav"><a href="/2021/08/hdu-4417-super-mario/" class="prev" rel="prev" title="HDU 4417 Super Mario"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
-            <a href="/2021/08/cf840d-destiny/" class="next" rel="next" title="Cf840D Destiny">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2021/08/cf840d-destiny/" data-title="Cf840D Destiny" data-hashtags="题解,主席树"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2021/08/cf840d-destiny/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2021/08/cf840d-destiny/" data-title="Cf840D Destiny" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2021/08/%E6%B4%9B%E8%B0%B7-p2617-dynamic-rankings/" class="prev" rel="prev" title="洛谷 P2617"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2021/08/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/" class="next" rel="next" title="洛谷-1972 HH的项链">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="valine"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
