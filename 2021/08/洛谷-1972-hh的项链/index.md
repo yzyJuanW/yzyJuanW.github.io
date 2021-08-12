@@ -120,7 +120,7 @@ int build(int l, int r) {
 }
 int modify(int pre, int l, int r, int indx, int val) {
     int now = ++ram;
-    hjt[now] = hjt[pre], hjt[now].sum +=val;
+    hjt[now] = hjt[pre], hjt[now].sum += val;
     if (l == r) return now;
     int mid = (l + r) >> 1;
     if (indx <= mid) hjt[now].l = modify(hjt[now].l, l, mid, indx, val);
@@ -304,7 +304,7 @@ int build(int l, int r) {
 }
 int modify(int pre, int l, int r, int indx, int val) {
     int now = ++ram;
-    hjt[now] = hjt[pre], hjt[now].sum +=val;
+    hjt[now] = hjt[pre], hjt[now].sum += val;
     if (l == r) return now;
     int mid = (l + r) >> 1;
     if (indx <= mid) hjt[now].l = modify(hjt[now].l, l, mid, indx, val);
