@@ -26,14 +26,13 @@ void Un(int a, int b) {
 ```cpp
 class UF {
 public:
-    vector<int> parent;
-    vector<int> size;
     int n;
     // 当前连通分量数目
     int cnt;
-    
-public:
-    UF(int _n): n(_n), cnt(_n), parent(_n), size(_n, 1) {
+    vector<int> size;
+    vector<int> parent;
+
+    UF(int _n): n(_n + 1), cnt(_n + 1), size(_n + 1, 1), parent(_n + 1) {
         int i = 0;
         for (auto &x : parent) x = i++;
     }

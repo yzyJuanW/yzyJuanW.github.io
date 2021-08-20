@@ -69,16 +69,18 @@ void table() {
 ```cpp
 // 复杂度O(n)
 const int M = 1e5 + 10;
-int pri[M], cnt = 0;
+int cnt = 0;
 bool isp[M];
 // true 为非素数， false 为素数
-void table() {
+vector<int> pri;
+void table(int n = 1e5) {
     isp[0] = isp[1] = 1;
-    for (int i = 2; i < M; i++) {
-        if (!isp[i]) pri[cnt++] = i;
-        for (int j = 0; j < cnt && i * pri[j] < M; j++) {// 如果M较大需要注意i*pri[j]会爆int
-            isp[i * pri[j]] = 1;
-            if (!(i % pri[j])) break;
+    for (int i = 2; i <= n; ++i) {
+        if (!isp[i]) pri.push_back(i);
+        for (int x : pri) {
+            if (x * i > n) break;
+            isp[x * i] = 1;
+            if (i % x == 0) break;
         }
     }
 }

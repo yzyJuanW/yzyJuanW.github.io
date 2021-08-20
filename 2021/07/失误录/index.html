@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E5%A4%B1%E8%AF%AF%E5%BD%95\/"
-        },"genre": "posts","wordcount":  374 ,
+        },"genre": "posts","wordcount":  541 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E5%A4%B1%E8%AF%AF%E5%BD%95\/","datePublished": "2021-07-19T12:22:01+08:00","dateModified": "2021-07-19T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">失误录</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 374 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟</span>&nbsp;<span id="/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/" class="leancloud_visitors" data-flag-title="失误录">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 541 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/" class="leancloud_visitors" data-flag-title="失误录">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -139,6 +139,10 @@
     <li><a href="#hdu-中-string需要string的头文件">HDU 中 string需要string的头文件</a></li>
     <li><a href="#状态转移时需要滚动时可以考虑用tmp数组复制再转移这样就不用滚动了">状态转移时，需要滚动时，可以考虑用tmp数组复制再转移，这样就不用滚动了</a></li>
     <li><a href="#当有查询操作时可以优先考虑离线打表">当有查询操作时，可以优先考虑离线打表</a></li>
+    <li><a href="#线段树的lazy标记要符合定义思考如何继承上一个结点的标记">线段树的lazy标记要符合定义，思考如何继承上一个结点的标记</a></li>
+    <li><a href="#当碰到有时间轴性质的题时考虑优先利用某时间短或者长的">当碰到有时间轴性质的题时，考虑优先利用某时间短或者长的</a></li>
+    <li><a href="#状态转移的tmp用法有两种一种覆盖型一种记录历史性两种各有好处哪个方便用哪个">状态转移的tmp用法有两种，一种覆盖型，一种记录历史性，两种各有好处，哪个方便用哪个</a></li>
+    <li><a href="#dp利用到的信息必须是无后效性的全局性的如果不行则可以尝试开多一维使得转移好转注意dp定义一般可以从计算当前决策的全局性贡献来思考">dp利用到的信息必须是无后效性的、全局性的。如果不行则可以尝试开多一维使得转移好转，注意dp定义一般可以从计算当前决策的全局性贡献来思考</a></li>
   </ul>
 </nav></div>
                 </div><div class="content" id="content"><h1 id="做题时的失误记录">做题时的失误记录</h1>
@@ -169,6 +173,10 @@
 <h2 id="hdu-中-string需要string的头文件">HDU 中 string需要string的头文件</h2>
 <h2 id="状态转移时需要滚动时可以考虑用tmp数组复制再转移这样就不用滚动了">状态转移时，需要滚动时，可以考虑用tmp数组复制再转移，这样就不用滚动了</h2>
 <h2 id="当有查询操作时可以优先考虑离线打表">当有查询操作时，可以优先考虑离线打表</h2>
+<h2 id="线段树的lazy标记要符合定义思考如何继承上一个结点的标记">线段树的lazy标记要符合定义，思考如何继承上一个结点的标记</h2>
+<h2 id="当碰到有时间轴性质的题时考虑优先利用某时间短或者长的">当碰到有时间轴性质的题时，考虑优先利用某时间短或者长的</h2>
+<h2 id="状态转移的tmp用法有两种一种覆盖型一种记录历史性两种各有好处哪个方便用哪个">状态转移的tmp用法有两种，一种覆盖型，一种记录历史性，两种各有好处，哪个方便用哪个</h2>
+<h2 id="dp利用到的信息必须是无后效性的全局性的如果不行则可以尝试开多一维使得转移好转注意dp定义一般可以从计算当前决策的全局性贡献来思考">dp利用到的信息必须是无后效性的、全局性的。如果不行则可以尝试开多一维使得转移好转，注意dp定义一般可以从计算当前决策的全局性贡献来思考</h2>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
                 <span>更新于 2021-07-19</span>

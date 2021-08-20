@@ -727,16 +727,18 @@ void table() {
 ```cpp
 // 复杂度O(n)
 const int M = 1e5 + 10;
-int pri[M], cnt = 0;
+int cnt = 0;
 bool isp[M];
 // true 为非素数， false 为素数
-void table() {
+vector<int> pri;
+void table(int n = 1e5) {
     isp[0] = isp[1] = 1;
-    for (int i = 2; i < M; i++) {
-        if (!isp[i]) pri[cnt++] = i;
-        for (int j = 0; j < cnt && i * pri[j] < M; j++) {// 如果M较大需要注意i*pri[j]会爆int
-            isp[i * pri[j]] = 1;
-            if (!(i % pri[j])) break;
+    for (int i = 2; i <= n; ++i) {
+        if (!isp[i]) pri.push_back(i);
+        for (int x : pri) {
+            if (x * i > n) break;
+            isp[x * i] = 1;
+            if (i % x == 0) break;
         }
     }
 }
@@ -1456,14 +1458,13 @@ void Un(int a, int b) {
 ```cpp
 class UF {
 public:
-    vector<int> parent;
-    vector<int> size;
     int n;
     // 当前连通分量数目
     int cnt;
-    
-public:
-    UF(int _n): n(_n), cnt(_n), parent(_n), size(_n, 1) {
+    vector<int> size;
+    vector<int> parent;
+
+    UF(int _n): n(_n + 1), cnt(_n + 1), size(_n + 1, 1), parent(_n + 1) {
         int i = 0;
         for (auto &x : parent) x = i++;
     }
@@ -3196,6 +3197,9 @@ void exkmp(char x[], int m, char y[], int n, int next[], int extend[]) {
  * ^ 向量叉乘
  * < 点对点的比较
  * double len() 向量的长度，也可以用来求两个点的距离
+ * double len2() const;  向量长度的平方
+ * double dist(Point); 判断p点到这个点的距离
+ * double angle(Point, Point); // 传入两个点a b， 返回 角apb 的弧度
  * Point rotate(double angle)  向量逆时针旋转angle弧度
  * Point rotate(Point, double)  点让点p逆时针旋转angle弧度
  * void print() 将点输出
@@ -3207,8 +3211,10 @@ void exkmp(char x[], int m, char y[], int n, int next[], int extend[]) {
  * Line(Point, Point) 构造函数
  * Line(Point, double) 根据一个点和一个倾斜角 0 <= angle < PI确定直线 （未验证）
  * double len() 返回线段的长度
+ * Point vec();  获取该线的向量
  * double point(double t)  返回距离点p向前t倍向量的点
  * double angle() 返回直线的倾斜角 范围[0, PI) (未验证)
+ * int PointAndLine(Point); // 点和直线的关系，1 点在线左边，2 右边， 3 线上面
  * double disPointToLine(const Point&) 点到这条直线的距离
  * double disPointToSeg(const Point&) 点到这条线段的距离（未验证）
  * Point getPro(const Point&) 点在这条线上的投影 （未验证）
@@ -3269,6 +3275,9 @@ struct Point {
     bool operator < (const Point&) const;  // 排序需要
     Point operator * (double);    //向量伸长b倍
     double len() const; // 向量的长度
+    double len2() const; // 向量长度的平方
+    double dist(Point); // 判断p点到这个点的距离
+    double angle(Point, Point); // 传入两个点a b， 返回 角apb 的弧度
     Point rotate(double);    // 向量逆时针旋转a弧度后
     Point rotate(Point&, double);    // 点绕p点顺时针旋转a弧度后
     void print() { printf("%.2f %.2f", x, y); }
@@ -3295,11 +3304,23 @@ bool Point::operator < (const Point& b) const {
     return (!dcmp(x - b.x)) ? dcmp(y - b.y) < 0 : x < b.x;
 }
 // 向量的长度
-double Point::len() const { return sqrt(x * x + y * y); }
-//向量伸长b倍
+double Point::len() const { return hypot(x, y); }
+
+// 向量长度平方
+double Point::len2() const { return x * x + y * y; }
+
+// 判断p点到这个点的距离
+double Point::dist(Point p) { return hypot(x - p.x, y - p.y); }
+// 向量伸长b倍
 Point Point::operator * (double b) {
     return Point(x * b, y * b);
 }
+// 返回 角apb 的弧度
+double Point::angle(Point a, Point b) {
+    Point p = *this;
+    return fabs(atan2(fabs((a - p) ^ (b - p)), (a - p) * (b - p)));
+}
+
 // 向量逆时针旋转a弧度后
 // cosx -sinx
 // sinx cosx
@@ -3324,13 +3345,15 @@ int SegAndSeg(const Line& l1, const Line& l2) 两个线段的关系 0不相交 1
 int LineAndSeg(const Line& line, const Line& seg) 直线和线段的关系，0不相交 1非规范相交 2规范相交
 */
 struct Line {
-    Point p1, p2, v;
+    Point s, e;
     Line() {}
-    Line(Point p1, Point p2) : p1(p1), p2(p2), v(p2 - p1) {}
+    Line(Point s, Point e) : s(s), e(e) {}
     Line(Point, double); // 根据一个点和一个倾斜角0<= angle < PI确定直线
     double len(); // 线段的长度
-    Point point(double);  // P = p1 + vt
+    Point vec() const; // 获取该线的向量
+    Point point(double);  // P = s + vt
     double angle(); // 直线的倾斜角[0, PI)
+    int PointAndLine(Point); // 点和直线的关系，1 点在线左边，2 右边， 3 线上面
     double disPointToLine(const Point&); // 点到这条直线的距离
     double disPointToSeg(const Point&); // 点到这条线段的距离
     Point getPro(const Point&); // 点到这条线的投影
@@ -3340,78 +3363,87 @@ struct Line {
     Point cross(Line&); // 直线和这条直线的交点，前提是相交才能调用
     void print(); // 输出线段
 };
-Line::Line(Point p, double angle) : p1(p) {
-    if (!dcmp(angle - PI / 2)) p2 = p1 + Point(0, 1);
-    else p2 = p1 + Point(1, tan(angle));
+Line::Line(Point p, double angle) : s(p) {
+    if (!dcmp(angle - PI / 2)) e = s + Point(0, 1);
+    else e = s + Point(1, tan(angle));
 }
-double Line::len() { return v.len(); }
-Point Line::point(const double t){ return (p1 + (v * t)); }
+double Line::len() { return s.dist(e); }
+Point Line::vec() const { return e - s; }
+Point Line::point(const double t){ return (s + (vec() * t)); }
 double Line::angle() {
-    double ret = atan2(p2.y - p1.y, p2.x - p1.x);
+    double ret = atan2(e.y - s.y, e.x - s.x);
     if (dcmp(ret) < 0) ret += PI;
     if (!dcmp(ret - PI)) ret -= PI;
     return ret;
 }
+int Line::PointAndLine(Point p) {
+    int c = dcmp((p - s) ^ vec());
+    if (c < 0) return 1;
+    return c ? 2 : 3;
+}
 void Line::print() {
-    printf("(%f,%f)->(%f,%f)", p1.x, p1.y, p2.x, p2.y);
+    printf("(%f,%f) -> (%f,%f)", s.x, s.y, e.x, e.y);
 }
 double Line::disPointToLine(const Point& p) {
-    Point vec = p - p1;
-    return fabs(v ^ vec) / v.len();
+    return fabs((p - s) ^ vec()) / len();
 }
 double Line::disPointToSeg(const Point& p) {
-    if (p1 == p2) return (p1 - p).len();
-    Point v1 = p - p1, v2 = p - p2;
+    if (s == e) return (s - p).len();
+    Point v1 = p - s, v2 = p - e, v = vec();
     if (dcmp(v1 * v) < 0) return v1.len();
     if (dcmp(v2 * v) > 0) return v2.len();
     return disPointToLine(p);
 }
 Point Line::getPro(const Point& p) {
-    return p1 + v * (v * (p - p1) / (v.len() * v.len()));
+    Point v = vec();
+    return s + v * (v * (p - s) / v.len2());
 }
 Point Line::getSym(const Point& p) {
     Point q = getPro(p);
     return Point(2 * q.x - p.x, 2 * q.y - p.y);
 }
 bool Line::isOnLine(const Point& p) {
-    return !dcmp((p - p1) ^ (p - p2));
+    return !dcmp((p - s) ^ (p - e));
 }
 bool Line::isOnSeg(const Point& p) {
-    return isOnLine(p) && (dcmp((p - p1) * (p - p2)) <= 0);
+    return isOnLine(p) && (dcmp((p - s) * (p - e)) <= 0);
 }
 Point Line::cross(Line& l) {
-    double a1 = l.v ^ (p1 - l.p1);
-    double a2 = l.v ^ (p2 - l.p1);
-    return Point((p1.x * a2 - p2.x * a1) / (a2 - a1),
-    (p1.y *a2 - p2.y * a1) / (a2 - a1));
+    Point l_vec = l.vec();
+    double a1 = l_vec ^ (s - l.s);
+    double a2 = l_vec ^ (e - l.s);
+    return Point((s.x * a2 - e.x * a1) / (a2 - a1),
+    (s.y *a2 - e.y * a1) / (a2 - a1));
 }
 // 直线和直线的关系 0平行 1重合 2相交 
 int LineAndLine(Line& l1, Line& l2) {
-    if (!dcmp(l1.v ^ l2.v)) return l2.isOnLine(l1.p1);
+    if (!dcmp(l1.vec() ^ l2.vec())) return l2.isOnLine(l1.s);
     return 2;
 }
 // 求两个直线的交点，必须相交才能调用
 Point getLineInter(Line& l1, Line& l2) {
-    Point vec = l1.p1 - l2.p1;
-    double t = (l2.v ^ vec) / (l1.v ^ l2.v);
+    Point v = l1.s - l2.s, l1_vec = l1.vec(), l2_vec = l2.vec();
+    double t = (l2_vec ^ v) / (l1_vec ^ l2_vec);
     return l1.point(t);
 }
 // 判断两个线段的关系
 int SegAndSeg(const Line& l1, const Line& l2) {
-    int d1 = dcmp(l1.v ^ (l2.p1 - l1.p1));
-    int d2 = dcmp(l1.v ^ (l2.p2 - l1.p1));
-    int d3 = dcmp(l2.v ^ (l1.p1 - l2.p1));
-    int d4 = dcmp(l2.v ^ (l1.p2 - l2.p1));
+    Point l1_vec = l1.vec(), l2_vec = l2.vec();
+    int d1 = dcmp(l1_vec ^ (l2.s - l1.s));
+    int d2 = dcmp(l1_vec ^ (l2.e - l1.s));
+    int d3 = dcmp(l2_vec ^ (l1.s - l2.s));
+    int d4 = dcmp(l2_vec ^ (l1.e - l2.s));
     if((d1 ^ d2) == -2 && (d3 ^ d4) == -2) return 2;
-    return (!d1 && dcmp((l2.p1 - l1.p1) * (l2.p1 - l1.p2)) <= 0) || 
-        (!d2 && dcmp((l2.p2 - l1.p1) * (l2.p2 - l1.p2)) <= 0) || 
-        (!d3 && dcmp((l1.p1 - l2.p1) * (l1.p1 - l2.p2)) <= 0) ||
-        (!d4 && dcmp((l1.p2 - l2.p1) * (l1.p2 - l2.p2)) <= 0);
+    return (!d1 && dcmp((l2.s - l1.s) * (l2.s - l1.e)) <= 0) || 
+        (!d2 && dcmp((l2.e - l1.s) * (l2.e - l1.e)) <= 0) || 
+        (!d3 && dcmp((l1.s - l2.s) * (l1.s - l2.e)) <= 0) ||
+        (!d4 && dcmp((l1.e - l2.s) * (l1.e - l2.e)) <= 0);
 }
 // 直线和线段的关系，0不相交 1非规范相交 2规范相交
 int LineAndSeg(const Line& line, const Line& seg) {
-    int d1 = dcmp(line.v ^ (seg.p1 - line.p1));
-    int d2 = dcmp(line.v ^ (seg.p2 - line.p1));
+    Point line_vec = line.vec();
+    int d1 = dcmp(line_vec ^ (seg.s - line.s));
+    int d2 = dcmp(line_vec ^ (seg.e - line.s));
     if ((d1 ^ d2) == -2) return 2;
     return d1 == 0 || d2 == 0;
 }

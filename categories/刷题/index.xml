@@ -3,7 +3,37 @@
         <title>刷题 - 分类 - haofish</title>
         <link>https://haofish.github.io/categories/%E5%88%B7%E9%A2%98/</link>
         <description>刷题 - 分类 - haofish</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 12 Aug 2021 11:32:52 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E5%88%B7%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 20 Aug 2021 16:45:44 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E5%88%B7%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>洛谷 3354 Riv 河流</title>
+    <link>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</link>
+    <pubDate>Fri, 20 Aug 2021 16:45:44 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</guid>
+    <description><![CDATA[一道比较困难的树形背包问题]]></description>
+</item>
+<item>
+    <title>Cf755F PolandBall and Gifts</title>
+    <link>https://haofish.github.io/2021/08/cf755f-polandball-and-gifts/</link>
+    <pubDate>Sun, 15 Aug 2021 14:10:57 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/cf755f-polandball-and-gifts/</guid>
+    <description><![CDATA[多重背包，利用bitset优化]]></description>
+</item>
+<item>
+    <title>POJ 1742 Coins</title>
+    <link>https://haofish.github.io/2021/08/poj-1742-coins/</link>
+    <pubDate>Fri, 13 Aug 2021 21:20:35 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/poj-1742-coins/</guid>
+    <description><![CDATA[一道多重背包问题]]></description>
+</item>
+<item>
+    <title>Cf864E</title>
+    <link>https://haofish.github.io/2021/08/cf864e-fire/</link>
+    <pubDate>Thu, 12 Aug 2021 20:44:52 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/cf864e-fire/</guid>
+    <description><![CDATA[贪心+01背包]]></description>
+</item>
+<item>
+    <title>Cf366C Dima and Salad</title>
+    <link>https://haofish.github.io/2021/08/cf366c-dima-and-salad/</link>
+    <pubDate>Thu, 12 Aug 2021 18:47:24 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/cf366c-dima-and-salad/</guid>
+    <description><![CDATA[思维+01背包问题]]></description>
+</item>
+<item>
     <title>洛谷 4137 mex</title>
     <link>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-4137-mex/</link>
     <pubDate>Thu, 12 Aug 2021 11:32:52 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E6%B4%9B%E8%B0%B7-4137-mex/</guid>
@@ -62,6 +92,36 @@
     <link>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
     <pubDate>Tue, 03 Aug 2021 23:29:19 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
     <description><![CDATA[线段树and数论技巧]]></description>
+</item>
+<item>
+    <title>HDU 5649 DZY Loves Sorting</title>
+    <link>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</link>
+    <pubDate>Tue, 03 Aug 2021 20:38:47 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-5649-dzy-loves-sorting/</guid>
+    <description><![CDATA[线段树+二分的一道思维题]]></description>
+</item>
+<item>
+    <title>SPOJ GSS5 Can you answer these queries V</title>
+    <link>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</link>
+    <pubDate>Tue, 03 Aug 2021 18:42:24 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/</guid>
+    <description><![CDATA[线段树解决另类区间最大字段和]]></description>
+</item>
+<item>
+    <title>SPOJ GSS3 Can you answer these queries III</title>
+    <link>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</link>
+    <pubDate>Tue, 03 Aug 2021 17:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</guid>
+    <description><![CDATA[线段树解决区间最大字段和]]></description>
+</item>
+<item>
+    <title>SPOJ GSS4 Can you answer these queries IV</title>
+    <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
+    <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+    <description><![CDATA[线段树暴力解决区间问题]]></description>
+</item>
+<item>
+    <title>POJ2777 Count Color</title>
+    <link>https://haofish.github.io/2021/07/poj2777-count-color/</link>
+    <pubDate>Fri, 30 Jul 2021 18:50:42 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/poj2777-count-color/</guid>
+    <description><![CDATA[线段树维护区间信息]]></description>
 </item>
 </channel>
 </rss>
