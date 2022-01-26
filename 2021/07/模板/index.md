@@ -4,6 +4,7 @@
 # 常用模板（包括网络赛）
 
 ## 一、基础板子
+
 ### 1. 二分
 #### 整数二分
 
@@ -64,7 +65,7 @@ struct discrete {
 ```
 ### 3. 高精
 
-#### 复杂版
+#### 压位版
 
 ```cpp {.line-numbers}
 #include <cstdio>
@@ -370,208 +371,88 @@ int main() {
 #### 简化版
 
 ```cpp
-#include <iostream>
-#include <algorithm>
-#include <cstring>
-#include <string>
-#include <vector>
-#define ll long long
-using namespace std;
-// 坑： 没有处理好正负号
-const int wsize = 8;//压位8个0
-const ll w = 1e8;
-const char pout[] = "%08lld";//记得修改
-struct bint {
-    vector<ll> a;
-    bint() : a(0) {}
-    bint(ll x);
-    bint(string s);
-    void pb(ll x) { a.push_back(x); }
-    int len() { return (int)a.size() - 1; }
-    void operator= (const int x) { *this = bint(x); }
-    void operator= (const ll x) { *this = bint(x); }
-    void operator= (char x[]) { *this = bint(x); }
-    void operator= (string x) { *this = bint(x); }
-    ll &operator[] (int x) { return a[x]; }
-    /* 输出 */
-    void print();
-    /* 比较(未验证) */
-    bool operator< (bint b);
-    bool operator- ();
-    bool operator> (bint b) { return b < *this; }
-    bool operator<= (bint b) { return !(b < *this); }
-    bool operator>= (bint b) { return !(*this < b); }
-    bool operator!= (bint b) { return b < *this || *this < b; }
-    bool operator== (bint b) { return !(b < *this) && !(*this < b); }
-    /* 各种运算 */
-    bint operator+ (bint b);  // 高精 + 高精
-    bint operator* (int b);  // 高精 * 低精
-    bint operator* (bint b);      // 高精 * 高精
-    bint operator- (bint b);  // 高精 - 高精
-    bint operator/ (int b);  // 高精 / 低精
-    bint operator% (int b);       // 高精 % 低精
-};
-
-bint::bint(ll n) {
-    a.clear();
-    a.push_back(n < 0 ? -1 : 1);
-    while (1) {
-        a.push_back(n % w), n /= w;
-        if (!n) break;
+#define bint vector<int>
+int cmp(bint& x, bint& y) { // 1:x>y, 0:x=y, -1:x<y
+    if (x.size() != y.size()) {
+        return x.size() > y.size() ? 1 : -1;
     }
-}
-
-bint::bint(string s) {
-    a.clear();
-    if (s[0] == '-') {
-        a.push_back(-1);
-        s = s.substr(1);
-    } else a.push_back(1);
-    int len = s.size() - 1;
-    for (int i = len; i >= 0; i -= wsize) {
-        ll tmp = 0, k = 1;
-        for (int j = 0; j < wsize && i - j >= 0; ++j, k *= 10) {
-            tmp += (s[i - j] - '0') * k;
+    for (int i = x.size() - 1; i >= 0; --i) {
+        if (x[i] != y[i]) {
+            return x[i] > y[i] ? 1 : -1;
         }
-        a.push_back(tmp);
     }
+    return 0;
 }
-
-
-void bint::print() {
-    if (a[0] < 0) putchar('-');
-    printf("%lld", a.back());
-    for (int i = len() - 1; i > 0; --i) printf(pout, a[i]);
-}
-
-
-bool bint::operator< (bint b) {
-    if (a[0] ^ b[0]) return a[0] < 0;
-    if (len() != b.len()) return len() < b.len();
-    for (int i = len(); i > 0; i--) {
-        if (a[i] != b.a[i]) return a[i] < b.a[i];
-    }
-    return false;
-}
-/************************常用****************************/
-
-// 加法 同号
-bint add(bint& a, bint& b) {
-    if (a.len() < b.len()) return add(b, a);
+// 正整数加
+bint add(bint& x, bint& y) {
+    if (x.size() < y.size()) return add(y, x);
     bint res;
-    res.pb(a[0]);
-    ll sum = 0;
-    int n = a.len(), m = b.len();
-    for (int i = 1; i <= n; ++i, sum /= w) {
-        sum += a[i];
-        if (i <= m) sum += b[i];
-        res.pb(sum % w);
+    int c = 0, n = x.size(), m = y.size();
+    for (int i = 0; i < n; ++i, c /= 10) {
+        c += x[i];
+        if (i < m) c += y[i];
+        res.push_back(c % 10);
     }
-    if (sum) res.pb(sum);
+    if (c) res.push_back(c);
     return res;
 }
-// 减法  abs(a) >= abs(b)
-bint sub(bint& a, bint& b) {
+// 正整数 x >= y
+bint sub(bint& x, bint& y) {
     bint res;
-    res.pb(a[0]);
-    ll last = 0;
-    int n = a.len(), m = b.len();
-    for (int i = 1; i <= n; ++i, last = (last < 0)) {
-        last = a[i] - last;
-        if (i <= m) last -= b[i];
-        res.pb((last + w) % w);
+    int n = x.size(), m = y.size();
+    for (int i = 0, t = 0; i < n; ++i, t = (t < 0)) {
+        t = x[i] - t;
+        if (i < m) t -= y[i];
+        res.push_back((t + 10) % 10);
     }
-    while (res.len() > 1 && res.a.back() == 0) res.a.pop_back();
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
     return res;
 }
 
-// 乘法
-bint mul(bint& a, bint& b) {
+bint mul(bint& x, int y) {
     bint res;
-    res.pb(a[0] * b[0]);
-    int n = a.len(), m = b.len();
-    for (int i = 1; i <= n + m; ++i) res.pb(0);
-    for (int i = 1; i <= n; ++i) {
-        ll up = 0;
-        for (int j = 1; j <= m; ++j) {
-            ll tmp = a[i] * b[j] + res[i + j - 1] + up;
-            res[i + j - 1] = tmp % w;
-            up = tmp / w;
+    int t = 0, n = x.size();
+    for (int i = 0; i < n || t; ++i, t /= 10) {
+        if (i < n) t += x[i] * y;
+        res.push_back(t % 10);
+    }
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
+    return res;
+}
+
+bint mul(bint& x, bint& y) {
+    int n = x.size(), m = y.size();
+    bint res(n + m, 0);
+    for (int i = 0; i < n; ++i) {
+        int up = 0;
+        for (int j = 0; j < m; ++j) {
+            int tmp = x[i] * y[j] + res[i + j] + up;
+            res[i + j] = tmp % 10;
+            up = tmp / 10;
         }
         if (up) res[i + m] = up;
     }
-    while (res.len() > 1 && res.a.back() == 0) res.a.pop_back();
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
     return res;
 }
 
-// 除法
-bint div(bint& a, ll b, ll& r) {
+bint div(bint& x, int y, ll &r) {
     bint res;
-    res.pb(a[0] * b >= 0);
-    r = 0;
-    for (int i = a.len(); i >= 1; --i) res.pb(0);
-    for (int i = a.len(); i >= 1; --i) {
-        r = r * w + a[i];
-        if (r >= b) res[i] = r / b, r %= b;
+    for (int i = x.size() - 1; i >= 0; --i) {
+        r = r * 10 + x[i];
+        res.push_back(r / y);
+        r %= y;
     }
-    while (res.len() > 1 && res.a.back() == 0) res.a.pop_back();
+    reverse(res.begin(), res.end());
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
     return res;
 }
 
-/*****************************各种运算操作******************************/
-// +
-bint bint::operator+ (bint b) {
-    return add(*this, b);
-}
-// -
-bint bint::operator- (bint b) {
-    return sub(*this, b);
-}
-// *
-bint bint::operator* (int b) {
-    bint res;
-    res.pb(a[0] * b < 0 ? -1 : 1);
-    int n = len();
-    ll nxt = 0;
-    for (int i = 1; i <= n; ++i) {
-        ll tmp = a[i] * b + nxt;
-        res.pb(tmp % w);
-        nxt = tmp / w;
-    }
-    while (nxt) {
-        res.pb(nxt % w);
-        nxt /= w;
-    }
-    return res;
-}
-// *
-bint bint::operator* (bint b) {
-    return mul(*this, b);
-}
-// /
-bint bint::operator/ (int b) {
-    ll r;
-    return div(*this, b, r);
-}
 
-// % 
-bint bint::operator% (int b) {
-    ll r = 0;
-    for (int i = len(); i > 0; --i) {
-        r = r * w + a[i];
-        if (r >= b) r %= b;
+void print(bint& x) {
+    for (int i = x.size() - 1; i >= 0; --i) {
+        cout << x[i];
     }
-    return bint(r);
-}
-
-int main() {
-    bint a, b;
-    string s1, s2;
-    cin >> s1 >> s2;
-    a = s1, b = s2;
-    bint res = a * b;
-    res.print();
-    return 0;
 }
 ```
 
@@ -1581,45 +1462,26 @@ int get(int l, int r) {
 
 ```cpp
 template<class T>
-class BIT{
-    inline int lb(int x) { return x & (-x); }
-    vector<T> bit;
-    T getSum(int i) {
-        T ret = 0;
-        while (i > 0) {
-            ret += bit[i];
-            i -= lb(i);
-        }
-        return ret;
+class fenwich{
+    #define lowbit(x) ((x) & (-x))
+    vector<T> v;
+    int len;
+    T get_pre(int i) {
+        T res = 0;
+        for(; i > 0; i -= lowbit(i)) res += v[i];
+        return res;
     }
-    int n;
 public:
-    BIT (int n, T val) : bit(n + 1, val), n(n) {};
-    BIT (int n, T *a) { rebuild(n, a); }
-    void rebuild(int n, T *a) {
-        bit.clear();
-        bit.push_back();
-        this->n = n;
-        for (int i = 1; i <= n; ++i) {
-            bit.push_back(a[i]);
-        }
-        for (int i = 1; i <= n; ++i) {
-            if (i + lb(i) <= n) {
-                bit[i + lb(i)] += bit[i];
-            }
-        }
+    fenwich (int len) : v(len + 1, 0), len(len) {}
+    void resize(int n, T x = 0) { v.resize(n + 1, x), len = n; }
+    void modify(int i, T val) { // 单点修改
+        for (; i <= len; i += lowbit(i)) v[i] += val;
     }
-    void point_update(int index, T val) {
-        while (index <= n) {
-            bit[index] += val;
-            index += lb(index);
-        }
-    }
-
-    T get(int l, int r) {
+    T operator() (int l, int r) { // 区间查询
         if (l > r) return 0;
-        return getSum(r) - getSum(l - 1);
+        return get_pre(r) - get_pre(l - 1);
     }
+    #undef lowbit
 };
 ```
 
@@ -2030,8 +1892,8 @@ void solve() {
     int l = 1, r = 0;
     for (int i = 0; i < m; i++) {
         while (l > q[i].l) add(--l);
-        while (l < q[i].l) del(l++);
         while (r < q[i].r) add(++r);
+        while (l < q[i].l) del(l++);
         while (r > q[i].r) del(r--);
         ans[q[i].k] = res;//res根据题目意思来
     }
@@ -3682,7 +3544,7 @@ Loj 10157
 dp[0][i]表示i点被选上，则其 += min({dp[0][son], dp[2][son], dp[1][son]})
 dp[1][i]表示i点没被选上，但是其父亲被选上了，则其 += min(dp[0][son], dp[2][son])
 dp[2][i]表示i点没被选上，但是去其中某几个儿子被选上了，注意这个比较难转移，转移方式如下
-先求出所有儿子min(dp[0][son], dp[1][son])的总和，然后在递归完后选出最小是那个儿子的dp[0][son]
+先求出所有儿子min(dp[0][son], dp[2][son])的总和，然后在递归完后选出最小是那个儿子的dp[0][son]
 即dp[2][u] = min(dp[2][u], sum - min(dp[2][v], dp[0][v]) + dp[0][v]);这行
 */
 #include <cstdio>

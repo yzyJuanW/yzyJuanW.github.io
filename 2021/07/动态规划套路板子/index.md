@@ -73,7 +73,7 @@ Loj 10157
 dp[0][i]表示i点被选上，则其 += min({dp[0][son], dp[2][son], dp[1][son]})
 dp[1][i]表示i点没被选上，但是其父亲被选上了，则其 += min(dp[0][son], dp[2][son])
 dp[2][i]表示i点没被选上，但是去其中某几个儿子被选上了，注意这个比较难转移，转移方式如下
-先求出所有儿子min(dp[0][son], dp[1][son])的总和，然后在递归完后选出最小是那个儿子的dp[0][son]
+先求出所有儿子min(dp[0][son], dp[2][son])的总和，然后在递归完后选出最小是那个儿子的dp[0][son]
 即dp[2][u] = min(dp[2][u], sum - min(dp[2][v], dp[0][v]) + dp[0][v]);这行
 */
 #include <cstdio>
@@ -546,20 +546,7 @@ dp[i][j]代表第i门课程选j个课的最大学分和
 using namespace std;
 #define ll long long
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {}
 
 const int maxn = 1e4, maxm = 1e4;
 const int INF = 0x3f3f3f3f;
@@ -688,11 +675,7 @@ const int N = 1e5 + 5, M = 1e6 + 5, inf = 1e9;
 
 int num[N], sum[410];
 ll a[210];
-void print(ll x) {
-    if (x < 0) putchar('-'), x = -x;
-    if (x > 9) print(x / 10);
-    putchar(x % 10 + '0');
-}
+void print(ll x) {} //快输
 
 struct pii{
     int x, indx;

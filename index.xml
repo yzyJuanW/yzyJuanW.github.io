@@ -3,9 +3,15 @@
         <title>haofish</title>
         <link>https://haofish.github.io/</link>
         <description>一个手残党的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Aug 2021 14:38:39 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Sep 2021 17:46:16 &#43;0800</lastBuildDate>
             <atom:link href="https://haofish.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>双指针总结</title>
+    <link>https://haofish.github.io/2021/09/%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Wed, 15 Sep 2021 17:46:16 &#43;0800</pubDate><guid>https://haofish.github.io/2021/09/%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[对双指针的理解与套路板子]]></description>
+</item>
+<item>
     <title>狂补dp Atcoder Educational DP Contest(全)</title>
     <link>https://haofish.github.io/2021/08/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</link>
     <pubDate>Tue, 24 Aug 2021 14:38:39 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</guid>
@@ -117,13 +123,7 @@
     <title>SPOJ GSS3 Can you answer these queries III</title>
     <link>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</link>
     <pubDate>Tue, 03 Aug 2021 17:01:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/</guid>
-    <description><![CDATA[线段树解决区间最大字段和]]></description>
-</item>
-<item>
-    <title>SPOJ GSS4 Can you answer these queries IV</title>
-    <link>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</link>
-    <pubDate>Fri, 30 Jul 2021 19:29:02 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/</guid>
-    <description><![CDATA[线段树暴力解决区间问题]]></description>
+    <description><![CDATA[线段树解决区间最大子段和]]></description>
 </item>
 </channel>
 </rss>

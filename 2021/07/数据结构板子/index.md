@@ -6,18 +6,16 @@
 #### 简便的路径压缩版
 
 ```cpp
-const int Max = 1e5 + 10;
-int fa[Max];
-inline void init() { for (int i = 0; i < Max; i++) fa[i] = i; }
+const int M = 1e5 + 10;
+int fa[M];
+void init(int n) { for (int i = 0; i <= n; i++) fa[i] = i; }
 
-int findfa(int x) {
-    return x == fa[x] ? x : fa[x] = findfa(fa[x]);
+int findset(int x) {
+    return x == fa[x] ? x : fa[x] = findset(fa[x]);
 }
 
-void Un(int a, int b) {
-    int fa1 = findfa(a);
-    int fa2 = findfa(b);
-    if (fa1 != fa2) fa[fa1] = fa2;
+void unite(int a, int b) {
+    fa[findset(a)] = findset(b);
 }
 ```
 
@@ -151,45 +149,26 @@ int get(int l, int r) {
 
 ```cpp
 template<class T>
-class BIT{
-    inline int lb(int x) { return x & (-x); }
-    vector<T> bit;
-    T getSum(int i) {
-        T ret = 0;
-        while (i > 0) {
-            ret += bit[i];
-            i -= lb(i);
-        }
-        return ret;
+class fenwich{
+    #define lowbit(x) ((x) & (-x))
+    vector<T> v;
+    int len;
+    T get_pre(int i) {
+        T res = 0;
+        for(; i > 0; i -= lowbit(i)) res += v[i];
+        return res;
     }
-    int n;
 public:
-    BIT (int n, T val) : bit(n + 1, val), n(n) {};
-    BIT (int n, T *a) { rebuild(n, a); }
-    void rebuild(int n, T *a) {
-        bit.clear();
-        bit.push_back();
-        this->n = n;
-        for (int i = 1; i <= n; ++i) {
-            bit.push_back(a[i]);
-        }
-        for (int i = 1; i <= n; ++i) {
-            if (i + lb(i) <= n) {
-                bit[i + lb(i)] += bit[i];
-            }
-        }
+    fenwich (int len) : v(len + 1, 0), len(len) {}
+    void resize(int n, T x = 0) { v.resize(n + 1, x), len = n; }
+    void modify(int i, T val) { // 单点修改
+        for (; i <= len; i += lowbit(i)) v[i] += val;
     }
-    void point_update(int index, T val) {
-        while (index <= n) {
-            bit[index] += val;
-            index += lb(index);
-        }
-    }
-
-    T get(int l, int r) {
+    T operator() (int l, int r) { // 区间查询
         if (l > r) return 0;
-        return getSum(r) - getSum(l - 1);
+        return get_pre(r) - get_pre(l - 1);
     }
+    #undef lowbit
 };
 ```
 
@@ -566,7 +545,6 @@ void build(int n) {
     b[cnt].r = n;
     for (int i = 1; i <= n; ++i) belong[i] = (i - 1) / siz + 1;
 }
-
 ```
 
 ### 6. 莫队
@@ -604,8 +582,8 @@ void solve() {
     int l = 1, r = 0;
     for (int i = 0; i < m; i++) {
         while (l > q[i].l) add(--l);
-        while (l < q[i].l) del(l++);
         while (r < q[i].r) add(++r);
+        while (l < q[i].l) del(l++);
         while (r > q[i].r) del(r--);
         ans[q[i].k] = res;//res根据题目意思来
     }
@@ -643,20 +621,7 @@ int main() {
 #include <algorithm>
 #include <random>
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {}
 using namespace std;
 const int N = 4e5 + 10;
 mt19937 rnd(233);
@@ -758,8 +723,6 @@ int main() {
 
 #### spaly
 
-#### 替罪羊
-
 ### 8. 左偏树
 
 ### 9. 主席树
@@ -772,20 +735,7 @@ int main() {
 #include <algorithm>
 #include <vector>
 #include <cctype>
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 using namespace std;
 
 /*************************************离散化********************************************/
@@ -867,20 +817,7 @@ int main() {
 #include <cstring>
 #include <cctype>
 #define ll long long
-inline long long IO() {
-    long long x = 0;
-    bool f = false;
-    char c = getchar();
-    while (!isdigit(c)) {
-        if (c == '-') f = true;
-        c = getchar();
-    }
-    while (isdigit(c)) {
-        x = (x << 1) + (x << 3) + (c - '0');
-        c = getchar();
-    }
-    return f ? -x : x;
-}
+inline long long IO() {} // 快读略
 using namespace std;
 const int maxn = 5e5 + 5, maxm = 5e5 + 5;
 const int INF = 0x3f3f3f3f;

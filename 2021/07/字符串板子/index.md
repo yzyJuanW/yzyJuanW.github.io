@@ -64,6 +64,40 @@ ull strhash(const char *s) {
 
 ### 3. 马拉车
 
+```cpp
+string s,t;
+int p[maxn*2+5];
+
+string init(string s){
+    t="";
+    t.push_back('$');
+    t.push_back('#');
+    for(int i=0;i<s.size();i++){
+        t.push_back(s[i]);
+        t.push_back('$');
+    }
+    t.push_back('^');
+    return t;
+}
+
+int manacher(string s){
+    init(s);
+    int id=0,mx=0;
+    for(int i=1;i<t.size()-1;i++){
+        if(mx>i)p[i]=min(p[id*2-i],mx-i);
+        else p[i]=1;
+        for(;t[i+p[i]]==t[i-p[i]];p[i]++);
+        if(p[i]+i>mx){
+            mx=p[i]+i;
+            id=i;
+        }
+    }
+    int res=p[0]-1;
+    for(int i=0;i<t.size();i++)res=max(res,p[i]-1);
+    return res;
+}
+```
+
 ### 4. exkmp
 
 ```cpp

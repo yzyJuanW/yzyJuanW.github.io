@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>SPOJ GSS3 Can you answer these queries III - haofish</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="SPOJ GSS3 Can you answer these queries III" />
-<meta property="og:description" content="线段树解决区间最大字段和" />
+<meta property="og:description" content="线段树解决区间最大子段和" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-03T17:01:02+08:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="SPOJ GSS3 Can you answer these queries III"/>
-<meta name="twitter:description" content="线段树解决区间最大字段和"/>
+<meta name="twitter:description" content="线段树解决区间最大子段和"/>
 <meta name="application-name" content="FeelIt">
 <meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/08/spoj-gss3-can-you-answer-these-queries-iii/" /><link rel="prev" href="https://haofish.github.io/2021/07/spoj-gss4-can-you-answer-these-queries-iv/" /><link rel="next" href="https://haofish.github.io/2021/08/spoj-gss5-can-you-answer-these-queries-v/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
@@ -130,7 +130,7 @@
                     </div>
                     <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
                 </div><div class="content" id="content"><ul>
-<li>题意：给你一个数组，每次操作将x下标位的数改成y，每次询问区间 <code>[x, y]</code> 之间的最大字段和</li>
+<li>题意：给你一个数组，每次操作将x下标位的数改成y，每次询问区间 <code>[x, y]</code> 之间的最大子段和</li>
 <li>一个另类的线段树维护区间信息的题（听说如果只有查询，可以直接用猫树来做）</li>
 <li>线段树结点维护4个值：
 <ul>
@@ -435,7 +435,7 @@
             </noscript></div></article></div>
             </main>
             <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
-        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
 </div>
 <script>
 if ('serviceWorker' in navigator) {

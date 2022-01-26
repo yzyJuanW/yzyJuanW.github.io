@@ -15,7 +15,7 @@
 
 ```cpp
 const int N = 4e5 + 10;
-struct treap{
+struct treap{ 
     int val, l, r, size, key;
 }fhq[N];
 ```

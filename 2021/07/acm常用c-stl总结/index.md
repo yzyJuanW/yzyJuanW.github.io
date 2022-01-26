@@ -1790,8 +1790,12 @@ for(auto x : l) {
 - **insert(iterator, count, val)**：在迭代器iterator前插入count个val
 - **front()**、**back()**：返回头元素、尾元素的**引用**
 - **begin()**、**end()**：返回头部和尾部下一位置的迭代器
+- **size()**：大小
 - **sort()**：升序排序
 - **clear()**：清空
+- **reverse()**：翻转链表
+- **merge(list2)** ：用第二个有序的 list 合并一个有序 list
+- **splice(list.iterator, list2, list2.iterator_start, list2.iterator_end)**：在本list的 `iterator`后插入list2的从 `iterator_start` 到 `iterator_end`， 后面两个可填可以不填，当填了`iterator_start`，可不填最后一个，时间复杂度O(1)
 - **erase(iterator)**：删除iterator，返回删除前的下一个的迭代器
 - **erase(iterator_start, iterator_end)**：删除[iterator_start, iterator_end)范围内的元素，返回删除前的iterator_end
 

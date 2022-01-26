@@ -153,7 +153,7 @@
 </ul>
 <h2 id="cf1463b-find-the-array1400">cf1463B Find The Array(*1400)</h2>
 <ul>
-<li>给定一个长度为n的数组a，总和为s，求一个同长的数组b，使其和给定的数组每个对应的数的绝对值即$a_i - b_i$的二倍小于等于s，并且对于每一对相邻的数$b_i$和$b_{i+1}$要么$b_i % b_{i+1} == 0$要么$b_{i+1} % b_i == 0$</li>
+<li>给定一个长度为n的数组a，总和为s，求一个同长的数组b，使其和给定的数组每个对应的数的绝对值即$a_i - b_i$的二倍小于等于s，并且对于每一对相邻的数$b_i$和$b_{i+1}$要么$b_i \mod b_{i+1} == 0$要么$b_{i+1} \mod b_i == 0$</li>
 <li>我的思路：不难发现目的就是为了使得$a_i - b_i$尽可能的小，那就很容易想到可以使其直接为0，然后又要满足相邻的可以被除的条件，则可是在奇数（或者偶数）下标取$a_i$，在偶数（或者奇数）下标取1，这样的话只需要求出给定数组的奇数下标的和与偶数下标的和，对比大小来决定到底是奇数放1还是偶数放1了</li>
 <li>大佬的思路：对于b数组让每个数都是2的k次幂即$2^k,k\ge0$，并且保证$2^k \le a_i$</li>
 <li><strong>总结</strong>：回归本质，思考题目设置的限制条件的意义，从那里出发思考，同时可以自己举例子</li>
@@ -166,7 +166,7 @@
 </ul>
 <h2 id="cf1408b-arrays-sum1400">cf1408B Arrays Sum(*1400)</h2>
 <ul>
-<li>给一个单调不减且数组a，求一个数组组，数组组中的每个数组的也要是单调不减且不同数的个数不超过k，并且数组的下标i的总和正好为$a_i$，输出最小的数组组的大小，无解输出-1</li>
+<li>给一个单调不减的数组a，求一个数组组，数组组中的每个数组的也要是单调不减且不同数的个数不超过k，并且数组的下标i的总和正好为$a_i$，输出最小的数组组的大小，无解输出-1</li>
 <li>纸上模拟，反向推演找数组组，不难发现若要个数不超过k，除了第一次，之后的每次最多能使k - 1个数变为0，而第一次能使k个数变为0（包括本来的0）。所以最终得到的公式就是$k + (k - 1) * num \ge dif$，其中dif为a数组不同数的个数，num为答案。不难发现若$dif &gt; k$则无解</li>
 <li><strong>总结</strong>：想清楚题目要我干嘛，寻找规律，大胆猜想，纸上推演，理清思路，排除不必要的干扰，防止思维混乱。</li>
 </ul>
@@ -234,7 +234,7 @@
             </noscript></div></article></div>
             </main>
             <footer class="footer"><div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a>
-        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">幼稚园卷王</a></span></div>
 </div>
 <script>
 if ('serviceWorker' in navigator) {

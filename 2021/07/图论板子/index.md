@@ -32,29 +32,9 @@ inline void add(int u, int v, int w) {
 #### dijkstra
 
 ```cpp
-//顶点数和边数
-const int maxn = 1e5 + 10, maxm = 2e5 + 10;
-const int INF = 0x3f3f3f3f;
-
-int head[maxn], cnt, dis[maxn];
-bool vis[maxn];
-//初始化
-void init(int n) { // n个点
-    fill_n(head, n + 1, -1);
-    cnt = 0;
-}
-
-struct edges {
-    int to, next;
-    int w;
-    edges(int to = 0, int next = -1, int w = 0) : to(to), next(next), w(w) {}
-}edge[maxm << 1]; //无向图则需要乘2
-
-inline void add_edges(int u, int v, int w) {
-    edge[++cnt] = edges(v, head[u], w);
-    head[u] = cnt;
-}
-
+const int N = 1e5 + 5, inf = 0x3f3f3f3f;
+int dis[N], vis[N];
+vector<pair<int, int>> mp[N];
 struct qnode{
     int v;
     int w;
@@ -63,7 +43,7 @@ struct qnode{
 };
 
 void dij(int n, int s) {//n 为顶点数， m 为边数
-    for (int i = 0; i <= n; ++i) dis[i] = INF, vis[i] = 0;
+    for (int i = 0; i <= n; ++i) dis[i] = inf, vis[i] = 0;
     dis[s] = 0;
     priority_queue<qnode> heap;
     heap.push(qnode(s, dis[s]));
@@ -71,10 +51,8 @@ void dij(int n, int s) {//n 为顶点数， m 为边数
         int u = heap.top().v;
         heap.pop();
         if (vis[u]) continue;
-        vis[u] = true;
-        for (int i = head[u]; ~i; i = edge[i].next) {
-            int v = edge[i].to;
-            int w = edge[i].w;
+        vis[u] = 1;
+        for (auto [v, w] : mp[u]) {
             if (!vis[v] && dis[u] + w < dis[v]) { //松弛
                 dis[v] = dis[u] + w;
                 heap.push(qnode(v, dis[v]));
@@ -87,13 +65,13 @@ void dij(int n, int s) {//n 为顶点数， m 为边数
 #### bellman-ford
 
 ```cpp
-const int maxn = 1e5 + 10, maxm = 2e5 + 10, inf = 0x3f3f3f3f;
-int dis[maxn];
+const int N = 1e5 + 10, M = 2e5 + 10, inf = 0x3f3f3f3f;
+int dis[N];
 
 struct edges {
     int u, v, w;
     edges(int u = 0, int v = 0, int w = 0) : u(u), v(v), w(w) {}
-} edge[maxm];
+} edge[M];
 
 bool bf(int n, int m, int s) { // n个点， m个边， s为起点
     fill_n(dis, n + 1, inf);
@@ -115,30 +93,15 @@ bool bf(int n, int m, int s) { // n个点， m个边， s为起点
     }
     return true;// 无负环
 }
+
 ```
 
 #### spfa
 
 ```cpp
-const int maxn = 1e5 + 10, maxm = 2e5 + 10, inf = 0x3f3f3f3f;
-int dis[maxn], num[maxn], head[maxn], cnt; //num 数组是判断是否有负环
-bool inq[maxn];
-
-void init(int n) { // n个点
-    fill_n(head, n + 5, -1);
-    cnt = 0;
-}
-
-struct edges {
-    int to, w, next;
-    edges(int to = 0, int w = 0, int next = -1) : to(to), w(w), next(next) {}
-} edge[maxm];
-
-inline void add_edges(int u, int v, int w) {
-    edge[++cnt] = edges(v, w, head[u]);
-    head[u] = cnt;
-}
-
+const int N = 1e5 + 10, inf = 0x3f3f3f3f;
+int dis[N], num[N], head[N], cnt, inq[N]; //num 数组是判断是否有负环
+vector<pair<int, int>> mp[N];
 bool spfa(int n, int s) {// n个点， s为起点
     for (int i = 0; i <= n; ++i) {
         dis[i] = inf, num[i] = inq[i] = 0;
@@ -149,9 +112,8 @@ bool spfa(int n, int s) {// n个点， s为起点
     while (q.size()) {
         int u = q.front();
         q.pop();
-        inq[u] = false;
-        for (int i = head[u]; ~i; i = edge[i].next) {
-            int v = edge[i].to, w = edge[i].w;
+        inq[u] = 0;
+        for (auto [v, w] : mp[u]) {
             if (dis[v] > dis[u] + w) {
                 dis[v] = dis[u] + w;
                 if (!inq[v]) {
@@ -163,7 +125,7 @@ bool spfa(int n, int s) {// n个点， s为起点
             }
         }
     }
-    return true;
+    return true; // 无环
 }
 ```
 

@@ -28,9 +28,9 @@ void cal(int u, int fa, int k) {
 void dsu(int u, int fa, int keep) {
 	for (/*遍历下一个结点*/) {
 		v = /*下一个结点*/;
-		if (v != fa && v != son[u]) dfs(v, u, 0);
+		if (v != fa && v != son[u]) dsu(v, u, 0);
 	}
-	if (son[u]) dfs(son[u], u, 1), flag = son[u]; // 如果存在重儿子
+	if (son[u]) dsu(son[u], u, 1), flag = son[u]; // 如果存在重儿子
 	cal(u, fa, 1); // 计算
 	if (flag) flag = 0;
 	if (!keep) cal(u, fa, -1); //删除
