@@ -64,6 +64,18 @@
 8. 性质8：若$n$、$p$互质，则$p-n$也与$p$互质，因此小于$p$且与$p$互质的数之和为$phi(n) \times n / 2$
 9. 性质9：若$n > 1$，则小于$n$且与其互质的所有正整数之和为$phi(n) \times n / 2$
 
+## 欧拉降幂公式
+
+$$
+a^b \equiv
+\begin{cases} 
+a^{b \mod \phi(m)} & \text{gcd(a, m) = 1} \\ 
+a^{b} & \text{gcd(a, m)} \ne 1 , b< \phi(m) \\ 
+a^{b \mod \phi(m) + \phi(m)} & \text{gcd(a, m)} \ne 1 , b \geqslant \phi(m) \\ 
+\end{cases}
+(\mod m)
+$$
+
 ## 概率 
 
 1. 假设有一个整数随机变量X，则有$p(X = k) = p(X \ge k) - p(X > k)$

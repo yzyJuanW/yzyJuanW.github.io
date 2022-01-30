@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "STL","wordcount":  17583 ,
+        },"genre": "posts","keywords": "STL","wordcount":  18271 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93\/","datePublished": "2021-07-19T12:22:01+08:00","dateModified": "2021-07-19T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">ACM常用C&#43;&#43;stl总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 17583 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 36 分钟</span>&nbsp;<span id="/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="ACM常用C&#43;&#43;stl总结">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 18271 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 37 分钟</span>&nbsp;<span id="/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="ACM常用C&#43;&#43;stl总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -305,6 +305,13 @@
                 <li><a href="#151-声明方式">15.1 声明方式</a></li>
                 <li><a href="#152-遍历方式">15.2 遍历方式</a></li>
                 <li><a href="#153-常用函数">15.3 常用函数</a></li>
+              </ul>
+            </li>
+            <li><a href="#16-tuple">16. tuple</a>
+              <ul>
+                <li><a href="#161-声明">16.1 声明</a></li>
+                <li><a href="#162-遍历方式">16.2 遍历方式</a></li>
+                <li><a href="#163-make_tuple函数">16.3 make_tuple函数</a></li>
               </ul>
             </li>
           </ul>
@@ -1331,6 +1338,66 @@
 </span><span class="cm">输出：
 </span><span class="cm">1 2 3 4 5
 </span><span class="cm">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果是c++17的话，就可以使用结构化绑定的功能</li>
+<li>对于结构化绑定的赋值顺序，一般是结构体中变量的声明顺序</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">my_struct</span> <span class="p">{</span> <span class="c1">// 自己定义一个结构体，当然class也行
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">my_int</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">my_string</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">my_double</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">my_struct</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">x</span><span class="p">.</span><span class="n">my_int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">my_string</span> <span class="o">=</span> <span class="s">&#34;A&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">my_double</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：8 A 0.9
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>这有什么用呢，这可有大用处，对于在pair和tuple或者map的使用场景中大有用处</li>
+<li>就拿大家最为熟悉的<strong>pair</strong>做演示</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="s">&#34;haha&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 可以加取地址符号对内部进行修改
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：haha 10
+</span><span class="c1"></span>    <span class="n">x</span> <span class="o">=</span> <span class="s">&#34;okok&#34;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：okok 99
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h5 id="13-lambda函数">1.3 Lambda函数</h5>
@@ -2608,15 +2675,18 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#34;haha&#34;</span><span class="p">};</span><span class="c1">// 好像有些编译版本用不了这样，具体多少忘记了
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id="72-遍历方式">7.2 遍历方式</h5>
 <ul>
 <li>直接向类一样的点运算符访问就好了</li>
 <li>例如我想知道first的值<code>p.first</code>就好</li>
+<li>也可以看看前面auto中介绍的遍历方式</li>
 </ul>
 <h5 id="73-make_pair函数">7.3 make_pair函数</h5>
 <ul>
@@ -3009,7 +3079,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>当然也可以用c++17的for的结构化能力，更加方便</li>
+<li>当然也可以用c++17的for的结构化绑定能力，更加方便</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3326,7 +3396,76 @@
 <li><strong>erase(iterator)</strong>：删除iterator，返回删除前的下一个的迭代器</li>
 <li><strong>erase(iterator_start, iterator_end)</strong>：删除[iterator_start, iterator_end)范围内的元素，返回删除前的iterator_end</li>
 </ul>
-<h3 id="四algorithm">四、algorithm</h3>
+<h4 id="16-tuple">16. tuple</h4>
+<ul>
+<li>还记得pair吗？没错这个和pair差不多，pair只能放两个，而tuple元组则能放自定义个，来自c++11版本</li>
+<li>但是这个不怎么常用</li>
+<li>头文件<code>#include &lt;tuple&gt;  </code></li>
+</ul>
+<h5 id="161-声明">16.1 声明</h5>
+<ul>
+<li>和pair差不多</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">};</span> <span class="c1">// 绑定1个
+</span><span class="c1"></span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">t2</span><span class="p">;</span> <span class="c1">// 绑定2个
+</span><span class="c1"></span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">t3</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#34;haha&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span> <span class="c1">// 绑定3个
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="162-遍历方式">16.2 遍历方式</h5>
+<ul>
+<li>第一种是使用<code>get&lt;&gt;()</code>的方式遍历，注意：尖括号内部只能传入常量，圆括号内部传入需要读取的tuple元组名</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#34;okok&#34;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：1
+</span><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：okok
+</span><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：0.9
+</span><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：y
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>当然auto也是可以的，之前也介绍过</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#34;okok&#34;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="p">};</span>
+<span class="k">auto</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：1 okok 0.9 y
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="163-make_tuple函数">16.3 make_tuple函数</h5>
+<ul>
+<li>不多说了，和make_pair差不多</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#34;okok&#34;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="四algorithm">四、algorithm</h3>
 <h4 id="1-sort">1. sort</h4>
 <ul>
 <li>最最最常用的算法函数之一</li>

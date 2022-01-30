@@ -573,6 +573,38 @@ int main() {
 */
 ```
 
+- 如果是c++17的话，就可以使用结构化绑定的功能
+- 对于结构化绑定的赋值顺序，一般是结构体中变量的声明顺序
+
+```cpp
+struct my_struct { // 自己定义一个结构体，当然class也行
+    int my_int;
+    string my_string;
+    double my_double;
+};
+int main() {
+    my_struct x;
+    x.my_int = 8, x.my_string = "A", x.my_double = 0.9;
+    auto [a, b, c] = x;
+    cout << a << ' ' << b << ' ' << c << endl; // 输出：8 A 0.9
+    return 0;
+}
+```
+
+- 这有什么用呢，这可有大用处，对于在pair和tuple或者map的使用场景中大有用处
+- 就拿大家最为熟悉的**pair**做演示
+
+```cpp
+int main() {
+    pair<string, long long> p = make_pair("haha", 10);
+    auto& [x, y] = p; // 可以加取地址符号对内部进行修改
+    cout << x << ' ' << y << endl; // 输出：haha 10
+    x = "okok", y = 99;
+    cout << x << ' ' << y << endl; // 输出：okok 99
+    return 0;
+}
+```
+
 ##### 1.3 Lambda函数
 
 - 前言：Lambda即匿名函数，对于匿名函数可能玩python比较熟悉，当然c++也有自己的一套Lambda玩法
@@ -1337,13 +1369,15 @@ private:
 - 例如，我想将int和string捆绑在一起
 
 ```cpp
-pair<int, string> p;
+pair<int, string> p1;
+pair<int, string> p2 = {3, "haha"};// 好像有些编译版本用不了这样，具体多少忘记了
 ```
 
 ##### 7.2 遍历方式
 
 - 直接向类一样的点运算符访问就好了
 - 例如我想知道first的值`p.first`就好
+- 也可以看看前面auto中介绍的遍历方式
 
 ##### 7.3 make_pair函数
 
@@ -1586,7 +1620,7 @@ ha:-99999999
 */
 ```
 
-- 当然也可以用c++17的for的结构化能力，更加方便
+- 当然也可以用c++17的for的结构化绑定能力，更加方便
 
 ```cpp
 map<string, int> mp = {
@@ -1798,6 +1832,50 @@ for(auto x : l) {
 - **splice(list.iterator, list2, list2.iterator_start, list2.iterator_end)**：在本list的 `iterator`后插入list2的从 `iterator_start` 到 `iterator_end`， 后面两个可填可以不填，当填了`iterator_start`，可不填最后一个，时间复杂度O(1)
 - **erase(iterator)**：删除iterator，返回删除前的下一个的迭代器
 - **erase(iterator_start, iterator_end)**：删除[iterator_start, iterator_end)范围内的元素，返回删除前的iterator_end
+
+#### 16. tuple
+
+- 还记得pair吗？没错这个和pair差不多，pair只能放两个，而tuple元组则能放自定义个，来自c++11版本
+- 但是这个不怎么常用
+- 头文件`#include <tuple>  `
+
+##### 16.1 声明
+
+- 和pair差不多
+
+```cpp
+tuple<int> t1 = {9}; // 绑定1个
+tuple<int, double> t2; // 绑定2个
+tuple<int, string, int> t3 = {1, "haha", 10}; // 绑定3个
+```
+
+##### 16.2 遍历方式
+
+- 第一种是使用`get<>()`的方式遍历，注意：尖括号内部只能传入常量，圆括号内部传入需要读取的tuple元组名
+
+```cpp
+tuple<int, string, double, char> t = {1, "okok", 0.9, 'y'};
+cout << get<0>(t) << endl; // 输出：1
+cout << get<1>(t) << endl; // 输出：okok
+cout << get<2>(t) << endl; // 输出：0.9
+cout << get<3>(t) << endl; // 输出：y
+```
+
+- 当然auto也是可以的，之前也介绍过
+
+```cpp
+tuple<int, string, double, char> t = {1, "okok", 0.9, 'y'};
+auto [a, b, c, d] = t;
+cout << a << ' ' << b << ' ' << c << ' ' << d << endl; // 输出：1 okok 0.9 y
+```
+
+##### 16.3 make_tuple函数
+
+- 不多说了，和make_pair差不多
+
+```cpp
+tuple<int, string, double, char> t = make_tuple(1, "okok", 0.9, 'y');
+```
 
 ### 四、algorithm
 

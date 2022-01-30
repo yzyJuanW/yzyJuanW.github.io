@@ -54,7 +54,7 @@ int pri[M], cnt = 0;
 bool isp[M];
 // 复杂度O(nloglogn)
 // true 为非素数， false 为素数
-void table() {
+void table_prime() {
 	isp[0] = isp[1] = true;
     for (int i = 2; i < M; i++) {
         if (isp[i]) continue;
@@ -69,18 +69,16 @@ void table() {
 ```cpp
 // 复杂度O(n)
 const int M = 1e5 + 10;
-int cnt = 0;
-bool isp[M];
-// true 为非素数， false 为素数
 vector<int> pri;
-void table(int n = 1e5) {
-    isp[0] = isp[1] = 1;
+int minp[M]; // 存放x的最小素因子
+void table(int n = 1e5) { // if x >= 2 && minp[x] == x 则为素数
+    for (int i = 1; i <= n; ++i) minp[i] = i;
     for (int i = 2; i <= n; ++i) {
-        if (!isp[i]) pri.push_back(i);
-        for (int x : pri) {
-            if (x * i > n) break;
-            isp[x * i] = 1;
-            if (i % x == 0) break;
+        if (minp[i] == i) pri.push_back(i);
+        for (int p : pri) {
+            if (p * i > n) break;
+            minp[p * i] = p;
+            if (i % p == 0) break;
         }
     }
 }
@@ -695,13 +693,17 @@ ll crt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x， b[i]中互�
 #### ExCrt
 
 ```cpp
-ll mul(ll a, ll b, ll p) {
-    ll res = 0;
-    for (a %= p; b; b >>= 1) {
-        if (b & 1) res = (res + a) % p;
-        a = (a + a) % p;
-    }
-    return res;
+ll mul(ll a, ll b, ll p) { // 快速乘
+    if (a >= p) a %= p;
+    if (b >= p) b %= p;
+    if (p <= 1000000000) return a * b % p;
+    if (p <= 1000000000000ll)
+        return (((a * (b >> 20) % p) << 20)
+                + (a * (b & ((1 << 20) - 1)))) % p;
+    ll d = (ll)floor(a * (long double)b / p + 0.5);
+    ll ret = (a * b - d * p) % p;
+    if (ret < 0) ret += p;
+    return ret;
 }
 void exgcd(ll a, ll b, ll &g, ll &x, ll &y) {
     if (!b) {
@@ -711,7 +713,7 @@ void exgcd(ll a, ll b, ll &g, ll &x, ll &y) {
     exgcd(b, a % b, g, y, x);
     y -= x * (a / b);
 }
-ll excrt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x
+ll excrt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x，下标从0开始
     ll res = a[0], minlcm = b[0], x, y, g;
     for (int i = 1; i < n; ++i) {
         ll c = (a[i] - res % b[i] + b[i]) % b[i];
@@ -728,21 +730,41 @@ ll excrt(ll *a, ll *b, int n) {// x % b[i] = a[i], 返回最小的x
 
 ### 11. 欧拉函数
 
+#### 求单个数的欧拉函数
+
+```cpp
+int euler_phi(int n) {
+    int ans = n;
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) {
+            ans = ans / i * (i - 1);
+            while (n % i == 0) n /= i;
+        }
+    }
+    if (n > 1) ans = ans / n * (n - 1);
+    return ans;
+}
+```
+
 #### 线性复杂度O(n)
 
 ```cpp
-void getphi() {
+const int M = 1e6 + 5;
+int phi[M], minp[M];
+vector<int> pri;
+void table_phi(int n = 1e5) {
+    for (int i = 1; i <= n; ++i) minp[i] = i;
     phi[1] = 1;
-    for (int i = 2; i < M; ++i) {
-        if (!isp[i]) pri[cnt++] = i, phi[i] = i - 1;
-        for (int j = 0; j < cnt && i * pri[j] < M; ++j) {
-            isp[i * pri[j]] = 1;
-            if (i % pri[j] == 0) {
-                phi[i * pri[j]] = pri[j] * phi[i];
+    for (int i = 2; i <= n; ++i) {
+        if (minp[i] == i) pri.push_back(i), phi[i] = i - 1;
+        for (int p : pri) {
+            if (i * p > n) break;
+            minp[i * p] = p;
+            if (i % p == 0) {
+                phi[i * p] = p * phi[i];
                 break;
-            } else {
-                phi[i * pri[j]] = (pri[j] - 1) * phi[i];
             }
+            phi[i * p] = (p - 1) * phi[i];
         }
     }
 }
