@@ -68,13 +68,16 @@
 
 $$
 a^b \equiv
-\begin{cases} 
-a^{b \mod \phi(m)} & \text{gcd(a, m) = 1} \\ 
-a^{b} & \text{gcd(a, m)} \ne 1 , b< \phi(m) \\ 
-a^{b \mod \phi(m) + \phi(m)} & \text{gcd(a, m)} \ne 1 , b \geqslant \phi(m) \\ 
+\begin{cases}
+
+a^{b \bmod \phi(m)} & gcd(a, m) = 1 \\ 
+a^{b} & gcd(a, m) \ne 1 , b< \phi(m) \\ 
+a^{b \bmod \phi(m) + \phi(m)} & gcd(a, m) \ne 1 , b \geqslant \phi(m)
 \end{cases}
-(\mod m)
+\pmod  m
 $$
+
+
 
 ## 概率 
 
