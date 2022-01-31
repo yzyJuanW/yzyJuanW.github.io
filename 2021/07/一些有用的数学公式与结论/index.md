@@ -22,7 +22,7 @@
 4. 斐波那契数列$f(1) = 1, f(2) = 1, f(3) = 2\dots$，则$gcd(f(a), f(b)) = f(gcd(a, b))$
 5. 由第2条性质可推广：$gcd(a_1, a_2, a_3, \dots a_n) = gcd(a_1, a_2 - a_1, a_3 - a_2\dots a_n - a_{n- 1})$
 6. $gcd$具区间单调性：对于区间$l_3 \le l_2 \le l_1 \le r_1 \le r_2 \le r_3$ $gcd(l_3, r_3)\le gcd(l_2, r_2) \le gcd(l_1, r_1)$
-7. $gcd$具有区间反向包含性质：对于$gcd(l_1, r_1)$，$gcd(l_2, r_2)$，$l_1\le l_2 \le r_2 \le r_1$则$gcd(l_1, r_1)$一定是$gcd(l_2, r_2)$的因子
+7. $gcd$具有区间反向包含性质：对于$gcd(l_1, r_1)$，$gcd(l_2, r_2)$，$l_1\le l_2 \le r_2 \le r_1$则$gcd(l_1, r_1)$一定是$gcd(l_2, r_2)$的因子。
 
 ## 卡特兰
 
@@ -69,10 +69,9 @@
 $$
 a^b \equiv
 \begin{cases}
-
-a^{b \bmod \phi(m)} & gcd(a, m) = 1 \\ 
-a^{b} & gcd(a, m) \ne 1 , b< \phi(m) \\ 
-a^{b \bmod \phi(m) + \phi(m)} & gcd(a, m) \ne 1 , b \geqslant \phi(m)
+a^{b \bmod \phi (m)} & gcd(a, m) = 1 \\ 
+a^{b} & gcd(a, m) \ne 1 , b< \phi (m) \\ 
+a^{b \bmod \phi (m) + \phi (m)} & gcd(a, m) \ne 1 , b \geqslant \phi (m)
 \end{cases}
 \pmod  m
 $$
