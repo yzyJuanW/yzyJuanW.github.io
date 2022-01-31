@@ -73,7 +73,37 @@ a^{b \bmod \phi (m)} & gcd(a, m) = 1 \\
 a^{b} & gcd(a, m) \ne 1 , b< \phi (m) \\ 
 a^{b \bmod \phi (m) + \phi (m)} & gcd(a, m) \ne 1 , b \geqslant \phi (m)
 \end{cases}
-\pmod  m
+\pmod m
+$$
+
+$$
+a^b \equiv
+\begin{cases}
+a^{b \bmod \phi (m)} & gcd(a, m) = 1
+\end{cases}
+\pmod m
+$$
+
+$$
+a^b \equiv
+\begin{cases}
+a^{b} & gcd(a, m) \ne 1 , b< \phi (m) \\ 
+\end{cases}
+\pmod m
+$$
+
+
+$$
+a^b \equiv
+\begin{cases}
+a^{b \bmod \phi (m) + \phi (m)} gcd(a, m) \ne 1 , b \geqslant \phi (m)
+\end{cases}
+\pmod m
+$$
+
+$$
+a^{b \bmod \phi (m)}  gcd(a, m) = 1  
+\pmod m
 $$
 
 
