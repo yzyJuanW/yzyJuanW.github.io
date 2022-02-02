@@ -8,7 +8,7 @@
 1. 算术基本定理：$N = {P_1}^{k_1} \times{P_2}^{k_2} \times {P_3}^{k_3} \cdots \times {P_n}^{k_n} \ \ , \ \ P_1 < P_2 < P_3 < \cdots < P_n$
 2. 一个数N约数个数：$(k_1 + 1) \times (k_2 + 1) \times (k_3 + 1) \times \cdots \times (k_n + 1)$，k是算术基本定理中的k
 3. 一个数N的所有正因数的和：$({P_1} ^ {0} + {P_1} ^ {1} + {P_1} ^ {2} \cdots + {P_1} ^ {k_1})\times ({P_2} ^ {0} + {P_2} ^ {1} + {P_2} ^ {2} \cdots + {P_2} ^ {k_2}) \times \cdots \times ({P_n} ^ {0} + {P_n} ^ {1} + {P_n} ^ {2} \cdots + {P_n} ^ {k_n})$
-4. 费马小定理：$a^{p - 1} \equiv 1 (modp)$，p是素数
+4. 费马小定理：$a^{p - 1} \equiv 1 \pmod p$，p是素数
 
 ## gcd
 
@@ -54,15 +54,15 @@
 
 ## 欧拉函数
 
-1. 性质1：若p为质数则$phi(p) = p - 1$
-2. 性质2：若p为质数则$phi(p^a) = (p - 1) \times p^{a - 1}$
-3. 性质3：当$n$，$m$互质时，则有$phi(nm) = phi(n) \times phi(m)$
-4. 性质4：若$a$，$m$互质时，则有$a^{phi(m)} \equiv 1 \pmod m$
-5. 性质5：若$p$为质数，且$i \bmod p = 0$，则$phi(i \times p) = p \times phi(i)$
-6. 性质6：若$p$为质数，且$i \bmod p \ne 0$，则$phi(i \times p) = phi(i) \times (p - 1)$
-7. 性质7：若$n$为奇数，则$phi(2n) = phi(n)$
-8. 性质8：若$n$、$p$互质，则$p-n$也与$p$互质，因此小于$p$且与$p$互质的数之和为$phi(n) \times n / 2$
-9. 性质9：若$n > 1$，则小于$n$且与其互质的所有正整数之和为$phi(n) \times n / 2$
+1. 性质1：若p为质数则$\phi(p) = p - 1$
+2. 性质2：若p为质数则$\phi(p^a) = (p - 1) \times p^{a - 1}$
+3. 性质3：当$n$，$m$互质时，则有$\phi(nm) = \phi(n) \times \phi(m)$
+4. 性质4：若$a$，$m$互质时，则有$a^{\phi(m)} \equiv 1 \pmod m$
+5. 性质5：若$p$为质数，且$i \bmod p = 0$，则$\phi(i \times p) = p \times \phi(i)$
+6. 性质6：若$p$为质数，且$i \bmod p \ne 0$，则$\phi(i \times p) = \phi(i) \times (p - 1)$
+7. 性质7：若$n$为奇数，则$\phi(2n) = \phi(n)$
+8. 性质8：若$n$、$p$互质，则$p-n$也与$p$互质，因此小于$p$且与$p$互质的数之和为$\phi(n) \times n / 2$
+9. 性质9：若$n > 1$，则小于$n$且与其互质的所有正整数之和为$\phi(n) \times n / 2$
 
 ## 欧拉降幂公式
 
@@ -102,8 +102,14 @@ a^{b \bmod \phi (m) + \phi (m)} gcd(a, m) \ne 1 , b \geqslant \phi (m)
 $$
 
 $$
-a^{b \bmod \phi (m)}  gcd(a, m) = 1  
-\pmod m
+a^{b \bmod \phi (m)}  \ gcd(a, m) = 1  \pmod m
+$$
+
+$$
+\begin{aligned}
+P(B|A)&=\frac{P(AB)}{P(A)}\\
+P(\overline{B}|A)&=1-P(B|A)=1-\frac{P(AB)}{P(A)}
+\end{aligned}
 $$
 
 
