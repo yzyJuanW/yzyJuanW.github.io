@@ -107,7 +107,19 @@ $$
 
 $$
 \begin{aligned}
-P(B|A)&=\frac{P(AB)}{P(A)}
+&a^b \equiv a^{b \bmod \phi (p)} & \text{when} && gcd(a, p) = 1
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& a^b \equiv a^b & gcd(a, p) \ne 1 , b < \phi(p)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& a^b \equiv a^{b \bmod \phi (p) + \phi (p)} & & gcd(a, p) \ne 1, b \ge \phi(p)
 \end{aligned}
 $$
 
