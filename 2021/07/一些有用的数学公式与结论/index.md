@@ -69,61 +69,11 @@
 $$
 a^b \equiv
 \begin{cases}
-a^{b \bmod \phi (m)} & gcd(a, m) = 1 \\ 
-a^{b} & gcd(a, m) \ne 1 , b< \phi (m) \\ 
-a^{b \bmod \phi (m) + \phi (m)} & gcd(a, m) \ne 1 , b \geqslant \phi (m)
+a^{b \bmod \phi (p)} & gcd(a, p) = 1 \newline
+a^{b} & gcd(a, p) \ne 1 , b< \phi (p) \newline 
+a^{b \bmod \phi (p) + \phi (p)} & gcd(a, p) \ne 1 , b \geqslant \phi (p)
 \end{cases}
-\pmod m
-$$
-
-$$
-a^b \equiv
-\begin{cases}
-a^{b \bmod \phi (m)} & gcd(a, m) = 1
-\end{cases}
-\pmod m
-$$
-
-$$
-a^b \equiv
-\begin{cases}
-a^{b} & gcd(a, m) \ne 1 , b< \phi (m) \\\
-ab
-\end{cases}
-\pmod m
-$$
-
-
-$$
-a^b \equiv
-\begin{cases}
-a^{b \bmod \phi (m) + \phi (m)} gcd(a, m) \ne 1 , b \geqslant \phi (m)
-abc
-\end{cases}
-\pmod m
-$$
-
-$$
-a^{b \bmod \phi (m)}  \ gcd(a, m) = 1  \pmod m
-$$
-
-$$
-\begin{aligned}
-&a^b \equiv a^{b \bmod \phi (p)} & \text{when} && gcd(a, p) = 1 \newline
-& a^b \equiv a^b & \text{when} && gcd(a, p) \ne 1 , b < \phi(p)
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
-& a^b \equiv a^b & \text{when} && gcd(a, p) \ne 1 , b < \phi(p)
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
-& a^b \equiv a^{b \bmod \phi (p) + \phi (p)} & \text{when} && gcd(a, p) \ne 1, b \ge \phi(p)
-\end{aligned}
+\pmod p
 $$
 
 
