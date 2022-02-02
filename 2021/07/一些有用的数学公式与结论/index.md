@@ -107,8 +107,7 @@ $$
 
 $$
 \begin{aligned}
-P(B|A)&=\frac{P(AB)}{P(A)}\\
-P(\overline{B}|A)&=1-P(B|A)=1-\frac{P(AB)}{P(A)}
+P(B|A)&=\frac{P(AB)}{P(A)}
 \end{aligned}
 $$
 
