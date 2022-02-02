@@ -97,7 +97,7 @@ $$
 $$
 a^b \equiv
 \begin{cases}
-a^{b \bmod \phi (m) + \phi (m)} gcd(a, m) \ne 1 , b \geqslant \phi (m)\\\\
+a^{b \bmod \phi (m) + \phi (m)} gcd(a, m) \ne 1 , b \geqslant \phi (m)
 abc
 \end{cases}
 \pmod m
@@ -109,7 +109,8 @@ $$
 
 $$
 \begin{aligned}
-&a^b \equiv a^{b \bmod \phi (p)} & \text{when} && gcd(a, p) = 1
+&a^b \equiv a^{b \bmod \phi (p)} & \text{when} && gcd(a, p) = 1 \newline
+& a^b \equiv a^b & \text{when} && gcd(a, p) \ne 1 , b < \phi(p)
 \end{aligned}
 $$
 
