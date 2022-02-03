@@ -69,7 +69,6 @@ struct discrete {
 
 ```cpp {.line-numbers}
 #include <vector>
-#include <cctype>
 #include <iomanip>
 #include <algorithm>
 #include <string>
@@ -81,7 +80,6 @@ typedef long long ll;
 /*
 用前必读：
     本高精采用可调压位式运算对于不同需求记得更改下面的压位代码
-    注意笔者只封装了 bign * int 没有封装 int * bign , 用时注意顺序
     本代码暂时只支持
         高精 + 高精
         高精1 - 高精2 （高精1 > 高精2）
@@ -104,167 +102,169 @@ typedef long long ll;
     其余请读者自己体会，也许还有bug，但对于所有运算均在洛谷模板题上验证过
 */
 
-class bign{
+class hint{
 public:
     static const int w = 1e8, wsize = 8;//压位8个0
-    vector<ll> num;
+    vector<ll> a;
     // int len;
        /* 初始化 */
-    bign(ll);
-    bign(string);
-    ll& operator[] (int x) { return num[x]; }
-    int len() const { return num.size(); }
+    hint(ll);
+    hint(string);
+    ll& operator[] (int x) { return a[x]; }
+    ll operator[] (int x) const { return a[x]; }
+    int len() const { return a.size(); }
     /* 比较(未验证) */
-    bool operator< (const bign &b) const;
-    bool operator> (const bign &b) const { return b < *this; }
-    bool operator<= (const bign &b) const { return !(b < *this); }
-    bool operator>= (const bign &b) const { return !(*this < b); }
-    bool operator!= (const bign &b) const { return b < *this || *this < b; }
-    bool operator== (const bign &b) const { return !(b < *this) && !(*this < b); }
+    bool operator< (const hint &b) const;
+    bool operator> (const hint &b) const { return b < *this; }
+    bool operator<= (const hint &b) const { return !(b < *this); }
+    bool operator>= (const hint &b) const { return !(*this < b); }
+    bool operator!= (const hint &b) const { return b < *this || *this < b; }
+    bool operator== (const hint &b) const { return !(b < *this) && !(*this < b); }
     /* 各种运算 */
-    bign operator+ (bign&); // 高精 + 高精
-    bign operator* (const int); // 高精 * 低精
-    bign operator* (bign&);      // 高精 * 高精
-    bign operator- (bign&); // 高精 - 高精
-    bign operator/ (const int); // 高精 / 低精
-    bign operator% (const int);       // 高精 % 低精
-    bign& operator+= (bign&);     // 高精 += 高精
-    bign& operator*= (const int);      // 高精 *= 低精
-    bign& operator*= (bign&);     // 高精 *= 高精
-    bign& operator-= (bign&);     // 高精 -= 高精
-    bign& operator/= (const int);      // 高精 /= 低精
-    bign& operator%= (const int);      // 高精 %= 低精
+    // hint operator+ (hint&); // 高精 + 高精
+    friend hint operator+ (const hint&, const hint&);
+    friend hint operator- (const hint&, const hint&);
+    friend hint operator* (const hint&, const hint&);
+    hint operator* (const int&); // 高精 * 低精
+    hint operator/ (const int&); // 高精 / 低精
+    hint operator% (const int&);       // 高精 % 低精
+    hint& operator+= (const hint&);     // 高精 += 高精
+    hint& operator*= (const int&);      // 高精 *= 低精
+    hint& operator*= (const hint&);     // 高精 *= 高精
+    hint& operator-= (const hint&);     // 高精 -= 高精
+    hint& operator/= (const int&);      // 高精 /= 低精
+    hint& operator%= (const int&);      // 高精 %= 低精
     /* 输入输出重载 */
-    friend istream& operator>> (istream &in, bign &res) ;
-    friend ostream& operator<< (ostream &out, bign &res);
+    friend istream& operator>> (istream&, hint&) ;
+    friend ostream& operator<< (ostream&, const hint&);
 };
-bign::bign(ll x = 0) {
-    num.clear();
+hint::hint(ll x = 0) {
+    a.clear();
     do {
-        num.push_back(x % w);
+        a.push_back(x % w);
         x /= w;
     } while (x);
 }
-bign::bign(string s) {
-    num.clear();
+hint::hint(string s) {
+    a.clear();
     reverse(s.begin(), s.end());
     int n = s.size();
     for (int i = 0; i < n; i += wsize) {
         string tmp = s.substr(i, wsize);
         reverse(tmp.begin(), tmp.end());
-        num.push_back(stoll(tmp));
+        a.push_back(stoll(tmp));
     }
 }
 /* 比较(未验证) */
-bool bign::operator< (const bign& b) const {
+bool hint::operator< (const hint& b) const {
     if (len() != b.len()) return len() < b.len();
     for (int i = len() - 1; i > 0; --i) {
-        if (num[i] != b.num[i]) return num[i] < b.num[i];
+        if (a[i] != b.a[i]) return a[i] < b.a[i];
     }
     return 0;
 }
 /* 各种运算 */
-bign& bign::operator+= (bign& b) {
-    while (len() < b.len()) num.push_back(0);
+hint& hint::operator+= (const hint& b) {
+    while (len() < b.len()) a.push_back(0);
     ll c = 0;
     int n = len(), m = b.len();
     for (int i = 0; i < n; ++i, c /= w) {
-        c += num[i];
+        c += a[i];
         if (i < m) c += b[i];
-        num[i] = c % w;
+        a[i] = c % w;
     }
-    if (c) num.push_back(c);
+    if (c) a.push_back(c);
     return *this;
 }
-bign bign::operator+ (bign& b) {
-    bign res = *this;
+hint operator+ (const hint& a, const hint& b) {
+    hint res = a;
     return (res += b);
 }
-bign& bign::operator-= (bign& b) {
+hint& hint::operator-= (const hint& b) {
     // assert(*this >= b);
     ll t = 0;
     for (int i = 0, n = len(), m = b.len(); i < n; ++i) {
-        t = num[i] - t;
+        t = a[i] - t;
         if (i < m) t -= b[i];
-        num[i] = (t + w) % w, t = (t < 0);
+        a[i] = (t + w) % w, t = (t < 0);
     }
-    while (len() > 1 && !num.back()) num.pop_back();
+    while (len() > 1 && !a.back()) a.pop_back();
     return *this;
 }
-bign bign::operator- (bign& b) {
-    bign res = *this;
+hint operator-(const hint& a, const hint& b) {
+    hint res = a;
     return (res -= b);
 }
-bign& bign::operator*= (const int b) {
+hint& hint::operator*= (const int& b) {
     ll t = 0;
     for (int i = 0, n = len(); i < n || t; ++i, t /= w) {
-        t += num[i] * b;
-        if (i < n) num[i] = t % w;
-        else num.push_back(t % w);
+        t += a[i] * b;
+        if (i < n) a[i] = t % w;
+        else a.push_back(t % w);
     }
-    while (num.size() > 1 && !num.back()) num.pop_back();
+    while (a.size() > 1 && !a.back()) a.pop_back();
     return *this;
 }
-bign bign::operator* (const int b) {
-    bign res = *this;
+hint hint::operator* (const int& b) {
+    hint res = *this;
     return (res *= b);
 }
-bign bign::operator* (bign& b) {
-    int n = len(), m = b.len();
-    bign res;
-    res.num.resize(n + m, 0);
+hint operator* (const hint& a, const hint& b) {
+    int n = a.len(), m = b.len();
+    hint res;
+    res.a.resize(n + m, 0);
     for (int i = 0; i < n; ++i) {
         ll up = 0;
         for (int j = 0; j < m; ++j) {
-            ll tmp = num[i] * b[j] + res[i + j] + up;
-            res[i + j] = tmp % w;
-            up = tmp / w;
+            ll tmp = a[i] * b[j] + res[i + j] + up;
+            res[i + j] = tmp % hint::w;
+            up = tmp / hint::w;
         }
         if (up) res[i + m] = up;
     }
-    while (res.len() > 1 && !res.num.back()) res.num.pop_back();
+    while (res.len() > 1 && !res.a.back()) res.a.pop_back();
     return res;
 }
-bign& bign::operator*= (bign& b) {
+hint& hint::operator*= (const hint& b) {
     return *this = *this * b;
 }
-bign& bign::operator/= (const int b) {
+hint& hint::operator/= (const int& b) {
     ll r = 0;
     for (int i = len() - 1; i >= 0; --i) {
-        r = r * w + num[i];
-        if (r < b) num[i] = 0;
-        else num[i] = r / b, r %= b;
+        r = r * w + a[i];
+        if (r < b) a[i] = 0;
+        else a[i] = r / b, r %= b;
     }
-    while (len() > 1 && !num.back()) num.pop_back();
+    while (len() > 1 && !a.back()) a.pop_back();
     return *this;
 }
-bign bign::operator/ (const int b) {
-    bign res = *this;
+hint hint::operator/ (const int& b) {
+    hint res = *this;
     return (res /= b);
 }
-bign& bign::operator%= (const int b) {
+hint& hint::operator%= (const int& b) {
     ll r = 0;
     for (int i = len() - 1; i >= 0; --i) {
-        r = r * w + num[i];
+        r = r * w + a[i];
         if (r >= b) r %= b;
     }
-    return *this = bign(r);
+    return *this = hint(r);
 }
 
-bign bign::operator% (const int b) {
-    bign res = *this;
+hint hint::operator% (const int& b) {
+    hint res = *this;
     return res %= b;
 }
 
 /* 输入输出重载 */
-istream& operator>> (istream &in, bign &res) {
+istream& operator>> (istream &in, hint &res) {
     string s;
     in >> s;
-    res = bign(s);
+    res = hint(s);
     return in;
 }
-ostream& operator<< (ostream &out, bign &res) {
-    out << res.num.back();
+ostream& operator<< (ostream &out, const hint& res) {
+    out << res.a.back();
     for(int i = res.len() - 2; i >= 0; --i) {
         out << setw(8) << setfill('0') << res[i];
     }
@@ -272,11 +272,10 @@ ostream& operator<< (ostream &out, bign &res) {
 }
 
 int main() {
-    bign a;
+    hint a;
     int b;
     cin >> a >> b;
-    bign res = a / b;
-    cout << res;
+    cout << a / b;
     return 0;
 }
 ```
@@ -287,7 +286,7 @@ int main() {
 #define bint vector<int>
 
 
-int cmp(bint& x, bint& y) { // 1:x>y, 0:x=y, -1:x<y
+int cmp(const bint& x, const bint& y) { // 1:x>y, 0:x=y, -1:x<y
     if (x.size() != y.size()) {
         return x.size() > y.size() ? 1 : -1;
     }
@@ -299,7 +298,7 @@ int cmp(bint& x, bint& y) { // 1:x>y, 0:x=y, -1:x<y
     return 0;
 }
 // 正整数加
-bint add(bint& x, bint& y) {
+bint add(const bint& x, const bint& y) {
     if (x.size() < y.size()) return add(y, x);
     bint res;
     int c = 0, n = x.size(), m = y.size();
@@ -312,7 +311,7 @@ bint add(bint& x, bint& y) {
     return res;
 }
 // 正整数 x >= y
-bint sub(bint& x, bint& y) {
+bint sub(const bint& x, const bint& y) {
     bint res;
     int n = x.size(), m = y.size();
     for (int i = 0, t = 0; i < n; ++i, t = (t < 0)) {
@@ -324,7 +323,7 @@ bint sub(bint& x, bint& y) {
     return res;
 }
 
-bint mul(bint& x, int y) {
+bint mul(const bint& x, const int y) {
     bint res;
     int t = 0, n = x.size();
     for (int i = 0; i < n || t; ++i, t /= 10) {
@@ -335,7 +334,7 @@ bint mul(bint& x, int y) {
     return res;
 }
 
-bint mul(bint& x, bint& y) {
+bint mul(const bint& x, const bint& y) {
     int n = x.size(), m = y.size();
     bint res(n + m, 0);
     for (int i = 0; i < n; ++i) {
@@ -351,7 +350,7 @@ bint mul(bint& x, bint& y) {
     return res;
 }
 
-bint div(bint& x, int y, ll &r) {
+bint div(const bint& x, const int y, ll &r) {
     bint res;
     for (int i = x.size() - 1; i >= 0; --i) {
         r = r * 10 + x[i];
@@ -364,7 +363,7 @@ bint div(bint& x, int y, ll &r) {
 }
 
 
-void print(bint& x) {
+void print(const bint& x) {
     for (int i = x.size() - 1; i >= 0; --i) {
         cout << x[i];
     }
