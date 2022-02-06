@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/"
-        },"genre": "posts","keywords": "数学","wordcount":  1512 ,
+        },"genre": "posts","keywords": "数学","wordcount":  1613 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/","datePublished": "2021-07-21T12:22:01+08:00","dateModified": "2021-07-21T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">一些有用的数学公式与结论</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1512 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1613 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟</span>&nbsp;<span id="/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/" class="leancloud_visitors" data-flag-title="一些有用的数学公式与结论">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -137,6 +137,7 @@
     <li><a href="#斯特林数">斯特林数</a></li>
     <li><a href="#欧拉函数">欧拉函数</a></li>
     <li><a href="#欧拉降幂公式">欧拉降幂公式</a></li>
+    <li><a href="#二项式反演公式">二项式反演公式</a></li>
     <li><a href="#概率">概率</a></li>
     <li><a href="#期望">期望</a></li>
   </ul>
@@ -214,6 +215,36 @@ a^{b} &amp; gcd(a, p) \ne 1 , b&lt; \phi (p) \newline
 a^{b \bmod \phi (p) + \phi (p)} &amp; gcd(a, p) \ne 1 , b \geqslant \phi (p)
 \end{cases}
 \pmod p
+$$</p>
+<h2 id="二项式反演公式">二项式反演公式</h2>
+<ul>
+<li>通常用来解决容斥问题</li>
+<li>函数$f$一般和函数$g$互为补集</li>
+<li>一般形式</li>
+</ul>
+<p>$$
+\begin{aligned}
+f(n) &amp;= \sum_{i=0}^{n} \  (-1)^i \ C_n^i \ g(i) \newline
+g(n) &amp;= \sum_{i=0}^{n} \  (-1)^i \ C_n^i \ f(i)
+\end{aligned}
+$$</p>
+<ul>
+<li>常见形式</li>
+</ul>
+<p>$$
+\begin{aligned}
+f(n) &amp;= \sum_{i=0}^{n} C_n^i g(i) \newline
+g(n) &amp;= \sum_{i=0}^{n} (-1)^{n-i} C_n^i f(i)
+\end{aligned}
+$$</p>
+<ul>
+<li>其他形式</li>
+</ul>
+<p>$$
+\begin{aligned}
+f(n) &amp;= \sum_{i=n}^{m} C_i^{n} g(i) \newline
+g(n) &amp;= \sum_{i=n}^{m} (-1)^{i-n} C_i^n f(i)
+\end{aligned}
 $$</p>
 <h2 id="概率">概率</h2>
 <ol>

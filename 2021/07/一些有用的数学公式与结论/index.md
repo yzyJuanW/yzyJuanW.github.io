@@ -78,6 +78,39 @@ $$
 
 
 
+## 二项式反演公式
+
+- 通常用来解决容斥问题
+- 函数$f$一般和函数$g$互为补集
+- 一般形式
+
+$$
+\begin{aligned}
+f(n) &= \sum_{i=0}^{n} \  (-1)^i \ C_n^i \ g(i) \newline
+g(n) &= \sum_{i=0}^{n} \  (-1)^i \ C_n^i \ f(i)
+\end{aligned}
+$$
+
+- 常见形式
+
+$$
+\begin{aligned}
+f(n) &= \sum_{i=0}^{n} C_n^i g(i) \newline
+g(n) &= \sum_{i=0}^{n} (-1)^{n-i} C_n^i f(i)
+\end{aligned}
+$$
+
+- 其他形式
+
+$$
+\begin{aligned}
+f(n) &= \sum_{i=n}^{m} C_i^{n} g(i) \newline
+g(n) &= \sum_{i=n}^{m} (-1)^{i-n} C_i^n f(i)
+\end{aligned}
+$$
+
+
+
 ## 概率 
 
 1. 假设有一个整数随机变量X，则有$p(X = k) = p(X \ge k) - p(X > k)$
