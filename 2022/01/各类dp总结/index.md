@@ -394,8 +394,60 @@ for (int s1 = s; s1; s1 = (s1 - 1) & s) {
 
 ## 数位dp
 
-待补……
+说起数位dp，求解的过程更像是在树上计数一样
+
+值得注意的是：记忆化递归求解简单易懂，而且几乎不会卡递归的方式
+
+给出递归时的一个套路代码（很多地方更多的是希望根据题意来）
+
+有时候有些数位dp可能对前导0或者前面填的数对后面有影响，则可以在dfs中传参传多几个标志，然后再更新res时特判就好了
+
+```cpp
+int num[100], dp[100];
+
+int dfs(int indx, int limit, /*参数根据题意来添加*/) {
+    if (indx == 0) {
+        return 1;// 根据题意来返回
+    }
+	int &ref = dp[indx];
+    if (!limit && ref != -1) return ref;
+    int res = 0;
+    int up = (limit ? num[indx] : 9);
+    for (int i = 0; i <= up; ++i) {
+        // 更新res
+		dfs(indx - 1, limit && i == up);
+    }
+    if (!limit) ref = res;
+    return res;
+}
+
+int solve(int x) {
+    if (!x) return 1; // 根据题意来决定返回值
+    int len = 0;
+    while (x) {
+        num[++len] = x % 10;
+        x /= 10;
+    }
+    return dfs(len, 1);
+}
+int main() {
+    memset(dp, - 1, sizeof dp); // 根据题意决定初始化的时机和大小
+    // 此行省略读入
+    cout << solve(r) - solve(l - 1) endl;
+}
+```
 
 ###### 例题
 
-待补……
+- [Libre 10164. 「一本通 5.3 例 2」数字游戏](https://loj.ac/p/10164) 入门好题
+- [Libre 10166. 「一本通 5.3 练习 1」数字游戏](https://loj.ac/p/10166) 和上一题处理差不多
+- [[SCOI2009] windy 数](https://www.luogu.com.cn/problem/P2657) 多少人的刚学是做的这题？
+- [atcoder abc161D Lunlun Number](https://atcoder.jp/contests/abc161/tasks/abc161_d) 不说应该也能想到怎么做的题
+- [CodeForces 204A Little Elephant and Interval](https://codeforces.com/problemset/problem/204/A) 这题让我吹爆记忆化搜的数位dp，处理前导0的形式值得练习
+- [CodeForces 1143B Nirvana](https://codeforces.com/contest/1143/problem/B) 这题虽然可以不用数位dp做，但可以当做数位dp的练手题，可以练习一下处理前导0的形式
+- [And and Pair](https://nanti.jisuanke.com/t/42578) 19年南昌icpc的C题，重现的时候自己是组合数学写出来的，但这题确实可以用数位dp写
+- [Sum of Log](https://ac.nowcoder.com/acm/contest/9925/C) 20年上海icpc的C题，两个范围维度限制的数位dp
+
+~持续更新中……
+
+

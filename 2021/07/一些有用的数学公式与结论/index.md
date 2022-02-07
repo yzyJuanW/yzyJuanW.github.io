@@ -66,6 +66,8 @@
 
 ## 欧拉降幂公式
 
+- 一般将第一行的情况会当做第三行处理
+
 $$
 a^b \equiv
 \begin{cases}
@@ -74,6 +76,51 @@ a^{b} & gcd(a, p) \ne 1 , b< \phi (p) \newline
 a^{b \bmod \phi (p) + \phi (p)} & gcd(a, p) \ne 1 , b \geqslant \phi (p)
 \end{cases}
 \pmod p
+$$
+
+
+
+## 求和公式的变换
+
+- 无关系数提前：$\sum_{i=0}^{n} p \ f(i) = p\sum_{i=0}^{n} f(i)$
+- 左右置换：$\sum_{i=0}^n \sum_{j=0}^m f(i) \ast g(j) = \sum_{j=0}^m \sum_{i=0}^n f(i) \ast g(j)$
+- 矩阵的下三角：$\sum_{i=0}^n \sum_{j=0}^{i} f(i) \ast g(j) = \sum_{j=0}^n \sum_{i=j}^n f(i) \ast g(j)$
+- 因数和倍数枚举的变换：$\sum_{i = 1}^n \sum_{d\vert i} f(i) \ast g(d) \ast h(\frac{i}{d})= \sum_{d=1}^n \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} f(i \times d) \ast g(d) \ast h(i)$
+
+## 莫比乌斯反演公式
+
+莫比乌斯函数
+$$
+\mu (n) =
+\begin{cases}
+1 & & n = 1 \newline
+(-1)^k & & n = p_1\ p_2\ p_3 \ldots p_k \ ,\ p_i \ne p_j \ \and\ i\ne j \newline
+0 & & \text{others}
+\end{cases}
+$$
+
+1. 性质1：$\sum_{d \vert n} \mu(d) = [n == 1]$
+
+2. 性质2：$\sum_{d \vert n} \frac{\mu(d)}{d} = \frac{\phi(n)}{n}$
+
+**莫比乌斯反演公式**
+
+- 一般形式（因子关系）
+
+$$
+\begin{aligned}
+f(n) &= \sum_{d \vert n} \ g(d) \newline
+g(n) &= \sum_{d \vert n} \mu(d) \ f(\frac{n}{d})
+\end{aligned}
+$$
+
+- 其他形式（倍数关系）
+
+$$
+\begin{aligned}
+f(n) &= \sum_{n \vert d} \ g(d) \newline
+g(n) &= \sum_{n \vert d} \mu(\frac{d}{n}) \ f(d)
+\end{aligned}
 $$
 
 
@@ -95,8 +142,8 @@ $$
 
 $$
 \begin{aligned}
-f(n) &= \sum_{i=0}^{n} C_n^i g(i) \newline
-g(n) &= \sum_{i=0}^{n} (-1)^{n-i} C_n^i f(i)
+f(n) &= \sum_{i=0}^{n} \ C_n^i \ g(i) \newline
+g(n) &= \sum_{i=0}^{n} \ (-1)^{n-i} \ C_n^i \ f(i)
 \end{aligned}
 $$
 
@@ -104,12 +151,14 @@ $$
 
 $$
 \begin{aligned}
-f(n) &= \sum_{i=n}^{m} C_i^{n} g(i) \newline
-g(n) &= \sum_{i=n}^{m} (-1)^{i-n} C_i^n f(i)
+f(n) &= \sum_{i=n}^{m} \ C_i^{n} \ g(i) \newline
+g(n) &= \sum_{i=n}^{m} \ (-1)^{i-n} \ C_i^n \ f(i)
 \end{aligned}
 $$
 
 
+
+## 斯特林反演公式
 
 ## 概率 
 

@@ -30,7 +30,7 @@ int dfs(int indx, int limit, /*参数根据题意来添加*/) {
     int up = (limit ? num[indx] : 9);
     for (int i = 0; i <= up; ++i) {
         // 更新res
-        dfs(indx - 1, limit && i == up);
+		dfs(indx - 1, limit && i == up);
     }
     if (!limit) ref = res;
     return res;

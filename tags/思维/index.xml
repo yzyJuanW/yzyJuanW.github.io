@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>思维 - 标签 - haofish</title>
+        <title>思维 - 标签 - 幼稚园卷王</title>
         <link>https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/</link>
-        <description>思维 - 标签 - haofish</description>
+        <description>思维 - 标签 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Aug 2020 11:57:07 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E6%80%9D%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
     <title>UVA11572</title>
     <link>https://haofish.github.io/2020/08/uva11572/</link>

@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>字符串 - 标签 - haofish</title>
+        <title>字符串 - 标签 - 幼稚园卷王</title>
         <link>https://haofish.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
-        <description>字符串 - 标签 - haofish</description>
+        <description>字符串 - 标签 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jul 2020 15:59:43 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="self" type="application/rss+xml" /><item>
     <title>C. Move Brackets题解</title>
     <link>https://haofish.github.io/2020/07/653div3problemc/</link>

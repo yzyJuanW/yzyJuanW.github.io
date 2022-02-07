@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>区间dp - 标签 - haofish</title>
+        <title>区间dp - 标签 - 幼稚园卷王</title>
         <link>https://haofish.github.io/tags/%E5%8C%BA%E9%97%B4dp/</link>
-        <description>区间dp - 标签 - haofish</description>
+        <description>区间dp - 标签 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Aug 2021 18:29:03 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%8C%BA%E9%97%B4dp/" rel="self" type="application/rss+xml" /><item>
     <title>HDU 2476</title>
     <link>https://haofish.github.io/2021/08/hdu-2476-string-painter/</link>

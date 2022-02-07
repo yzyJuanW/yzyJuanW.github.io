@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>成长心得 - 分类 - haofish</title>
+        <title>成长心得 - 分类 - 幼稚园卷王</title>
         <link>https://haofish.github.io/categories/%E6%88%90%E9%95%BF%E5%BF%83%E5%BE%97/</link>
-        <description>成长心得 - 分类 - haofish</description>
+        <description>成长心得 - 分类 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 27 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E6%88%90%E9%95%BF%E5%BF%83%E5%BE%97/" rel="self" type="application/rss+xml" /><item>
     <title>动态规划刷题总结</title>
     <link>https://haofish.github.io/2020/06/dynamicprogramming/</link>

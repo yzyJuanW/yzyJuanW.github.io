@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>总结 - 分类 - haofish</title>
+        <title>总结 - 分类 - 幼稚园卷王</title>
         <link>https://haofish.github.io/categories/%E6%80%BB%E7%BB%93/</link>
-        <description>总结 - 分类 - haofish</description>
+        <description>总结 - 分类 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jan 2022 12:08:36 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml" /><item>
     <title>各类dp总结</title>
     <link>https://haofish.github.io/2022/01/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/</link>

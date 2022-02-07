@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>cf补题 - 分类 - haofish</title>
+        <title>cf补题 - 分类 - 幼稚园卷王</title>
         <link>https://haofish.github.io/categories/cf%E8%A1%A5%E9%A2%98/</link>
-        <description>cf补题 - 分类 - haofish</description>
+        <description>cf补题 - 分类 - 幼稚园卷王</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jul 2020 20:28:19 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/categories/cf%E8%A1%A5%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
     <title>C. A Cookie for You题解</title>
     <link>https://haofish.github.io/2020/07/654div2problemc/</link>
