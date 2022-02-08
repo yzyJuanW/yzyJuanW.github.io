@@ -129,9 +129,9 @@
                         <span><i class="details-icon fas fa-angle-right"></i></span>
                     </div>
                     <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-                </div><div class="content" id="content"><p>题意：给你x，y，求 $\sum_{i=0}^x \sum_{j = \lbrack i = 0 \rbrack}^y \lbrack i &amp; j = 1\rbrack \lfloor log_2(i + j) + 1 \rfloor$</p>
+                </div><div class="content" id="content"><p>题意：给你x，y，求 $\sum_{i=0}^x \sum_{j = \lbrack i = 0 \rbrack}^y \lbrack i \And j = 1\rbrack \lfloor log_2(i + j) + 1 \rfloor$</p>
 <p>对于这种题（求范围内符合条件的数对）类型的题，有点类似19年南昌icpc的C题的数位dp思路</p>
-<p>首先 $i &amp; j = 1$ 是一个切入口，一开始想错没注意到这个条件，后来发现后便觉得这题的难度小了一大半</p>
+<p>首先 $i \And j = 1$ 是一个切入口，一开始想错没注意到这个条件，后来发现后便觉得这题的难度小了一大半</p>
 <p>然后要了解到$\lfloor log(x) + 1\rfloor$可以理解成二进制最高位1的位置</p>
 <p>最后就是求和，定死最高位1在<code>i</code>的条件进行累加，注意，对于两个数的某一个数，如果<code>i</code>超过了或者等于他的最高位的位数，则这个数在dp的时候要有 <code>limit</code>限制</p>
 <p>看代码好理解些</p>

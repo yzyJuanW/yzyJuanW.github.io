@@ -1,11 +1,11 @@
 # 2020ICPC上海站C. Sum of Log
 
 
-题意：给你x，y，求 $\sum_{i=0}^x \sum_{j = \lbrack i = 0 \rbrack}^y \lbrack i \& j = 1\rbrack \lfloor log_2(i + j) + 1 \rfloor$
+题意：给你x，y，求 $\sum_{i=0}^x \sum_{j = \lbrack i = 0 \rbrack}^y \lbrack i \And j = 1\rbrack \lfloor log_2(i + j) + 1 \rfloor$
 
 对于这种题（求范围内符合条件的数对）类型的题，有点类似19年南昌icpc的C题的数位dp思路
 
-首先 $i \& j = 1$ 是一个切入口，一开始想错没注意到这个条件，后来发现后便觉得这题的难度小了一大半
+首先 $i \And j = 1$ 是一个切入口，一开始想错没注意到这个条件，后来发现后便觉得这题的难度小了一大半
 
 然后要了解到$\lfloor log(x) + 1\rfloor$可以理解成二进制最高位1的位置
 
