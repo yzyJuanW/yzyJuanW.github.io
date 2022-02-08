@@ -94,13 +94,23 @@ $$
 \mu (n) =
 \begin{cases}
 1 & & n = 1 \newline
-(-1)^k & & n = p_1\ p_2\ p_3 \ldots p_k \ ,\ p_i \ne p_j \ \and\ i\ne j \newline
+(-1)^k & & n = p_1\ p_2\ p_3 ... p_k \ ,\ p_i \ne p_j \ \and\ i\ne j \newline
 0 & & \text{others}
 \end{cases}
 $$
 
-1. 性质1：$\sum_{d \vert n} \mu(d) = [n == 1]$
+$$
+\mu (n) =
+\begin{cases}
+1 & & n = 1 \newline
+(-1)^k & & n = p_1\ p_2\ p_3 \ldots p_k \ ,\ p_i \ne p_j \ \and\ i\ne j \newline
+0 & & others
+\end{cases}
+$$
 
+
+
+1. 性质1：$\sum_{d \vert n} \mu(d) = [n == 1]$
 2. 性质2：$\sum_{d \vert n} \frac{\mu(d)}{d} = \frac{\phi(n)}{n}$
 
 **莫比乌斯反演公式**

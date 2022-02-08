@@ -400,7 +400,9 @@ for (int s1 = s; s1; s1 = (s1 - 1) & s) {
 
 给出递归时的一个套路代码（很多地方更多的是希望根据题意来）
 
-有时候有些数位dp可能对前导0或者前面填的数对后面有影响，则可以在dfs中传参传多几个标志，然后再更新res时特判就好了
+有时候有些数位dp可能对前导0或者前面填的数对后面有影响，则可以在dfs中传参传多几个标志，然后在更新res（12行）时特判就好了
+
+当然，个人感觉核心代码就是11~13行内部的转移方式，一般来说，写题的时候有点纠结状态怎么定义时，会先写这部分
 
 ```cpp
 int num[100], dp[100];
@@ -445,8 +447,8 @@ int main() {
 - [atcoder abc161D Lunlun Number](https://atcoder.jp/contests/abc161/tasks/abc161_d) 不说应该也能想到怎么做的题
 - [CodeForces 204A Little Elephant and Interval](https://codeforces.com/problemset/problem/204/A) 这题让我吹爆记忆化搜的数位dp，处理前导0的形式值得练习
 - [CodeForces 1143B Nirvana](https://codeforces.com/contest/1143/problem/B) 这题虽然可以不用数位dp做，但可以当做数位dp的练手题，可以练习一下处理前导0的形式
-- [And and Pair](https://nanti.jisuanke.com/t/42578) 19年南昌icpc的C题，重现的时候自己是组合数学写出来的，但这题确实可以用数位dp写
-- [Sum of Log](https://ac.nowcoder.com/acm/contest/9925/C) 20年上海icpc的C题，两个范围维度限制的数位dp
+- [And and Pair](https://nanti.jisuanke.com/t/42578) 19年南昌icpc的C题，重现的时候自己是组合数学写出来的，但这题确实可以用数位dp写，注意是两个限制维度
+- [Sum of Log](https://ac.nowcoder.com/acm/contest/9925/C) 20年上海icpc的C题，也是两个限制维度限制的数位dp
 
 ~持续更新中……
 

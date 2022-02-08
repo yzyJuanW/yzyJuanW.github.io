@@ -1,0 +1,64 @@
+---
+title: "NC2020多校训练营（第六场）H题 Harmony Pairs"
+date: 2022-02-08T09:14:53+08:00
+draft: false
+categories: ["刷题"]
+tags: ["题解", "数位dp"]
+summary: 一道求范围内符合条件的数对的个数
+---
+
+题意：S(x)表示x十进制上的所有数相加的和，问n范围内，$0 \le A \le B$ 并且 $S(A) > S(B)$ 的数对个数
+
+本题首先要想到的是用数位dp解决，然后就是状态的定义，本题状态定义的话刷多了dp的都有感觉，和（NC19158 失衡天平）的定义差不多的思想
+
+定义 `dp[id][dif]` 为最低位到第`id`位上，两个数和的差
+
+然后数位dp转移，有两个限制的limit的这种题还是很少遇到的，记录一下，这种题应该一般是对单范围内符合某种条件的数对的个数
+
+递归写好理解，注意对于两个limit限制条件需要开多两个维度，不然T到飞起
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+const ll mod = 1e9 + 7;
+int num[110];
+int init = 1000;
+ll dp[110][2005][2][2];
+
+ll dfs(int pos, int dif, int limit1, int limit2) {
+    if (pos == 0) return dif > init;
+    ll& res = dp[pos][dif][limit1][limit2];
+    if (res != -1) return res;
+    res = 0;
+    int up = (limit1 ? num[pos] : 9);
+    for (int i = 0; i <= up; ++i) { // B
+        int len = (limit2 ? i : 9);
+        for (int j = 0; j <= len; ++j) { // A
+            res = (res + dfs(pos - 1, dif + j - i, limit1 && (i == up), limit2 && (j == len))) % mod;
+        }
+    }
+    return res;
+}
+
+void problem() {
+    memset(dp, -1, sizeof dp);
+    string s;
+    cin >> s;
+    int cnt = 0;
+    while (s.size()) {
+        num[++cnt] = s.back() - '0';
+        s.pop_back();
+    }
+    cout << dfs(cnt, init, 1, 1) << endl;
+}
+
+int main() {
+    problem();
+    return 0;
+}
+```
+
+
+
