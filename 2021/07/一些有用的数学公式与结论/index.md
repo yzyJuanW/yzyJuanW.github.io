@@ -93,7 +93,9 @@ $$
 $$
 \mu (n) =
 \begin{cases}
-1 & & n = 1 \newline
+1 & n = 1 \newline
+(-1)^k & n = p_1\ p_2\ p_3 ... p_k \ \ p_i \ne p_j \ 且\ i\ne j \newline
+0 & others
 \end{cases}
 $$
 
@@ -101,8 +103,17 @@ $$
 \mu (n) =
 \begin{cases}
 1 & n = 1 \newline
-(-1)^k & n = p_1\ p_2\ p_3 \ldots p_k \ ,\ p_i \ne p_j \ \and\ i\ne j \newline
+(-1)^k & n = p_1\ p_2\ p_3 \ldots p_k \ ,\ p_i \ne p_j \ 且\ i\ne j \newline
 0 & \text{others}
+\end{cases}
+$$
+
+$$
+\mu (n) =
+\begin{cases}
+1 & n = 1 \newline
+(-1)^k & n = p_1\ p_2\ p_3 ... p_k \ ,\ p_i \ne p_j \ \ i\ne j \newline
+0 & others
 \end{cases}
 $$
 
