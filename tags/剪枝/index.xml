@@ -3,7 +3,13 @@
         <title>剪枝 - 标签 - 幼稚园卷王</title>
         <link>https://haofish.github.io/tags/%E5%89%AA%E6%9E%9D/</link>
         <description>剪枝 - 标签 - 幼稚园卷王</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Aug 2020 19:53:14 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%89%AA%E6%9E%9D/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 09 Feb 2022 13:29:05 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/tags/%E5%89%AA%E6%9E%9D/" rel="self" type="application/rss+xml" /><item>
+    <title>Abc211E Red Polyomino</title>
+    <link>https://haofish.github.io/2022/02/abc211e-red-polyomino/</link>
+    <pubDate>Wed, 09 Feb 2022 13:29:05 &#43;0800</pubDate><guid>https://haofish.github.io/2022/02/abc211e-red-polyomino/</guid>
+    <description><![CDATA[dfs+剪枝的一道题]]></description>
+</item>
+<item>
     <title>UVA140</title>
     <link>https://haofish.github.io/2020/08/uva140/</link>
     <pubDate>Fri, 07 Aug 2020 19:53:14 &#43;0800</pubDate><guid>https://haofish.github.io/2020/08/uva140/</guid>

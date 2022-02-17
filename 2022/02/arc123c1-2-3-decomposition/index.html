@@ -4,30 +4,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>2020ICPC上海站C. Sum of Log - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="2020ICPC上海站C. Sum of Log" />
-<meta property="og:description" content="范围内符合条件的数对类型的数位dp" />
+        <title>Arc123C 1, 2, 3 - Decomposition - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="Arc123C 1, 2, 3 - Decomposition" />
+<meta property="og:description" content="一道有点思维性的题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-02-08T13:31:52+08:00" />
-<meta property="article:modified_time" content="2022-02-08T13:31:52+08:00" />
+<meta property="og:url" content="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-11T13:31:21+08:00" />
+<meta property="article:modified_time" content="2022-02-11T13:31:21+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
-<meta name="twitter:title" content="2020ICPC上海站C. Sum of Log"/>
-<meta name="twitter:description" content="范围内符合条件的数对类型的数位dp"/>
+<meta name="twitter:title" content="Arc123C 1, 2, 3 - Decomposition"/>
+<meta name="twitter:description" content="一道有点思维性的题"/>
 <meta name="application-name" content="FeelIt">
-<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" /><link rel="prev" href="https://haofish.github.io/2022/02/abc161d-lunlun-number/" /><link rel="next" href="https://haofish.github.io/2022/02/abc211e-red-polyomino/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" /><link rel="prev" href="https://haofish.github.io/2022/02/abc211e-red-polyomino/" /><link rel="next" href="https://haofish.github.io/2022/02/arc123d-inc-dec-decomposition/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "2020ICPC上海站C. Sum of Log",
+        "headline": "Arc123C 1, 2, 3 - Decomposition",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/haofish.github.io\/2022\/02\/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log\/"
-        },"genre": "posts","keywords": "题解, 数位dp","wordcount":  558 ,
-        "url": "https:\/\/haofish.github.io\/2022\/02\/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log\/","datePublished": "2022-02-08T13:31:52+08:00","dateModified": "2022-02-08T13:31:52+08:00","publisher": {
+            "@id": "https:\/\/haofish.github.io\/2022\/02\/arc123c1-2-3-decomposition\/"
+        },"genre": "posts","keywords": "题解, 分治","wordcount":  514 ,
+        "url": "https:\/\/haofish.github.io\/2022\/02\/arc123c1-2-3-decomposition\/","datePublished": "2022-02-11T13:31:21+08:00","dateModified": "2022-02-11T13:31:21+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
@@ -115,10 +115,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">2020ICPC上海站C. Sum of Log</h2><div class="post-meta">
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">Arc123C 1, 2, 3 - Decomposition</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%88%B7%E9%A2%98/"><i class="far fa-folder fa-fw"></i>刷题</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-08">2022-02-08</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 558 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" class="leancloud_visitors" data-flag-title="2020ICPC上海站C. Sum of Log">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-11">2022-02-11</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 514 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2022/02/arc123c1-2-3-decomposition/" class="leancloud_visitors" data-flag-title="Arc123C 1, 2, 3 - Decomposition">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -129,12 +129,17 @@
                         <span><i class="details-icon fas fa-angle-right"></i></span>
                     </div>
                     <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-                </div><div class="content" id="content"><p>题意：给你x，y，求 $\sum_{i=0}^x \sum_{j = \lbrack i = 0 \rbrack}^y \lbrack i \And j = 1\rbrack \lfloor log_2(i + j) + 1 \rfloor$</p>
-<p>对于这种题（求范围内符合条件的数对）类型的题，有点类似19年南昌icpc的C题的数位dp思路</p>
-<p>首先 $i \And j = 1$ 是一个切入口，一开始想错没注意到这个条件，后来发现后便觉得这题的难度小了一大半</p>
-<p>然后要了解到$\lfloor log(x) + 1\rfloor$可以理解成二进制最高位1的位置</p>
-<p>最后就是求和，定死最高位1在<code>i</code>的条件进行累加，注意，对于两个数的某一个数，如果<code>i</code>超过了或者等于他的最高位的位数，则这个数在dp的时候要有 <code>limit</code>限制</p>
-<p>看代码好理解些</p>
+                </div><div class="content" id="content"><p>题意：把一个数拆成x个数相加，这x个数的十进制每一位都必须是 1,2,3中的数</p>
+<p>分治地思维想</p>
+<p>将数拆成两部分 :</p>
+<p><strong>（部分a：除了个位的其余位的数）（部分b：个位的数）</strong></p>
+<p>如果”部分b“最少可以拆成x次，同时“部分a”拆的次数不超过x次，则整体的次数便是x</p>
+<p>例如 29 可以拆成 （部分a：2） 和 （部分b：9）</p>
+<p>可以发现9的最少次数为3次（3, 3, 3），而”部分a“的最少次数为1次（2），则29可以拆3次（23，3，3）</p>
+<p>注意到“部分b”是可以向前借位的，此时“部分b”的便可以在实现拆4次以上，</p>
+<p>我们可以枚举“部分b”的次数，然后看看“部分a”的次数是否满足上述条件，从小枚举，符合便<code>return</code>，则答案就是最小</p>
+<p>其实可以发现，如果“部分b”的次数为5时，b的范围就是$0 \le b \le 9$，其中0到5的范围是向前借了位，5到9是没有借位的范围。</p>
+<p>这说明次数是不会超过5次的，保险起见枚举9次</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -166,90 +171,34 @@
 </span><span class="lnt">27
 </span><span class="lnt">28
 </span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="mi">35</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">change</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">fill_n</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">num</span><span class="p">[</span><span class="o">++</span><span class="n">len</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">len</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ish</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// ish看看当前是不是最高位
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">id</span><span class="p">][</span><span class="n">limit1</span><span class="p">][</span><span class="n">limit2</span><span class="p">][</span><span class="n">ish</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">res</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">up1</span> <span class="o">=</span> <span class="n">limit1</span> <span class="o">?</span> <span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">up2</span> <span class="o">=</span> <span class="n">limit2</span> <span class="o">?</span> <span class="n">b</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">up1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">up2</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="n">j</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ish</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">limit1</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">up1</span><span class="p">,</span> <span class="n">limit2</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">up2</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">res</span> <span class="o">&gt;=</span> <span class="n">mod</span><span class="p">)</span> <span class="n">res</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">ll</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">cal</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">return</span> <span class="n">mp</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 枚举次数
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 枚举部分b是什么
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cal</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">)</span> <span class="k">return</span> <span class="n">mp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">problem</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">len1</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="n">len2</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">len1</span><span class="p">,</span> <span class="n">len2</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1ll</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">len1</span><span class="p">,</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">len2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">ans</span> <span class="o">&gt;=</span> <span class="n">mod</span><span class="p">)</span> <span class="n">ans</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-<span class="p">}</span>
-
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">problem</span><span class="p">();</span>
+        <span class="n">ll</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">cal</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -257,14 +206,14 @@
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>
-                </span><span><a href="/tags/%E6%95%B0%E4%BD%8Ddp/">数位dp</a>
+                </span><span><a href="/tags/%E5%88%86%E6%B2%BB/">分治</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
-                <span>更新于 2022-02-08</span>
+                <span>更新于 2022-02-11</span>
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" data-title="2020ICPC上海站C. Sum of Log" data-hashtags="题解,数位dp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" data-title="2020ICPC上海站C. Sum of Log" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
-        </div></div><div class="post-nav"><a href="/2022/02/abc161d-lunlun-number/" class="prev" rel="prev" title="Abc161D LunlunNumber"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
-            <a href="/2022/02/abc211e-red-polyomino/" class="next" rel="next" title="Abc211E Red Polyomino">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" data-title="Arc123C 1, 2, 3 - Decomposition" data-hashtags="题解,分治"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" data-title="Arc123C 1, 2, 3 - Decomposition" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2022/02/abc211e-red-polyomino/" class="prev" rel="prev" title="Abc211E Red Polyomino"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2022/02/arc123d-inc-dec-decomposition/" class="next" rel="next" title="arc123D Inc, Dec - Decomposition">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="valine"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>

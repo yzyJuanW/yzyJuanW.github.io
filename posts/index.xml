@@ -3,7 +3,25 @@
         <title>所有文章 - 幼稚园卷王</title>
         <link>https://haofish.github.io/posts/</link>
         <description>所有文章 | 幼稚园卷王</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Feb 2022 13:31:52 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Feb 2022 11:12:00 &#43;0800</lastBuildDate><atom:link href="https://haofish.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>arc123D Inc, Dec - Decomposition</title>
+    <link>https://haofish.github.io/2022/02/arc123d-inc-dec-decomposition/</link>
+    <pubDate>Sun, 13 Feb 2022 11:12:00 &#43;0800</pubDate><guid>https://haofish.github.io/2022/02/arc123d-inc-dec-decomposition/</guid>
+    <description><![CDATA[中位数的应用]]></description>
+</item>
+<item>
+    <title>Arc123C 1, 2, 3 - Decomposition</title>
+    <link>https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/</link>
+    <pubDate>Fri, 11 Feb 2022 13:31:21 &#43;0800</pubDate><guid>https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/</guid>
+    <description><![CDATA[一道有点思维性的题]]></description>
+</item>
+<item>
+    <title>Abc211E Red Polyomino</title>
+    <link>https://haofish.github.io/2022/02/abc211e-red-polyomino/</link>
+    <pubDate>Wed, 09 Feb 2022 13:29:05 &#43;0800</pubDate><guid>https://haofish.github.io/2022/02/abc211e-red-polyomino/</guid>
+    <description><![CDATA[dfs+剪枝的一道题]]></description>
+</item>
+<item>
     <title>2020ICPC上海站C. Sum of Log</title>
     <link>https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</link>
     <pubDate>Tue, 08 Feb 2022 13:31:52 &#43;0800</pubDate><guid>https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</guid>
@@ -104,24 +122,6 @@
     <link>https://haofish.github.io/2021/08/hdu-2476-string-painter/</link>
     <pubDate>Wed, 04 Aug 2021 18:29:03 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/hdu-2476-string-painter/</guid>
     <description><![CDATA[一道有意思的区间dp题]]></description>
-</item>
-<item>
-    <title>UVA 10617</title>
-    <link>https://haofish.github.io/2021/08/uva-10617-again-palindrome/</link>
-    <pubDate>Wed, 04 Aug 2021 13:42:06 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/uva-10617-again-palindrome/</guid>
-    <description><![CDATA[利用区间dp求解区间中回文串的个数]]></description>
-</item>
-<item>
-    <title>POJ 1159 Palindrome</title>
-    <link>https://haofish.github.io/2021/08/poj-1159-palindrome/</link>
-    <pubDate>Wed, 04 Aug 2021 11:17:06 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/poj-1159-palindrome/</guid>
-    <description><![CDATA[一道简单的区间dp，要用到空间优化]]></description>
-</item>
-<item>
-    <title>AcWing 246 区间最大公约数</title>
-    <link>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
-    <pubDate>Tue, 03 Aug 2021 23:29:19 &#43;0800</pubDate><guid>https://haofish.github.io/2021/08/acwing246%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
-    <description><![CDATA[线段树and数论技巧]]></description>
 </item>
 </channel>
 </rss>

@@ -206,33 +206,16 @@ int main() {
 #### Edmonds-Karp算法，速度较慢
 
 ```cpp
-#define ll long long
-#include <cctype>
-inline long long IO() // 快读略
-const int N = 205, M = 1e4 + 5;
-struct edges{
-    int to, next;
-    ll cap, flow;// flow为记录当前路径流的流量，cap为容量
-    void add(int a, int b, ll c) {
-        to = a, next = b;
-        cap = c, flow = 0; 
-    }
-};
-
-struct EK{
-    edges e[M];
-    const ll inf = 1e18;
-    int head[N], cnt, n = 0, vis[N], pre[N];// vis记录是否在队内, pre记录前驱内存池编号
-    ll minc[N]; // 记录增广路的最小流
-    void init(int n) {
-        this->n = n, cnt = -1;
-        fill_n(head, n + 1, -1);
-    }
-    void add(int u, int v, ll cap, int f = 1) {
-        e[++cnt].add(v, head[u], cap);
-        head[u] = cnt;
-        if (f) add(v, u, 0, 0);
-    }
+class EK {
+    struct edges {
+        int to, next;
+        ll cap, flow;// flow为记录当前路径流的流量，cap为容量
+    };
+    vector<edges> e;
+    static const ll inf = 1e18;
+    vector<int> head, vis, pre;// vis记录是否在队内, pre记录前驱内存池编号
+    vector<ll> minc; // minc记录增广路的最小流
+    int n; // 点的个数
     int bfs(int s, int t) {
         queue<int> q;
         for (int i = 0; i <= n; ++i) vis[i] = 0, pre[i] = -1;
@@ -250,7 +233,20 @@ struct EK{
         }
         return 0;
     }
-    ll ek(int s, int t) {
+  public:
+    EK(int n = 0) { init(n); }
+    void init(int n) {
+        this->n = n;
+        e.clear();
+        head.resize(n + 1, -1);
+        pre.resize(n + 1), vis.resize(n + 1), minc.resize(n + 1);
+    }
+    void add_edge(int u, int v, ll cap, int f = 1) {
+        e.push_back({v, head[u], cap, 0});
+        head[u] = e.size() - 1;
+        if (f) add_edge(v, u, 0, 0);
+    }
+    ll maxflow(int s, int t) { // 计算最大流
         ll ans = 0, &dif = minc[t];
         while (bfs(s, t)) {
             ans += dif;
@@ -261,55 +257,28 @@ struct EK{
         }
         return ans;
     }
-    void clearflow() { // 清空流
-        for (int i = 0; i <= cnt; ++i) e[i].flow = 0;
+    void clearflow() { // 将流清空
+        for (auto& x : e) x.flow = 0;
     }
-}ek;
-
-
-int main() {
-    int n = IO(), m = IO(), s = IO(), t = IO();
-    ek.init(n);
-    for (int i = 0; i < m; ++i)  {
-        int u = IO(), v = IO(), cap = IO();
-        ek.add(u, v, cap);
-    }
-    printf("%lld", ek.ek(s, t));
-    return 0;
-}
+};
 ```
 
 #### dinic, 当前弧优化+多路增广优化+炸点优化(模板题),复杂度$O(n^2m)$
 
 ```cpp
-inline long long IO() // 快读略
-const int N = 205, M = 1e4 + 5;
-struct edges{
-    int to, next;
-    ll cap, flow;// flow为记录当前路径流的流量，cap为容量
-    void add(int a, int b, ll c) {
-        to = a, next = b;
-        cap = c, flow = 0; 
-    }
-};
-
-struct Dinic {
-    edges e[M];
-    const ll inf = 1e18;
-    int head[N], cnt, n = 0, deep[N], cur[N];
-    void init(int n) {
-        this->n = n, cnt = -1;
-        fill_n(head, n + 1, -1);
-    }
-    void add(int u, int v, ll cap, int f = 1) {
-        e[++cnt].add(v, head[u], cap);
-        head[u] = cnt;
-        if (f) add(v, u, 0, 0);
-    }
+class Dinic {
+    struct edges {
+        int to, next;
+        ll cap, flow;// flow为记录当前路径流的流量，cap为容量
+    };
+    vector<edges> e;
+    static const ll inf = 1e18;
+    vector<int> head, cur, deep;
+    int n;
     // bfs求增广路，一次求出多条增广路
     int bfs(int s, int t) {
         queue<int> q;
-        fill_n(deep, n + 1, 0);
+        for (auto& x : deep) x = 0;
         deep[s] = 1, q.push(s);
         while (q.size()) {
             int u = q.front(); q.pop();
@@ -322,7 +291,7 @@ struct Dinic {
         }
         return deep[t] != 0;
     }
-    
+
     ll dfs(int u, int t, ll flow) {
         if (u == t) return flow;
         ll nowflow = 0;
@@ -339,57 +308,48 @@ struct Dinic {
         if (!nowflow) deep[u] = -2;// 炸点优化
         return nowflow;
     }
-    
-    ll dinic(int s, int t) {
+public:
+    Dinic(int n = 0) { init(n); }
+    void init(int n) {
+        this->n = n;
+        head.resize(n + 1, -1);
+        deep.resize(n + 1);
+    }
+    void add_edge(int u, int v, ll cap, int f = 1) {
+        e.push_back({v, head[u], cap, 0});
+        head[u] = e.size() - 1;
+        if (f) add_edge(v, u, 0, 0);
+    }
+
+    ll maxflow(int s, int t) {
         ll ans = 0;
         while (bfs(s, t)) {
-            for (int i = 0; i <= n; ++i) cur[i] = head[i];// 预处理，方便当前弧优化
+            cur = head;// 预处理，方便当前弧优化
             ans += dfs(s, t, inf);// 进过多路增广优化可不用循环
         }
         return ans;
     }
-    
-    void clearflow() { // 清空流
-        for (int i = 0; i <= cnt; ++i) e[i].flow = 0;
-    }
-}dinic;
 
-int main() {
-	int n = IO(), m = IO(), s = IO(), t = IO();
-    dinic.init(n);
-    for (int i = 0; i < m; ++i) {
-        int u = IO(), v = IO();
-        ll c = IO();
-        dinic.add(u, v, c);
+    void clearflow() {
+        for (auto& x : e) x.flow = 0;
     }
-    printf("%lld", dinic.dinic(s, t));
-    return 0;
-}
+};
+
 ```
 
 #### 最小费用最大流，将ek算法中的bfs换成spfa
 
 ```cpp
-inline long long IO() // 快读代码略
-const int N = 410, M = 2e5 + 5;
-struct edges {
-    int to, next;
-    ll cap, cost, flow;
-    void add(int a, int b, ll c, ll d) {
-        to = a, next = b;
-        cap = c, cost = d, flow = 0;
-    }
-};
-struct MCMF{
-    const ll inf = 1e15;
-    int head[N], pre[N], cnt, n, inq[N];
-    ll maxflow, mincost, dist[N];
-    edges e[M];
-    void add(int u, int v, ll cap, ll cost, int f = 1) {
-        e[++cnt].add(v, head[u], cap, cost);
-        head[u] = cnt;
-        if (f) add(v, u, 0, -cost, 0);// 建立反向弧，费用相反
-    }
+class MCMF{
+    struct edges {
+        int to, next;
+        ll cap, cost, flow;;// flow为记录当前路径流的流量，cap为容量
+    };
+    vector<edges> e;
+    static const ll inf = 1e15;
+    vector<int> head, pre, inq;
+    vector<ll> dist;
+    int n;
     int spfa(int s, int t) {// 利用spaf找最小费用的路，即最短路
         for (int i = 0; i <= n; ++i) inq[i] = 0, dist[i] = inf, pre[i] = -1;
         queue<int> q;
@@ -410,9 +370,22 @@ struct MCMF{
         }
         return pre[t] != -1;// 如果说t没有前驱则说明找不到增广路了
     }
+public:
+    MCMF(int n = 0) { init(n); }
+    void add_edge(int u, int v, ll cap, ll cost, int f = 1) {
+        e.push_back({v, head[u], cap, cost, 0});
+        head[u] = e.size() - 1;
+        if (f) add_edge(v, u, 0, -cost, 0);// 建立反向弧，费用相反
+    }
+    void init(int n) {
+        this->n = n;
+        head.resize(n + 1, -1);
+        pre.resize(n + 1), inq.resize(n + 1);
+        dist.resize(n + 1);
+    }
     
-    void mcmf(int s, int t) {
-        maxflow = mincost = 0;
+    pair<ll, ll> mcmf(int s, int t) {
+        ll maxflow = 0, mincost = 0;
         while (spfa(s, t)) {
             ll low = inf;
             for (int i = pre[t]; ~i; i = pre[e[i ^ 1].to]) {
@@ -425,28 +398,13 @@ struct MCMF{
             }
             maxflow += low;
         }
-    }
-    void init(int n) {
-        cnt = -1, this->n = n;
-        fill_n(head, n + 1, -1);
+        return make_pair(maxflow, mincost);
     }
     void clearflow() {
-        for (int i = 0; i <= cnt; ++i) e[i].flow = 0;
+        for (auto& x : e) x.flow = 0;
     }
-}mcmf;
+};
 
-int main() {
-    int n = IO(), m = IO();
-    mcmf.init(n);
-    for (int i = 0; i < m; ++i) {
-        int u = IO(), v = IO();
-        ll cap = IO(), cost = IO();
-        mcmf.add(u, v, cap, cost);
-    }
-    mcmf.mcmf(1, n);
-    printf("%lld %lld", mcmf.maxflow, mcmf.mincost);
-    return 0;
-}
 ```
 
 ### 5. 二分图

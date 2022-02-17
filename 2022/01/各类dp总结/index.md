@@ -100,64 +100,36 @@ for (int i = 1; i <= n; ++i) {
 ###### 例题
 
 - [AcWing 2. 01背包问题](https://www.acwing.com/problem/content/2/)  01背包入门题
-
 - [AcWing 3. 完全背包问题](https://www.acwing.com/problem/content/3/)   完全背包入门题
-
 - [AcWing 4. 多重背包问题 I](https://www.acwing.com/problem/content/4/)  多重背包入门题
-
 - [AcWing 5. 多重背包问题 II](https://www.acwing.com/problem/content/5/) 多重背包进阶题
-
 - [AcWing 6. 多重背包问题 III](https://www.acwing.com/problem/content/6/) 多重背包困难题
-
 - [AcWing 7. 混合背包问题](https://www.acwing.com/problem/content/7/) 混合背包
-
 - [AcWing 8. 二维费用的背包问题](https://www.acwing.com/problem/content/8/) 二维背包
-
 - [AcWing 9. 分组背包问题](https://www.acwing.com/problem/content/9/) 分组背包
-
 - [AcWing 11. 背包问题求方案数](https://www.acwing.com/problem/content/11/) 背包问题求方案数
-
 - [AcWing 12. 背包问题求具体方案](https://www.acwing.com/problem/content/12/) 背包问题求具体方案，可以试试上面说的求具体方案的方法
-
 - [NC23413 小A买彩票](https://ac.nowcoder.com/acm/problem/23413) 一个简单的背包问题
-
 - [NC14526 购物](https://ac.nowcoder.com/acm/problem/14526) 01背包+分组背包
-
 - [NC207751 牛牛的旅游纪念品](https://ac.nowcoder.com/acm/problem/207751) 背包问题入门题
-
 - [NC16693 [NOIP2001]装箱问题](https://ac.nowcoder.com/acm/problem/16693) 裸的01背包
-
 - [P1048 [NOIP2005 普及组] 采药](https://www.luogu.com.cn/problem/P1048) 裸的01背包
-
 - [NC17871 CSL分苹果](https://ac.nowcoder.com/acm/problem/17871) 转换成01背包写
-
 - [P1064 [NOIP2006 提高组] 金明的预算方案](https://www.luogu.com.cn/problem/P1064) 我是当成有依赖的背包写的，但也有人用线性方式的dp写出来了，所以放这吧
-
 - [NC14699 队伍配置](https://ac.nowcoder.com/acm/problem/14699) 多维背包的入门题
-
 - [[USACO09DEC]Video Game Troubles](https://www.luogu.com.cn/problem/P2967) 分组背包+01背包，转移用两个方程
-
 - [NC17193 简单瞎搞题](https://ac.nowcoder.com/acm/problem/17193) 分组背包用bitset优化
-
 - [NC16576 [NOIP2012]摆花](https://ac.nowcoder.com/acm/problem/16576) 分组背包
-
 - [P5020 [NOIP2018 提高组] 货币系统](https://www.luogu.com.cn/problem/P5020) 完全背包的应用
-
 - [P1877 [HAOI2012]音量调节](https://www.luogu.com.cn/problem/P1877) 简单背包问题
-
 - [P4158 [SCOI2009]粉刷匠](https://www.luogu.com.cn/problem/P4158) 划分dp + 分组背包，有点进阶
-
 - [CodeForces 755F PolandBall and Gifts](https://codeforces.com/problemset/problem/755/F) 多重背包，说实话有点毒瘤
-
 - [CodeForces - 864E Fire](https://codeforces.com/problemset/problem/864/E) 贪心+01背包
-
 - [CodeForces - 366C](https://codeforces.com/problemset/problem/366/C) 思维+01背包，有点进阶
-
 - [atcoder Knapsack 2](https://atcoder.jp/contests/dp/tasks/dp_e) 01背包+换意dp
-
 - [atcoder Candies](https://atcoder.jp/contests/dp/tasks/dp_m) 多重背包，需要一些优化手段
-
 - [atcoder Tower](https://atcoder.jp/contests/dp/tasks/dp_x) 思维+01背包，有点思维性，多想想
+- [CodeForces 1637D. Yet Another Minimization Problem](https://codeforces.com/contest/1637/problem/D)  打比赛时发现的，好题
 
 #### 其他线性dp
 
@@ -378,19 +350,34 @@ for (int s1 = s; s1; s1 = (s1 - 1) & s) {
 ###### 例题
 
 - [AcWing 292. 炮兵阵地](https://www.acwing.com/problem/content/294/) 基础题
+
 - [P1896 [SCOI2005]互不侵犯](https://www.luogu.com.cn/problem/P1896) 入门题
+
 - [NC17890 方格填色](https://ac.nowcoder.com/acm/problem/17890) 要用快速幂优化
+
 - [NC210981 mixup2 混乱的奶牛](https://ac.nowcoder.com/acm/problem/210981) 算是基础题吧
+
 - [AcWing 291. 蒙德里安的梦想](https://www.acwing.com/problem/content/293/) 状态dp，个人觉得轮廓线的思想来转移会比较好
+
 - [NC15832 Most Powerful](https://ac.nowcoder.com/acm/problem/15832) 好好思考状态
+
 - [P1879 [USACO06NOV]Corn Fields](https://www.luogu.com.cn/problem/P1879) 基础题
+
 - [NC16122 郊区春游](https://ac.nowcoder.com/acm/problem/16122) 本质是求一个哈密顿最小路径的通路
+
 - [NC16544 简单环](https://ac.nowcoder.com/acm/problem/16544) 类似求一个哈密顿回路的方案数
+
 - [P3118 [USACO15JAN]Moovie Mooving](https://www.luogu.com.cn/problem/P3118) 思考状态存什么
+
 - [P3092 [USACO13NOV]No Change](https://www.luogu.com.cn/problem/P3092) 要二分优化
+
 - [atcoder Matching](https://atcoder.jp/contests/dp/tasks/dp_o) 二分图的完美匹配方案数
+
 - [atcoder Grouping](https://atcoder.jp/contests/dp/tasks/dp_u) 你需要学会枚举子集
+
 - [ [CQOI2012]局部极小值](https://www.luogu.com.cn/problem/P3160) 状压dp+容斥（难度较高）
+
+- [leetcode 6007. 数组的最大与和](https://leetcode-cn.com/problems/maximum-and-sum-of-array/) 这题有点意思，建议用状压做
 
 ## 数位dp
 

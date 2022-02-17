@@ -4,30 +4,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>UVA208 - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="UVA208" />
-<meta property="og:description" content="UVA548 Firetruck，记录刷题代码" />
+        <title>Abc211E Red Polyomino - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="Abc211E Red Polyomino" />
+<meta property="og:description" content="dfs&#43;剪枝的一道题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://haofish.github.io/2020/08/uva208/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-08-12T10:24:20+08:00" />
-<meta property="article:modified_time" content="2020-08-12T10:24:20+08:00" />
+<meta property="og:url" content="https://haofish.github.io/2022/02/abc211e-red-polyomino/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-09T13:29:05+08:00" />
+<meta property="article:modified_time" content="2022-02-09T13:29:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
-<meta name="twitter:title" content="UVA208"/>
-<meta name="twitter:description" content="UVA548 Firetruck，记录刷题代码"/>
+<meta name="twitter:title" content="Abc211E Red Polyomino"/>
+<meta name="twitter:description" content="dfs&#43;剪枝的一道题"/>
 <meta name="application-name" content="FeelIt">
-<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2020/08/uva208/" /><link rel="prev" href="https://haofish.github.io/2020/08/uva11212/" /><link rel="next" href="https://haofish.github.io/2020/08/uva225/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2022/02/abc211e-red-polyomino/" /><link rel="prev" href="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" /><link rel="next" href="https://haofish.github.io/2022/02/arc123c1-2-3-decomposition/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "UVA208",
+        "headline": "Abc211E Red Polyomino",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/haofish.github.io\/2020\/08\/uva208\/"
-        },"genre": "posts","keywords": "题解, DFS, 回溯","wordcount":  430 ,
-        "url": "https:\/\/haofish.github.io\/2020\/08\/uva208\/","datePublished": "2020-08-12T10:24:20+08:00","dateModified": "2020-08-12T10:24:20+08:00","publisher": {
+            "@id": "https:\/\/haofish.github.io\/2022\/02\/abc211e-red-polyomino\/"
+        },"genre": "posts","keywords": "题解, dfs, 剪枝","wordcount":  506 ,
+        "url": "https:\/\/haofish.github.io\/2022\/02\/abc211e-red-polyomino\/","datePublished": "2022-02-09T13:29:05+08:00","dateModified": "2022-02-09T13:29:05+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
@@ -115,10 +115,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">UVA208</h2><div class="post-meta">
-                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch7/"><i class="far fa-folder fa-fw"></i>紫书刷题录-ch7</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-12">2020-08-12</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 430 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟</span>&nbsp;<span id="/2020/08/uva208/" class="leancloud_visitors" data-flag-title="UVA208">
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">Abc211E Red Polyomino</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%88%B7%E9%A2%98/"><i class="far fa-folder fa-fw"></i>刷题</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-09">2022-02-09</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 506 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2022/02/abc211e-red-polyomino/" class="leancloud_visitors" data-flag-title="Abc211E Red Polyomino">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -128,18 +128,13 @@
                         <span>目录</span>
                         <span><i class="details-icon fas fa-angle-right"></i></span>
                     </div>
-                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#firetruckhttpsvjudgenetproblemuva-208"><a href="https://vjudge.net/problem/UVA-208">Firetruck</a></a></li>
-  </ul>
-</nav></div>
-                </div><div class="content" id="content"><h2 id="firetruckhttpsvjudgenetproblemuva-208"><a href="https://vjudge.net/problem/UVA-208" target="_blank" rel="noopener noreffer">Firetruck</a></h2>
-<ul>
-<li>题意：给你一个无向图，让你求出从1号节点到n号节点的所有路径，按顺序输出，具体看样例</li>
-<li>DFS和BFS都可以，这里我用了DFS，利用了一个ans的vector数组来储存答案，根据题目要求，优先递归节点权值小的</li>
-<li>注意：要先判断1号节点能否到达n号节点，不然会tle，这里我用了一个类似于并查集的思想来判断是否能到达n号节点</li>
-<li>代码如下</li>
-</ul>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                </div><div class="content" id="content"><p>题意：在一个n*n的格子中，<code>.</code>表示白色，<code>#</code>表示黑色，问你把k个白色染成红色并且最后是个连通（所有红色都同属一个连通块）的方案数</p>
+<p>一开始想到状压，后来发现单行连通，此行不连通但相邻行能使他们连通的情况不好处理</p>
+<p>后来发现可以dfs爆搜，一开始想不到怎么不重不漏地搜出来，用set去重计数，跑了400+ms的速度，很是不满意</p>
+<p>后来察觉到，往时搜索立刻回溯的方案太慢了，而且有重复遍历，所有采用最后再全部回溯为原来模样的方式遍历，跑了17ms</p>
+<p>可以这么理解，包括该点的走法，和不包括该点的走法， 最后统一回溯，有效防止后面dfs时再走一次</p>
+<p>记录一下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -191,81 +186,55 @@
 </span><span class="lnt">47
 </span><span class="lnt">48
 </span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">vi</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">Kase</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">fa</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
-<span class="kt">bool</span> <span class="n">vis</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">f</span><span class="p">,</span> <span class="n">num</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
-<span class="n">vi</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">ans</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nums</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">i</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">)</span> <span class="n">i</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-    <span class="n">ans</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">num</span><span class="p">);</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">vis</span><span class="p">);</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">v</span><span class="p">);</span>
-    <span class="n">vis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">fa</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cnt</span><span class="o">++</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="n">f</span> <span class="o">=</span> <span class="o">!</span><span class="n">f</span><span class="p">;</span> <span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span> <span class="p">}</span>
-        <span class="n">puts</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="n">vis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="n">DFS</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-        <span class="n">vis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="n">ans</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">bool</span> <span class="nf">check</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="p">{</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span> <span class="n">fa</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
-    <span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;CASE %d:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">++</span><span class="n">Kase</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
-        <span class="n">init</span><span class="p">();</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">u</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">),</span> <span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-            <span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">g</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">vis</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">10</span><span class="p">],</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dxy</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">}};</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">isp</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">void</span><span class="p">();</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">nxt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">isp</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">:</span> <span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">]</span> <span class="o">:</span> <span class="n">dxy</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">ny</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">nx</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="o">||</span> <span class="n">ny</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;.&#39;</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="n">g</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;@&#39;</span><span class="p">;</span>
+            <span class="n">isp</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">});</span>
+            <span class="n">nxt</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">});</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">g</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;#&#39;</span><span class="p">;</span>
+            <span class="n">isp</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
         <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">i</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">)</span> <span class="n">sort</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">i</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">check</span><span class="p">())</span> <span class="n">DFS</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;There are %d routes from the firestation to streetcorner %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
     <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">:</span> <span class="n">nxt</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;.&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;@&#39;</span><span class="p">,</span> <span class="n">isp</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
+                <span class="n">dfs</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;#&#39;</span><span class="p">,</span> <span class="n">isp</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -273,14 +242,14 @@
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>
                 </span><span><a href="/tags/dfs/">dfs</a>
-                </span><span><a href="/tags/%E5%9B%9E%E6%BA%AF/">回溯</a>
+                </span><span><a href="/tags/%E5%89%AA%E6%9E%9D/">剪枝</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
-                <span>更新于 2020-08-12</span>
+                <span>更新于 2022-02-09</span>
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2020/08/uva208/" data-title="UVA208" data-hashtags="题解,DFS,回溯"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2020/08/uva208/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2020/08/uva208/" data-title="UVA208" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
-        </div></div><div class="post-nav"><a href="/2020/08/uva11212/" class="prev" rel="prev" title="UVA11212"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
-            <a href="/2020/08/uva225/" class="next" rel="next" title="UVA225">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2022/02/abc211e-red-polyomino/" data-title="Abc211E Red Polyomino" data-hashtags="题解,dfs,剪枝"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2022/02/abc211e-red-polyomino/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2022/02/abc211e-red-polyomino/" data-title="Abc211E Red Polyomino" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" class="prev" rel="prev" title="2020ICPC上海站C. Sum of Log"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2022/02/arc123c1-2-3-decomposition/" class="next" rel="next" title="Arc123C 1, 2, 3 - Decomposition">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="valine"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
