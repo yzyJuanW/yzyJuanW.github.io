@@ -643,7 +643,7 @@ int main() {
     puts("函数运行前：");
     printf("a = %d\nb = %d\nc = %d\nd = %d\ne = %d\n", a, b, c, d, e);
     printf("func(d, e) = %d\n", func(d, e));
-    puts("运行前：");
+    puts("运行后：");
     printf("a = %d\nb = %d\nc = %d\nd = %d\ne = %d\n", a, b, c, d, e);
     return 0;
 }
