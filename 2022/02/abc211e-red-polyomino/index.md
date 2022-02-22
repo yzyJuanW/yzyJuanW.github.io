@@ -23,7 +23,7 @@ using namespace std;
 int n, m;
 char g[10][10];
 int vis[10][10], ans = 0;
-pair<int, int> dxy[] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+pair<int, int> dxy[] = { {0, 1}, {0, -1}, {1, 0}, {-1, 0} };
 vector<pair<int, int>> isp;
 void dfs(int num) {
     if (num == 0) return ans += 1, void();
