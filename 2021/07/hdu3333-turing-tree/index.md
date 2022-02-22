@@ -1,0 +1,189 @@
+# HDU3333 Turing Tree
+
+
+- 题意：给定一个长度为n的序列a，给定m个查询，每次查询区间[L,R]范围内不同元素的和。
+- 此题我的思路是利用离线操作和区间查询，其中区间查询方便起见用了树状数组
+- 考虑记录每个下标上的数上一次出现在哪里，假设用一个数组 `last` 记录，则问题就转化为：每次询问 `[l, r]` 区间中 `last` 数组小于 `l` 的数的和
+- 这样为了方便查询，先将所有询问记录下来，离线操作。即将所有询问按其 `l` 值进行升序排序，然后再遍历排好序的查询，对于每次查询，将所有 `last`  严格小于 `l` 数 `a[i]` 插入带树状数组中（按下标 `i`  插入），则当前查询的答案便是区间 `[l, r]` 的和。
+- 为了方便上述的插入操作，构建一个结构体（记录原数组的值、下标和last值）然后再按last排序
+
+```cpp
+#include <bits/stdc++.h>
+#define ll long long
+#define rep(u, i, e) for (int i = head[u]; ~i; i = e[i].next)
+#define pb push_back
+#define debug(x) printf(#x" = %lld\n", (ll)x)
+#define bug puts("bug")
+#define umap unordered_map
+#define uset unordered_set
+#define vi vector
+#define all(x) x.begin(), x.end()
+#define lb(x) (x & (-x))
+
+using namespace std;
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-快读与快输-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+inline ll IO() {
+    long long x = 0;
+    int f = 0, c = getchar();
+    for (; !isdigit(c) && c != -1; c = getchar()) {
+        if (c == '-') f = 1;
+    }
+    if (c == -1) exit(0);
+    for (; isdigit(c); c = getchar()) {
+        x = (x << 1) + (x << 3) + (c ^ '0');
+    }
+    return f ? -x : x;
+}
+void getstr(string &s) {
+    int c = getchar();
+    while (c < 33 && c != -1) c = getchar();
+    if (c == -1) exit(0);
+    s.clear();
+    for(;c > 32; c = getchar()) s.pb(c);
+}
+void print(ll x) {
+    if (x < 0) putchar('-'), x = -x;
+    if (x > 9) print(x / 10);
+    putchar(x % 10 + '0');
+}
+void print(const string& s) { for (char c : s) putchar(c); }
+template <typename T>
+void print(T x, char c) { print(x); putchar(c); }
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-快读与快输-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-不可修改区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+// gcd
+template <typename T>
+T gcd(T a, T b, T m = 0) { while (b) m = a % b, a = b, b = m; return a; }
+// 快速幂
+ll powf(ll a, ll b, ll p, ll res = 1) {
+    for (a %= p; b; b >>= 1, a = a * a % p) if (b & 1) res = res * a % p;
+    return res;
+}
+// 数组读入
+template <typename T>
+inline void fill_w(T *a, int cnt) {  for (int i = 0; i < cnt; ++i) a[i] = IO();}
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-不可修改区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-可修改区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+/*↓可修改区*/
+// 自定义结构体
+struct pii {
+    int l, r, indx;
+    bool operator< (const pii& j) {
+        return l != j.l ? l < j.l : r < j.r;
+    }
+};
+struct pjj {
+    ll a;
+    int indx, last;
+    bool operator< (const pjj& j) {
+        return last < j.last;
+    }
+};
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-可修改区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-全局变量区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+const int mod = 2333;
+const int inf = (1LL << 31) - 1;
+const ll llf = 1e18;
+const double eps = 1e-5, PI = acos(-1);
+const int dx[] = {-1, 0, 1, 0, -1, 1, 1, -1}; // 上左下右，顺时针
+const int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};
+const int N = 1e5 + 10, M = 2e6 + 10;
+ll ans[N], bit[N];
+umap<ll, int> mp;
+pii ask[N];
+pjj arr[N];
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-全局变量区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-模板代码区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+void modify(int indx, ll val, int n) {
+    while(indx <= n) {
+        bit[indx] += val;
+        indx += lb(indx);
+    }
+}
+ll get(int indx) {
+    ll res = 0;
+    while(indx > 0) {
+        res += bit[indx];
+        indx -= lb(indx);
+    }
+    return res;
+}
+ll get(int l, int r) { return get(r) - get(l - 1); }
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-模板代码区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-函数代码区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-函数代码区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-主代码区-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+void problem() {
+    int n = IO();
+    for (int i = 1; i <= n; ++i) {
+        arr[i].a = IO(), arr[i].indx = i;
+        arr[i].last = mp[arr[i].a];
+        mp[arr[i].a] = i;
+    }
+    sort(arr + 1, arr + 1 + n);
+    int m = IO();
+    for (int i = 1; i <= m; ++i) {
+        ask[i].l = IO(), ask[i].r = IO();
+        ask[i].indx = i;
+    }
+    sort(ask + 1, ask + 1 + m);
+    for (int i = 1, j = 1; i <= m; ++i) {
+        while (j <= n && arr[j].last < ask[i].l) {
+            modify(arr[j].indx, arr[j].a, n);
+            j += 1;
+        }
+        ans[ask[i].indx] = get(ask[i].l, ask[i].r);
+    }
+    for (int i = 1; i <= m; ++i) print(ans[i], '\n');
+    fill_n(bit, n + 5, 0);
+    mp.clear();
+}
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-主代码区-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+int main() {
+    int t = 1;
+    // prework();
+    t = IO();
+    while (t--) problem();
+    // while (1) problem();
+    return 0;
+}
+```
+
+- 当然，本题也可以用主席树来做，具体看洛谷1972的刷题记录

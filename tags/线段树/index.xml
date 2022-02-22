@@ -63,5 +63,11 @@
     <pubDate>Thu, 29 Jul 2021 14:00:38 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/acwing260%E4%B9%B0%E7%A5%A8/</guid>
     <description><![CDATA[线段树or(树状数组+二分)]]></description>
 </item>
+<item>
+    <title>HDU3333 Turing Tree</title>
+    <link>https://haofish.github.io/2021/07/hdu3333-turing-tree/</link>
+    <pubDate>Wed, 28 Jul 2021 22:20:40 &#43;0800</pubDate><guid>https://haofish.github.io/2021/07/hdu3333-turing-tree/</guid>
+    <description><![CDATA[(线段树or树状数组)+离线操作]]></description>
+</item>
 </channel>
 </rss>

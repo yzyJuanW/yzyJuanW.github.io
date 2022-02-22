@@ -4,30 +4,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Abc161D LunlunNumber - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="Abc161D LunlunNumber" />
-<meta property="og:description" content="二分&#43;数位dp的一道好题" />
+        <title>NC2020多校训练营（第六场）H题 Harmony Pairs - 幼稚园卷王</title><meta name="description" content="一个手残党的博客"><meta property="og:title" content="NC2020多校训练营（第六场）H题 Harmony Pairs" />
+<meta property="og:description" content="一道求范围内符合条件的数对的个数" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://haofish.github.io/2022/02/abc161d-lunlun-number/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-02-07T16:14:40+08:00" />
-<meta property="article:modified_time" content="2022-02-07T16:14:40+08:00" />
+<meta property="og:url" content="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" /><meta property="og:image" content="https://haofish.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-08T09:14:53+08:00" />
+<meta property="article:modified_time" content="2022-02-08T09:14:53+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haofish.github.io/images/logo.png"/>
 
-<meta name="twitter:title" content="Abc161D LunlunNumber"/>
-<meta name="twitter:description" content="二分&#43;数位dp的一道好题"/>
+<meta name="twitter:title" content="NC2020多校训练营（第六场）H题 Harmony Pairs"/>
+<meta name="twitter:description" content="一道求范围内符合条件的数对的个数"/>
 <meta name="application-name" content="FeelIt">
-<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2022/02/abc161d-lunlun-number/" /><link rel="prev" href="https://haofish.github.io/2022/01/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/" /><link rel="next" href="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" /><link rel="prev" href="https://haofish.github.io/2022/02/abc161d-lunlun-number/" /><link rel="next" href="https://haofish.github.io/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Abc161D LunlunNumber",
+        "headline": "NC2020多校训练营（第六场）H题 Harmony Pairs",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/haofish.github.io\/2022\/02\/abc161d-lunlun-number\/"
-        },"genre": "posts","keywords": "题解, 二分, 数位dp","wordcount":  574 ,
-        "url": "https:\/\/haofish.github.io\/2022\/02\/abc161d-lunlun-number\/","datePublished": "2022-02-07T16:14:40+08:00","dateModified": "2022-02-07T16:14:40+08:00","publisher": {
+            "@id": "https:\/\/haofish.github.io\/2022\/02\/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs\/"
+        },"genre": "posts","keywords": "题解, 数位dp","wordcount":  438 ,
+        "url": "https:\/\/haofish.github.io\/2022\/02\/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs\/","datePublished": "2022-02-08T09:14:53+08:00","dateModified": "2022-02-08T09:14:53+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
                 "@type": "Person",
@@ -115,10 +115,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">Abc161D LunlunNumber</h2><div class="post-meta">
+        </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">NC2020多校训练营（第六场）H题 Harmony Pairs</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%88%B7%E9%A2%98/"><i class="far fa-folder fa-fw"></i>刷题</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-07">2022-02-07</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 574 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟</span>&nbsp;<span id="/2022/02/abc161d-lunlun-number/" class="leancloud_visitors" data-flag-title="Abc161D LunlunNumber">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-08">2022-02-08</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 438 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟</span>&nbsp;<span id="/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" class="leancloud_visitors" data-flag-title="NC2020多校训练营（第六场）H题 Harmony Pairs">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -129,11 +129,11 @@
                         <span><i class="details-icon fas fa-angle-right"></i></span>
                     </div>
                     <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-                </div><div class="content" id="content"><p>题意：一个数被称为lunlun数（无前导0）则说明每个相邻的数相差不超过1，例如345，问你从1开始第n个lunlun数是几</p>
-<p>还记得windy数（数位dp入门题）吗，对，如果让我们n以内的windy数的个数显然可以数位dp</p>
-<p>那么这道题也是同理，随着数的增加，lunlun数的个数也不减，具有单调性，所以我们可以求一个x内的lunlun数的个数，看看其是不是超过n个，那么问题就变成了找第一个x其范围内lunlun数的个数大于等于n，显然二分找</p>
-<p>其实记录本题的目的是记录类似这种前导0需要特判数位dp的处理方式代码16~20行</p>
-<p>当然，还有一种办法就是dfs多传一个参，标志是否前面全是0，然后再类似代码中的判断一样进行处理</p>
+                </div><div class="content" id="content"><p>题意：S(x)表示x十进制上的所有数相加的和，问n范围内，$0 \le A \le B$ 并且 $S(A) &gt; S(B)$ 的数对个数</p>
+<p>本题首先要想到的是用数位dp解决，然后就是状态的定义，本题状态定义的话刷多了dp的都有感觉，和（NC19158 失衡天平）的定义差不多的思想</p>
+<p>定义 <code>dp[id][dif]</code> 为最低位到第<code>id</code>位上，两个数和的差</p>
+<p>然后数位dp转移，有两个限制的limit的这种题还是很少遇到的，记录一下，这种题应该一般是对单范围内符合某种条件的数对的个数</p>
+<p>递归写好理解，注意对于两个limit限制条件需要开多两个维度，不然T到飞起</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -176,75 +176,60 @@
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
-<span class="n">ll</span> <span class="n">dp</span><span class="p">[</span><span class="mi">20</span><span class="p">][</span><span class="mi">13</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="n">ll</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pre</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit</span><span class="p">)</span> <span class="p">{</span><span class="c1">// pre为上一个数填了什么，12表示前面全是0， 
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">ll</span><span class="o">&amp;</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">id</span><span class="p">][</span><span class="n">pre</span><span class="p">],</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">limit</span> <span class="o">&amp;&amp;</span> <span class="n">ret</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">up</span> <span class="o">=</span> <span class="n">limit</span> <span class="o">?</span> <span class="n">num</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">:</span> <span class="mi">9</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">up</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">pre</span> <span class="o">==</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">12</span> <span class="o">:</span> <span class="n">i</span><span class="p">,</span> <span class="n">limit</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">up</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">pre</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">){</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">limit</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">up</span><span class="p">);</span>
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">110</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">init</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+<span class="n">ll</span> <span class="n">dp</span><span class="p">[</span><span class="mi">110</span><span class="p">][</span><span class="mi">2005</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+
+<span class="n">ll</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dif</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">dif</span> <span class="o">&gt;</span> <span class="n">init</span><span class="p">;</span>
+    <span class="n">ll</span><span class="o">&amp;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">dif</span><span class="p">][</span><span class="n">limit1</span><span class="p">][</span><span class="n">limit2</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">res</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">up</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit1</span> <span class="o">?</span> <span class="n">num</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">:</span> <span class="mi">9</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">up</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// B
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit2</span> <span class="o">?</span> <span class="nl">i</span> <span class="p">:</span> <span class="mi">9</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// A
+</span><span class="c1"></span>            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs</span><span class="p">(</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dif</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">limit1</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">up</span><span class="p">),</span> <span class="n">limit2</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">len</span><span class="p">)))</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">limit</span><span class="p">)</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">res</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="n">ll</span> <span class="nf">solve</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">num</span><span class="p">[</span><span class="o">++</span><span class="n">len</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="n">x</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">problem</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">num</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">ll</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">3234566667ll</span><span class="p">,</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ll</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">solve</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">)</span> <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-        <span class="k">else</span> <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+    <span class="n">problem</span><span class="p">();</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>
-                </span><span><a href="/tags/%E4%BA%8C%E5%88%86/">二分</a>
                 </span><span><a href="/tags/%E6%95%B0%E4%BD%8Ddp/">数位dp</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
-                <span>更新于 2022-02-07</span>
+                <span>更新于 2022-02-08</span>
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2022/02/abc161d-lunlun-number/" data-title="Abc161D LunlunNumber" data-hashtags="题解,二分,数位dp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2022/02/abc161d-lunlun-number/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2022/02/abc161d-lunlun-number/" data-title="Abc161D LunlunNumber" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
-        </div></div><div class="post-nav"><a href="/2022/01/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/" class="prev" rel="prev" title="各类dp总结"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
-            <a href="/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" class="next" rel="next" title="NC2020多校训练营（第六场）H题 Harmony Pairs">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+            <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" data-title="NC2020多校训练营（第六场）H题 Harmony Pairs" data-hashtags="题解,数位dp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" data-hashtag="题解"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2022/02/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98harmony-pairs/" data-title="NC2020多校训练营（第六场）H题 Harmony Pairs" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/2022/02/abc161d-lunlun-number/" class="prev" rel="prev" title="Abc161D LunlunNumber"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/2022/02/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/" class="next" rel="next" title="2020ICPC上海站C. Sum of Log">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="valine"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
