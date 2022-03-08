@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="ACM常用C&#43;&#43;stl总结"/>
 <meta name="twitter:description" content="一些个人觉得在ACM中比较有用的函数和stl的用法"/>
 <meta name="application-name" content="FeelIt">
-<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" /><link rel="prev" href="https://haofish.github.io/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/" /><link rel="next" href="https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="FeelIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" /><link rel="prev" href="https://haofish.github.io/2021/07/%E6%95%B0%E4%BD%8Ddp/" /><link rel="next" href="https://haofish.github.io/2021/07/%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "STL","wordcount":  18271 ,
+        },"genre": "posts","keywords": "STL","wordcount":  18348 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93\/","datePublished": "2021-07-19T12:22:01+08:00","dateModified": "2021-07-19T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">ACM常用C&#43;&#43;stl总结</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 18271 字</span>&nbsp;
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-19">2021-07-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 18348 字</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 37 分钟</span>&nbsp;<span id="/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="ACM常用C&#43;&#43;stl总结">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
@@ -1517,7 +1517,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>下面解释每个符号的含义
+<li>
+<p>下面解释每个符号的含义</p>
 <ul>
 <li><strong>[]</strong> 是捕捉列表，用于捕捉父级的变量
 <ol>
@@ -1535,8 +1536,25 @@
 <li><strong>{}</strong> 是函数体，没什么好说的</li>
 </ul>
 </li>
+<li>
+<p>演示一个lambda常用的写递归的方式，将lambda本身当成值传参</p>
+</li>
 </ul>
-<h4 id="2-vector">2. vector</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">self</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">{</span> <span class="c1">// 一定要写返回值
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">x</span> <span class="o">+</span> <span class="n">self</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dfs</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span><span class="c1">// 输出:55
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-vector">2. vector</h4>
 <ul>
 <li>最常用的STl容器之一，对于新手你可以把他理解成一个数组，他能使用下标访问，能在尾部$O(1)$时间插入元素，固他是动态开辟空间的</li>
 <li>头文件为<code>#include &lt;vector&gt;</code></li>
@@ -3722,7 +3740,7 @@
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
             <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" data-title="ACM常用C&#43;&#43;stl总结" data-hashtags="STL"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" data-hashtag="STL"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haofish.github.io/2021/07/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/" data-title="ACM常用C&#43;&#43;stl总结" data-web><i class="fab fa-whatsapp fa-fw"></i></a></span>
-        </div></div><div class="post-nav"><a href="/2021/07/%E5%A4%B1%E8%AF%AF%E5%BD%95/" class="prev" rel="prev" title="失误录"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+        </div></div><div class="post-nav"><a href="/2021/07/%E6%95%B0%E4%BD%8Ddp/" class="prev" rel="prev" title="数位dp总结"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
             <a href="/2021/07/%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" class="next" rel="next" title="树形背包思考方式">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="valine"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

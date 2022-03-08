@@ -142,52 +142,30 @@ for (int i = 1; i <= n; ++i) {
 ###### 例题
 
 - [NC20875 舔狗舔到最后一无所有](https://ac.nowcoder.com/acm/problem/20875) 这题的转移有点意思
-
 - [NC20650 可爱の星空](https://ac.nowcoder.com/acm/problem/20650) 这题的转移注意状态的空间，建议使用dfs找状态
-
 - [NC51216 花店橱窗](https://ac.nowcoder.com/acm/problem/51216) 这题感觉像是背包+数字三角形的模型，还要求具体方案
-
 - [NC16850 免费馅饼](https://ac.nowcoder.com/acm/problem/16850) 加个时间轴作为状态的一维，然后像数字三角形一样走，反过来遍历就好了，然后正过来找具体方案
-
 - [NC16856 钉子和小球](https://ac.nowcoder.com/acm/problem/16856) 这题有点好玩，初始状态有点意思
-
 - [NC16619 [NOIP2008]传球游戏](https://ac.nowcoder.com/acm/problem/16619) 很简单的线性dp
-
 - [NC16664 [NOIP2004]合唱队形](https://ac.nowcoder.com/acm/problem/16664) 算LIS的入门题吧
-
 - [[NOIP1999] 拦截导弹 ](https://www.luogu.com.cn/problem/P1020) 相信不少人做过这题，Dilworth定理的应用
-
 - [NC15553 数学考试](https://ac.nowcoder.com/acm/problem/15553) 算划分dp吧
-
 - [NC19158 失衡天平](https://ac.nowcoder.com/acm/problem/19158) 这种转移也有点意思，没遇到过可能真要想挺久的	
-
 - [NC13885 Music Problem](https://ac.nowcoder.com/acm/problem/13885) 要用到bitset优化，想想取余的加减法对应的操作吧
-
 - [NC14704 美味菜肴](https://ac.nowcoder.com/acm/problem/14704) 先贪心，后dp，最后找最优值
-
 - [NC207781 迁徙过程中的河流](https://ac.nowcoder.com/acm/problem/207781) 贪心思维的dp
-
 - [[NOIP2008 提高组] 传纸条](https://www.luogu.com.cn/problem/P1006) 建议记忆化搜索，可以空间优化
-
 - [P1004 [NOIP2000 提高组] 方格取数](https://www.luogu.com.cn/problem/P1004) 和传纸条差不多
-
 - [P1052 [NOIP2005 提高组] 过河](https://www.luogu.com.cn/problem/P1052) 空间优化，转移找状态有点恶心
-
 - [NC16590 乌龟棋](https://ac.nowcoder.com/acm/problem/16590) 需要空间优化
-
 - [NC50959 To the Max](https://ac.nowcoder.com/acm/problem/50959) 前缀和与最大连续子串的应用
-
 - [P1169 [ZJOI2007]棋盘制作](https://www.luogu.com.cn/problem/P1169) 思维+最大全为1的正方形+单调栈的应用
-
 - [P2331 [SCOI2005]最大子矩阵](https://www.luogu.com.cn/problem/P2331) 状态有点难想，也有点难转移
-
 - [AcWing 431. 守望者的逃离](https://www.acwing.com/problem/content/433/) 转移挺有意思的，记住特判条件就好了
-
 - [[USACO 2008 Jan S]Running](https://ac.nowcoder.com/acm/problem/24949) 刷表法的应用
-
 - [P2051 [AHOI2009]中国象棋](https://www.luogu.com.cn/problem/P2051) 要结合组合数学转移
-
 - [atcoder Grid 2](https://atcoder.jp/contests/dp/tasks/dp_y) 需要组合数学和走格子的一个数学小结论
+- [atcoder abc212E Safety Journey](https://atcoder.jp/contests/abc212/tasks/abc212_e) 一开始以为是图上矩阵的k次幂，发现数据太大
 
 ## 区间dp
 
@@ -343,41 +321,28 @@ for (int l = n; l >= 1; --l) {
 ```cpp
 for (int s1 = s; s1; s1 = (s1 - 1) & s) {
     int s2 = s ^ s1;
-    // s1 与 s2 互为 s 的补集，且s1与s2不会重复，即利用s1与s2可以不重不漏地枚举完所有子集
+    // s1 与 s2 互为 s 的补集
 }
 ```
 
 ###### 例题
 
 - [AcWing 292. 炮兵阵地](https://www.acwing.com/problem/content/294/) 基础题
-
 - [P1896 [SCOI2005]互不侵犯](https://www.luogu.com.cn/problem/P1896) 入门题
-
 - [NC17890 方格填色](https://ac.nowcoder.com/acm/problem/17890) 要用快速幂优化
-
 - [NC210981 mixup2 混乱的奶牛](https://ac.nowcoder.com/acm/problem/210981) 算是基础题吧
-
 - [AcWing 291. 蒙德里安的梦想](https://www.acwing.com/problem/content/293/) 状态dp，个人觉得轮廓线的思想来转移会比较好
-
 - [NC15832 Most Powerful](https://ac.nowcoder.com/acm/problem/15832) 好好思考状态
-
 - [P1879 [USACO06NOV]Corn Fields](https://www.luogu.com.cn/problem/P1879) 基础题
-
 - [NC16122 郊区春游](https://ac.nowcoder.com/acm/problem/16122) 本质是求一个哈密顿最小路径的通路
-
 - [NC16544 简单环](https://ac.nowcoder.com/acm/problem/16544) 类似求一个哈密顿回路的方案数
-
 - [P3118 [USACO15JAN]Moovie Mooving](https://www.luogu.com.cn/problem/P3118) 思考状态存什么
-
 - [P3092 [USACO13NOV]No Change](https://www.luogu.com.cn/problem/P3092) 要二分优化
-
 - [atcoder Matching](https://atcoder.jp/contests/dp/tasks/dp_o) 二分图的完美匹配方案数
-
 - [atcoder Grouping](https://atcoder.jp/contests/dp/tasks/dp_u) 你需要学会枚举子集
-
 - [ [CQOI2012]局部极小值](https://www.luogu.com.cn/problem/P3160) 状压dp+容斥（难度较高）
-
 - [leetcode 6007. 数组的最大与和](https://leetcode-cn.com/problems/maximum-and-sum-of-array/) 这题有点意思，建议用状压做
+- [atcoder ABC213G - Connectivity 2](https://atcoder.jp/contests/abc213/tasks/abc213_g?lang=en) 枚举子集，要想到如何不重不漏地计算
 
 ## 数位dp
 

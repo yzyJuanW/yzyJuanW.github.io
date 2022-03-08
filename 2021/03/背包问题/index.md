@@ -667,7 +667,7 @@ int root, n, m, dp[M][M], w[M], v[M], tmp[M];
 int dfs(int u) {
     int sum = v[u]; // 记录本棵树的物品总重量
     dp[u][v[u]] = w[u];
-    for (int& son : mp[u]) {
+    for (int son : mp[u]) {
         int siz = dfs(son);// 计算孩子节点的决策，并获取他的物品总重量
         for (int i = 0; i <= min(m, sum + siz); ++i) tmp[i] = dp[u][i]; // 还记得01背包的空间优化3吗
         for (int i = 0; i <= siz; ++i) { // 这棵孩子子树选取i容量的物品
