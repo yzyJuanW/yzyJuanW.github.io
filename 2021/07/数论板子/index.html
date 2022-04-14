@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90\/"
-        },"genre": "posts","wordcount":  5700 ,
+        },"genre": "posts","wordcount":  7761 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90\/","datePublished": "2021-07-27T16:16:45+08:00","dateModified": "2021-07-27T16:16:45+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">数论板子</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a>&nbsp;<a href="/categories/%E6%A8%A1%E6%9D%BF/"><i class="far fa-folder fa-fw"></i>模板</a>&nbsp;<a href="/categories/%E6%95%B0%E8%AE%BA/"><i class="far fa-folder fa-fw"></i>数论</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-27">2021-07-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5700 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟</span>&nbsp;<span id="/2021/07/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/" class="leancloud_visitors" data-flag-title="数论板子">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-27">2021-07-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7761 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟</span>&nbsp;<span id="/2021/07/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/" class="leancloud_visitors" data-flag-title="数论板子">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -160,6 +160,7 @@
             <li><a href="#浮点数高斯约旦消元法-洛谷模板题">浮点数高斯约旦消元法， 洛谷模板题</a></li>
             <li><a href="#模意义下的高斯消元法poj---2065-seti">模意义下的高斯消元法，POJ - 2065 SETI</a></li>
             <li><a href="#异或的高斯消元法带解决自由变元的poj1681-painters-problem">异或的高斯消元法（带解决自由变元的），POJ1681 Painter&rsquo;s Problem</a></li>
+            <li><a href="#矩阵求逆时间复杂度o2-times-n3洛谷板子题">矩阵求逆，时间复杂度O($2 \times n^3$)，洛谷板子题</a></li>
           </ul>
         </li>
         <li><a href="#8-卢卡斯定理">8. 卢卡斯定理</a>
@@ -187,6 +188,9 @@
             <li><a href="#素因子版针对取余p不为质数其n较小的情况onlogn">素因子版，针对取余p不为质数，其n较小的情况，O(nlogn)</a></li>
           </ul>
         </li>
+        <li><a href="#13-fft">13. FFT</a></li>
+        <li><a href="#14-fntt">14. FNTT</a></li>
+        <li><a href="#15-分治fft">15. 分治FFT</a></li>
       </ul>
     </li>
   </ul>
@@ -423,28 +427,22 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//a ^ (p - 1) = 1 (mod p), p为素数
 </span><span class="c1">//a ^ (p - 2) = a ^ (-1) (mod p)
 </span><span class="c1">//a 的逆元为 a ^ (p - 2)
 </span><span class="c1"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
-<span class="n">ll</span> <span class="nf">pow_f</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mo</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">a</span> <span class="o">%=</span> <span class="n">mo</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">ans</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="n">mo</span><span class="p">;</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="n">mo</span><span class="p">;</span>
-        <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="n">ll</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">pow_f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ksm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -458,11 +456,13 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define ll long long
-</span><span class="cp"></span><span class="n">ll</span> <span class="nf">powf</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
-</span><span class="c1"></span>	<span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
@@ -594,8 +594,8 @@
                 <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="n">Mat</span> <span class="k">operator</span><span class="o">^</span> <span class="p">(</span><span class="n">Mat</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// 要保证矩阵A不为0
+</span><span class="c1"></span><span class="n">Mat</span> <span class="k">operator</span><span class="o">^</span> <span class="p">(</span><span class="n">Mat</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">Mat</span> <span class="nf">res</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">vi</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">X</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
@@ -607,6 +607,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="7-高斯消元">7. 高斯消元</h3>
+<p>高斯消元做多了会发现，容易被卡常，有几种解决办法，将vector换成数组，如果是异或高斯则可以用bitset优化，</p>
 <h4 id="普通浮点数高斯消元洛谷模板题">普通浮点数高斯消元，洛谷模板题</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -678,15 +679,15 @@
 <span class="k">const</span> <span class="kt">double</span> <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">;</span> <span class="c1">// 用来控制进度
 </span><span class="c1">// 普通的高斯消元是将矩阵转化成上三角的形式，再回带求出答案
 </span><span class="c1"></span><span class="kt">double</span> <span class="n">ans</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// 用来记录答案
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m + 1列的增广矩阵
-</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// 当前行和当前列
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m+1列增广矩阵，下标从0开始
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// r为当前行和c为当前列
 </span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">maxr</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> <span class="c1">// 记录最大
 </span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">maxr</span><span class="p">][</span><span class="n">c</span><span class="p">]))</span>
             <span class="n">maxr</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// 寻找从当前行开始向下走的当前列中的绝对值最大值
 </span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">^</span> <span class="n">maxr</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">maxr</span><span class="p">]);</span> <span class="c1">// 如果不是当前行，则交换两行
 </span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 如果当前行当前列的最大值为0则不作消元
-</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">];</span> <span class="c1">// 将当前行的从当前列开始到最后一列
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">];</span> <span class="c1">// 将当前行的当前列开始到最后一列
 </span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 如果改行的当前列已经是0，则不作消元
 </span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 逆向消元，可以少开一个变量
@@ -783,8 +784,8 @@
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">double</span> <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">ans</span><span class="p">[</span><span class="mi">110</span><span class="p">];</span> <span class="c1">// 记录答案
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss_j</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m + 1列增广矩阵
-</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// 当前行当前列
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss_j</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m+1列增广矩阵，下标从0开始
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// r为当前行和c为当前列
 </span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 
 </span><span class="c1"></span>        <span class="kt">int</span> <span class="n">maxr</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> <span class="c1">// 记录最大值
 </span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">maxr</span><span class="p">][</span><span class="n">c</span><span class="p">]))</span>
@@ -917,19 +918,19 @@
 <span class="kt">int</span> <span class="nf">lcm</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
 <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="mi">310</span><span class="p">];</span> <span class="c1">// 记录答案
 </span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">powf</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">mod</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-        <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="nf">inv</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">powf</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ksm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">//模意义下的高斯消元不需要用约旦的方式，因为整数不用考虑精度问题
-</span><span class="c1">// n 行 m + 1列的增广矩阵，从0开始
+</span><span class="c1">// n行m+1列增广矩阵，下标从0开始
 </span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传入模p
 </span><span class="c1"></span>    <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// 当前行和当前列
 </span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
@@ -950,8 +951,8 @@
     <span class="p">}</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 无解
 </span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// 无穷解
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">~</span><span class="n">i</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">m</span><span class="p">];</span>
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">~</span><span class="n">i</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 回带
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">m</span><span class="p">];</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
             <span class="n">tmp</span> <span class="o">-=</span> <span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
@@ -974,9 +975,9 @@
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">mat</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;*&#39;</span><span class="p">)</span> <span class="n">mat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">mat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">powf</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">mat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ksm</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">gauss</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+        <span class="n">gauss</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
         <span class="n">puts</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -1064,6 +1065,8 @@
 </span><span class="lnt">75
 </span><span class="lnt">76
 </span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//POJ1681 Painter&#39;s Problem
@@ -1074,7 +1077,9 @@
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">305</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">freew</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// 记录答案和记录自由变元是哪些
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m + 1列的增广矩阵
+</span><span class="c1">//01矩阵，例如第一行为 a11 * x1 ^ a12 * x2 ^ ... ^ a1n * xn = y1的矩阵
+</span><span class="c1">// 初等行变换不再是某行加减某行，而是异或了
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// n行m+1列增广矩阵，下标从0开始
 </span><span class="c1"></span>    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="c1">// 自由变元的个数 当前行 当前列
 </span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">freew</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 初始化答案和自由变元
 </span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
@@ -1140,6 +1145,163 @@
         <span class="p">}</span>
         <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">gauss</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="n">mat</span><span class="p">);</span>
         <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="矩阵求逆时间复杂度o2-times-n3洛谷板子题">矩阵求逆，时间复杂度O($2 \times n^3$)，洛谷板子题</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 洛谷板子题
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 模意义下的高斯消元不需要用约旦的方式，因为整数不用考虑精度问题
+</span><span class="c1">// 利用高斯消元，剩下的是上三角，所以要倒过来回带
+</span><span class="c1">// n行n + n列增广矩阵，下标从0开始，求矩阵逆，被卡常尝试将vector换成数组
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">gauss</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;&amp;</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">ans</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">ll</span> <span class="n">x</span> <span class="o">=</span> <span class="n">ksm</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">mod</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">mod</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 此行都乘1/a[i][i]，使得a[i][i] = 1
+</span><span class="c1"></span>            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">];</span> <span class="c1">// x为倍数即row_j - row_i * x
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+                <span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 回带， 
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 不知道为什么这样写快一些
+</span><span class="c1"></span>            <span class="n">ll</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">// row_i - row_j * x
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+                <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">auto</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;</span> <span class="n">vt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vt</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">gauss</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vt</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">res</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;No Solution&#34;</span><span class="p">),</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">ll</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld &#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1265,10 +1427,12 @@
 </span><span class="lnt">65
 </span><span class="lnt">66
 </span><span class="lnt">67
+</span><span class="lnt">68
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ll</span> <span class="nf">powf</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
-</span><span class="c1"></span>	<span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
@@ -1305,7 +1469,7 @@
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pk</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span> <span class="o">%</span> <span class="n">pk</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">powf</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="n">pk</span><span class="p">,</span> <span class="n">pk</span><span class="p">);</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ksm</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="n">pk</span><span class="p">,</span> <span class="n">pk</span><span class="p">);</span>
     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="n">pk</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span> <span class="o">%</span> <span class="n">pk</span><span class="p">;</span>
@@ -1319,7 +1483,7 @@
     <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">/=</span> <span class="n">p</span><span class="p">)</span> <span class="n">cnt</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">p</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">/=</span> <span class="n">p</span><span class="p">)</span> <span class="n">cnt</span> <span class="o">-=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">p</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">/=</span> <span class="n">p</span><span class="p">)</span> <span class="n">cnt</span> <span class="o">-=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">p</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">up</span> <span class="o">*</span> <span class="n">inverse</span><span class="p">(</span><span class="n">down</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span> <span class="o">%</span> <span class="n">pk</span> <span class="o">*</span> <span class="n">powf</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span> <span class="o">%</span> <span class="n">pk</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">up</span> <span class="o">*</span> <span class="n">inverse</span><span class="p">(</span><span class="n">down</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span> <span class="o">%</span> <span class="n">pk</span> <span class="o">*</span> <span class="n">ksm</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span> <span class="o">%</span> <span class="n">pk</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="c1">//直接调用此函数即可
 </span><span class="c1"></span><span class="n">ll</span> <span class="nf">exlucas</span><span class="p">(</span><span class="n">ll</span> <span class="n">n</span><span class="p">,</span> <span class="n">ll</span> <span class="n">m</span><span class="p">,</span> <span class="n">ll</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 计算C(n, m) % p，其中p不为质数
@@ -1681,25 +1845,272 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 计算分子分母的素数个数差来计算结果O(nlogn),需要用到质数表，和快速幂
-</span><span class="c1"></span><span class="n">ll</span> <span class="nf">comb</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 求C(n, m) % p的结果，其中n, m &lt;= 1e6, p &lt;= 1e9
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 计算分子分母的素数个数差来计算结果O(nlogn),需要用到质数表，和快速幂，cnt为质数个数
+</span><span class="c1">// 求C(n, m) % p的结果，其中n, m &lt;= 1e6, p &lt;= 1e9，注意，要打出小于n的所有质数
+</span><span class="c1">// p 理论上可以很大，但过大就可能需要快速乘了
+</span><span class="c1"></span><span class="n">ll</span> <span class="nf">comb</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cnt</span> <span class="o">&amp;&amp;</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span> <span class="o">/=</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">num</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">/</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span> <span class="o">/=</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">num</span> <span class="o">-=</span> <span class="n">j</span> <span class="o">/</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span> <span class="o">/=</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">num</span> <span class="o">-=</span> <span class="n">j</span> <span class="o">/</span> <span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">powf</span><span class="p">(</span><span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">num</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">ksm</span><span class="p">(</span><span class="n">pri</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">num</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">res</span> <span class="o">%</span> <span class="n">p</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>​</p>
-</div><div class="post-footer" id="post-footer">
+<h3 id="13-fft">13. FFT</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Poly</span> <span class="p">{</span><span class="c1">// 时间复杂度O(nlogn), 若被卡常，可尝试手写复数
+</span><span class="c1"></span>    <span class="cp">#define cpd complex&lt;double&gt;
+</span><span class="cp"></span>    <span class="k">constexpr</span> <span class="k">static</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rev</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">fft</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cpd</span><span class="o">&gt;&amp;</span> <span class="n">vc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">opt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// opt=1:FFT(系数式-&gt;点值式), opt=-1:IFFT
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">rev</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">vc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vc</span><span class="p">[</span><span class="n">rev</span><span class="p">[</span><span class="n">i</span><span class="p">]]);</span> <span class="c1">// 位逆序置换
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">h</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">h</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 蝴蝶操作
+</span><span class="c1"></span>            <span class="n">cpd</span> <span class="n">wn</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">h</span><span class="p">),</span> <span class="n">sin</span><span class="p">(</span><span class="n">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="n">opt</span><span class="p">);</span> <span class="c1">// 主n次单位根
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">cpd</span> <span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="o">+</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">,</span> <span class="n">w</span> <span class="o">*=</span> <span class="n">wn</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cpd</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">vc</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="p">],</span> <span class="n">u</span> <span class="o">=</span> <span class="n">vc</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+                    <span class="n">vc</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">vc</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="n">tmp</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">opt</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">vc</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">real</span><span class="p">(</span><span class="n">vc</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">real</span><span class="p">()</span> <span class="o">/</span> <span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// 用来存最后的答案
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">convolution</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传入a和b两个多项式，是int就int
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">Alen</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">Blen</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">Alen</span> <span class="o">+</span> <span class="n">Blen</span><span class="p">)</span> <span class="n">n</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">cpd</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cpd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="n">B</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cpd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+        <span class="n">rev</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">result</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">rev</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="n">rev</span><span class="p">[</span><span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">Alen</span><span class="p">)</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">real</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">Blen</span><span class="p">)</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">real</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="n">fft</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">fft</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">fft</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="c1">// 根据题意自己改最后要的是什么
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">Alen</span> <span class="o">+</span> <span class="n">Blen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">real</span><span class="p">()));</span> 
+    <span class="p">}</span>
+    <span class="cp">#undef cpd
+</span><span class="cp"></span><span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="14-fntt">14. FNTT</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="n">ll</span> <span class="nf">ksm</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 返回a^b % mod
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span> <span class="n">b</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Poly</span> <span class="p">{</span> <span class="c1">// 被卡常就用int+重写模数乘吧
+</span><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rev</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="k">static</span> <span class="n">ll</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">gi</span> <span class="o">=</span> <span class="mi">332748118</span><span class="p">,</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span> <span class="c1">// g * gi % mod = 1
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">ntt</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span> <span class="n">vt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">opt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// opt=1:FFT, opt=-1:IFFT
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">rev</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">vt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vt</span><span class="p">[</span><span class="n">rev</span><span class="p">[</span><span class="n">i</span><span class="p">]]);</span> <span class="c1">// 位逆序置换
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ll</span> <span class="n">gn</span> <span class="o">=</span> <span class="n">ksm</span><span class="p">(</span><span class="n">opt</span> <span class="o">?</span> <span class="nl">g</span> <span class="p">:</span> <span class="n">gi</span><span class="p">,</span> <span class="p">(</span><span class="n">mod</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">mod</span><span class="p">);</span> <span class="c1">// 单位原根
+</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">ll</span> <span class="n">g0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">,</span> <span class="n">g0</span> <span class="o">=</span> <span class="n">g0</span> <span class="o">*</span> <span class="n">gn</span> <span class="o">%</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">ll</span> <span class="n">u</span> <span class="o">=</span> <span class="n">vt</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">],</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">g0</span> <span class="o">*</span> <span class="n">vt</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+                    <span class="n">vt</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">tmp</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+                    <span class="n">vt</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// 用来存最后的答案
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">convolution</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传入a和b两个多项式
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">Alen</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">Blen</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">Alen</span> <span class="o">+</span> <span class="n">Blen</span><span class="p">)</span> <span class="n">n</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">B</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">rev</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">result</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">rev</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="n">rev</span><span class="p">[</span><span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">Alen</span><span class="p">)</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">Blen</span><span class="p">)</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">mod</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ntt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">ntt</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">ntt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="n">ll</span> <span class="n">inv</span> <span class="o">=</span> <span class="n">ksm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mod</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">mod</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">Alen</span> <span class="o">+</span> <span class="n">Blen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">inv</span> <span class="o">%</span> <span class="n">mod</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="15-分治fft">15. 分治FFT</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//给g[1~n], f[0] = 1, f[i] = sum{ f[i - j] * g[j] }, 求f[0~n], 
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">PolyDivide</span> <span class="p">{</span> <span class="c1">// 传入的g[0]可设为0
+</span><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">;</span>
+    <span class="n">Poly</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">poly</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="k">static</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span> <span class="c1">// 一般都是这个模数
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">cdq</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">cdq</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">l</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 取f函数的[l, mid]范围的数
+</span><span class="c1"></span>        <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">(</span><span class="n">g</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">g</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 去 g函数的 [0, r - l]范围的数
+</span><span class="c1"></span>        <span class="n">poly</span><span class="p">.</span><span class="n">convolution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="c1">// 多项式乘
+</span><span class="c1"></span>        <span class="k">auto</span><span class="o">&amp;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">poly</span><span class="p">.</span><span class="n">result</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">l</span><span class="p">])</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">cdq</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span> <span class="c1">// 注意cdq的顺序
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传入 g[0~n]
+</span><span class="c1"></span>        <span class="k">this</span><span class="o">-&gt;</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">g</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 初始化 f[0] = 1;
+</span><span class="c1"></span>        <span class="n">cdq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 计算 f[0~n]
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
                 <span>更新于 2021-07-27</span>
             </div><div class="post-info-mod"></div>

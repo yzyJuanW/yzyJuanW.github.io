@@ -127,28 +127,26 @@ ll inverse(ll a, ll m) {//扩展欧几里得法求逆元，返回-1代表没有�
 //a ^ (p - 2) = a ^ (-1) (mod p)
 //a 的逆元为 a ^ (p - 2)
 typedef long long ll;
-ll pow_f(ll a, ll b, const ll mo) {
-    ll ans = 1;
-    a %= mo;
-    while (b) {
-        if (b & 1) ans = (ans * a) % mo;
-        a = (a * a) % mo;
-        b >>= 1;
-    }
-    return ans;
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
 }
 
 ll inverse(ll a, ll m) {
-    return pow_f(a, m - 2, m);
+    return ksm(a, m - 2, m);
 }
 ```
 
 ### 5. 快速幂
 
 ```cpp
-#define ll long long
-ll powf(ll a, ll b, const ll mod) {// 返回a^b % mod
-	ll res = 1;
+typedef long long ll;
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
     for (a %= mod; b; b >>= 1, a = a * a % mod)
         if (b & 1) res = res * a % mod;
     return res;
@@ -216,7 +214,7 @@ Mat operator* (Mat a, Mat b) {
                 res[i][j] = (res[i][j] + a[i][k] * b[k][j] % mod) % mod;
     return res;
 }
-
+// 要保证矩阵A不为0
 Mat operator^ (Mat a, long long b) {
     Mat res(X, vi(X, 0));
     for (int i = 0; i < X; ++i) res[i][i] = 1;
@@ -229,6 +227,8 @@ Mat operator^ (Mat a, long long b) {
 ```
 
 ### 7. 高斯消元
+
+高斯消元做多了会发现，容易被卡常，有几种解决办法，将vector换成数组，如果是异或高斯则可以用bitset优化，
 
 #### 普通浮点数高斯消元，洛谷模板题
 
@@ -243,15 +243,15 @@ const int N = 110;
 const double eps = 1e-6; // 用来控制进度
 // 普通的高斯消元是将矩阵转化成上三角的形式，再回带求出答案
 double ans[N]; // 用来记录答案
-int gauss(int n, int m, vector<vector<double>> &a) { // n行m + 1列的增广矩阵
-    int r, c; // 当前行和当前列
+int gauss(int n, int m, vector<vector<double>> &a) { // n行m+1列增广矩阵，下标从0开始
+    int r, c; // r为当前行和c为当前列
     for (r = c = 0; c < m && r < n; ++ c) {
         int maxr = r; // 记录最大
         for (int i = r + 1; i < n; ++i) if (abs(a[i][c]) > abs(a[maxr][c]))
             maxr = i; // 寻找从当前行开始向下走的当前列中的绝对值最大值
         if (r ^ maxr) swap(a[r], a[maxr]); // 如果不是当前行，则交换两行
         if (abs(a[r][c]) < eps) continue; // 如果当前行当前列的最大值为0则不作消元
-        for (int i = m; i >= c; --i) a[r][i] /= a[r][c]; // 将当前行的从当前列开始到最后一列
+        for (int i = m; i >= c; --i) a[r][i] /= a[r][c]; // 将当前行的当前列开始到最后一列
         for (int i = r + 1; i < n; ++i) {
             if (abs(a[i][c]) < eps) continue; // 如果改行的当前列已经是0，则不作消元
             for (int j = m; j >= c; --j) { // 逆向消元，可以少开一个变量
@@ -302,8 +302,8 @@ int main() {
 using namespace std;
 const double eps = 1e-6;
 double ans[110]; // 记录答案
-int gauss_j(int n, int m, vector<vector<double>> &a) { // n行m + 1列增广矩阵
-    int r, c; // 当前行当前列
+int gauss_j(int n, int m, vector<vector<double>> &a) { // n行m+1列增广矩阵，下标从0开始
+    int r, c; // r为当前行和c为当前列
     for (r = c = 0; c < m && r < n; ++c) { // 
         int maxr = r; // 记录最大值
         for (int i = r + 1; i < n; ++i) if (abs(a[i][c]) > abs(a[maxr][c]))
@@ -356,19 +356,19 @@ int gcd(int a, int b) { int m; while(b) m = a % b, a = b, b = m; return a; }
 int lcm(int a, int b) { return a / gcd(a, b) * b; }
 int p, ans[310]; // 记录答案
 
-int powf(int a, int b, const int mod, int ans = 1) {
-    a %= mod;
-    while (b) {
-        if (b & 1) ans = ans * a % mod;
-        b >>= 1, a = a * a % mod;
-    }
-    return ans;
+typedef long long ll;
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
 }
 int inv(int a, int m) {
-    return powf(a, m - 2, m);
+    return ksm(a, m - 2, m);
 }
 //模意义下的高斯消元不需要用约旦的方式，因为整数不用考虑精度问题
-// n 行 m + 1列的增广矩阵，从0开始
+// n行m+1列增广矩阵，下标从0开始
 int gauss(int n, int m, vector<vector<int> > &a, const int &p) { // 传入模p
     int r, c; // 当前行和当前列
     for (r = c = 0; c < m && r < n; ++c) {
@@ -389,7 +389,7 @@ int gauss(int n, int m, vector<vector<int> > &a, const int &p) { // 传入模p
     }
     for (int i = r; i < n; ++i) if (a[i][c]) return 0; // 无解
     if (r < m) return -1; // 无穷解
-    for (int i = m - 1; ~i; --i) {
+    for (int i = m - 1; ~i; --i) {// 回带
         int tmp = a[i][m];
         for (int j = i + 1; j < m; ++j) {
             if (!a[i][j]) continue;
@@ -413,9 +413,9 @@ int main() {
         for (int i = 1; i <= n; ++i) {
             mat.push_back(vector<int>(n + 1, 0));
             if (str[i] != '*') mat[i - 1][n] = str[i] - 'a' + 1;
-            for (int j = 0; j < n; ++j) mat[i - 1][j] = powf(i, j, p);
+            for (int j = 0; j < n; ++j) mat[i - 1][j] = ksm(i, j, p);
         }
-        int res = gauss(n, n, mat, p);
+        gauss(n, n, mat, p);
         for (int i = 0; i < n; ++i) printf("%d ", ans[i]);
         puts("");
     }
@@ -434,7 +434,9 @@ int main() {
 using namespace std;
 const int N = 305;
 int ans[N], freew[N]; // 记录答案和记录自由变元是哪些
-int gauss(int n, int m, vector<vector<int> > &a) { // n行m + 1列的增广矩阵
+//01矩阵，例如第一行为 a11 * x1 ^ a12 * x2 ^ ... ^ a1n * xn = y1的矩阵
+// 初等行变换不再是某行加减某行，而是异或了
+int gauss(int n, int m, vector<vector<int> > &a) { // n行m+1列增广矩阵，下标从0开始
     int num = 0, r, c; // 自由变元的个数 当前行 当前列
     for (int i = 0; i < n; ++i) ans[i] = freew[i] = 0; // 初始化答案和自由变元
     for (r = c = 0; r < n && c < m; ++c) {
@@ -505,6 +507,86 @@ int main() {
 }
 ```
 
+#### 矩阵求逆，时间复杂度O($2 \times n^3$)，洛谷板子题
+
+```cpp
+// 洛谷板子题
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+#include <vector>
+typedef long long ll;
+using namespace std;
+const long long mod = 1e9 + 7;
+
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
+}
+// 模意义下的高斯消元不需要用约旦的方式，因为整数不用考虑精度问题
+// 利用高斯消元，剩下的是上三角，所以要倒过来回带
+// n行n + n列增广矩阵，下标从0开始，求矩阵逆，被卡常尝试将vector换成数组
+int gauss(int n, vector<vector<ll>>& a, vector<vector<ll>>& ans) { 
+    ans.resize(n, vector<ll>(n, 0));
+    for (int i = 0; i < n; ++i) ans[i][i] = 1;
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (a[j][i]) {
+                swap(a[j], a[i]);
+                swap(ans[j], ans[i]);
+                break;
+            }
+        }
+        if (!a[i][i]) return -1;
+        ll x = ksm(a[i][i], mod - 2, mod);
+        for (int j = 0; j < n; ++j) { // 此行都乘1/a[i][i]，使得a[i][i] = 1
+            a[i][j] = a[i][j] * x % mod;
+            ans[i][j] = ans[i][j] * x % mod;
+        }
+        for (int j = i + 1; j < n; ++j) {
+            x = a[j][i]; // x为倍数即row_j - row_i * x
+            for (int k = 0; k < n; ++k) {
+                a[j][k] = ((a[j][k] - a[i][k] * x) % mod + mod) % mod;
+                ans[j][k] = ((ans[j][k] - ans[i][k] * x) % mod + mod) % mod;
+            }
+        }
+    }
+    for (int i = n - 1; i >= 0; --i) { // 回带， 
+        for (int j = i + 1; j < n; ++j) {// 不知道为什么这样写快一些
+            ll x = a[i][j]; // row_i - row_j * x
+            for (int k = 0; k < n; ++k) {
+                a[i][k] = ((a[i][k] - a[j][k] * x) % mod + mod) % mod;
+                ans[i][k] = ((ans[i][k] - ans[j][k] * x) % mod + mod) % mod;
+            }
+        }
+    }
+    return 1;
+}
+auto main() -> int {
+    int n;
+    scanf("%d", &n);
+    vector<vector<ll>> vt(n, vector<ll>(n, 0));
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            scanf("%lld", &vt[i][j]);
+        }
+    }
+    vector<vector<ll>> ans;
+    int res = gauss(n, vt, ans);
+    if (res < 0) return puts("No Solution"), 0;
+    for (auto& v : ans) {
+        for (ll& x : v) {
+            printf("%lld ", x);
+        }
+        puts("");
+    }
+    return 0;
+}
+```
+
 ### 8. 卢卡斯定理
 
 #### lucas
@@ -536,8 +618,9 @@ ll lucas(ll n, ll m) { // 本函数不考虑comb的时间复杂度的话就是O(
 #### exlucas
 
 ```cpp
-ll powf(ll a, ll b, const ll mod) {// 返回a^b % mod
-	ll res = 1;
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
     for (a %= mod; b; b >>= 1, a = a * a % mod)
         if (b & 1) res = res * a % mod;
     return res;
@@ -574,7 +657,7 @@ ll cal(ll n, ll p, ll pk) { // 计算n!中取出所有p因子后mod pk的结果
     for (int i = 1; i < pk; ++i) {
         if (i % p) res = res * i % pk;
     }
-    res = powf(res, n / pk, pk);
+    res = ksm(res, n / pk, pk);
     int len = n % pk;
     for (int i = 1; i <= len; ++i) {
         if (i % p) res = res * i % pk;
@@ -588,7 +671,7 @@ ll comb(ll n, ll m, ll p, ll pk) {// 计算C(n, m) % pk的结果，其中p^k = p
     for (ll i = n; i; i /= p) cnt += i / p;
     for (ll i = m; i; i /= p) cnt -= i / p;
     for (ll i = n - m; i; i /= p) cnt -= i / p;
-    return up * inverse(down, pk) % pk * powf(p, cnt, pk) % pk;
+    return up * inverse(down, pk) % pk * ksm(p, cnt, pk) % pk;
 }
 //直接调用此函数即可
 ll exlucas(ll n, ll m, ll p) { // 计算C(n, m) % p，其中p不为质数
@@ -786,8 +869,10 @@ ll comb(ll n, ll m) {
 #### 素因子版，针对取余p不为质数，其n较小的情况，O(nlogn)
 
 ```cpp
-// 计算分子分母的素数个数差来计算结果O(nlogn),需要用到质数表，和快速幂
-ll comb(int n, int m, int p) {// 求C(n, m) % p的结果，其中n, m <= 1e6, p <= 1e9
+// 计算分子分母的素数个数差来计算结果O(nlogn),需要用到质数表，和快速幂，cnt为质数个数
+// 求C(n, m) % p的结果，其中n, m <= 1e6, p <= 1e9，注意，要打出小于n的所有质数
+// p 理论上可以很大，但过大就可能需要快速乘了
+ll comb(int n, int m, int p) { 
     if (n < m) return 0;
     ll res = 1;
     for (int i = 0; i < cnt && pri[i] <= n; ++i) {
@@ -795,10 +880,138 @@ ll comb(int n, int m, int p) {// 求C(n, m) % p的结果，其中n, m <= 1e6, p 
         for (int j = n; j; j /= pri[i]) num += j / pri[i];
         for (int j = m; j; j /= pri[i]) num -= j / pri[i];
         for (int j = n - m; j; j /= pri[i]) num -= j / pri[i];
-        res = res * powf(pri[i], num, p) % p;
+        res = res * ksm(pri[i], num, p) % p;
     }
-    return res;
+    return res % p;
 }
 ```
 
 ​	
+
+### 13. FFT
+
+```cpp
+template <class T>
+class Poly {// 时间复杂度O(nlogn), 若被卡常，可尝试手写复数
+    #define cpd complex<double>
+    constexpr static double PI = acos(-1.0);
+    vector<int> rev;
+    void fft(vector<cpd>& vc, int opt, int n) { // opt=1:FFT(系数式->点值式), opt=-1:IFFT
+        for (int i = 0; i < n; ++i) if (i < rev[i]) swap(vc[i], vc[rev[i]]); // 位逆序置换
+        for (int h = 2; h <= n; h <<= 1) { // 蝴蝶操作
+            cpd wn(cos(PI * 2 / h), sin(PI * 2 / h) * opt); // 主n次单位根
+            for (int j = 0; j < n; j += h) {
+                cpd w(1, 0);
+                for (int k = j; k < j + h / 2; ++k, w *= wn) {
+                    cpd tmp = w * vc[k + h / 2], u = vc[k];
+                    vc[k] = u + tmp, vc[k + h / 2] = u - tmp;
+                }
+            }
+        }
+        if (opt == 1) return;
+        for (int i = 0; i < n; ++i) vc[i].real(vc[i].real() / n);
+    }
+public:
+    vector<T> result; // 用来存最后的答案
+    void convolution(const vector<T>& a, const vector<T> &b) { // 传入a和b两个多项式，是int就int
+        int Alen = a.size(), Blen = b.size(), m = 1, n = 2;
+        while (n < Alen + Blen) n <<= 1, m += 1;
+        vector<cpd> A(n, cpd(0, 0)), B(n, cpd(0, 0));
+        rev.resize(1, 0), result.clear();
+        for (int i = 1; i < n; ++i) rev.push_back((rev[i >> 1] >> 1) | (i & 1) << (m - 1));
+        for (int i = 0; i < n; ++i) {
+            if (i < Alen) A[i].real(a[i]);
+            if (i < Blen) B[i].real(b[i]);
+        }
+        fft(A, 1, n), fft(B, 1, n);
+        for (int i = 0; i < n; ++i) A[i] *= B[i];
+        fft(A, -1, n);
+        // 根据题意自己改最后要的是什么
+        for (int i = 0; i < Alen + Blen - 1; ++i) result.push_back(round(A[i].real())); 
+    }
+    #undef cpd
+};
+```
+
+### 14. FNTT
+
+```cpp
+typedef long long ll;
+ll ksm(ll a, ll b, const ll mod = 1e9 + 7) {// 返回a^b % mod
+    if (a == 0 && b != 0) return 0;
+    ll res = 1;
+    for (a %= mod; b; b >>= 1, a = a * a % mod)
+        if (b & 1) res = res * a % mod;
+    return res;
+}
+template <class T>
+class Poly { // 被卡常就用int+重写模数乘吧
+    vector<int> rev;
+    constexpr static ll g = 3, gi = 332748118, mod = 998244353; // g * gi % mod = 1
+    void ntt(vector<ll>& vt, int opt, int n) { // opt=1:FFT, opt=-1:IFFT
+        for (int i = 0; i < n; ++i) if (i < rev[i]) swap(vt[i], vt[rev[i]]); // 位逆序置换
+        for (int i = 1; i < n; i <<= 1) {
+            ll gn = ksm(opt ? g : gi, (mod - 1) / (i << 1), mod); // 单位原根
+            for (int j = 0; j < n; j += (i << 1)) {
+                ll g0 = 1;
+                for (int k = 0; k < i; ++k, g0 = g0 * gn % mod) {
+                    ll u = vt[j + k], tmp = g0 * vt[i + j + k] % mod;
+                    vt[j + k] = (u + tmp) % mod;
+                    vt[i + j + k] = (u - tmp + mod) % mod;
+                }
+            }
+        }
+    }
+public:
+    vector<T> result; // 用来存最后的答案
+    void convolution(const vector<T>& a, const vector<T> &b) { // 传入a和b两个多项式
+        int Alen = a.size(), Blen = b.size(), m = 1, n = 2;
+        while (n < Alen + Blen) n <<= 1, m += 1;
+        vector<ll> A(n, 0), B(n, 0);
+        rev.resize(1, 0), result.clear();
+        for (int i = 1; i < n; ++i) rev.push_back((rev[i >> 1] >> 1) | (i & 1) << (m - 1));
+        for (int i = 0; i < n; ++i) {
+            if (i < Alen) A[i] = (a[i] + mod) % mod;
+            if (i < Blen) B[i] = (b[i] + mod) % mod;
+        }
+        ntt(A, 1, n), ntt(B, 1, n);
+        for (int i = 0; i < n; ++i) A[i] = A[i] * B[i] % mod;
+        ntt(A, 0, n);
+        ll inv = ksm(n, mod - 2, mod);
+        for (int i = 0; i < Alen + Blen - 1; ++i) result.push_back(A[i] * inv % mod);
+    }
+};
+```
+
+### 15. 分治FFT
+
+```cpp
+//给g[1~n], f[0] = 1, f[i] = sum{ f[i - j] * g[j] }, 求f[0~n], 
+template <class T>
+class PolyDivide { // 传入的g[0]可设为0
+    vector<T> g;
+    Poly<T> poly;
+    constexpr static ll mod = 998244353; // 一般都是这个模数
+    void cdq(int l, int r) {
+        if (l == r) return;
+        int mid = (l + r) >> 1;
+        cdq(l, mid);
+        vector<T> a(result.begin() + l, result.begin() + mid + 1); // 取f函数的[l, mid]范围的数
+        vector<T> b(g.begin(), g.begin() + r - l + 1); // 去 g函数的 [0, r - l]范围的数
+        poly.convolution(a, b); // 多项式乘
+        auto& res = poly.result;
+        for (int i = mid + 1; i <= r; ++i) result[i] = (result[i] + res[i - l]) % mod;
+        cdq(mid + 1, r); // 注意cdq的顺序
+    }
+public:
+    vector<T> result;
+    void calculate(vector<T>& g) { // 传入 g[0~n]
+        this->g = g;
+        result.resize(g.size(), 0);
+        result[0] = 1; // 初始化 f[0] = 1;
+        cdq(0, g.size() - 1); // 计算 f[0~n]
+    }
+};
+```
+
+

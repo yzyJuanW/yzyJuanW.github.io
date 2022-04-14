@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90\/"
-        },"genre": "posts","wordcount":  7451 ,
+        },"genre": "posts","wordcount":  7821 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90\/","datePublished": "2021-07-27T20:40:18+08:00","dateModified": "2021-07-27T20:40:18+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">数据结构板子</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a>&nbsp;<a href="/categories/%E6%A8%A1%E6%9D%BF/"><i class="far fa-folder fa-fw"></i>模板</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-27">2021-07-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7451 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟</span>&nbsp;<span id="/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/" class="leancloud_visitors" data-flag-title="数据结构板子">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-27">2021-07-27</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7821 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟</span>&nbsp;<span id="/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/" class="leancloud_visitors" data-flag-title="数据结构板子">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -142,7 +142,6 @@
           <ul>
             <li><a href="#单点修改与区间查询">单点修改与区间查询</a></li>
             <li><a href="#区间修改区间查询">区间修改，区间查询</a></li>
-            <li><a href="#网络赛类封装版">网络赛类封装版</a></li>
           </ul>
         </li>
         <li><a href="#3-线段树">3. 线段树</a>
@@ -165,6 +164,8 @@
         <li><a href="#9-主席树">9. 主席树</a></li>
         <li><a href="#10-lca">10. LCA</a></li>
         <li><a href="#11-树链剖分">11. 树链剖分</a></li>
+        <li><a href="#12-树上点差分">12. 树上点差分</a></li>
+        <li><a href="#13-dfs序">13. dfs序</a></li>
       </ul>
     </li>
   </ul>
@@ -309,47 +310,31 @@
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 修改复杂度与查询复杂度O(logn)
-</span><span class="c1"></span><span class="cp">#define lb(x) ((x) &amp; (-x))
-</span><span class="cp">#define ll long long
-</span><span class="cp"></span><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">2e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">bit</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-<span class="c1">// 初始化
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="n">bit</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">bit</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">fenwich</span> <span class="p">{</span>
+    <span class="cp">#define lowbit(x) ((x) &amp; (-x))
+</span><span class="cp"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
+    <span class="n">T</span> <span class="nf">get_pre</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">T</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="c1">// 单点修改
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">ll</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">bit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
-        <span class="n">index</span> <span class="o">+=</span> <span class="n">lb</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">fenwich</span> <span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="o">:</span> <span class="n">v</span><span class="p">(</span><span class="n">len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">len</span><span class="p">(</span><span class="n">len</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">len</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 单点修改，用此函数建树
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="c1">// 前缀查询
-</span><span class="c1"></span><span class="n">ll</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">res</span> <span class="o">+=</span> <span class="n">bit</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-        <span class="n">index</span> <span class="o">-=</span> <span class="n">lb</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+    <span class="n">T</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 区间查询
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c1">// 区间和查询
-</span><span class="c1"></span><span class="n">ll</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">get</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="p">}</span>
+    <span class="cp">#undef lowbit
+</span><span class="cp"></span><span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="区间修改区间查询">区间修改，区间查询</h4>
@@ -394,90 +379,35 @@
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define lb(x) ((x) &amp; (-x))
-</span><span class="cp">#define int long long
-</span><span class="cp"></span><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">5e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">id</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
-<span class="c1">// 基础树状数组单点更新
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">bit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="c1">// 单点修改
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="c1">// 区间修改
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">update</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">update</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">val</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
-    <span class="n">update</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span> <span class="o">*</span> <span class="n">val</span><span class="p">,</span> <span class="n">id</span><span class="p">),</span> <span class="n">update</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">id</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="c1">// 前缀查询
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">bit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">bit</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c1">// 区间和查询
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
-    <span class="n">res</span> <span class="o">-=</span> <span class="n">get</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span> <span class="o">-</span> <span class="n">get</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="网络赛类封装版">网络赛类封装版</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">fenwich</span><span class="p">{</span>
+<span class="k">class</span> <span class="nc">Fenwich</span> <span class="p">{</span>
     <span class="cp">#define lowbit(x) ((x) &amp; (-x))
-</span><span class="cp"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+</span><span class="cp"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">d</span><span class="p">,</span> <span class="n">id</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
-    <span class="n">T</span> <span class="nf">get_pre</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">indx</span><span class="p">,</span> <span class="n">T</span> <span class="n">val</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">vt</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">indx</span> <span class="o">&lt;=</span> <span class="n">len</span> <span class="o">&amp;&amp;</span> <span class="n">indx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">indx</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">indx</span><span class="p">))</span> <span class="n">vt</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">T</span> <span class="nf">get_pre</span><span class="p">(</span><span class="kt">int</span> <span class="n">indx</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">vt</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">T</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">indx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">indx</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">indx</span><span class="p">))</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">vt</span><span class="p">[</span><span class="n">indx</span><span class="p">];</span>
         <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">fenwich</span> <span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="o">:</span> <span class="n">v</span><span class="p">(</span><span class="n">len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">len</span><span class="p">(</span><span class="n">len</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="kt">void</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">len</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 单点修改
-</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+    <span class="n">Fenwich</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="o">:</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">id</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">d</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">id</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">len</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="n">T</span> <span class="nf">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 区间查询
-</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 区间修改，单点修改和建树也调用此函数
+</span><span class="c1"></span>        <span class="n">update</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">update</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">val</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+        <span class="n">update</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">val</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">id</span><span class="p">),</span> <span class="n">update</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">id</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">T</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">T</span> <span class="n">res</span> <span class="o">=</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+        <span class="n">res</span> <span class="o">-=</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span> <span class="o">-</span> <span class="n">get_pre</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="cp">#undef lowbit
 </span><span class="cp"></span><span class="p">};</span>
@@ -548,6 +478,8 @@
 </span><span class="lnt">59
 </span><span class="lnt">60
 </span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 宏
@@ -611,7 +543,9 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">qr</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">rs</span><span class="p">),</span> <span class="n">ret</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="cp">#undef ls
+</span><span class="cp">#undef rs
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id="结构体版">结构体版</h4>
 <div class="highlight"><div class="chroma">
@@ -2066,9 +2000,10 @@
 </span><span class="lnt">168
 </span><span class="lnt">169
 </span><span class="lnt">170
+</span><span class="lnt">171
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 洛谷板子题
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 洛谷板子题,链的操作时间复杂度是O(nlognlogn)
 </span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
@@ -2114,6 +2049,7 @@
 </span><span class="c1"></span>    <span class="p">}</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="n">v</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// 点上的权值
+</span><span class="c1">// top:当前节点所在链的顶端节点
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">tim</span><span class="p">,</span> <span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">top</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// w的下标是时间戳，对应的是相应时间戳上的点的点权
 </span><span class="c1"></span><span class="kt">void</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tim</span><span class="p">,</span> <span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
@@ -2240,7 +2176,71 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h3 id="12-树上点差分">12. 树上点差分</h3>
+<p>设将树上两点u，v之间路径上的所有点权都增加val，lca为u和v的最近公共祖先，fa为lca的父亲，则树上差分为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">dif</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+<span class="n">dif</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+<span class="n">dif</span><span class="p">[</span><span class="n">lca</span><span class="p">]</span> <span class="o">-=</span> <span class="n">val</span><span class="p">;</span>
+<span class="n">dif</span><span class="p">[</span><span class="n">fa</span><span class="p">]</span> <span class="o">-=</span> <span class="n">val</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>后面求某子树的结点权值和就是该点的权值，初始化dif也可以用上面的步骤初始化，当然$O(n)$预处理也是可以的，$dif[ u ] = a[ u ] - \sum a[ son ]$</p>
+<p>,其中son表示u结点的直接儿子</p>
+<h3 id="13-dfs序">13. dfs序</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">val</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">valx</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">tim</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">px</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">dfsx</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fa</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">px</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">first</span> <span class="o">=</span> <span class="o">++</span><span class="n">tim</span><span class="p">;</span>
+    <span class="n">valx</span><span class="p">[</span><span class="n">tim</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="c1">// 用valx存dfs序对应的val数组
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">mp</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">fa</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="n">dfsx</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">px</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">second</span> <span class="o">=</span> <span class="n">tim</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>点修改，子树权值和查询</strong>：利用树状数组在dfs序上单点修改和区间查询</li>
+<li><strong>树链修改，点查询</strong>：利用树上差分思想，用树状数组在dfs序上单点修改和区间查询</li>
+<li><strong>树链修改，子树权值和查询</strong>：和利用树状数组实现区间修改和查询的思想是同理的
+<ul>
+<li>查询u子树权值和，对于其子结点son的贡献为：$val[ son ] \times (dep[ son ] - dep[ u ] + 1)$</li>
+<li>拆括号： $val[ son ] \times dep[ son ] - val[ son ] * (dep[ u ] - 1)$</li>
+<li>u子树的权值和为 $\sum_{v = start[ u ]}^{end[ u ]} val[ v ] \times dep[ v ] - (dep[ u ] - 1) \times \sum_{ v = start[ u ]}^{end[ u ]} val[v]$</li>
+<li>维护两个数组：<code>val[v] * dep[v]</code> 和 <code>val[v]</code></li>
+</ul>
+</li>
+<li><strong>点修改，树链和查询</strong>：都这样了，上树剖吧</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
                 <span>更新于 2021-07-27</span>
             </div><div class="post-info-mod"></div>

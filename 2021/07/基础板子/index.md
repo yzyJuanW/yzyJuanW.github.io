@@ -391,7 +391,7 @@ void get_res(int n) {
 }
 ```
 
-### 5.三分
+### 5. 三分
 
 ```cpp
 double ts(int l, int r) {

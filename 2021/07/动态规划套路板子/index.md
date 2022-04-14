@@ -403,6 +403,7 @@ int dfs(int u, int fa, const int &n) {
     }
     return tot;
 }
+
 void solve() {
     int n = IO();
     init(), siz = inf;

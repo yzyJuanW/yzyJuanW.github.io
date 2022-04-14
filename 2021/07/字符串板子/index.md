@@ -5,23 +5,14 @@
 
 ```cpp
 const int M = 1e6 + 5;
-//普通版本
+// 下标都是从0开始
+// nxt[i]表示第i位失配时，前nxt[i] - 1的不必再从新匹配了，即第i位前（不包括第i位）有nxt[i]长度与前缀相等
 void getnext(char *x, int len, int *nxt) {
     int i = 0, j;
     j = nxt[0] = -1;
     while (i < len) {
         while(j != -1 && x[i] != x[j]) j = nxt[j];
         nxt[++i] = ++j;
-    }
-}
-//略微优化版本
-void getNext(char *x, int len, int *nxt) {
-    int i = 0, j;
-    j = nxt[0] = -1;
-    while (i < len) {
-        while (j != -1 && x[i] != x[j]) j = nxt[j];
-        if (x[++i] == x[++j]) nxt[i] = nxt[j];
-        else nxt[i] = j;
     }
 }
 // y是主串
@@ -138,4 +129,31 @@ void exkmp(char x[], int m, char y[], int n, int next[], int extend[]) {
     }
 }
 ```
+
+### 5. Trie
+
+```cpp
+int trie[M][30], ed[M], ram;
+
+void insert(char* s, int id) {
+    int n = strlen(s), p = 0;
+    for (int i = 0; i < n; ++i) {
+        int c = s[i] - 'a';
+        if (!trie[p][c]) trie[p][c] = ++ram;
+        p = trie[p][c];
+    }
+    ed[p] = id;
+}
+
+int search(char* s) {
+    int n = strlen(s), p = 0;
+    for (int i = 0; i < n; ++i) {
+        int c = s[i] - 'a';
+        if (!trie[p][c]) return -1;
+        p = trie[p][c];
+    }
+    return ed[p];
+}
+```
+
 

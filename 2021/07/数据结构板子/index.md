@@ -68,36 +68,28 @@ public:
 
 ```cpp
 // 修改复杂度与查询复杂度O(logn)
-#define lb(x) ((x) & (-x))
-#define ll long long
-const int N = 1e6 + 5, M = 2e5 + 5;
-ll n, m, a[N], bit[N];
-// 初始化
-void build(int n) {
-    for (int i = 1; i <= n; ++i) {
-        bit[i] += a[i];
-        int j = lb(i) + i;
-        if (j <= n) bit[j] += bit[i];
+template<class T>
+class fenwich {
+    #define lowbit(x) ((x) & (-x))
+    vector<T> v;
+    int len;
+    T get_pre(int i) {
+        T res = 0;
+        for(; i > 0; i -= lowbit(i)) res += v[i];
+        return res;
     }
-}
-// 单点修改
-void update(int index, ll val, int n) {
-    while (index <= n) {
-        bit[index] += val;
-        index += lb(index);
+public:
+    fenwich (int len) : v(len + 1, 0), len(len) {}
+    void resize(int n, T x = 0) { v.resize(n + 1, x), len = n; }
+    void modify(int i, T val) { // 单点修改，用此函数建树
+        for (; i <= len && i > 0; i += lowbit(i)) v[i] += val;
     }
-}
-// 前缀查询
-ll get(int index, int n) {
-    ll res = 0;
-    while (index) {
-        res += bit[index];
-        index -= lb(index);
+    T get(int l, int r) { // 区间查询
+        if (l > r) return 0;
+        return get_pre(r) - get_pre(l - 1);
     }
-    return res;
-}
-// 区间和查询
-ll get(int l, int r, int n) { return get(r, n) - get(l - 1, n); }
+    #undef lowbit
+};
 ```
 
 #### 区间修改，区间查询
@@ -111,62 +103,33 @@ ll get(int l, int r, int n) { return get(r, n) - get(l - 1, n); }
 7. 固开两个树状数组，一个维护差分数组$d_i$，一个维护$i \times d_i$
 
 ```cpp
-#define lb(x) ((x) & (-x))
-#define int long long
-const int N = 5e3 + 5, M = 1e6 + 5;
-int n, m, d[M], id[M];
-// 基础树状数组单点更新
-void update(int i, int val, int *bit) {
-    while (i <= n) {
-        bit[i] += val;
-        i += lb(i);
-    }
-}
-// 单点修改
-void update(int i, int val) {
-    update(i, val, d), update(i, val * i, id);
-}
-// 区间修改
-void update(int l, int r, int val) {
-    update(l, val, d), update(r + 1, -val, d);
-    update(l, l * val, id), update(r + 1, (-val) * (r + 1), id);
-}
-// 前缀查询
-int get(int i, int *bit) {
-    int res = 0;
-    while (i) res += bit[i], i -= lb(i);
-    return res;
-}
-// 区间和查询
-int get(int l, int r) {
-    int res = get(r, d) * (r + 1) - get(r, id);
-    res -= get(l - 1, d) * l - get(l - 1, id);
-    return res;
-}
-```
-
-#### 网络赛类封装版
-
-```cpp
 template<class T>
-class fenwich{
+class Fenwich {
     #define lowbit(x) ((x) & (-x))
-    vector<T> v;
+    vector<T> d, id;
     int len;
-    T get_pre(int i) {
+    void update(int indx, T val, vector<T>& vt) {
+        for (; indx <= len && indx > 0; indx += lowbit(indx)) vt[indx] += val;
+    }
+    T get_pre(int indx, vector<T>& vt) {
         T res = 0;
-        for(; i > 0; i -= lowbit(i)) res += v[i];
+        for (; indx > 0; indx -= lowbit(indx)) res += vt[indx];
         return res;
     }
 public:
-    fenwich (int len) : v(len + 1, 0), len(len) {}
-    void resize(int n, T x = 0) { v.resize(n + 1, x), len = n; }
-    void modify(int i, T val) { // 单点修改
-        for (; i <= len; i += lowbit(i)) v[i] += val;
+    Fenwich(int n) : d(n + 1, 0), id(n + 1, 0), len(n) {}
+    void resize(int n, T x = 0) {
+        d.resize(n + 1, 0), id.resize(n + 1, 0);
+        len = n;
     }
-    T operator() (int l, int r) { // 区间查询
-        if (l > r) return 0;
-        return get_pre(r) - get_pre(l - 1);
+    void modify(int l, int r, T val) { // 区间修改，单点修改和建树也调用此函数
+        update(l, val, d), update(r + 1, -val, d);
+        update(l, val * l, id), update(r + 1, (-val) * (r + 1), id);
+    }
+    T get(int l, int r) {
+        T res = get_pre(r, d) * (r + 1) - get_pre(r, id);
+        res -= get_pre(l - 1, d) * l - get_pre(l - 1, id);
+        return res;
     }
     #undef lowbit
 };
@@ -238,6 +201,8 @@ ll get(int ql, int qr, int l, int r, int node) {
     if (qr > mid) ret = op(get(ql, qr, mid + 1, r, rs), ret);
     return ret;
 }
+#undef ls
+#undef rs
 ```
 
 #### 结构体版
@@ -900,7 +865,7 @@ int main() {
 ### 11. 树链剖分
 
 ```cpp
-// 洛谷板子题
+// 洛谷板子题,链的操作时间复杂度是O(nlognlogn)
 #include <cstdio>
 #include <cstring>
 #include <algorithm>
@@ -946,6 +911,7 @@ void dfs1(int u, int f) {
     }
 }
 int v[N]; // 点上的权值
+// top:当前节点所在链的顶端节点
 int tim, dfn[N], top[N], w[N]; // w的下标是时间戳，对应的是相应时间戳上的点的点权
 void dfs2(int u, int t) {
     dfn[u] = ++tim, top[u] = t;
@@ -1071,4 +1037,49 @@ int main() {
     return 0;
 }
 ```
+
+### 12. 树上点差分
+
+设将树上两点u，v之间路径上的所有点权都增加val，lca为u和v的最近公共祖先，fa为lca的父亲，则树上差分为
+
+```cpp
+dif[u] += val;
+dif[v] += val;
+dif[lca] -= val;
+dif[fa] -= val;
+```
+
+后面求某子树的结点权值和就是该点的权值，初始化dif也可以用上面的步骤初始化，当然$O(n)$预处理也是可以的，$dif[ u ] = a[ u ] - \sum a[ son ]$
+
+,其中son表示u结点的直接儿子
+
+### 13. dfs序
+
+```cpp
+vector<int> mp[N];
+ll val[N], valx[N];
+int tim;
+pair<int, int> px[N];
+void dfsx(int u, int fa) {
+    px[u].first = ++tim;
+    valx[tim] = val[u]; // 用valx存dfs序对应的val数组
+    for (int v : mp[u]) {
+        if (v == fa) continue;
+        dfsx(v, u);
+    }
+    px[u].second = tim;
+}
+```
+
+- **点修改，子树权值和查询**：利用树状数组在dfs序上单点修改和区间查询
+- **树链修改，点查询**：利用树上差分思想，用树状数组在dfs序上单点修改和区间查询
+- **树链修改，子树权值和查询**：和利用树状数组实现区间修改和查询的思想是同理的
+  - 查询u子树权值和，对于其子结点son的贡献为：$val[ son ] \times (dep[ son ] - dep[ u ] + 1)$
+  - 拆括号： $val[ son ] \times dep[ son ] - val[ son ] * (dep[ u ] - 1)$
+  - u子树的权值和为 $\sum_{v = start[ u ]}^{end[ u ]} val[ v ] \times dep[ v ] - (dep[ u ] - 1) \times \sum_{ v = start[ u ]}^{end[ u ]} val[v]$
+  - 维护两个数组：`val[v] * dep[v]` 和 `val[v]`
+- **点修改，树链和查询**：都这样了，上树剖吧
+
+
+
 
