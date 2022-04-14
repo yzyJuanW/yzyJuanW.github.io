@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/"
-        },"genre": "posts","keywords": "数学","wordcount":  3577 ,
+        },"genre": "posts","keywords": "数学","wordcount":  4356 ,
         "url": "https:\/\/haofish.github.io\/2021\/07\/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA\/","datePublished": "2021-07-21T12:22:01+08:00","dateModified": "2021-07-21T12:22:01+08:00","publisher": {
             "@type": "Organization",
             "name": "幼稚园卷王"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single" data-toc="enable"><div class="single-card" ><h2 class="single-title animated flipInX">一些有用的数学公式与结论</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>幼稚园卷王</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%80%BB%E7%BB%93/"><i class="far fa-folder fa-fw"></i>总结</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3577 字</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟</span>&nbsp;<span id="/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/" class="leancloud_visitors" data-flag-title="一些有用的数学公式与结论">
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4356 字</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟</span>&nbsp;<span id="/2021/07/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/" class="leancloud_visitors" data-flag-title="一些有用的数学公式与结论">
                             <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                         </span>&nbsp;</div>
             </div>
@@ -459,13 +459,51 @@ f(x) = \sum_{i = 1}^n y_i \prod_{j \ne i} \frac{x - x_j}{x_i - x_j}
 $$</p>
 <h2 id="一些求方案数的问题">一些求方案数的问题</h2>
 <ol>
-<li>将n个<strong>相同</strong>的小球放入m个<strong>相同</strong>的盒子，盒子<strong>不能</strong>为空：
+<li>将n个<strong>相同</strong>的小球放入m个<strong>相同</strong>的盒子，盒子<strong>不能</strong>为空：设方案数为$f_1(n, m)$
 <ul>
-<li>理解1：$f(n, m) = f(n - 1, m - 1) + f(n - m, m)$, 有一个位置只有一个球的方案 + 先所有位置都预先放一个球的方案</li>
-<li>理解2：本质就是背包问题，用m个数组成的和为n的方案数，$dp(n, m) = \sum_{i=1}^ndp(n - i, m - 1)$</li>
+<li>理解1：$f_1(n, m) = f_1(n - 1, m - 1) + f_1(n - m, m)$, 有一个位置只有一个球的方案 + 先所有位置都预先放一个球的方案(所有位置都大于1)，边界条件$f_1(n, m) = 0, n &lt; m \text{或} n &lt; 0$, $f_1(n, m) = 1, n = m \text{或} m = 1$</li>
+<li>理解2：本质就是背包问题，用m个<strong>正整数</strong>组成的和为n的方案数，$f_1(n, m) = dp(n, m) = \sum_{i=1}^ndp(n - i, m - 1), i &gt; 0$</li>
 </ul>
 </li>
-<li></li>
+<li>将n个<strong>相同</strong>的小球放入m个<strong>不同</strong>的盒子，盒子<strong>不能</strong>为空：设方案数为$f_2(n, m)$
+<ul>
+<li>理解1：隔板法得出方案数为 $f_2(n, m) = C_{n-1}^{m-1}$</li>
+<li>理解2：也可以当做分组背包问题做（每组物品容量为<strong>正整数</strong>）</li>
+</ul>
+</li>
+<li>将n个<strong>不同</strong>的小球放入m个<strong>相同</strong>的盒子，盒子<strong>不能</strong>为空：设方案数为$f_3(n, m)$
+<ul>
+<li>理解1：其实就是第二类斯特林数的问题：$f_3(n, m) = {n \brace m}$</li>
+</ul>
+</li>
+<li>将n个<strong>不同</strong>的小球放入m个<strong>不同</strong>的盒子，盒子<strong>不能</strong>为空：设方案数为$f_4(n, m)$
+<ul>
+<li>理解1：其实不难发现就是在问题3的基础上多了个<strong>全排列</strong>，固$f_4(n, m) = f_3(n, m) \times m!$</li>
+</ul>
+</li>
+<li>将n个<strong>相同</strong>的小球放入m个<strong>相同</strong>的盒子，盒子<strong>可以</strong>为空：设方案数为$f_5(n, m)$
+<ul>
+<li>理解1：$f_5(n, m) = f_5(n, m - 1) + f_5(n - m, m)$, 有一个位置为空的方案 + 先所有位置都预先放一个球的方案（没有位置为空），边界条件$f_5(n, m) = 0, n &lt; 0$, $f_5(n, m) = 1, n == 1 \text{或} m == 1$</li>
+<li>理解2：本质就是背包问题，用m个<strong>非负整数</strong>组成的和为n的方案数，$f_5(n, m) = dp(n, m) = \sum_{i=1}^ndp(n - i, m - 1), i &gt;= 0$</li>
+<li>理解3：不难发现和问题1相关，固枚举空位置的个数即可$f_5(n, m) = \sum_{i = 1}^mf_1(n, i)$</li>
+</ul>
+</li>
+<li>将n个<strong>相同</strong>的小球放入m个<strong>不同</strong>的盒子，盒子<strong>可以</strong>为空：设方案数为$f_6(n, m)$
+<ul>
+<li>理解1：隔板法推到得出方案数为 $f_6(n, m) = C_{n + m - 1}^{m-1}$</li>
+<li>理解2：也可以当做分组背包问题做（每组物品容量为<strong>非负整数</strong>）</li>
+</ul>
+</li>
+<li>将n个<strong>不同</strong>的小球放入m个<strong>相同</strong>的盒子，盒子<strong>可以</strong>为空：设方案数为$f_7(n, m)$
+<ul>
+<li>理解1：可以发现和问题3相关，枚举为空的个数即可：$f_7(n, m) = \sum_{i=1}^{m}f_3(n, i)$</li>
+</ul>
+</li>
+<li>将n个<strong>不同</strong>的小球放入m个<strong>不同</strong>的盒子，盒子<strong>可以</strong>为空：设方案数为$f_8(n, m)$
+<ul>
+<li>理解1：其实不难发现就是在问题7的基础上<strong>求和时</strong>多了个<strong>排列</strong>，固$f_8(n, m) = \sum_{i=1}^{m} A_m^i \times f_3(n, i)$</li>
+</ul>
+</li>
 </ol>
 <h2 id="概率">概率</h2>
 <ol>
