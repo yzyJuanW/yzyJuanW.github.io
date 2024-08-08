@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>总结 on yzyJuanW</title>
+    <link>https://example.com/categories/%E6%80%BB%E7%BB%93/</link>
+    <description>Recent content in 总结 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jan 2022 12:08:36 +0800</lastBuildDate>
+    <atom:link href="https://example.com/categories/%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>各类dp总结</title>
+      <link>https://example.com/2022/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 25 Jan 2022 12:08:36 +0800</pubDate>
+      <guid>https://example.com/2022/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/</guid>
+      <description>记录一些我对动态规划的理解和总结</description>
+    </item>
+    <item>
+      <title>双指针总结</title>
+      <link>https://example.com/2021/%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 15 Sep 2021 17:46:16 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93/</guid>
+      <description>对双指针的理解与套路板子</description>
+    </item>
+    <item>
+      <title>动态规划套路板子</title>
+      <link>https://example.com/2021/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 20:46:34 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/</guid>
+      <description>虽然动态规划没有所谓的模板，但有些套路东西是固定的，固记录一些常用的动态规划套路模板</description>
+    </item>
+    <item>
+      <title>计算几何板子</title>
+      <link>https://example.com/2021/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 20:45:06 +0800</pubDate>
+      <guid>https://example.com/2021/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的计算几何板子，整合成了一份代码</description>
+    </item>
+    <item>
+      <title>字符串板子</title>
+      <link>https://example.com/2021/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 20:43:47 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的字符串板子</description>
+    </item>
+    <item>
+      <title>图论板子</title>
+      <link>https://example.com/2021/%E5%9B%BE%E8%AE%BA%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 20:42:27 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%9B%BE%E8%AE%BA%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的图论板子</description>
+    </item>
+    <item>
+      <title>数据结构板子</title>
+      <link>https://example.com/2021/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 20:40:18 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的数据结构板子</description>
+    </item>
+    <item>
+      <title>数论板子</title>
+      <link>https://example.com/2021/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 16:16:45 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的数论板子</description>
+    </item>
+    <item>
+      <title>基础板子</title>
+      <link>https://example.com/2021/%E5%9F%BA%E7%A1%80%E6%9D%BF%E5%AD%90/</link>
+      <pubDate>Tue, 27 Jul 2021 16:13:55 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%9F%BA%E7%A1%80%E6%9D%BF%E5%AD%90/</guid>
+      <description>记录一些常用的基础板子</description>
+    </item>
+    <item>
+      <title>我的模板（整合版）</title>
+      <link>https://example.com/2021/%E6%88%91%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%95%B4%E5%90%88%E7%89%88/</link>
+      <pubDate>Thu, 22 Jul 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%88%91%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%95%B4%E5%90%88%E7%89%88/</guid>
+      <description>记录一些常用的板子，整合版本</description>
+    </item>
+    <item>
+      <title>一些有用的数学公式与结论</title>
+      <link>https://example.com/2021/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</link>
+      <pubDate>Wed, 21 Jul 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BB%93%E8%AE%BA/</guid>
+      <description>记录一些有用的数学公式</description>
+    </item>
+    <item>
+      <title>树形背包思考方式</title>
+      <link>https://example.com/2021/%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Tue, 20 Jul 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%A0%91%E5%BD%A2%E8%83%8C%E5%8C%85%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/</guid>
+      <description>本人对树形背包转移的理解</description>
+    </item>
+    <item>
+      <title>ACM常用C&#43;&#43;stl总结</title>
+      <link>https://example.com/2021/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 19 Jul 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/acm%E5%B8%B8%E7%94%A8c-stl%E6%80%BB%E7%BB%93/</guid>
+      <description>一些个人觉得在ACM中比较有用的函数和stl的用法</description>
+    </item>
+    <item>
+      <title>数位dp总结</title>
+      <link>https://example.com/2021/%E6%95%B0%E4%BD%8Ddp%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 19 Jul 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%95%B0%E4%BD%8Ddp%E6%80%BB%E7%BB%93/</guid>
+      <description>基础数位dp刷题的一些小总结</description>
+    </item>
+    <item>
+      <title>网络流</title>
+      <link>https://example.com/2021/%E7%BD%91%E7%BB%9C%E6%B5%81/</link>
+      <pubDate>Wed, 26 May 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E7%BD%91%E7%BB%9C%E6%B5%81/</guid>
+      <description>对网络流板子的认识和总结，包括EK算法、dinic算法、最小费用最大流的EK算法</description>
+    </item>
+    <item>
+      <title>树上dsu总结</title>
+      <link>https://example.com/2021/%E6%A0%91%E4%B8%8Adsu%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 12 May 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%A0%91%E4%B8%8Adsu%E6%80%BB%E7%BB%93/</guid>
+      <description>树上启发式合并总结，附带一些刷题记录（此坑未填完）</description>
+    </item>
+    <item>
+      <title>背包问题</title>
+      <link>https://example.com/2021/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 26 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</guid>
+      <description>对九类背包问题的总结</description>
+    </item>
+    <item>
+      <title>贪心刷题总结</title>
+      <link>https://example.com/2021/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 23 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E8%B4%AA%E5%BF%83%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</guid>
+      <description>对常见的贪心的刷题总结</description>
+    </item>
+    <item>
+      <title>主席树</title>
+      <link>https://example.com/2021/%E4%B8%BB%E5%B8%AD%E6%A0%91/</link>
+      <pubDate>Tue, 23 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E4%B8%BB%E5%B8%AD%E6%A0%91/</guid>
+      <description>初学时对主席树的理解和总结</description>
+    </item>
+    <item>
+      <title>二分图</title>
+      <link>https://example.com/2021/%E4%BA%8C%E5%88%86%E5%9B%BE/</link>
+      <pubDate>Mon, 15 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E4%BA%8C%E5%88%86%E5%9B%BE/</guid>
+      <description>记录一下二分图的板子、目前记录了判图和最大匹配算法</description>
+    </item>
+    <item>
+      <title>FHQ树</title>
+      <link>https://example.com/2021/fhq%E6%A0%91/</link>
+      <pubDate>Tue, 09 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/fhq%E6%A0%91/</guid>
+      <description>记录初学时对FHQ树的理解和总结</description>
+    </item>
+    <item>
+      <title>寒假cf刷题</title>
+      <link>https://example.com/2021/%E5%AF%92%E5%81%87cf%E5%88%B7%E9%A2%98/</link>
+      <pubDate>Tue, 12 Jan 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E5%AF%92%E5%81%87cf%E5%88%B7%E9%A2%98/</guid>
+      <description>2021年寒假狂补cf的基础题</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.com/2020/</link>
+      <pubDate>Wed, 19 Aug 2020 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2020/</guid>
+      <description>初学时对一些动态规划的总结，包括常见的dp、背包、状压、树形（还有坑没填完）</description>
+    </item>
+    <item>
+      <title>图论刷题总结</title>
+      <link>https://example.com/2020/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 21 Jul 2020 22:22:01 +0800</pubDate>
+      <guid>https://example.com/2020/%E5%9B%BE%E8%AE%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</guid>
+      <description>图论基础的刷题总结（目前只有最短路）</description>
+    </item>
+  </channel>
+</rss>

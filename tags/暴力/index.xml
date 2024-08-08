@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>暴力 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%9A%B4%E5%8A%9B/</link>
+    <description>Recent content in 暴力 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jul 2020 20:08:59 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%9A%B4%E5%8A%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cutting_Banner</title>
+      <link>https://example.com/2020/cutting_banner/</link>
+      <pubDate>Thu, 23 Jul 2020 20:08:59 +0800</pubDate>
+      <guid>https://example.com/2020/cutting_banner/</guid>
+      <description>codeforces Cutting_Banner题解</description>
+    </item>
+  </channel>
+</rss>

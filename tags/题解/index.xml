@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>题解 on yzyJuanW</title>
+    <link>https://example.com/tags/%E9%A2%98%E8%A7%A3/</link>
+    <description>Recent content in 题解 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Feb 2022 11:12:00 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>arc123D Inc, Dec - Decomposition</title>
+      <link>https://example.com/2022/arc123d-inc-dec-decomposition/</link>
+      <pubDate>Sun, 13 Feb 2022 11:12:00 +0800</pubDate>
+      <guid>https://example.com/2022/arc123d-inc-dec-decomposition/</guid>
+      <description>中位数的应用</description>
+    </item>
+    <item>
+      <title>Arc123C 1, 2, 3 - Decomposition</title>
+      <link>https://example.com/2022/arc123c-1-2-3-decomposition/</link>
+      <pubDate>Fri, 11 Feb 2022 13:31:21 +0800</pubDate>
+      <guid>https://example.com/2022/arc123c-1-2-3-decomposition/</guid>
+      <description>一道有点思维性的题</description>
+    </item>
+    <item>
+      <title>Abc211E Red Polyomino</title>
+      <link>https://example.com/2022/abc211e-red-polyomino/</link>
+      <pubDate>Wed, 09 Feb 2022 13:29:05 +0800</pubDate>
+      <guid>https://example.com/2022/abc211e-red-polyomino/</guid>
+      <description>dfs+剪枝的一道题</description>
+    </item>
+    <item>
+      <title>2020ICPC上海站C. Sum of Log</title>
+      <link>https://example.com/2022/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</link>
+      <pubDate>Tue, 08 Feb 2022 13:31:52 +0800</pubDate>
+      <guid>https://example.com/2022/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</guid>
+      <description>范围内符合条件的数对类型的数位dp</description>
+    </item>
+    <item>
+      <title>NC2020多校训练营（第六场）H题 Harmony Pairs</title>
+      <link>https://example.com/2022/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98-harmony-pairs/</link>
+      <pubDate>Tue, 08 Feb 2022 09:14:53 +0800</pubDate>
+      <guid>https://example.com/2022/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98-harmony-pairs/</guid>
+      <description>一道求范围内符合条件的数对的个数</description>
+    </item>
+    <item>
+      <title>Abc161D LunlunNumber</title>
+      <link>https://example.com/2022/abc161d-lunlunnumber/</link>
+      <pubDate>Mon, 07 Feb 2022 16:14:40 +0800</pubDate>
+      <guid>https://example.com/2022/abc161d-lunlunnumber/</guid>
+      <description>二分+数位dp的一道好题</description>
+    </item>
+    <item>
+      <title>狂补dp Atcoder Educational DP Contest(全)</title>
+      <link>https://example.com/2021/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</link>
+      <pubDate>Tue, 24 Aug 2021 14:38:39 +0800</pubDate>
+      <guid>https://example.com/2021/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</guid>
+      <description>Atcoder dp 练习计划</description>
+    </item>
+    <item>
+      <title>洛谷 3354 Riv 河流</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</link>
+      <pubDate>Fri, 20 Aug 2021 16:45:44 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</guid>
+      <description>一道比较困难的树形背包问题</description>
+    </item>
+    <item>
+      <title>Cf755F PolandBall and Gifts</title>
+      <link>https://example.com/2021/cf755f-polandball-and-gifts/</link>
+      <pubDate>Sun, 15 Aug 2021 14:10:57 +0800</pubDate>
+      <guid>https://example.com/2021/cf755f-polandball-and-gifts/</guid>
+      <description>多重背包，利用bitset优化</description>
+    </item>
+    <item>
+      <title>POJ 1742 Coins</title>
+      <link>https://example.com/2021/poj-1742-coins/</link>
+      <pubDate>Fri, 13 Aug 2021 21:20:35 +0800</pubDate>
+      <guid>https://example.com/2021/poj-1742-coins/</guid>
+      <description>一道多重背包问题</description>
+    </item>
+    <item>
+      <title>Cf864E</title>
+      <link>https://example.com/2021/cf864e/</link>
+      <pubDate>Thu, 12 Aug 2021 20:44:52 +0800</pubDate>
+      <guid>https://example.com/2021/cf864e/</guid>
+      <description>贪心+01背包</description>
+    </item>
+    <item>
+      <title>Cf366C Dima and Salad</title>
+      <link>https://example.com/2021/cf366c-dima-and-salad/</link>
+      <pubDate>Thu, 12 Aug 2021 18:47:24 +0800</pubDate>
+      <guid>https://example.com/2021/cf366c-dima-and-salad/</guid>
+      <description>思维+01背包问题</description>
+    </item>
+    <item>
+      <title>洛谷 4137 mex</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-4137-mex/</link>
+      <pubDate>Thu, 12 Aug 2021 11:32:52 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-4137-mex/</guid>
+      <description>利用主席树求解区间mex</description>
+    </item>
+    <item>
+      <title>Cf840D Destiny</title>
+      <link>https://example.com/2021/cf840d-destiny/</link>
+      <pubDate>Tue, 10 Aug 2021 09:37:29 +0800</pubDate>
+      <guid>https://example.com/2021/cf840d-destiny/</guid>
+      <description>一道询问区间最小出现某次数的数的题</description>
+    </item>
+    <item>
+      <title>洛谷 P2617</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-p2617/</link>
+      <pubDate>Sun, 08 Aug 2021 22:52:29 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-p2617/</guid>
+      <description>一道动态求解区间第k大的板子题</description>
+    </item>
+    <item>
+      <title>HDU 4417 Super Mario</title>
+      <link>https://example.com/2021/hdu-4417-super-mario/</link>
+      <pubDate>Sat, 07 Aug 2021 17:39:53 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-4417-super-mario/</guid>
+      <description>利用主席树来求解区间中有多少个数不超过k的</description>
+    </item>
+    <item>
+      <title>HDU 1421 搬寝室</title>
+      <link>https://example.com/2021/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</link>
+      <pubDate>Wed, 04 Aug 2021 20:30:19 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</guid>
+      <description>一道简单的线性dp题</description>
+    </item>
+    <item>
+      <title>HDU 2476</title>
+      <link>https://example.com/2021/hdu-2476/</link>
+      <pubDate>Wed, 04 Aug 2021 18:29:03 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-2476/</guid>
+      <description>一道有意思的区间dp题</description>
+    </item>
+    <item>
+      <title>UVA 10617</title>
+      <link>https://example.com/2021/uva-10617/</link>
+      <pubDate>Wed, 04 Aug 2021 13:42:06 +0800</pubDate>
+      <guid>https://example.com/2021/uva-10617/</guid>
+      <description>利用区间dp求解区间中回文串的个数</description>
+    </item>
+    <item>
+      <title>POJ 1159 Palindrome</title>
+      <link>https://example.com/2021/poj-1159-palindrome/</link>
+      <pubDate>Wed, 04 Aug 2021 11:17:06 +0800</pubDate>
+      <guid>https://example.com/2021/poj-1159-palindrome/</guid>
+      <description>一道简单的区间dp，要用到空间优化</description>
+    </item>
+    <item>
+      <title>AcWing 246 区间最大公约数</title>
+      <link>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
+      <pubDate>Tue, 03 Aug 2021 23:29:19 +0800</pubDate>
+      <guid>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
+      <description>线段树and数论技巧</description>
+    </item>
+    <item>
+      <title>HDU 5649 DZY Loves Sorting</title>
+      <link>https://example.com/2021/hdu-5649-dzy-loves-sorting/</link>
+      <pubDate>Tue, 03 Aug 2021 20:38:47 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-5649-dzy-loves-sorting/</guid>
+      <description>线段树+二分的一道思维题</description>
+    </item>
+    <item>
+      <title>SPOJ GSS5 Can you answer these queries V</title>
+      <link>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</link>
+      <pubDate>Tue, 03 Aug 2021 18:42:24 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</guid>
+      <description>线段树解决另类区间最大字段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS3 Can you answer these queries III</title>
+      <link>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</link>
+      <pubDate>Tue, 03 Aug 2021 17:01:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</guid>
+      <description>线段树解决区间最大子段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS4 Can you answer these queries IV</title>
+      <link>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</link>
+      <pubDate>Fri, 30 Jul 2021 19:29:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+      <description>线段树暴力解决区间问题</description>
+    </item>
+    <item>
+      <title>POJ2777 Count Color</title>
+      <link>https://example.com/2021/poj2777-count-color/</link>
+      <pubDate>Fri, 30 Jul 2021 18:50:42 +0800</pubDate>
+      <guid>https://example.com/2021/poj2777-count-color/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>POJ3321 Apple Tree</title>
+      <link>https://example.com/2021/poj3321-apple-tree/</link>
+      <pubDate>Fri, 30 Jul 2021 17:45:26 +0800</pubDate>
+      <guid>https://example.com/2021/poj3321-apple-tree/</guid>
+      <description>线段树利用dfs序维护树上子树信息</description>
+    </item>
+    <item>
+      <title>Cf786B Legacy</title>
+      <link>https://example.com/2021/cf786b-legacy/</link>
+      <pubDate>Fri, 30 Jul 2021 17:07:02 +0800</pubDate>
+      <guid>https://example.com/2021/cf786b-legacy/</guid>
+      <description>线段树优化建图</description>
+    </item>
+    <item>
+      <title>HDU1540 Tunnel Warfare</title>
+      <link>https://example.com/2021/hdu1540-tunnel-warfare/</link>
+      <pubDate>Fri, 30 Jul 2021 14:09:14 +0800</pubDate>
+      <guid>https://example.com/2021/hdu1540-tunnel-warfare/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>AcWing260买票</title>
+      <link>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</link>
+      <pubDate>Thu, 29 Jul 2021 14:00:38 +0800</pubDate>
+      <guid>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+      <description>线段树or(树状数组+二分)</description>
+    </item>
+    <item>
+      <title>HDU3333 Turing Tree</title>
+      <link>https://example.com/2021/hdu3333-turing-tree/</link>
+      <pubDate>Wed, 28 Jul 2021 22:20:40 +0800</pubDate>
+      <guid>https://example.com/2021/hdu3333-turing-tree/</guid>
+      <description>(线段树or树状数组)+离线操作</description>
+    </item>
+    <item>
+      <title>UVA1625</title>
+      <link>https://example.com/2020/uva1625/</link>
+      <pubDate>Mon, 07 Sep 2020 20:44:19 +0800</pubDate>
+      <guid>https://example.com/2020/uva1625/</guid>
+      <description>UVA1625 Color Length，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11584</title>
+      <link>https://example.com/2020/uva11584/</link>
+      <pubDate>Mon, 31 Aug 2020 19:20:38 +0800</pubDate>
+      <guid>https://example.com/2020/uva11584/</guid>
+      <description>UVA11584 Partitioning by Palindromes，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11400</title>
+      <link>https://example.com/2020/uva11400/</link>
+      <pubDate>Mon, 31 Aug 2020 16:12:16 +0800</pubDate>
+      <guid>https://example.com/2020/uva11400/</guid>
+      <description>UVA11400 Lighting System Design，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA12563</title>
+      <link>https://example.com/2020/uva12563/</link>
+      <pubDate>Fri, 21 Aug 2020 21:29:02 +0800</pubDate>
+      <guid>https://example.com/2020/uva12563/</guid>
+      <description>UVA12563 Jin Ge Jin Qu hao，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA116</title>
+      <link>https://example.com/2020/uva116/</link>
+      <pubDate>Fri, 21 Aug 2020 14:36:57 +0800</pubDate>
+      <guid>https://example.com/2020/uva116/</guid>
+      <description>UVA116 Unidirectional TSP，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA437</title>
+      <link>https://example.com/2020/uva437/</link>
+      <pubDate>Fri, 21 Aug 2020 09:46:38 +0800</pubDate>
+      <guid>https://example.com/2020/uva437/</guid>
+      <description>UVA437 The Tower of Babylon，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1025</title>
+      <link>https://example.com/2020/uva1025/</link>
+      <pubDate>Thu, 20 Aug 2020 19:32:31 +0800</pubDate>
+      <guid>https://example.com/2020/uva1025/</guid>
+      <description>UVA1025 A Spy in the Metro，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1149</title>
+      <link>https://example.com/2020/uva1149/</link>
+      <pubDate>Tue, 18 Aug 2020 15:50:53 +0800</pubDate>
+      <guid>https://example.com/2020/uva1149/</guid>
+      <description>UVA1149 Bin Packing，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11572</title>
+      <link>https://example.com/2020/uva11572/</link>
+      <pubDate>Tue, 18 Aug 2020 11:57:07 +0800</pubDate>
+      <guid>https://example.com/2020/uva11572/</guid>
+      <description>UVA11572 Unique Snowflakes，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11054</title>
+      <link>https://example.com/2020/uva11054/</link>
+      <pubDate>Tue, 18 Aug 2020 10:55:44 +0800</pubDate>
+      <guid>https://example.com/2020/uva11054/</guid>
+      <description>UVA11054 Wine trading in Gergovia，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1152</title>
+      <link>https://example.com/2020/uva1152/</link>
+      <pubDate>Mon, 17 Aug 2020 19:54:27 +0800</pubDate>
+      <guid>https://example.com/2020/uva1152/</guid>
+      <description>UVA1152 4 Values whose Sum is 0，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1605</title>
+      <link>https://example.com/2020/uva1605/</link>
+      <pubDate>Mon, 17 Aug 2020 11:43:31 +0800</pubDate>
+      <guid>https://example.com/2020/uva1605/</guid>
+      <description>UVA1605 Building for UN，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA120</title>
+      <link>https://example.com/2020/uva120/</link>
+      <pubDate>Mon, 17 Aug 2020 11:16:52 +0800</pubDate>
+      <guid>https://example.com/2020/uva120/</guid>
+      <description>UVA120 Stacks of Flapjacks，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA12558</title>
+      <link>https://example.com/2020/uva12558/</link>
+      <pubDate>Sun, 16 Aug 2020 21:28:14 +0800</pubDate>
+      <guid>https://example.com/2020/uva12558/</guid>
+      <description>UVA12558 Egyptian Fractions，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA12113</title>
+      <link>https://example.com/2020/uva12113/</link>
+      <pubDate>Sat, 15 Aug 2020 17:16:11 +0800</pubDate>
+      <guid>https://example.com/2020/uva12113/</guid>
+      <description>UVA12113 Overlapping Squares，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA690</title>
+      <link>https://example.com/2020/uva690/</link>
+      <pubDate>Fri, 14 Aug 2020 12:22:46 +0800</pubDate>
+      <guid>https://example.com/2020/uva690/</guid>
+      <description>UVA690 Pipeline Scheduling，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA211</title>
+      <link>https://example.com/2020/uva211/</link>
+      <pubDate>Thu, 13 Aug 2020 14:46:51 +0800</pubDate>
+      <guid>https://example.com/2020/uva211/</guid>
+      <description>UVA211 The Domino Effect，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA225</title>
+      <link>https://example.com/2020/uva225/</link>
+      <pubDate>Wed, 12 Aug 2020 15:54:08 +0800</pubDate>
+      <guid>https://example.com/2020/uva225/</guid>
+      <description>UVA225 Golygons，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA208</title>
+      <link>https://example.com/2020/uva208/</link>
+      <pubDate>Wed, 12 Aug 2020 10:24:20 +0800</pubDate>
+      <guid>https://example.com/2020/uva208/</guid>
+      <description>UVA548 Firetruck，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11212</title>
+      <link>https://example.com/2020/uva11212/</link>
+      <pubDate>Tue, 11 Aug 2020 10:02:22 +0800</pubDate>
+      <guid>https://example.com/2020/uva11212/</guid>
+      <description>UVA11212 Editing a Book，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1601</title>
+      <link>https://example.com/2020/uva1601/</link>
+      <pubDate>Mon, 10 Aug 2020 17:00:48 +0800</pubDate>
+      <guid>https://example.com/2020/uva1601/</guid>
+      <description>UVA1601 The Morning after Halloween，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA10603</title>
+      <link>https://example.com/2020/uva10603/</link>
+      <pubDate>Sun, 09 Aug 2020 20:37:14 +0800</pubDate>
+      <guid>https://example.com/2020/uva10603/</guid>
+      <description>UVA10603 Fill，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1354</title>
+      <link>https://example.com/2020/uva1354/</link>
+      <pubDate>Sun, 09 Aug 2020 15:45:24 +0800</pubDate>
+      <guid>https://example.com/2020/uva1354/</guid>
+      <description>UVA1354 Mobile Computing，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA140</title>
+      <link>https://example.com/2020/uva140/</link>
+      <pubDate>Fri, 07 Aug 2020 19:53:14 +0800</pubDate>
+      <guid>https://example.com/2020/uva140/</guid>
+      <description>UVA140 Bandwidth，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA129</title>
+      <link>https://example.com/2020/uva129/</link>
+      <pubDate>Fri, 07 Aug 2020 11:57:39 +0800</pubDate>
+      <guid>https://example.com/2020/uva129/</guid>
+      <description>UVA129 Krypton Factor，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA524</title>
+      <link>https://example.com/2020/uva524/</link>
+      <pubDate>Thu, 06 Aug 2020 20:32:38 +0800</pubDate>
+      <guid>https://example.com/2020/uva524/</guid>
+      <description>UVA524 Prime Ring Problem，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA10976</title>
+      <link>https://example.com/2020/uva10976/</link>
+      <pubDate>Thu, 06 Aug 2020 18:27:25 +0800</pubDate>
+      <guid>https://example.com/2020/uva10976/</guid>
+      <description>UVA10976 Fracions，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11059</title>
+      <link>https://example.com/2020/uva11059/</link>
+      <pubDate>Thu, 06 Aug 2020 17:34:18 +0800</pubDate>
+      <guid>https://example.com/2020/uva11059/</guid>
+      <description>UVA11059 Maximum Product，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA725</title>
+      <link>https://example.com/2020/uva725/</link>
+      <pubDate>Thu, 06 Aug 2020 16:25:28 +0800</pubDate>
+      <guid>https://example.com/2020/uva725/</guid>
+      <description>UVA725 Division，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA10410</title>
+      <link>https://example.com/2020/uva10410/</link>
+      <pubDate>Wed, 05 Aug 2020 10:12:16 +0800</pubDate>
+      <guid>https://example.com/2020/uva10410/</guid>
+      <description>UVA10410 The Reconstruction，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA806</title>
+      <link>https://example.com/2020/uva806/</link>
+      <pubDate>Tue, 04 Aug 2020 18:02:01 +0800</pubDate>
+      <guid>https://example.com/2020/uva806/</guid>
+      <description>UVA806 Spatial Structures，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA804</title>
+      <link>https://example.com/2020/uva804/</link>
+      <pubDate>Tue, 04 Aug 2020 14:26:40 +0800</pubDate>
+      <guid>https://example.com/2020/uva804/</guid>
+      <description>UVA804 Petri Net Simulation，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA12166</title>
+      <link>https://example.com/2020/uva12166/</link>
+      <pubDate>Mon, 03 Aug 2020 20:27:46 +0800</pubDate>
+      <guid>https://example.com/2020/uva12166/</guid>
+      <description>UVA12166 Equilibrium Mobile，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA1600</title>
+      <link>https://example.com/2020/uva1600/</link>
+      <pubDate>Mon, 03 Aug 2020 16:26:13 +0800</pubDate>
+      <guid>https://example.com/2020/uva1600/</guid>
+      <description>UVA1600 Patrol Robot，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA439</title>
+      <link>https://example.com/2020/uva439/</link>
+      <pubDate>Sun, 02 Aug 2020 16:15:00 +0800</pubDate>
+      <guid>https://example.com/2020/uva439/</guid>
+      <description>UVA439 Knight Moves，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA536</title>
+      <link>https://example.com/2020/uva536/</link>
+      <pubDate>Sun, 02 Aug 2020 15:35:18 +0800</pubDate>
+      <guid>https://example.com/2020/uva536/</guid>
+      <description>UVA536 Tree Recovery，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA712</title>
+      <link>https://example.com/2020/uva712/</link>
+      <pubDate>Sun, 02 Aug 2020 14:41:02 +0800</pubDate>
+      <guid>https://example.com/2020/uva712/</guid>
+      <description>UVA712 S-Trees，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA672</title>
+      <link>https://example.com/2020/uva672/</link>
+      <pubDate>Sun, 02 Aug 2020 09:51:25 +0800</pubDate>
+      <guid>https://example.com/2020/uva672/</guid>
+      <description>UVA672 Parentheses Balance，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA816</title>
+      <link>https://example.com/2020/uva816/</link>
+      <pubDate>Sat, 01 Aug 2020 15:56:21 +0800</pubDate>
+      <guid>https://example.com/2020/uva816/</guid>
+      <description>UVA816 Abbott&amp;rsquo;s Revenge，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA10305</title>
+      <link>https://example.com/2020/uva10305/</link>
+      <pubDate>Sat, 01 Aug 2020 09:47:35 +0800</pubDate>
+      <guid>https://example.com/2020/uva10305/</guid>
+      <description>UVA10305 Ordering Tasks，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA572</title>
+      <link>https://example.com/2020/uva572/</link>
+      <pubDate>Fri, 31 Jul 2020 20:13:07 +0800</pubDate>
+      <guid>https://example.com/2020/uva572/</guid>
+      <description>UVA572 Oil Deposits，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA699</title>
+      <link>https://example.com/2020/uva699/</link>
+      <pubDate>Fri, 31 Jul 2020 19:38:47 +0800</pubDate>
+      <guid>https://example.com/2020/uva699/</guid>
+      <description>UVA699 The Falling Leaves，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA839</title>
+      <link>https://example.com/2020/uva839/</link>
+      <pubDate>Fri, 31 Jul 2020 17:53:32 +0800</pubDate>
+      <guid>https://example.com/2020/uva839/</guid>
+      <description>UVA839 Not so Mobile，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA679</title>
+      <link>https://example.com/2020/uva679/</link>
+      <pubDate>Fri, 31 Jul 2020 11:53:31 +0800</pubDate>
+      <guid>https://example.com/2020/uva679/</guid>
+      <description>UVA679 Dropping Balls，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA548</title>
+      <link>https://example.com/2020/uva548/</link>
+      <pubDate>Fri, 31 Jul 2020 11:50:26 +0800</pubDate>
+      <guid>https://example.com/2020/uva548/</guid>
+      <description>UVA548 Tree，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA514</title>
+      <link>https://example.com/2020/uva514/</link>
+      <pubDate>Fri, 31 Jul 2020 11:48:14 +0800</pubDate>
+      <guid>https://example.com/2020/uva514/</guid>
+      <description>UVA514 Rails，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA442</title>
+      <link>https://example.com/2020/uva442/</link>
+      <pubDate>Fri, 31 Jul 2020 11:44:20 +0800</pubDate>
+      <guid>https://example.com/2020/uva442/</guid>
+      <description>UVA442 Matrix Chain Multiplication，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA122</title>
+      <link>https://example.com/2020/uva122/</link>
+      <pubDate>Fri, 31 Jul 2020 11:19:07 +0800</pubDate>
+      <guid>https://example.com/2020/uva122/</guid>
+      <description>UVA122 Trees on the level，记录刷题代码</description>
+    </item>
+    <item>
+      <title>Olympiad</title>
+      <link>https://example.com/2020/olympiad/</link>
+      <pubDate>Fri, 24 Jul 2020 19:25:00 +0800</pubDate>
+      <guid>https://example.com/2020/olympiad/</guid>
+      <description>codeforces Olympiad 题解</description>
+    </item>
+    <item>
+      <title>Cosmic_Tables</title>
+      <link>https://example.com/2020/cosmic_tables/</link>
+      <pubDate>Fri, 24 Jul 2020 16:26:14 +0800</pubDate>
+      <guid>https://example.com/2020/cosmic_tables/</guid>
+      <description>codeforces Cosmic_Tables题解</description>
+    </item>
+    <item>
+      <title>Shooshuns_and_Sequence</title>
+      <link>https://example.com/2020/shooshuns_and_sequence/</link>
+      <pubDate>Fri, 24 Jul 2020 15:15:22 +0800</pubDate>
+      <guid>https://example.com/2020/shooshuns_and_sequence/</guid>
+      <description>codeforces Shooshuns_and_Sequence题解</description>
+    </item>
+    <item>
+      <title>Tourist&#39;s_Notes</title>
+      <link>https://example.com/2020/tourists_notes/</link>
+      <pubDate>Fri, 24 Jul 2020 09:56:16 +0800</pubDate>
+      <guid>https://example.com/2020/tourists_notes/</guid>
+      <description>codeforces Tourist&amp;rsquo;s_Notes题解</description>
+    </item>
+    <item>
+      <title>Quasi_Binary</title>
+      <link>https://example.com/2020/quasi_binary/</link>
+      <pubDate>Thu, 23 Jul 2020 21:08:02 +0800</pubDate>
+      <guid>https://example.com/2020/quasi_binary/</guid>
+      <description>codeforces Quasi_Binary题解</description>
+    </item>
+    <item>
+      <title>Cutting_Banner</title>
+      <link>https://example.com/2020/cutting_banner/</link>
+      <pubDate>Thu, 23 Jul 2020 20:08:59 +0800</pubDate>
+      <guid>https://example.com/2020/cutting_banner/</guid>
+      <description>codeforces Cutting_Banner题解</description>
+    </item>
+    <item>
+      <title>C. A Cookie for You题解</title>
+      <link>https://example.com/2020/c.-a-cookie-for-you%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 20:28:19 +0800</pubDate>
+      <guid>https://example.com/2020/c.-a-cookie-for-you%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &amp;gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &amp;gt;</description>
+    </item>
+    <item>
+      <title>E1. Reading Books (easy version)题解</title>
+      <link>https://example.com/2020/e1.-reading-books-easy-version%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 18:00:01 +0800</pubDate>
+      <guid>https://example.com/2020/e1.-reading-books-easy-version%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 小A和小B要读书，现在共又 n 本书，对于每本书都有三个参数，$t_i$：阅读的时间、$a_i$：小A喜欢读的书、$b_i$：小B喜欢</description>
+    </item>
+    <item>
+      <title>D. Zero Remainder Array题解</title>
+      <link>https://example.com/2020/d.-zero-remainder-array%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 16:58:31 +0800</pubDate>
+      <guid>https://example.com/2020/d.-zero-remainder-array%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给你一个长度为 n 的数组$a_n$，和一个 k，你有一个 x（一开始为0），你有以下两种操作 给 x 加上 1，即$x = x + 1$ 选择一个任意一个$</description>
+    </item>
+    <item>
+      <title>C. Move Brackets题解</title>
+      <link>https://example.com/2020/c.-move-brackets%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 15:59:43 +0800</pubDate>
+      <guid>https://example.com/2020/c.-move-brackets%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给你一串字符串，只有&amp;quot;(&amp;quot; h和&amp;quot;)&amp;ldquo;组成，你每次都能选择一个字符把它移到最左边或者最右边</description>
+    </item>
+    <item>
+      <title>B. Multiply by 2, divide by 6题解</title>
+      <link>https://example.com/2020/b.-multiply-by-2-divide-by-6%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 15:01:02 +0800</pubDate>
+      <guid>https://example.com/2020/b.-multiply-by-2-divide-by-6%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给一个数 n,问你只进行以下两种操作，要操作最少多少次能够使得 n 为 1： 把 n 除以 6 （前提是可以整除） 把 n 乘 2 输出最少的操作次数，如果无</description>
+    </item>
+  </channel>
+</rss>

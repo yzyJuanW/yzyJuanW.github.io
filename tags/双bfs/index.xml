@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>双BFS on yzyJuanW</title>
+    <link>https://example.com/tags/%E5%8F%8Cbfs/</link>
+    <description>Recent content in 双BFS on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Aug 2020 17:00:48 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E5%8F%8Cbfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UVA1601</title>
+      <link>https://example.com/2020/uva1601/</link>
+      <pubDate>Mon, 10 Aug 2020 17:00:48 +0800</pubDate>
+      <guid>https://example.com/2020/uva1601/</guid>
+      <description>UVA1601 The Morning after Halloween，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>

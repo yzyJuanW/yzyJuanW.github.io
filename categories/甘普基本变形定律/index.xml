@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>甘普基本变形定律 on yzyJuanW</title>
+    <link>http://localhost:1313/categories/%E7%94%98%E6%99%AE%E5%9F%BA%E6%9C%AC%E5%8F%98%E5%BD%A2%E5%AE%9A%E5%BE%8B/</link>
+    <description>Recent content in 甘普基本变形定律 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Feb 2022 03:02:52 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%94%98%E6%99%AE%E5%9F%BA%E6%9C%AC%E5%8F%98%E5%BD%A2%E5%AE%9A%E5%BE%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo | Hugo-stack-theme主题魔改版</title>
+      <link>http://localhost:1313/2022/stack-theme-mod/</link>
+      <pubDate>Sun, 13 Feb 2022 03:02:52 +0800</pubDate>
+      <guid>http://localhost:1313/2022/stack-theme-mod/</guid>
+      <description>Github仓库地址：Mantyke/stack-theme-mod 本主题由CaiJimmy制作并发布，这个仓库是由Mantyke修改的魔改</description>
+    </item>
+  </channel>
+</rss>

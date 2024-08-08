@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on yzyJuanW</title>
+    <link>https://example.com/page/</link>
+    <description>Recent content in Pages on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>存档</title>
+      <link>https://example.com/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/archives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>链接</title>
+      <link>https://example.com/links/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/links/</guid>
+      <description>这个标题默认隐藏了标题与页尾，推荐用以下格式来交换友情链接。 友链头像放在/assets/link-img，友链数据放在/data/links</description>
+    </item>
+    <item>
+      <title>关于</title>
+      <link>https://example.com/%E5%85%B3%E4%BA%8E/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/%E5%85%B3%E4%BA%8E/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows. Hugo makes use of a variety of open source projects including: https://github.com/yuin/goldmark</description>
+    </item>
+    <item>
+      <title>搜索</title>
+      <link>https://example.com/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

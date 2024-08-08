@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数组 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%95%B0%E7%BB%84/</link>
+    <description>Recent content in 数组 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jul 2020 16:58:31 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>D. Zero Remainder Array题解</title>
+      <link>https://example.com/2020/d.-zero-remainder-array%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 16:58:31 +0800</pubDate>
+      <guid>https://example.com/2020/d.-zero-remainder-array%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给你一个长度为 n 的数组$a_n$，和一个 k，你有一个 x（一开始为0），你有以下两种操作 给 x 加上 1，即$x = x + 1$ 选择一个任意一个$</description>
+    </item>
+  </channel>
+</rss>

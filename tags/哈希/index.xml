@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>哈希 on yzyJuanW</title>
+    <link>https://example.com/tags/%E5%93%88%E5%B8%8C/</link>
+    <description>Recent content in 哈希 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Aug 2020 19:54:27 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E5%93%88%E5%B8%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UVA1152</title>
+      <link>https://example.com/2020/uva1152/</link>
+      <pubDate>Mon, 17 Aug 2020 19:54:27 +0800</pubDate>
+      <guid>https://example.com/2020/uva1152/</guid>
+      <description>UVA1152 4 Values whose Sum is 0，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dsu on yzyJuanW</title>
+    <link>https://example.com/tags/dsu/</link>
+    <description>Recent content in Dsu on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 May 2021 12:22:01 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/dsu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树上dsu总结</title>
+      <link>https://example.com/2021/%E6%A0%91%E4%B8%8Adsu%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 12 May 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%A0%91%E4%B8%8Adsu%E6%80%BB%E7%BB%93/</guid>
+      <description>树上启发式合并总结，附带一些刷题记录（此坑未填完）</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>离线操作 on yzyJuanW</title>
+    <link>https://example.com/tags/%E7%A6%BB%E7%BA%BF%E6%93%8D%E4%BD%9C/</link>
+    <description>Recent content in 离线操作 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jul 2021 22:20:40 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E7%A6%BB%E7%BA%BF%E6%93%8D%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU3333 Turing Tree</title>
+      <link>https://example.com/2021/hdu3333-turing-tree/</link>
+      <pubDate>Wed, 28 Jul 2021 22:20:40 +0800</pubDate>
+      <guid>https://example.com/2021/hdu3333-turing-tree/</guid>
+      <description>(线段树or树状数组)+离线操作</description>
+    </item>
+  </channel>
+</rss>

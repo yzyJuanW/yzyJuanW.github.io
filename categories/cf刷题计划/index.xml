@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cf刷题计划 on yzyJuanW</title>
+    <link>https://example.com/categories/cf%E5%88%B7%E9%A2%98%E8%AE%A1%E5%88%92/</link>
+    <description>Recent content in Cf刷题计划 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jul 2020 19:25:00 +0800</lastBuildDate>
+    <atom:link href="https://example.com/categories/cf%E5%88%B7%E9%A2%98%E8%AE%A1%E5%88%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Olympiad</title>
+      <link>https://example.com/2020/olympiad/</link>
+      <pubDate>Fri, 24 Jul 2020 19:25:00 +0800</pubDate>
+      <guid>https://example.com/2020/olympiad/</guid>
+      <description>codeforces Olympiad 题解</description>
+    </item>
+    <item>
+      <title>Cosmic_Tables</title>
+      <link>https://example.com/2020/cosmic_tables/</link>
+      <pubDate>Fri, 24 Jul 2020 16:26:14 +0800</pubDate>
+      <guid>https://example.com/2020/cosmic_tables/</guid>
+      <description>codeforces Cosmic_Tables题解</description>
+    </item>
+    <item>
+      <title>Shooshuns_and_Sequence</title>
+      <link>https://example.com/2020/shooshuns_and_sequence/</link>
+      <pubDate>Fri, 24 Jul 2020 15:15:22 +0800</pubDate>
+      <guid>https://example.com/2020/shooshuns_and_sequence/</guid>
+      <description>codeforces Shooshuns_and_Sequence题解</description>
+    </item>
+    <item>
+      <title>Tourist&#39;s_Notes</title>
+      <link>https://example.com/2020/tourists_notes/</link>
+      <pubDate>Fri, 24 Jul 2020 09:56:16 +0800</pubDate>
+      <guid>https://example.com/2020/tourists_notes/</guid>
+      <description>codeforces Tourist&amp;rsquo;s_Notes题解</description>
+    </item>
+    <item>
+      <title>Quasi_Binary</title>
+      <link>https://example.com/2020/quasi_binary/</link>
+      <pubDate>Thu, 23 Jul 2020 21:08:02 +0800</pubDate>
+      <guid>https://example.com/2020/quasi_binary/</guid>
+      <description>codeforces Quasi_Binary题解</description>
+    </item>
+    <item>
+      <title>Cutting_Banner</title>
+      <link>https://example.com/2020/cutting_banner/</link>
+      <pubDate>Thu, 23 Jul 2020 20:08:59 +0800</pubDate>
+      <guid>https://example.com/2020/cutting_banner/</guid>
+      <description>codeforces Cutting_Banner题解</description>
+    </item>
+  </channel>
+</rss>

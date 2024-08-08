@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络流 on yzyJuanW</title>
+    <link>https://example.com/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</link>
+    <description>Recent content in 网络流 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 May 2021 12:22:01 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网络流</title>
+      <link>https://example.com/2021/%E7%BD%91%E7%BB%9C%E6%B5%81/</link>
+      <pubDate>Wed, 26 May 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E7%BD%91%E7%BB%9C%E6%B5%81/</guid>
+      <description>对网络流板子的认识和总结，包括EK算法、dinic算法、最小费用最大流的EK算法</description>
+    </item>
+  </channel>
+</rss>

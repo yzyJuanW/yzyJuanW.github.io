@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数论 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%95%B0%E8%AE%BA/</link>
+    <description>Recent content in 数论 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Aug 2021 23:29:19 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AcWing 246 区间最大公约数</title>
+      <link>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
+      <pubDate>Tue, 03 Aug 2021 23:29:19 +0800</pubDate>
+      <guid>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
+      <description>线段树and数论技巧</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>平衡树 on yzyJuanW</title>
+    <link>https://example.com/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/</link>
+    <description>Recent content in 平衡树 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Mar 2021 12:22:01 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FHQ树</title>
+      <link>https://example.com/2021/fhq%E6%A0%91/</link>
+      <pubDate>Tue, 09 Mar 2021 12:22:01 +0800</pubDate>
+      <guid>https://example.com/2021/fhq%E6%A0%91/</guid>
+      <description>记录初学时对FHQ树的理解和总结</description>
+    </item>
+  </channel>
+</rss>

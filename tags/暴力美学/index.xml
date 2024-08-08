@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>暴力美学 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%9A%B4%E5%8A%9B%E7%BE%8E%E5%AD%A6/</link>
+    <description>Recent content in 暴力美学 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Aug 2020 18:27:25 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%9A%B4%E5%8A%9B%E7%BE%8E%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UVA10976</title>
+      <link>https://example.com/2020/uva10976/</link>
+      <pubDate>Thu, 06 Aug 2020 18:27:25 +0800</pubDate>
+      <guid>https://example.com/2020/uva10976/</guid>
+      <description>UVA10976 Fracions，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA11059</title>
+      <link>https://example.com/2020/uva11059/</link>
+      <pubDate>Thu, 06 Aug 2020 17:34:18 +0800</pubDate>
+      <guid>https://example.com/2020/uva11059/</guid>
+      <description>UVA11059 Maximum Product，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA725</title>
+      <link>https://example.com/2020/uva725/</link>
+      <pubDate>Thu, 06 Aug 2020 16:25:28 +0800</pubDate>
+      <guid>https://example.com/2020/uva725/</guid>
+      <description>UVA725 Division，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线段树 on yzyJuanW</title>
+    <link>https://example.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+    <description>Recent content in 线段树 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Aug 2021 23:29:19 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AcWing 246 区间最大公约数</title>
+      <link>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
+      <pubDate>Tue, 03 Aug 2021 23:29:19 +0800</pubDate>
+      <guid>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
+      <description>线段树and数论技巧</description>
+    </item>
+    <item>
+      <title>HDU 5649 DZY Loves Sorting</title>
+      <link>https://example.com/2021/hdu-5649-dzy-loves-sorting/</link>
+      <pubDate>Tue, 03 Aug 2021 20:38:47 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-5649-dzy-loves-sorting/</guid>
+      <description>线段树+二分的一道思维题</description>
+    </item>
+    <item>
+      <title>SPOJ GSS5 Can you answer these queries V</title>
+      <link>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</link>
+      <pubDate>Tue, 03 Aug 2021 18:42:24 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</guid>
+      <description>线段树解决另类区间最大字段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS3 Can you answer these queries III</title>
+      <link>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</link>
+      <pubDate>Tue, 03 Aug 2021 17:01:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</guid>
+      <description>线段树解决区间最大子段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS4 Can you answer these queries IV</title>
+      <link>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</link>
+      <pubDate>Fri, 30 Jul 2021 19:29:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+      <description>线段树暴力解决区间问题</description>
+    </item>
+    <item>
+      <title>POJ2777 Count Color</title>
+      <link>https://example.com/2021/poj2777-count-color/</link>
+      <pubDate>Fri, 30 Jul 2021 18:50:42 +0800</pubDate>
+      <guid>https://example.com/2021/poj2777-count-color/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>POJ3321 Apple Tree</title>
+      <link>https://example.com/2021/poj3321-apple-tree/</link>
+      <pubDate>Fri, 30 Jul 2021 17:45:26 +0800</pubDate>
+      <guid>https://example.com/2021/poj3321-apple-tree/</guid>
+      <description>线段树利用dfs序维护树上子树信息</description>
+    </item>
+    <item>
+      <title>Cf786B Legacy</title>
+      <link>https://example.com/2021/cf786b-legacy/</link>
+      <pubDate>Fri, 30 Jul 2021 17:07:02 +0800</pubDate>
+      <guid>https://example.com/2021/cf786b-legacy/</guid>
+      <description>线段树优化建图</description>
+    </item>
+    <item>
+      <title>HDU1540 Tunnel Warfare</title>
+      <link>https://example.com/2021/hdu1540-tunnel-warfare/</link>
+      <pubDate>Fri, 30 Jul 2021 14:09:14 +0800</pubDate>
+      <guid>https://example.com/2021/hdu1540-tunnel-warfare/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>AcWing260买票</title>
+      <link>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</link>
+      <pubDate>Thu, 29 Jul 2021 14:00:38 +0800</pubDate>
+      <guid>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+      <description>线段树or(树状数组+二分)</description>
+    </item>
+    <item>
+      <title>HDU3333 Turing Tree</title>
+      <link>https://example.com/2021/hdu3333-turing-tree/</link>
+      <pubDate>Wed, 28 Jul 2021 22:20:40 +0800</pubDate>
+      <guid>https://example.com/2021/hdu3333-turing-tree/</guid>
+      <description>(线段树or树状数组)+离线操作</description>
+    </item>
+  </channel>
+</rss>

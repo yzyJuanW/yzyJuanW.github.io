@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字符串 on yzyJuanW</title>
+    <link>https://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+    <description>Recent content in 字符串 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jul 2020 15:59:43 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C. Move Brackets题解</title>
+      <link>https://example.com/2020/c.-move-brackets%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 15:59:43 +0800</pubDate>
+      <guid>https://example.com/2020/c.-move-brackets%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给你一串字符串，只有&amp;quot;(&amp;quot; h和&amp;quot;)&amp;ldquo;组成，你每次都能选择一个字符把它移到最左边或者最右边</description>
+    </item>
+  </channel>
+</rss>

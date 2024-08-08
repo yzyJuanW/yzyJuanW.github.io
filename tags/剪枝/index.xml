@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>剪枝 on yzyJuanW</title>
+    <link>https://example.com/tags/%E5%89%AA%E6%9E%9D/</link>
+    <description>Recent content in 剪枝 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Feb 2022 13:29:05 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E5%89%AA%E6%9E%9D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abc211E Red Polyomino</title>
+      <link>https://example.com/2022/abc211e-red-polyomino/</link>
+      <pubDate>Wed, 09 Feb 2022 13:29:05 +0800</pubDate>
+      <guid>https://example.com/2022/abc211e-red-polyomino/</guid>
+      <description>dfs+剪枝的一道题</description>
+    </item>
+    <item>
+      <title>UVA140</title>
+      <link>https://example.com/2020/uva140/</link>
+      <pubDate>Fri, 07 Aug 2020 19:53:14 +0800</pubDate>
+      <guid>https://example.com/2020/uva140/</guid>
+      <description>UVA140 Bandwidth，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>

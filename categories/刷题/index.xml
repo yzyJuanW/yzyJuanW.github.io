@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>刷题 on yzyJuanW</title>
+    <link>https://example.com/categories/%E5%88%B7%E9%A2%98/</link>
+    <description>Recent content in 刷题 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Feb 2022 11:12:00 +0800</lastBuildDate>
+    <atom:link href="https://example.com/categories/%E5%88%B7%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>arc123D Inc, Dec - Decomposition</title>
+      <link>https://example.com/2022/arc123d-inc-dec-decomposition/</link>
+      <pubDate>Sun, 13 Feb 2022 11:12:00 +0800</pubDate>
+      <guid>https://example.com/2022/arc123d-inc-dec-decomposition/</guid>
+      <description>中位数的应用</description>
+    </item>
+    <item>
+      <title>Arc123C 1, 2, 3 - Decomposition</title>
+      <link>https://example.com/2022/arc123c-1-2-3-decomposition/</link>
+      <pubDate>Fri, 11 Feb 2022 13:31:21 +0800</pubDate>
+      <guid>https://example.com/2022/arc123c-1-2-3-decomposition/</guid>
+      <description>一道有点思维性的题</description>
+    </item>
+    <item>
+      <title>Abc211E Red Polyomino</title>
+      <link>https://example.com/2022/abc211e-red-polyomino/</link>
+      <pubDate>Wed, 09 Feb 2022 13:29:05 +0800</pubDate>
+      <guid>https://example.com/2022/abc211e-red-polyomino/</guid>
+      <description>dfs+剪枝的一道题</description>
+    </item>
+    <item>
+      <title>2020ICPC上海站C. Sum of Log</title>
+      <link>https://example.com/2022/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</link>
+      <pubDate>Tue, 08 Feb 2022 13:31:52 +0800</pubDate>
+      <guid>https://example.com/2022/2020icpc%E4%B8%8A%E6%B5%B7%E7%AB%99c.-sum-of-log/</guid>
+      <description>范围内符合条件的数对类型的数位dp</description>
+    </item>
+    <item>
+      <title>NC2020多校训练营（第六场）H题 Harmony Pairs</title>
+      <link>https://example.com/2022/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98-harmony-pairs/</link>
+      <pubDate>Tue, 08 Feb 2022 09:14:53 +0800</pubDate>
+      <guid>https://example.com/2022/nc2020%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%85%AD%E5%9C%BAh%E9%A2%98-harmony-pairs/</guid>
+      <description>一道求范围内符合条件的数对的个数</description>
+    </item>
+    <item>
+      <title>Abc161D LunlunNumber</title>
+      <link>https://example.com/2022/abc161d-lunlunnumber/</link>
+      <pubDate>Mon, 07 Feb 2022 16:14:40 +0800</pubDate>
+      <guid>https://example.com/2022/abc161d-lunlunnumber/</guid>
+      <description>二分+数位dp的一道好题</description>
+    </item>
+    <item>
+      <title>狂补dp Atcoder Educational DP Contest(全)</title>
+      <link>https://example.com/2021/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</link>
+      <pubDate>Tue, 24 Aug 2021 14:38:39 +0800</pubDate>
+      <guid>https://example.com/2021/%E7%8B%82%E8%A1%A5dp-atcoder-educational-dp-contest%E5%85%A8/</guid>
+      <description>Atcoder dp 练习计划</description>
+    </item>
+    <item>
+      <title>洛谷 3354 Riv 河流</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</link>
+      <pubDate>Fri, 20 Aug 2021 16:45:44 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-3354-riv-%E6%B2%B3%E6%B5%81/</guid>
+      <description>一道比较困难的树形背包问题</description>
+    </item>
+    <item>
+      <title>Cf755F PolandBall and Gifts</title>
+      <link>https://example.com/2021/cf755f-polandball-and-gifts/</link>
+      <pubDate>Sun, 15 Aug 2021 14:10:57 +0800</pubDate>
+      <guid>https://example.com/2021/cf755f-polandball-and-gifts/</guid>
+      <description>多重背包，利用bitset优化</description>
+    </item>
+    <item>
+      <title>POJ 1742 Coins</title>
+      <link>https://example.com/2021/poj-1742-coins/</link>
+      <pubDate>Fri, 13 Aug 2021 21:20:35 +0800</pubDate>
+      <guid>https://example.com/2021/poj-1742-coins/</guid>
+      <description>一道多重背包问题</description>
+    </item>
+    <item>
+      <title>Cf864E</title>
+      <link>https://example.com/2021/cf864e/</link>
+      <pubDate>Thu, 12 Aug 2021 20:44:52 +0800</pubDate>
+      <guid>https://example.com/2021/cf864e/</guid>
+      <description>贪心+01背包</description>
+    </item>
+    <item>
+      <title>Cf366C Dima and Salad</title>
+      <link>https://example.com/2021/cf366c-dima-and-salad/</link>
+      <pubDate>Thu, 12 Aug 2021 18:47:24 +0800</pubDate>
+      <guid>https://example.com/2021/cf366c-dima-and-salad/</guid>
+      <description>思维+01背包问题</description>
+    </item>
+    <item>
+      <title>洛谷 4137 mex</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-4137-mex/</link>
+      <pubDate>Thu, 12 Aug 2021 11:32:52 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-4137-mex/</guid>
+      <description>利用主席树求解区间mex</description>
+    </item>
+    <item>
+      <title>洛谷-1972 HH的项链</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/</link>
+      <pubDate>Tue, 10 Aug 2021 10:37:01 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-1972-hh%E7%9A%84%E9%A1%B9%E9%93%BE/</guid>
+      <description>区间查询不同数的个数</description>
+    </item>
+    <item>
+      <title>Cf840D Destiny</title>
+      <link>https://example.com/2021/cf840d-destiny/</link>
+      <pubDate>Tue, 10 Aug 2021 09:37:29 +0800</pubDate>
+      <guid>https://example.com/2021/cf840d-destiny/</guid>
+      <description>一道询问区间最小出现某次数的数的题</description>
+    </item>
+    <item>
+      <title>洛谷 P2617</title>
+      <link>https://example.com/2021/%E6%B4%9B%E8%B0%B7-p2617/</link>
+      <pubDate>Sun, 08 Aug 2021 22:52:29 +0800</pubDate>
+      <guid>https://example.com/2021/%E6%B4%9B%E8%B0%B7-p2617/</guid>
+      <description>一道动态求解区间第k大的板子题</description>
+    </item>
+    <item>
+      <title>HDU 4417 Super Mario</title>
+      <link>https://example.com/2021/hdu-4417-super-mario/</link>
+      <pubDate>Sat, 07 Aug 2021 17:39:53 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-4417-super-mario/</guid>
+      <description>利用主席树来求解区间中有多少个数不超过k的</description>
+    </item>
+    <item>
+      <title>HDU 1421 搬寝室</title>
+      <link>https://example.com/2021/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</link>
+      <pubDate>Wed, 04 Aug 2021 20:30:19 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-1421-%E6%90%AC%E5%AF%9D%E5%AE%A4/</guid>
+      <description>一道简单的线性dp题</description>
+    </item>
+    <item>
+      <title>HDU 2476</title>
+      <link>https://example.com/2021/hdu-2476/</link>
+      <pubDate>Wed, 04 Aug 2021 18:29:03 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-2476/</guid>
+      <description>一道有意思的区间dp题</description>
+    </item>
+    <item>
+      <title>UVA 10617</title>
+      <link>https://example.com/2021/uva-10617/</link>
+      <pubDate>Wed, 04 Aug 2021 13:42:06 +0800</pubDate>
+      <guid>https://example.com/2021/uva-10617/</guid>
+      <description>利用区间dp求解区间中回文串的个数</description>
+    </item>
+    <item>
+      <title>POJ 1159 Palindrome</title>
+      <link>https://example.com/2021/poj-1159-palindrome/</link>
+      <pubDate>Wed, 04 Aug 2021 11:17:06 +0800</pubDate>
+      <guid>https://example.com/2021/poj-1159-palindrome/</guid>
+      <description>一道简单的区间dp，要用到空间优化</description>
+    </item>
+    <item>
+      <title>AcWing 246 区间最大公约数</title>
+      <link>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</link>
+      <pubDate>Tue, 03 Aug 2021 23:29:19 +0800</pubDate>
+      <guid>https://example.com/2021/acwing-246-%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</guid>
+      <description>线段树and数论技巧</description>
+    </item>
+    <item>
+      <title>HDU 5649 DZY Loves Sorting</title>
+      <link>https://example.com/2021/hdu-5649-dzy-loves-sorting/</link>
+      <pubDate>Tue, 03 Aug 2021 20:38:47 +0800</pubDate>
+      <guid>https://example.com/2021/hdu-5649-dzy-loves-sorting/</guid>
+      <description>线段树+二分的一道思维题</description>
+    </item>
+    <item>
+      <title>SPOJ GSS5 Can you answer these queries V</title>
+      <link>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</link>
+      <pubDate>Tue, 03 Aug 2021 18:42:24 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss5-can-you-answer-these-queries-v/</guid>
+      <description>线段树解决另类区间最大字段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS3 Can you answer these queries III</title>
+      <link>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</link>
+      <pubDate>Tue, 03 Aug 2021 17:01:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss3-can-you-answer-these-queries-iii/</guid>
+      <description>线段树解决区间最大子段和</description>
+    </item>
+    <item>
+      <title>SPOJ GSS4 Can you answer these queries IV</title>
+      <link>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</link>
+      <pubDate>Fri, 30 Jul 2021 19:29:02 +0800</pubDate>
+      <guid>https://example.com/2021/spoj-gss4-can-you-answer-these-queries-iv/</guid>
+      <description>线段树暴力解决区间问题</description>
+    </item>
+    <item>
+      <title>POJ2777 Count Color</title>
+      <link>https://example.com/2021/poj2777-count-color/</link>
+      <pubDate>Fri, 30 Jul 2021 18:50:42 +0800</pubDate>
+      <guid>https://example.com/2021/poj2777-count-color/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>POJ3321 Apple Tree</title>
+      <link>https://example.com/2021/poj3321-apple-tree/</link>
+      <pubDate>Fri, 30 Jul 2021 17:45:26 +0800</pubDate>
+      <guid>https://example.com/2021/poj3321-apple-tree/</guid>
+      <description>线段树利用dfs序维护树上子树信息</description>
+    </item>
+    <item>
+      <title>Cf786B Legacy</title>
+      <link>https://example.com/2021/cf786b-legacy/</link>
+      <pubDate>Fri, 30 Jul 2021 17:07:02 +0800</pubDate>
+      <guid>https://example.com/2021/cf786b-legacy/</guid>
+      <description>线段树优化建图</description>
+    </item>
+    <item>
+      <title>HDU1540 Tunnel Warfare</title>
+      <link>https://example.com/2021/hdu1540-tunnel-warfare/</link>
+      <pubDate>Fri, 30 Jul 2021 14:09:14 +0800</pubDate>
+      <guid>https://example.com/2021/hdu1540-tunnel-warfare/</guid>
+      <description>线段树维护区间信息</description>
+    </item>
+    <item>
+      <title>AcWing260买票</title>
+      <link>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</link>
+      <pubDate>Thu, 29 Jul 2021 14:00:38 +0800</pubDate>
+      <guid>https://example.com/2021/acwing260%E4%B9%B0%E7%A5%A8/</guid>
+      <description>线段树or(树状数组+二分)</description>
+    </item>
+    <item>
+      <title>HDU3333 Turing Tree</title>
+      <link>https://example.com/2021/hdu3333-turing-tree/</link>
+      <pubDate>Wed, 28 Jul 2021 22:20:40 +0800</pubDate>
+      <guid>https://example.com/2021/hdu3333-turing-tree/</guid>
+      <description>(线段树or树状数组)+离线操作</description>
+    </item>
+  </channel>
+</rss>

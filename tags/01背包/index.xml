@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01背包 on yzyJuanW</title>
+    <link>https://example.com/tags/01%E8%83%8C%E5%8C%85/</link>
+    <description>Recent content in 01背包 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Aug 2021 20:44:52 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/01%E8%83%8C%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cf864E</title>
+      <link>https://example.com/2021/cf864e/</link>
+      <pubDate>Thu, 12 Aug 2021 20:44:52 +0800</pubDate>
+      <guid>https://example.com/2021/cf864e/</guid>
+      <description>贪心+01背包</description>
+    </item>
+    <item>
+      <title>Cf366C Dima and Salad</title>
+      <link>https://example.com/2021/cf366c-dima-and-salad/</link>
+      <pubDate>Thu, 12 Aug 2021 18:47:24 +0800</pubDate>
+      <guid>https://example.com/2021/cf366c-dima-and-salad/</guid>
+      <description>思维+01背包问题</description>
+    </item>
+    <item>
+      <title>UVA12563</title>
+      <link>https://example.com/2020/uva12563/</link>
+      <pubDate>Fri, 21 Aug 2020 21:29:02 +0800</pubDate>
+      <guid>https://example.com/2020/uva12563/</guid>
+      <description>UVA12563 Jin Ge Jin Qu hao，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>

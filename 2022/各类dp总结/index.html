@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='记录一些我对动态规划的理解和总结'><title>各类dp总结</title>
+
+<link rel='canonical' href='https://example.com/2022/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/'>
+
+<link rel="stylesheet" href="/scss/style.min.c3b5bd8854cb6b68b48457eab17358010a8e6075fcbeae582a4d466776fdb3df.css"><meta property='og:title' content='各类dp总结'>
+<meta property='og:description' content='记录一些我对动态规划的理解和总结'>
+<meta property='og:url' content='https://example.com/2022/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/'>
+<meta property='og:site_name' content='yzyJuanW'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-01-25T12:08:36&#43;08:00'/><meta property='article:modified_time' content='2022-01-25T12:08:36&#43;08:00'/>
+<meta name="twitter:title" content="各类dp总结">
+<meta name="twitter:description" content="记录一些我对动态规划的理解和总结">
+<link rel="shortcut icon" href="/logo.png" type="image/png" />
+
+  
+
+<style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+</head>
+
+<body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div
+        class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://example.com/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>返回</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu9248140401379375824.jpg" width="300"
+                            height="288" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">✨</span>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">yzyJuanW</a></h1>
+        <h2 class="site-description">Life is a fxxking movie.</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/yzyJuanW'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1723033862422" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14430" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M0 556.416C0 602.816 4.352 644.8 13.024 682.336 21.696 719.904 33.728 752.544 49.088 780.224 64.416 807.936 83.968 832.32 107.648 853.344 131.36 874.368 157.056 891.552 184.768 904.928 212.48 918.272 244.096 929.12 279.648 937.472 315.2 945.824 351.52 951.648 388.576 955.008 425.632 958.336 466.336 960 510.752 960 555.488 960 596.384 958.336 633.44 955.008 670.496 951.648 706.88 945.824 742.592 937.472 778.304 929.12 810.112 918.272 837.984 904.928 865.856 891.552 891.712 874.368 915.584 853.344 939.456 832.32 959.168 807.936 974.688 780.224 990.208 752.544 1002.304 719.904 1010.976 682.336 1019.648 644.8 1024 602.816 1024 556.416 1024 473.632 996.288 402.016 940.896 341.6 943.872 333.568 946.624 324.48 949.152 314.304 951.648 304.128 953.984 289.6 956.16 270.752 958.336 251.872 957.504 230.112 953.664 205.408 949.824 180.704 942.72 155.488 932.352 129.792L924.864 128.288C919.52 127.296 910.752 127.52 898.56 129.024 886.368 130.528 872.192 133.536 856 138.048 839.808 142.56 818.944 151.232 793.408 164.096 767.872 176.928 740.928 193.056 712.544 212.416 663.808 199.04 596.864 192.384 511.744 192.384 426.944 192.384 360.192 199.04 311.456 212.416 283.072 193.056 255.968 176.928 230.08 164.096 204.224 151.232 183.616 142.56 168.256 138.048 152.896 133.536 138.528 130.624 125.184 129.28 111.84 127.936 103.392 127.52 99.904 128.032 96.384 128.544 93.632 129.12 91.648 129.792 81.28 155.488 74.176 180.672 70.368 205.408 66.528 230.112 65.696 251.872 67.84 270.752 70.016 289.6 72.352 304.128 74.848 314.304 77.376 324.48 80.128 333.568 83.136 341.6 27.712 402.016 0 473.632 0 556.416ZM125.696 682.08C125.696 634.016 147.552 589.952 191.296 549.888 204.288 537.888 219.488 528.8 236.832 522.592 254.208 516.448 273.824 512.928 295.68 512.096 317.536 511.264 338.496 511.424 358.528 512.608 378.56 513.76 403.264 515.36 432.64 517.344 462.016 519.36 487.392 520.352 508.736 520.352 530.112 520.352 555.488 519.36 584.864 517.344 614.24 515.36 638.944 513.76 658.976 512.608 679.008 511.424 699.936 511.264 721.792 512.096 743.68 512.928 763.296 516.448 780.64 522.592 798.016 528.768 813.184 537.888 826.208 549.888 869.952 589.28 891.808 633.344 891.808 682.08 891.808 710.816 888.224 736.256 881.024 758.464 873.856 780.672 864.672 799.264 853.504 814.304 842.304 829.312 826.784 842.08 806.944 852.608 787.072 863.104 767.712 871.2 748.832 876.896 729.984 882.56 705.792 886.976 676.224 890.144 646.688 893.312 620.32 895.232 597.12 895.904 573.92 896.576 544.448 896.928 508.736 896.928 473.024 896.928 443.552 896.576 420.352 895.904 397.152 895.232 370.784 893.312 341.248 890.144 311.712 886.976 287.52 882.56 268.64 876.896 249.792 871.2 230.432 863.104 210.56 852.608 190.688 842.08 175.168 829.312 164 814.304 152.8 799.264 143.616 780.672 136.448 758.464 129.28 736.256 125.696 710.816 125.696 682.08ZM640 672A2 3 2520 1 0 768 672 2 3 2520 1 0 640 672zM256 672A2 3 2520 1 0 384 672 2 3 2520 1 0 256 672z" fill="#000000" p-id="14431"></path></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://space.bilibili.com/170865997'
+                            target="_blank"
+                            title="Bilibili"
+                        >
+                            
+                            
+                                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1723033831514" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11384" width="24" height="24" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M777.514667 131.669333a53.333333 53.333333 0 0 1 0 75.434667L728.746667 255.829333h49.92A160 160 0 0 1 938.666667 415.872v320a160 160 0 0 1-160 160H245.333333A160 160 0 0 1 85.333333 735.872v-320a160 160 0 0 1 160-160h49.749334L246.4 207.146667a53.333333 53.333333 0 1 1 75.392-75.434667l113.152 113.152c3.370667 3.370667 6.186667 7.04 8.448 10.965333h137.088c2.261333-3.925333 5.12-7.68 8.490667-11.008l113.109333-113.152a53.333333 53.333333 0 0 1 75.434667 0z m1.152 231.253334H245.333333a53.333333 53.333333 0 0 0-53.205333 49.365333l-0.128 4.010667v320c0 28.117333 21.76 51.157333 49.365333 53.162666l3.968 0.170667h533.333334a53.333333 53.333333 0 0 0 53.205333-49.365333l0.128-3.968v-320c0-29.44-23.893333-53.333333-53.333333-53.333334z m-426.666667 106.666666c29.44 0 53.333333 23.893333 53.333333 53.333334v53.333333a53.333333 53.333333 0 1 1-106.666666 0v-53.333333c0-29.44 23.893333-53.333333 53.333333-53.333334z m320 0c29.44 0 53.333333 23.893333 53.333333 53.333334v53.333333a53.333333 53.333333 0 1 1-106.666666 0v-53.333333c0-29.44 23.893333-53.333333 53.333333-53.333334z" p-id="11385"></path></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://blog.csdn.net/hao_6_6'
+                            target="_blank"
+                            title="CSDN"
+                        >
+                            
+                            
+                                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1723033847043" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12450" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M514.56 9.728c-277.504 0-503.808 226.304-503.808 503.808s226.304 502.272 503.808 502.272S1018.88 789.504 1018.88 512 792.064 9.728 514.56 9.728z m0 974.336c-259.072 0-469.504-211.968-469.504-471.04S257.024 40.96 516.096 40.96s469.504 211.968 469.504 471.04-211.456 472.064-471.04 472.064z" p-id="12451"></path><path d="M771.584 812.544l13.824-135.168c-39.936 11.776-125.952 19.968-184.832 19.968-167.936 0-257.024-58.88-244.224-182.784 14.336-138.24 141.312-182.272 290.816-182.272 68.608 0 153.088 11.264 188.928 23.04l17.408-141.824c-54.272-13.312-112.128-20.992-210.432-20.992-253.952 0-485.888 118.784-507.904 329.216-18.432 176.64 138.24 310.784 428.032 310.784 101.376 0 173.568-8.192 208.384-19.968z m0 0" p-id="12452"></path></svg>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://www.cnblogs.com/yzyJuanW'
+                            target="_blank"
+                            title="cnblog"
+                        >
+                            
+                            
+                                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1723033854811" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13459" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M851.40363594 172.59636406c-187.46181844-187.46181844-491.34545437-187.46181844-678.80727188 0-187.46181844 187.46181844-187.46181844 491.34545437 0 678.80727188 187.46181844 187.46181844 491.34545437 187.46181844 678.80727188 0 187.46181844-187.46181844 187.46181844-491.34545437 0-678.80727188zM387.33090875 728.08727281a47.08363594 47.08363594 0 1 1-66.63272719-66.50181843 47.08363594 47.08363594 0 0 1 66.63272719 66.50181843z m205.52727281 1.39636313a38.74909125 38.74909125 0 0 1-76.62545437-11.52h-0.04363594a6.54545437 6.54545437 0 0 0-0.04363688 0.30545531v-0.34909125c0.30545438-2.61818156 2.05090875-20.72727281-2.96727281-44.98909125a174.24 174.24 0 0 0-48.56727281-89.28 172.10181844 172.10181844 0 0 0-88.8-48.30545438 156.69818156 156.69818156 0 0 0-42.45818156-2.92363593 38.66181844 38.66181844 0 0 1-35.38909125-65.32363688 38.61818156 38.61818156 0 0 1 21.12-10.8218175v-0.2181825c4.45090875-0.74181844 111.14181844-16.45090875 200.33454562 72.74181844 89.01818156 89.01818156 74.18181844 196.14545438 73.44 200.72727281z m175.2 7.59272812a38.74909125 38.74909125 0 0 1-65.67272719 21.3818175 39.49090875 39.49090875 0 0 1-11.65090875-33.73090875c0.08727281-0.34909125 5.10545437-37.48363594-5.06181843-88.97454562-13.30909125-67.37454562-45.29454563-126.89454563-94.95272719-176.90181844-50.00727281-49.70181844-109.52727281-81.64363594-176.94545438-94.95272719-51.49090875-10.16727281-88.58181844-5.19272719-89.01818156-5.14909031h0.21818156-0.04363687a39.92727281 39.92727281 0 0 1-44.68363594-32.90181844 38.83636406 38.83636406 0 0 1 32.20363594-44.37818156c1.92-0.30545438 47.86909125-7.33090875 111.27272719 4.36363594a411.75272719 411.75272719 0 0 1 106.25454562 34.95272718 425.76 425.76 0 0 1 114.63272719 82.25454563l0.91636406 0.96 0.96 0.87272719a425.89090875 425.89090875 0 0 1 82.25454563 114.72c16.40727281 33.6 28.14545437 69.29454562 34.99636312 106.21090875 11.65090875 63.40363594 4.66909125 109.35272719 4.32 111.27272812z" fill="#515151" p-id="13460"></path></svg>
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%80%BB%E7%BB%93/" >
+                总结
+            </a>
+        
+            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" >
+                动态规划
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2022/%E5%90%84%E7%B1%BBdp%E6%80%BB%E7%BB%93/">各类dp总结</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 25, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    5040字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>这是一篇自己对各类动态规划和动态规划技巧的总结，未完待续，后续会一边刷题一边添加内容</p>
+<h2 id="关于填表法和刷表法">关于填表法和刷表法</h2>
+<p>在我们做的题中，一般填表法用得较多，但两者各有好处</p>
+<p>一般来说动态规划中，状态的转移可以理解成图论中的一条有向边($u \rightarrow v$)，我们以 <code>u</code> 作为已求出来的状态，<code>v</code> 为需要求的状态，那么填表法便是将目光放在 <code>v</code> 上，去寻找已知的 <code>u</code> 来更新；而刷表法则是将目光放在<code>u</code> 上，利用已知的 <code>u</code> 来去更新可抵达的 状态 <code>v</code></p>
+<p>具体来说填表法会写成这样 ：<code>dp[i] = dp[i - j] + w</code></p>
+<p>而刷表法会写成这样： <code>dp[i + j] = dp[i] + w</code></p>
+<p>填表法的<strong>好处</strong>不多说，毕竟平时用得最多的便是填表法</p>
+<p>而刷表法的<strong>好处</strong>便是：一般对于一道题中，若是在求本状态时，寻找需要利用到的状态比较困难时，则可以考虑用刷表法</p>
+<h2 id="关于空间优化">关于空间优化</h2>
+<p>动态规划中，真要考起动态规划来，感觉很少卡空间，但还是说说吧</p>
+<p>一般我碰见比较常见的空间优化的方式有两种：</p>
+<p>一种是状态转移时，<strong>本状态的维度只用到了上一个状态的维度</strong>，即 <code>dp[i][x] = dp[i - 1][y]</code> 这种形式，这样的优化方式有很多，例如开数组时将那一维开成2的大小，又例如直接把那一维删了</p>
+<p>另一种<strong>是多维度状态数组超内存</strong>的情况，一般来说这种的特点是，有一维可以利用其它几维间接推出来，固优化方式是直接将那一维删了，然后转移时，那一维的信息直接利用其它维信息推出来。例题 <a class="link" href="https://ac.nowcoder.com/acm/contest/24213/1041"  target="_blank" rel="noopener"
+    >[NOIP2010]乌龟棋</a> : 本题不能直接开5维度的空间</p>
+<h2 id="关于状态转移tmp数组">关于状态转移——tmp数组</h2>
+<p>为什么要总结这个？个人感觉这个真的很重要，在树形背包的应用上有<strong>奇效</strong></p>
+<p>tmp数组只是我自己的叫法，具体怎么用得慢慢解释</p>
+<p>对于上述所说的 &ldquo;本状态的维度只用到了上一个状态的维度&rdquo; 的空间优化，有人是这么处理的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">N</span><span class="p">];</span> <span class="c1">//  声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="o">!</span><span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)][</span><span class="n">j</span> <span class="o">-</span> <span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但如果使用tmp数组则可以这样，有两种方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">// 声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/* 方式一 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 先复制，记录没转移前的状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span> <span class="c1">// 在转移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* 方式二 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">inf</span><span class="p">;</span> <span class="c1">// 先初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span> <span class="c1">// 再转移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// 最后复制回dp数组里面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用tmp数组的好处是思路清晰，处理简单</p>
+<p>注意，方式一和方式二各有好处，不同题目的初始条件不同两者的效果可能会不同</p>
+<h2 id="关于更新状态">关于更新状态</h2>
+<p>寻常来说我们更新状态直接利用递推便可</p>
+<p>但有些题目最终利用到的状态并没有多少，但直接递推又不好找转移的状态，并且直接递推复杂度可能顶不住</p>
+<p>固一般来说这样的状态转移可以考虑记忆化搜索，类似剪枝一般在寻找状态时只搜索自己需要用到的状态，同时，有时状态可能是无限的，也可能超出了数组的下标承受范围，则可以考虑使用map存储状态</p>
+<h2 id="关于时间复杂度">关于时间复杂度</h2>
+<p>一般来说，我们dp的时间复杂度可以从空间大小来推测，因为一般我们的状态若是几乎都要遍历一遍的话，其复杂度的下限便是其空间的大小</p>
+<h2 id="关于寻找具体方案">关于寻找具体方案</h2>
+<p>对于这种题目，求最后的答案时可以像寻常般进行dp，而反过头来求出答案来源的具体方案我一般是dfs往回找，时间负责度也不高</p>
+<p>对于求解对字典序有要求的具体方案，我会反过来dp，然后正过来dfs找具体方案</p>
+<p>当然，也看过别的求解具体方案的方式：多开一个数组记录转移的路线，然后像是遍历图一样找路线</p>
+<h2 id="线性dp">线性dp</h2>
+<h4 id="线性dp背包">线性dp——背包</h4>
+<p>对于背包真的不想多说了，刷多了自然有就感觉了，我的《背包问题》这篇博客我也总结得不少了</p>
+<h6 id="例题">例题</h6>
+<ul>
+<li><a class="link" href="https://www.acwing.com/problem/content/2/"  target="_blank" rel="noopener"
+    >AcWing 2. 01背包问题</a>  01背包入门题</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/3/"  target="_blank" rel="noopener"
+    >AcWing 3. 完全背包问题</a>   完全背包入门题</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/4/"  target="_blank" rel="noopener"
+    >AcWing 4. 多重背包问题 I</a>  多重背包入门题</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/5/"  target="_blank" rel="noopener"
+    >AcWing 5. 多重背包问题 II</a> 多重背包进阶题</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/6/"  target="_blank" rel="noopener"
+    >AcWing 6. 多重背包问题 III</a> 多重背包困难题</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/7/"  target="_blank" rel="noopener"
+    >AcWing 7. 混合背包问题</a> 混合背包</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/8/"  target="_blank" rel="noopener"
+    >AcWing 8. 二维费用的背包问题</a> 二维背包</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/9/"  target="_blank" rel="noopener"
+    >AcWing 9. 分组背包问题</a> 分组背包</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/11/"  target="_blank" rel="noopener"
+    >AcWing 11. 背包问题求方案数</a> 背包问题求方案数</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/12/"  target="_blank" rel="noopener"
+    >AcWing 12. 背包问题求具体方案</a> 背包问题求具体方案，可以试试上面说的求具体方案的方法</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/23413"  target="_blank" rel="noopener"
+    >NC23413 小A买彩票</a> 一个简单的背包问题</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/14526"  target="_blank" rel="noopener"
+    >NC14526 购物</a> 01背包+分组背包</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/207751"  target="_blank" rel="noopener"
+    >NC207751 牛牛的旅游纪念品</a> 背包问题入门题</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16693"  target="_blank" rel="noopener"
+    >NC16693 [NOIP2001]装箱问题</a> 裸的01背包</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1048"  target="_blank" rel="noopener"
+    >P1048 [NOIP2005 普及组] 采药</a> 裸的01背包</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/17871"  target="_blank" rel="noopener"
+    >NC17871 CSL分苹果</a> 转换成01背包写</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1064"  target="_blank" rel="noopener"
+    >P1064 [NOIP2006 提高组] 金明的预算方案</a> 我是当成有依赖的背包写的，但也有人用线性方式的dp写出来了，所以放这吧</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/14699"  target="_blank" rel="noopener"
+    >NC14699 队伍配置</a> 多维背包的入门题</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P2967"  target="_blank" rel="noopener"
+    >[USACO09DEC]Video Game Troubles</a> 分组背包+01背包，转移用两个方程</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/17193"  target="_blank" rel="noopener"
+    >NC17193 简单瞎搞题</a> 分组背包用bitset优化</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16576"  target="_blank" rel="noopener"
+    >NC16576 [NOIP2012]摆花</a> 分组背包</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P5020"  target="_blank" rel="noopener"
+    >P5020 [NOIP2018 提高组] 货币系统</a> 完全背包的应用</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1877"  target="_blank" rel="noopener"
+    >P1877 [HAOI2012]音量调节</a> 简单背包问题</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P4158"  target="_blank" rel="noopener"
+    >P4158 [SCOI2009]粉刷匠</a> 划分dp + 分组背包，有点进阶</li>
+<li><a class="link" href="https://codeforces.com/problemset/problem/755/F"  target="_blank" rel="noopener"
+    >CodeForces 755F PolandBall and Gifts</a> 多重背包，说实话有点毒瘤</li>
+<li><a class="link" href="https://codeforces.com/problemset/problem/864/E"  target="_blank" rel="noopener"
+    >CodeForces - 864E Fire</a> 贪心+01背包</li>
+<li><a class="link" href="https://codeforces.com/problemset/problem/366/C"  target="_blank" rel="noopener"
+    >CodeForces - 366C</a> 思维+01背包，有点进阶</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_e"  target="_blank" rel="noopener"
+    >atcoder Knapsack 2</a> 01背包+换意dp</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_m"  target="_blank" rel="noopener"
+    >atcoder Candies</a> 多重背包，需要一些优化手段</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_x"  target="_blank" rel="noopener"
+    >atcoder Tower</a> 思维+01背包，有点思维性，多想想</li>
+<li><a class="link" href="https://codeforces.com/contest/1637/problem/D"  target="_blank" rel="noopener"
+    >CodeForces 1637D. Yet Another Minimization Problem</a>  打比赛时发现的，好题</li>
+</ul>
+<h4 id="其他线性dp">其他线性dp</h4>
+<p>线性dp是最基础的dp，其他dp可以说是他的延伸，线性dp难起来一般的难点是转移上</p>
+<p>线性dp考点有很多，包括空间优化，状态转移和定义，寻找具体方案等</p>
+<p>多刷题才是王道</p>
+<h6 id="例题-1">例题</h6>
+<ul>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/20875"  target="_blank" rel="noopener"
+    >NC20875 舔狗舔到最后一无所有</a> 这题的转移有点意思</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/20650"  target="_blank" rel="noopener"
+    >NC20650 可爱の星空</a> 这题的转移注意状态的空间，建议使用dfs找状态</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/51216"  target="_blank" rel="noopener"
+    >NC51216 花店橱窗</a> 这题感觉像是背包+数字三角形的模型，还要求具体方案</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16850"  target="_blank" rel="noopener"
+    >NC16850 免费馅饼</a> 加个时间轴作为状态的一维，然后像数字三角形一样走，反过来遍历就好了，然后正过来找具体方案</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16856"  target="_blank" rel="noopener"
+    >NC16856 钉子和小球</a> 这题有点好玩，初始状态有点意思</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16619"  target="_blank" rel="noopener"
+    >NC16619 [NOIP2008]传球游戏</a> 很简单的线性dp</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16664"  target="_blank" rel="noopener"
+    >NC16664 [NOIP2004]合唱队形</a> 算LIS的入门题吧</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1020"  target="_blank" rel="noopener"
+    >[NOIP1999] 拦截导弹 </a> 相信不少人做过这题，Dilworth定理的应用</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/15553"  target="_blank" rel="noopener"
+    >NC15553 数学考试</a> 算划分dp吧</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/19158"  target="_blank" rel="noopener"
+    >NC19158 失衡天平</a> 这种转移也有点意思，没遇到过可能真要想挺久的</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/13885"  target="_blank" rel="noopener"
+    >NC13885 Music Problem</a> 要用到bitset优化，想想取余的加减法对应的操作吧</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/14704"  target="_blank" rel="noopener"
+    >NC14704 美味菜肴</a> 先贪心，后dp，最后找最优值</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/207781"  target="_blank" rel="noopener"
+    >NC207781 迁徙过程中的河流</a> 贪心思维的dp</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1006"  target="_blank" rel="noopener"
+    >[NOIP2008 提高组] 传纸条</a> 建议记忆化搜索，可以空间优化</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1004"  target="_blank" rel="noopener"
+    >P1004 [NOIP2000 提高组] 方格取数</a> 和传纸条差不多</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1052"  target="_blank" rel="noopener"
+    >P1052 [NOIP2005 提高组] 过河</a> 空间优化，转移找状态有点恶心</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16590"  target="_blank" rel="noopener"
+    >NC16590 乌龟棋</a> 需要空间优化</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/50959"  target="_blank" rel="noopener"
+    >NC50959 To the Max</a> 前缀和与最大连续子串的应用</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1169"  target="_blank" rel="noopener"
+    >P1169 [ZJOI2007]棋盘制作</a> 思维+最大全为1的正方形+单调栈的应用</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P2331"  target="_blank" rel="noopener"
+    >P2331 [SCOI2005]最大子矩阵</a> 状态有点难想，也有点难转移</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/433/"  target="_blank" rel="noopener"
+    >AcWing 431. 守望者的逃离</a> 转移挺有意思的，记住特判条件就好了</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/24949"  target="_blank" rel="noopener"
+    >[USACO 2008 Jan S]Running</a> 刷表法的应用</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P2051"  target="_blank" rel="noopener"
+    >P2051 [AHOI2009]中国象棋</a> 要结合组合数学转移</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_y"  target="_blank" rel="noopener"
+    >atcoder Grid 2</a> 需要组合数学和走格子的一个数学小结论</li>
+<li><a class="link" href="https://atcoder.jp/contests/abc212/tasks/abc212_e"  target="_blank" rel="noopener"
+    >atcoder abc212E Safety Journey</a> 一开始以为是图上矩阵的k次幂，发现数据太大</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P3216"  target="_blank" rel="noopener"
+    >P3216 [HNOI2011] 数学作业</a> 快速幂优化，注意数据范围</li>
+<li><a class="link" href="https://loj.ac/p/10180"  target="_blank" rel="noopener"
+    >libre 10180. 「一本通 5.5 练习 1」烽火传递</a> 单调队列优化的划分dp</li>
+<li><a class="link" href="https://loj.ac/p/10177"  target="_blank" rel="noopener"
+    >libre 10177. 「一本通 5.5 例 3」修剪草坪</a> 和烽火传递一样</li>
+<li>[<a class="link" href="https://loj.ac/p/10181"  target="_blank" rel="noopener"
+    >libre 10181. 「一本通 5.5 练习 2」绿色通道</a> 二分+单调队列优化dp</li>
+<li><a class="link" href="https://codeforces.com/problemset/problem/372/C"  target="_blank" rel="noopener"
+    >CodeForces - 372C Watching Fireworks is Fun</a> 单调队列优化dp</li>
+</ul>
+<h2 id="区间dp">区间dp</h2>
+<p>一种具有区间性质的dp，一般来说转移都是从小区间转移到大区间，固一般是先枚举小区间再枚举大区间的即 <code>dp[l][r] &lt;- dp[l + 1][r - 1]</code></p>
+<p>有两种遍历方式可以做到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//1 比较常见的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">len</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">,</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 转移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//2 可以反向l只会找l+1转移，r只会找r-1转移，固可以l逆着遍历，r顺着遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 转移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>两种效果差不多</p>
+<p>对于环形的区间dp，一般的处理方式是拆环成链，开两倍的空间</p>
+<h6 id="例题-2">例题</h6>
+<ul>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/14701"  target="_blank" rel="noopener"
+    >NC14701 取数游戏2</a> 区间dp入门题</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/15447"  target="_blank" rel="noopener"
+    >NC15447 wyh的问题</a> 区间dp题，没什么好说的</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/50493"  target="_blank" rel="noopener"
+    >石子合并</a> 经典</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/50500"  target="_blank" rel="noopener"
+    >凸多边形的划分</a> 经典</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P4170"  target="_blank" rel="noopener"
+    >P4170 [CQOI2007]涂色</a> 区间dp，感性转移</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/16129"  target="_blank" rel="noopener"
+    >NC16129 小小粉刷匠</a> 和涂色差不多，多了个限制条件</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/23501"  target="_blank" rel="noopener"
+    >NC23501 小A的回文串</a> 拆环成链</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/227595"  target="_blank" rel="noopener"
+    >NC227595 跳跳跳</a> 区间dp，也不难想</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/13230"  target="_blank" rel="noopener"
+    >NC13230 合并回文子串</a> 如果能想到是区间dp就挺简单的了</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P3147"  target="_blank" rel="noopener"
+    >P3147 [USACO16OPEN]262144 P</a> 区间dp+换意dp</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P1005"  target="_blank" rel="noopener"
+    >P1005 [NOIP2007 提高组] 矩阵取数游戏</a> 普普通通的区间dp</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P1040"  target="_blank" rel="noopener"
+    >P1040 [NOIP2003 提高组] 加分二叉树</a> 需要一点树的中序和前序遍历的知识</p>
+</li>
+<li>
+<p><a class="link" href="https://acm.dingbacode.com/showproblem.php?pid=2476"  target="_blank" rel="noopener"
+    >HDU 2476 String painter</a> 和涂色差不多，需要预处理，然后来个区间dp，最后划分dp</p>
+</li>
+<li>
+<p><a class="link" href="https://vjudge.net/problem/UVA-10617"  target="_blank" rel="noopener"
+    >UVA 10617 Again Palindrome</a> 求区间中有多少个回文子序列，需要容斥一下</p>
+</li>
+<li>
+<p><a class="link" href="http://poj.org/problem?id=1159"  target="_blank" rel="noopener"
+    >POJ 1159 Palindrome</a> 需要空间优化</p>
+</li>
+<li>
+<p><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_l"  target="_blank" rel="noopener"
+    >atcoder Deque</a> 思维+区间dp</p>
+</li>
+</ul>
+<h2 id="树上dp">树上dp</h2>
+<p>个人感觉，树上dp和树上背包是不一样的，固分开来写</p>
+<p>树形dp简单的来说就是在树上进行dp</p>
+<p>但有些模型个人觉得还是必须要去了解的</p>
+<p>例如</p>
+<ul>
+<li>树上独立集</li>
+<li>树的最小支配集</li>
+<li>树的最小点覆盖</li>
+<li>树的直径</li>
+<li>树的重心
+<ul>
+<li>性质如下</li>
+<li>一棵树最少有一个重心，最多有两个重心，若有两个重心，则他们相邻（即连有直接边）</li>
+<li>树上所有点到某个点的距离和里，到重心的距离和最小；若有两个重心，则其距离和相同</li>
+<li>若以重心为根，则所有子树的大小都不超过整棵树的一半</li>
+<li>在一棵树上添加或删除一个叶子节点，其重心最多平移一条边的距离</li>
+<li>两棵树通过连一条边组合成新树，则新树重心在原来两棵树的重心的连线上</li>
+</ul>
+</li>
+<li>树的中心</li>
+<li>……</li>
+</ul>
+<p>当然还有比较常见的便是换根dp和基环树dp</p>
+<p>对于换根dp，换根时个人觉得还是多开一个数组进行记录需要的答案比较好。一般来说思考换根的公式是画图和进行未换根前的公式转换</p>
+<h6 id="例题-3">例题</h6>
+<ul>
+<li>
+<p><a class="link" href="https://loj.ac/p/10157"  target="_blank" rel="noopener"
+    >Libre 10157 「一本通 5.2 例 5」皇宫看守</a> 树上最小支配集</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/51178"  target="_blank" rel="noopener"
+    >NC51178 没有上司的舞会</a> 树上最大独立集</p>
+</li>
+<li>
+<p><a class="link" href="https://loj.ac/p/10156"  target="_blank" rel="noopener"
+    >Libre 10156 「一本通 5.2 例 4」战略游戏</a> 树上最小点覆盖</p>
+</li>
+<li>
+<p><a class="link" href="https://loj.ac/p/10159"  target="_blank" rel="noopener"
+    >Libre 10159 「一本通 5.2 练习 2」旅游规划</a> 树的直径+具体方案</p>
+</li>
+<li>
+<p><a class="link" href="http://poj.org/problem?id=1655"  target="_blank" rel="noopener"
+    >POJ 1655 Balancing Act</a> 树的重心</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/202475"  target="_blank" rel="noopener"
+    >NC202475 树上子链</a> 有点像树的直径</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/211219"  target="_blank" rel="noopener"
+    >NC211219 电话网络</a> 树上最小支配集</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/22598"  target="_blank" rel="noopener"
+    >NC22598 Rinne Loves Edges</a> 直接树上dp就行了</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P4268"  target="_blank" rel="noopener"
+    >P4268 [USACO18FEB]Directory Traversal</a> 换根dp</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P2986"  target="_blank" rel="noopener"
+    >P2986 [USACO10MAR] Great Cow Gathering</a> 换根dp</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/51180"  target="_blank" rel="noopener"
+    >NC51180 Accumulation Degree</a> 换根dp</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/51222"  target="_blank" rel="noopener"
+    >NC51222 Strategic game</a> 树上最小点覆盖</p>
+</li>
+</ul>
+<h2 id="树形背包">树形背包</h2>
+<p>树形背包，顾名思义是在树上的或者说是有依赖的背包问题</p>
+<p>对于思考方式可以看看之前写的《树形背包思考方式》</p>
+<p>一般困难点便是转移的思考、如何定义状态、边和点权哪个是物品重量等</p>
+<p>当然还有一个进阶考法是利用<strong>虚树</strong>进行优化</p>
+<h6 id="例题-4">例题</h6>
+<ul>
+<li>
+<p><a class="link" href="https://www.acwing.com/problem/content/10/"  target="_blank" rel="noopener"
+    >AcWing 10. 有依赖的背包问题</a> 入门题</p>
+</li>
+<li>
+<p><a class="link" href="https://loj.ac/p/10154"  target="_blank" rel="noopener"
+    >Libre 10154. 「一本通 5.2 例 2」选课</a> 入门级别吧</p>
+</li>
+<li>
+<p><a class="link" href="https://loj.ac/p/10153"  target="_blank" rel="noopener"
+    >Libre 10153. 「一本通 5.2 例 1」二叉苹果树</a> 入门级别</p>
+</li>
+<li>
+<p><a class="link" href="https://ac.nowcoder.com/acm/problem/20811"  target="_blank" rel="noopener"
+    >NC20811 蓝魔法师</a> 要学会思考什么是背包模型中的物品重量</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P1273"  target="_blank" rel="noopener"
+    >P1273 有线电视网</a> 树形背包+换意dp</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P1272"  target="_blank" rel="noopener"
+    >P1272 重建道路</a> 这题也不难</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P3177"  target="_blank" rel="noopener"
+    >P3177 [HAOI2015]树上染色</a> 注意背包模型中的物品是什么</p>
+</li>
+<li>
+<p><a class="link" href="http://acm.hdu.edu.cn/showproblem.php?pid=6540"  target="_blank" rel="noopener"
+    >HDU6540 Neko and tree</a> 进阶题</p>
+</li>
+<li>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P3354"  target="_blank" rel="noopener"
+    >P3354 [IOI2005]Riv 河流</a> 有点难</p>
+</li>
+</ul>
+<h2 id="状压dp">状压dp</h2>
+<p>状态压缩一般指的是利用二进制进行状态的压缩，很少出现三进制这些</p>
+<p>当然状态压缩dp常见的考点便是哈密顿通路的模型</p>
+<p>注意一个二进制状态寻找子集的搜索方法，其复杂度是O($3^n$)的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="n">s1</span><span class="p">;</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s</span> <span class="o">^</span> <span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// s1 与 s2 互为 s 的补集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="例题-5">例题</h6>
+<ul>
+<li><a class="link" href="https://www.acwing.com/problem/content/294/"  target="_blank" rel="noopener"
+    >AcWing 292. 炮兵阵地</a> 基础题</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1896"  target="_blank" rel="noopener"
+    >P1896 [SCOI2005]互不侵犯</a> 入门题</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/17890"  target="_blank" rel="noopener"
+    >NC17890 方格填色</a> 要用快速幂优化</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/210981"  target="_blank" rel="noopener"
+    >NC210981 mixup2 混乱的奶牛</a> 算是基础题吧</li>
+<li><a class="link" href="https://www.acwing.com/problem/content/293/"  target="_blank" rel="noopener"
+    >AcWing 291. 蒙德里安的梦想</a> 状态dp，个人觉得轮廓线的思想来转移会比较好</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/15832"  target="_blank" rel="noopener"
+    >NC15832 Most Powerful</a> 好好思考状态</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P1879"  target="_blank" rel="noopener"
+    >P1879 [USACO06NOV]Corn Fields</a> 基础题</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16122"  target="_blank" rel="noopener"
+    >NC16122 郊区春游</a> 本质是求一个哈密顿最小路径的通路</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/problem/16544"  target="_blank" rel="noopener"
+    >NC16544 简单环</a> 类似求一个哈密顿回路的方案数</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P3118"  target="_blank" rel="noopener"
+    >P3118 [USACO15JAN]Moovie Mooving</a> 思考状态存什么</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P3092"  target="_blank" rel="noopener"
+    >P3092 [USACO13NOV]No Change</a> 要二分优化</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_o"  target="_blank" rel="noopener"
+    >atcoder Matching</a> 二分图的完美匹配方案数</li>
+<li><a class="link" href="https://atcoder.jp/contests/dp/tasks/dp_u"  target="_blank" rel="noopener"
+    >atcoder Grouping</a> 你需要学会枚举子集</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P3160"  target="_blank" rel="noopener"
+    > [CQOI2012]局部极小值</a> 状压dp+容斥（难度较高）</li>
+<li><a class="link" href="https://leetcode-cn.com/problems/maximum-and-sum-of-array/"  target="_blank" rel="noopener"
+    >leetcode 6007. 数组的最大与和</a> 这题有点意思，建议用状压做</li>
+<li><a class="link" href="https://atcoder.jp/contests/abc213/tasks/abc213_g?lang=en"  target="_blank" rel="noopener"
+    >atcoder ABC213G - Connectivity 2</a> 枚举子集，要想到如何不重不漏地计算</li>
+</ul>
+<h2 id="数位dp">数位dp</h2>
+<p>说起数位dp，求解的过程更像是在树上计数一样</p>
+<p>值得注意的是：记忆化递归求解简单易懂，而且几乎不会卡递归的方式</p>
+<p>给出递归时的一个套路代码（很多地方更多的是希望根据题意来）</p>
+<p>有时候有些数位dp可能对前导0或者前面填的数对后面有影响，则可以在dfs中传参传多几个标志，然后在更新res（12行）时特判就好了</p>
+<p>当然，个人感觉核心代码就是11~13行内部的转移方式，一般来说，写题的时候有点纠结状态怎么定义时，会先写这部分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">indx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">limit</span><span class="p">,</span> <span class="cm">/*参数根据题意来添加*/</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">indx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span><span class="c1">// 根据题意来返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">ref</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">indx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">limit</span> <span class="o">&amp;&amp;</span> <span class="n">ref</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">up</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span> <span class="o">?</span> <span class="n">num</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">:</span> <span class="mi">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">up</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 更新res
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">dfs</span><span class="p">(</span><span class="n">indx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">limit</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">up</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">limit</span><span class="p">)</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 根据题意来决定返回值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span><span class="p">[</span><span class="o">++</span><span class="n">len</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dp</span><span class="p">);</span> <span class="c1">// 根据题意决定初始化的时机和大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 此行省略读入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">solve</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">solve</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="例题-6">例题</h6>
+<ul>
+<li><a class="link" href="https://loj.ac/p/10164"  target="_blank" rel="noopener"
+    >Libre 10164. 「一本通 5.3 例 2」数字游戏</a> 入门好题</li>
+<li><a class="link" href="https://loj.ac/p/10166"  target="_blank" rel="noopener"
+    >Libre 10166. 「一本通 5.3 练习 1」数字游戏</a> 和上一题处理差不多</li>
+<li><a class="link" href="https://www.luogu.com.cn/problem/P2657"  target="_blank" rel="noopener"
+    >[SCOI2009] windy 数</a> 多少人的刚学是做的这题？</li>
+<li><a class="link" href="https://atcoder.jp/contests/abc161/tasks/abc161_d"  target="_blank" rel="noopener"
+    >atcoder abc161D Lunlun Number</a> 不说应该也能想到怎么做的题</li>
+<li><a class="link" href="https://codeforces.com/problemset/problem/204/A"  target="_blank" rel="noopener"
+    >CodeForces 204A Little Elephant and Interval</a> 这题让我吹爆记忆化搜的数位dp，处理前导0的形式值得练习</li>
+<li><a class="link" href="https://codeforces.com/contest/1143/problem/B"  target="_blank" rel="noopener"
+    >CodeForces 1143B Nirvana</a> 这题虽然可以不用数位dp做，但可以当做数位dp的练手题，可以练习一下处理前导0的形式</li>
+<li><a class="link" href="https://nanti.jisuanke.com/t/42578"  target="_blank" rel="noopener"
+    >And and Pair</a> 19年南昌icpc的C题，重现的时候自己是组合数学写出来的，但这题确实可以用数位dp写，注意是两个限制维度</li>
+<li><a class="link" href="https://ac.nowcoder.com/acm/contest/9925/C"  target="_blank" rel="noopener"
+    >Sum of Log</a> 20年上海icpc的C题，也是两个限制维度限制的数位dp</li>
+</ul>
+<p>~持续更新中……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2021/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF%E6%9D%BF%E5%AD%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">动态规划套路板子</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2021/%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">双指针总结</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2021/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E6%9D%BF%E5%AD%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">计算几何板子</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2024 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了248.6k字·共 116篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+         <br />
+        <br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+        </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#关于填表法和刷表法">关于填表法和刷表法</a></li>
+    <li><a href="#关于空间优化">关于空间优化</a></li>
+    <li><a href="#关于状态转移tmp数组">关于状态转移——tmp数组</a></li>
+    <li><a href="#关于更新状态">关于更新状态</a></li>
+    <li><a href="#关于时间复杂度">关于时间复杂度</a></li>
+    <li><a href="#关于寻找具体方案">关于寻找具体方案</a></li>
+    <li><a href="#线性dp">线性dp</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#线性dp背包">线性dp——背包</a></li>
+            <li><a href="#其他线性dp">其他线性dp</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#区间dp">区间dp</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#树上dp">树上dp</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#树形背包">树形背包</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#状压dp">状压dp</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#数位dp">数位dp</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">分类</h2>
+    <div class="widget-categories--list">
+        <div class="widget">
+            <h3 class="widget-title"> </h3>
+            <div class="widget-body">
+                <div class="category-list">
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E5%88%B7%E9%A2%98/" class="category-list-link">刷题
+                            <span class="category-list-count">32</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E6%80%BB%E7%BB%93/" class="category-list-link">总结
+                            <span class="category-list-count">24</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch6/" class="category-list-link">紫书刷题录-ch6
+                            <span class="category-list-count">17</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch7/" class="category-list-link">紫书刷题录-ch7
+                            <span class="category-list-count">14</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E6%A8%A1%E6%9D%BF/" class="category-list-link">模板
+                            <span class="category-list-count">8</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/%E7%B4%AB%E4%B9%A6%E5%88%B7%E9%A2%98%E5%BD%95-ch9/" class="category-list-link">紫书刷题录-ch9
+                            <span class="category-list-count">7</span>
+                        </a>
+                    </div>
+                    <div class="category-list-item">
+                        <a href="https://example.com/categories/cf%E5%88%B7%E9%A2%98%E8%AE%A1%E5%88%92/" class="category-list-link">cf刷题计划
+                            <span class="category-list-count">6</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+            <section class="widget archives">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">归档</h2>
+
+    
+    
+    
+    
+
+    <div class="widget-archive--list">
+        <div class="archives-year">
+            <a href="/archives/#2022">
+                
+                <span class="year">2022</span>
+                <span class="count">7</span>
+                
+            </a>
+        </div>
+        <div class="archives-year">
+            <a href="/archives/#2021">
+                
+                <span class="year">2021</span>
+                <span class="count">47</span>
+                
+            </a>
+        </div>
+        <div class="archives-year">
+            <a href="/archives/#2020">
+                
+                <span class="year">2020</span>
+                <span class="count">62</span>
+                
+            </a>
+        </div>
+        
+    </div>
+</section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">标签云</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" class="font_size_90">
+                题解
+            </a>
+        
+            <a href="/tags/%E6%80%9D%E7%BB%B4/" class="font_size_16">
+                思维
+            </a>
+        
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="font_size_13">
+                动态规划
+            </a>
+        
+            <a href="/tags/dfs/" class="font_size_12">
+                DFS
+            </a>
+        
+            <a href="/tags/%E6%A0%91/" class="font_size_11">
+                树
+            </a>
+        
+            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="font_size_11">
+                线段树
+            </a>
+        
+            <a href="/tags/%E5%9B%9E%E6%BA%AF/" class="font_size_9">
+                回溯
+            </a>
+        
+            <a href="/tags/%E6%A8%A1%E6%8B%9F/" class="font_size_8">
+                模拟
+            </a>
+        
+            <a href="/tags/%E8%B4%AA%E5%BF%83/" class="font_size_8">
+                贪心
+            </a>
+        
+            <a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/" class="font_size_6">
+                主席树
+            </a>
+        
+            <a href="/tags/%E5%9B%BE/" class="font_size_6">
+                图
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E4%BD%8Ddp/" class="font_size_4">
+                数位dp
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" class="font_size_4">
+                数学
+            </a>
+        
+            <a href="/tags/%E6%A0%88/" class="font_size_4">
+                栈
+            </a>
+        
+            <a href="/tags/01%E8%83%8C%E5%8C%85/" class="font_size_3">
+                01背包
+            </a>
+        
+            <a href="/tags/dp/" class="font_size_3">
+                Dp
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E5%88%86/" class="font_size_3">
+                二分
+            </a>
+        
+            <a href="/tags/%E5%8C%BA%E9%97%B4dp/" class="font_size_3">
+                区间dp
+            </a>
+        
+            <a href="/tags/%E5%9B%BE%E8%AE%BA/" class="font_size_3">
+                图论
+            </a>
+        
+            <a href="/tags/%E6%9A%B4%E5%8A%9B%E7%BE%8E%E5%AD%A6/" class="font_size_3">
+                暴力美学
+            </a>
+        
+            <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="font_size_3">
+                树状数组
+            </a>
+        
+            <a href="/tags/bfs/" class="font_size_2">
+                BFS
+            </a>
+        
+            <a href="/tags/ida/" class="font_size_2">
+                IDA*
+            </a>
+        
+            <a href="/tags/%E5%89%AA%E6%9E%9D/" class="font_size_2">
+                剪枝
+            </a>
+        
+            <a href="/tags/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/" class="font_size_2">
+                多重背包
+            </a>
+        
+            <a href="/tags/%E6%8E%92%E5%BA%8F/" class="font_size_2">
+                排序
+            </a>
+        
+            <a href="/tags/%E6%A0%91%E5%BD%A2dp/" class="font_size_2">
+                树形dp
+            </a>
+        
+            <a href="/tags/%E7%8A%B6%E6%80%81%E5%9B%BE/" class="font_size_2">
+                状态图
+            </a>
+        
+            <a href="/tags/%E8%83%8C%E5%8C%85/" class="font_size_2">
+                背包
+            </a>
+        
+            <a href="/tags/bitset%E4%BC%98%E5%8C%96/" class="font_size_1">
+                Bitset优化
+            </a>
+        
+            <a href="/tags/dsu/" class="font_size_1">
+                Dsu
+            </a>
+        
+            <a href="/tags/stl/" class="font_size_1">
+                STL
+            </a>
+        
+            <a href="/tags/%E5%88%86%E6%B2%BB/" class="font_size_1">
+                分治
+            </a>
+        
+            <a href="/tags/%E5%88%B7%E9%A2%98/" class="font_size_1">
+                刷题
+            </a>
+        
+            <a href="/tags/%E5%8F%8Cbfs/" class="font_size_1">
+                双BFS
+            </a>
+        
+            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" class="font_size_1">
+                双指针
+            </a>
+        
+            <a href="/tags/%E5%93%88%E5%B8%8C/" class="font_size_1">
+                哈希
+            </a>
+        
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="font_size_1">
+                字符串
+            </a>
+        
+            <a href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/" class="font_size_1">
+                容斥原理
+            </a>
+        
+            <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" class="font_size_1">
+                平衡树
+            </a>
+        
+            <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="font_size_1">
+                拓扑排序
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E7%BB%84/" class="font_size_1">
+                数组
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E8%AE%BA/" class="font_size_1">
+                数论
+            </a>
+        
+            <a href="/tags/%E6%9A%B4%E5%8A%9B/" class="font_size_1">
+                暴力
+            </a>
+        
+            <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="font_size_1">
+                最短路
+            </a>
+        
+            <a href="/tags/%E6%A0%91%E5%A5%97%E6%A0%91/" class="font_size_1">
+                树套树
+            </a>
+        
+            <a href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/" class="font_size_1">
+                离散化
+            </a>
+        
+            <a href="/tags/%E7%A6%BB%E7%BA%BF%E6%93%8D%E4%BD%9C/" class="font_size_1">
+                离线操作
+            </a>
+        
+            <a href="/tags/%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96/" class="font_size_1">
+                空间优化
+            </a>
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7dp/" class="font_size_1">
+                线性dp
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+    </div>
+    <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+</body>
+
+</html>

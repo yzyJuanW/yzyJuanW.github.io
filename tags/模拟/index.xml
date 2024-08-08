@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模拟 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%A8%A1%E6%8B%9F/</link>
+    <description>Recent content in 模拟 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Aug 2020 14:26:40 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UVA804</title>
+      <link>https://example.com/2020/uva804/</link>
+      <pubDate>Tue, 04 Aug 2020 14:26:40 +0800</pubDate>
+      <guid>https://example.com/2020/uva804/</guid>
+      <description>UVA804 Petri Net Simulation，记录刷题代码</description>
+    </item>
+    <item>
+      <title>Olympiad</title>
+      <link>https://example.com/2020/olympiad/</link>
+      <pubDate>Fri, 24 Jul 2020 19:25:00 +0800</pubDate>
+      <guid>https://example.com/2020/olympiad/</guid>
+      <description>codeforces Olympiad 题解</description>
+    </item>
+    <item>
+      <title>Cosmic_Tables</title>
+      <link>https://example.com/2020/cosmic_tables/</link>
+      <pubDate>Fri, 24 Jul 2020 16:26:14 +0800</pubDate>
+      <guid>https://example.com/2020/cosmic_tables/</guid>
+      <description>codeforces Cosmic_Tables题解</description>
+    </item>
+    <item>
+      <title>Shooshuns_and_Sequence</title>
+      <link>https://example.com/2020/shooshuns_and_sequence/</link>
+      <pubDate>Fri, 24 Jul 2020 15:15:22 +0800</pubDate>
+      <guid>https://example.com/2020/shooshuns_and_sequence/</guid>
+      <description>codeforces Shooshuns_and_Sequence题解</description>
+    </item>
+    <item>
+      <title>Tourist&#39;s_Notes</title>
+      <link>https://example.com/2020/tourists_notes/</link>
+      <pubDate>Fri, 24 Jul 2020 09:56:16 +0800</pubDate>
+      <guid>https://example.com/2020/tourists_notes/</guid>
+      <description>codeforces Tourist&amp;rsquo;s_Notes题解</description>
+    </item>
+    <item>
+      <title>Quasi_Binary</title>
+      <link>https://example.com/2020/quasi_binary/</link>
+      <pubDate>Thu, 23 Jul 2020 21:08:02 +0800</pubDate>
+      <guid>https://example.com/2020/quasi_binary/</guid>
+      <description>codeforces Quasi_Binary题解</description>
+    </item>
+    <item>
+      <title>C. A Cookie for You题解</title>
+      <link>https://example.com/2020/c.-a-cookie-for-you%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 20:28:19 +0800</pubDate>
+      <guid>https://example.com/2020/c.-a-cookie-for-you%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 有 a 个 饼干，和 b 个巧克力 有 n 个 第一类人，有 m 个第二类人 对于第一类人， if (a &amp;gt; b)吃一个饼干，else 吃一个巧克力 对于第二类人， if (a &amp;gt;</description>
+    </item>
+    <item>
+      <title>B. Multiply by 2, divide by 6题解</title>
+      <link>https://example.com/2020/b.-multiply-by-2-divide-by-6%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Mon, 06 Jul 2020 15:01:02 +0800</pubDate>
+      <guid>https://example.com/2020/b.-multiply-by-2-divide-by-6%E9%A2%98%E8%A7%A3/</guid>
+      <description>传送门 题意 给一个数 n,问你只进行以下两种操作，要操作最少多少次能够使得 n 为 1： 把 n 除以 6 （前提是可以整除） 把 n 乘 2 输出最少的操作次数，如果无</description>
+    </item>
+  </channel>
+</rss>

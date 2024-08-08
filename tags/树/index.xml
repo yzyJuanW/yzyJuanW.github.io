@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树 on yzyJuanW</title>
+    <link>https://example.com/tags/%E6%A0%91/</link>
+    <description>Recent content in 树 on yzyJuanW</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jul 2021 17:45:26 +0800</lastBuildDate>
+    <atom:link href="https://example.com/tags/%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ3321 Apple Tree</title>
+      <link>https://example.com/2021/poj3321-apple-tree/</link>
+      <pubDate>Fri, 30 Jul 2021 17:45:26 +0800</pubDate>
+      <guid>https://example.com/2021/poj3321-apple-tree/</guid>
+      <description>线段树利用dfs序维护树上子树信息</description>
+    </item>
+    <item>
+      <title>UVA10410</title>
+      <link>https://example.com/2020/uva10410/</link>
+      <pubDate>Wed, 05 Aug 2020 10:12:16 +0800</pubDate>
+      <guid>https://example.com/2020/uva10410/</guid>
+      <description>UVA10410 The Reconstruction，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA806</title>
+      <link>https://example.com/2020/uva806/</link>
+      <pubDate>Tue, 04 Aug 2020 18:02:01 +0800</pubDate>
+      <guid>https://example.com/2020/uva806/</guid>
+      <description>UVA806 Spatial Structures，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA12166</title>
+      <link>https://example.com/2020/uva12166/</link>
+      <pubDate>Mon, 03 Aug 2020 20:27:46 +0800</pubDate>
+      <guid>https://example.com/2020/uva12166/</guid>
+      <description>UVA12166 Equilibrium Mobile，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA536</title>
+      <link>https://example.com/2020/uva536/</link>
+      <pubDate>Sun, 02 Aug 2020 15:35:18 +0800</pubDate>
+      <guid>https://example.com/2020/uva536/</guid>
+      <description>UVA536 Tree Recovery，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA712</title>
+      <link>https://example.com/2020/uva712/</link>
+      <pubDate>Sun, 02 Aug 2020 14:41:02 +0800</pubDate>
+      <guid>https://example.com/2020/uva712/</guid>
+      <description>UVA712 S-Trees，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA699</title>
+      <link>https://example.com/2020/uva699/</link>
+      <pubDate>Fri, 31 Jul 2020 19:38:47 +0800</pubDate>
+      <guid>https://example.com/2020/uva699/</guid>
+      <description>UVA699 The Falling Leaves，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA839</title>
+      <link>https://example.com/2020/uva839/</link>
+      <pubDate>Fri, 31 Jul 2020 17:53:32 +0800</pubDate>
+      <guid>https://example.com/2020/uva839/</guid>
+      <description>UVA839 Not so Mobile，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA679</title>
+      <link>https://example.com/2020/uva679/</link>
+      <pubDate>Fri, 31 Jul 2020 11:53:31 +0800</pubDate>
+      <guid>https://example.com/2020/uva679/</guid>
+      <description>UVA679 Dropping Balls，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA548</title>
+      <link>https://example.com/2020/uva548/</link>
+      <pubDate>Fri, 31 Jul 2020 11:50:26 +0800</pubDate>
+      <guid>https://example.com/2020/uva548/</guid>
+      <description>UVA548 Tree，记录刷题代码</description>
+    </item>
+    <item>
+      <title>UVA122</title>
+      <link>https://example.com/2020/uva122/</link>
+      <pubDate>Fri, 31 Jul 2020 11:19:07 +0800</pubDate>
+      <guid>https://example.com/2020/uva122/</guid>
+      <description>UVA122 Trees on the level，记录刷题代码</description>
+    </item>
+  </channel>
+</rss>
